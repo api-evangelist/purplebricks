@@ -1,0 +1,257 @@
+aid: purplebricks
+name: Purplebricks
+review:
+  question: Does Purplebricks publish a public, documented, machine-readable API surface —
+    and is there any RESO posture to record?
+  answer: false
+  date: '2026-07-26'
+  reviewer: API Evangelist
+  homeMarket: United Kingdom
+  tier: brokerage
+  status: built-stub
+sectorBlock:
+  resoPosture:
+    phrase: no RESO reference found
+    certified: false
+    certificationType: none
+    dataDictionaryVersion: null
+    webApiCertified: false
+    directoryEvidence: |
+      No RESO certification of any kind was found for Purplebricks. RESO (Real Estate
+      Standards Organization) is a North American body whose Web API and Data Dictionary
+      certifications are carried by MLSs, MLS technology vendors and North American
+      brokerages. The United Kingdom has no MLS, so there is no cooperative endpoint for
+      a UK agency to certify. Searches of the RESO certification material and of the
+      Purplebricks estate returned zero hits for "RESO", "Data Dictionary", "OData",
+      "UPI" or "Universal Property Identifier". No $metadata document is served
+      (https://www.purplebricks.co.uk/$metadata -> HTTP 404).
+    upiPresent: false
+    odataEndpointFound: false
+    metadataDocumentFound: false
+    note: |
+      Certification is not reachability, and here neither exists: Purplebricks is neither
+      RESO-certified nor exposing any OData surface. The honest finding for a UK brokerage
+      is simply that RESO is absent from the market, not that it is present-but-gated.
+  accessGate:
+    classification: none-published
+    whatADeveloperMustSignOrJoin: |
+      Nothing is offered to sign or join. There is no developer programme, no partner API
+      programme, no API application form, no sandbox and no key issuance of any kind on the
+      Purplebricks estate. A third party wanting Purplebricks listing data does not go to
+      Purplebricks — the listings are syndicated to the portals (Rightmove, Zoopla,
+      OnTheMarket, PrimeLocation), and portal data access is a separate commercial licence
+      with those portals, not with Purplebricks. The only Purplebricks API path that is
+      publicly discoverable is /outlook-api/v1/agent/outlook-sync (revealed by robots.txt),
+      which returns HTTP 401 and is an internal agent calendar-sync endpoint, not a product.
+    gated: true
+    selfServePortal: false
+    membershipRequired: false
+    licenceAgreementRequired: false
+    brokerOrAgentOnly: false
+  openData:
+    publishesOpenData: false
+    consumesOpenData: true
+    detail: |
+      Purplebricks publishes no open dataset and no open API. It is, however, a CONSUMER of
+      the UK's genuinely open government property data layer: the /house-prices tool is
+      explicitly attributed to HM Land Registry ("View the most recent property sales across
+      England and Wales, using data from HM Land Registry", and the page meta description
+      repeats "with data from HM Land Registry"). That is the UK counterweight to US private
+      control — the open layer is public sector (HM Land Registry Price Paid / ownership data,
+      Ordnance Survey addressing and mapping), and the private market layer (Rightmove /
+      Zoopla duopoly plus agency CRM software) is closed. Purplebricks sits entirely on the
+      closed side while re-presenting the open side to consumers through HTML pages.
+    openDataSetsPublishedByOrg: []
+  authModel:
+    scheme: none published
+    detail: |
+      No public authentication scheme is documented because no public API exists. No API key
+      programme, no OAuth2 authorization server, no OpenID Connect discovery document
+      (https://www.purplebricks.co.uk/.well-known/openid-configuration -> HTTP 404). The
+      consumer "Log in" flow is a first-party session on www.purplebricks.co.uk. The single
+      discoverable API path (/outlook-api/v1/agent/outlook-sync) responds HTTP 401, proving an
+      authenticated internal scheme exists but not documenting it; the WWW-Authenticate
+      challenge was not advertised as a developer contract anywhere.
+  webhooksEventsSdksPostman:
+    webhooks: false
+    events: false
+    sdks: false
+    postman: false
+    detail: |
+      No webhooks, no event stream, no published SDK and no Postman collection. Absence is the
+      finding. Purplebricks does operate a public GitHub organization (github.com/purplebricks,
+      verified for purplebricks.io, Birmingham UK) but every repository there is internal
+      engineering plumbing published as open source — the "Pat" family of Azure Service Bus
+      messaging libraries (Pat.Sender, Pat.Subscriber, Pat.Subscriber.Tools, Pat.DataProtection),
+      PB.ITOps.AspNetCore.Versioning (a web API versioning convention for ASP.NET), a Xamarin
+      calendar control, a mobile engineering test, and the tech blog itself. None of these is an
+      SDK for a Purplebricks API, and none contains an OpenAPI or other API contract.
+  productApiFamily:
+    detail: |
+      Purplebricks' real product segmentation, as the site itself presents it, is: property
+      search (for sale / to rent), sold house prices (HM Land Registry derived), free
+      valuation booking, seller packages, lettings and landlord/property management,
+      mortgages (via www.purplebricksmortgages.co.uk), and conveyancing bundled into the
+      selling packages. NONE of these segments is exposed as a documented API. Every one is
+      a server-rendered web surface (ASP.NET plus a Next.js house-prices app, Contentful CMS,
+      Azure hosting, Genesys Cloud contact centre).
+    segmentsWithPublicApi: []
+  marketSeam: |
+    Confirms the UK seam exactly. There is no MLS and no shared cooperative. Purplebricks
+    reaches buyers by feeding its listings to the portals — its own /where-we-advertise page
+    documents distribution to Rightmove, Zoopla, OnTheMarket and PrimeLocation. The contract
+    between agency and portal is a commercial feed arrangement, not a public standard and not
+    a public API. Meanwhile the open, callable, unlicensed property data in the UK is
+    government-published (HM Land Registry, Ordnance Survey) and Purplebricks is a downstream
+    consumer of it, not a publisher.
+findings:
+  summary: |
+    Purplebricks publishes no public API. Every developer-surface probe failed: developer.,
+    developers. and docs. subdomains do not resolve at all; api.purplebricks.co.uk resolves but
+    serves a generic Azure Front Door "Page not found" 404 at /, /swagger, /swagger/v1/swagger.json,
+    /openapi.json and /health; /developers, /api, /docs, /openapi.json, /swagger.json, /api-docs,
+    /graphql, /$metadata and /.well-known/openid-configuration on the main site are all 404. The
+    only machine-readable artifact served publicly is schema.org JSON-LD (a RealEstateAgent node
+    with legal name, founding date 2014-04-01, founders, London address at 146 Freston Road W10 6TR,
+    areaServed England/Wales/Scotland and sameAs social links), which is metadata about the company,
+    not an API contract. Zero specs were harvested; the openapi/ directory is therefore omitted.
+  developerPortal: none
+  portalConfirmed: false
+  specsHarvested: 0
+  machineReadablePublicSurface:
+    - type: JSON-LD
+      note: schema.org RealEstateAgent graph embedded in the homepage; parsed successfully.
+      location: https://www.purplebricks.co.uk/
+  discoveredButUndocumented:
+    - path: https://www.purplebricks.co.uk/outlook-api/v1/agent/outlook-sync
+      httpStatus: 401
+      note: |
+        Revealed only by a Disallow line in robots.txt. Authenticated, internal, agent-facing
+        calendar sync. Not documented anywhere, not a developer product, and deliberately NOT
+        listed as an API in apis.yml.
+  corporateContext: |
+    Founded 2014 (Michael Bruce, Kenny Bruce, David Shepherd); floated on AIM; overseas
+    expansions into Australia, the US and Canada were all wound down or sold. Sold to rival
+    online agent Strike for £1 in 2023 (91% shareholder approval, 2 June 2023), backed by Sir
+    Charles Dunstone; Strike retired its own brand and rebranded under Purplebricks later that
+    year. In 2026 the Bruce brothers returned with a significant minority stake through
+    Dunstone's Freston Ventures, Michael Bruce as CEO. Home market is now United Kingdom only.
+probes:
+  - url: https://www.purplebricks.co.uk/
+    status: 200
+    note: Homepage; ASP.NET + Contentful; carries schema.org JSON-LD.
+  - url: https://purplebricks.co.uk/
+    status: 200
+    note: Redirects to https://www.purplebricks.co.uk/.
+  - url: https://developer.purplebricks.co.uk/
+    status: 000
+    note: Does not resolve (no DNS / no connection).
+  - url: https://developers.purplebricks.co.uk/
+    status: 000
+    note: Does not resolve.
+  - url: https://docs.purplebricks.co.uk/
+    status: 000
+    note: Does not resolve.
+  - url: https://api.purplebricks.co.uk/
+    status: 404
+    note: Resolves behind Azure Front Door (x-azure-ref header) but serves a generic "Page not found".
+  - url: https://api.purplebricks.co.uk/swagger
+    status: 404
+  - url: https://api.purplebricks.co.uk/swagger/v1/swagger.json
+    status: 404
+  - url: https://api.purplebricks.co.uk/openapi.json
+    status: 404
+  - url: https://api.purplebricks.co.uk/health
+    status: 404
+  - url: https://www.purplebricks.co.uk/developers
+    status: 404
+  - url: https://www.purplebricks.co.uk/api
+    status: 404
+  - url: https://www.purplebricks.co.uk/docs
+    status: 404
+  - url: https://www.purplebricks.co.uk/openapi.json
+    status: 404
+  - url: https://www.purplebricks.co.uk/swagger.json
+    status: 404
+  - url: https://www.purplebricks.co.uk/api-docs
+    status: 404
+  - url: https://www.purplebricks.co.uk/graphql
+    status: 404
+  - url: https://www.purplebricks.co.uk/$metadata
+    status: 404
+    note: OData metadata probe — nothing served, consistent with no RESO/OData surface.
+  - url: https://www.purplebricks.co.uk/.well-known/openid-configuration
+    status: 404
+    note: Fetched anonymously; no OpenID Connect discovery document.
+  - url: https://www.purplebricks.co.uk/.well-known/security.txt
+    status: 404
+  - url: https://www.purplebricks.co.uk/partners
+    status: 404
+  - url: https://www.purplebricks.co.uk/partner
+    status: 404
+  - url: https://www.purplebricks.co.uk/robots.txt
+    status: 200
+    note: Discloses /outlook-api/v1/agent/outlook-sync and six sitemap locations.
+  - url: https://www.purplebricks.co.uk/outlook-api/v1/agent/outlook-sync
+    status: 401
+    note: Internal agent-facing endpoint; authenticated, undocumented.
+  - url: https://www.purplebricks.co.uk/house-prices
+    status: 200
+    note: Next.js app; explicitly attributes HM Land Registry as the data source.
+  - url: https://www.purplebricks.co.uk/search/property-for-sale
+    status: 200
+  - url: https://www.purplebricks.co.uk/search/property-to-rent
+    status: 200
+  - url: https://www.purplebricks.co.uk/where-we-advertise
+    status: 200
+    note: Documents portal distribution to Rightmove, Zoopla, OnTheMarket, PrimeLocation.
+  - url: https://www.purplebricks.co.uk/services/our-packages
+    status: 200
+  - url: https://www.purplebricks.co.uk/estate-agents
+    status: 200
+  - url: https://www.purplebricks.co.uk/landlords
+    status: 200
+  - url: https://www.purplebricks.co.uk/terms
+    status: 200
+  - url: https://www.purplebricks.co.uk/blog
+    status: 200
+  - url: https://www.purplebricksmortgages.co.uk/
+    status: 200
+  - url: https://purplebricks.io/
+    status: 200
+    note: Purplebricks engineering tech blog ("The tech team behind purplebricks.com"); no API docs.
+  - url: https://github.com/purplebricks
+    status: 200
+    note: Verified GitHub org for purplebricks.io, Birmingham UK; internal .NET libraries only.
+  - url: https://purplebricks.github.io/
+    status: 200
+    note: Tech blog source host.
+  - url: https://purplebricks.bamboohr.com/careers
+    status: 200
+sources:
+  - url: https://www.purplebricks.co.uk/
+    type: Website
+    note: Identity, JSON-LD RealEstateAgent graph, product navigation.
+  - url: https://www.purplebricks.co.uk/robots.txt
+    type: Robots
+    note: Only place any API path is disclosed at all.
+  - url: https://www.purplebricks.co.uk/house-prices
+    type: Documentation
+    note: HM Land Registry attribution — evidence of open-government-data consumption.
+  - url: https://www.purplebricks.co.uk/where-we-advertise
+    type: Documentation
+    note: Portal syndication evidence — the UK no-MLS seam.
+  - url: https://purplebricks.io/
+    type: Blog
+    note: Engineering blog; Azure/.NET stack, no developer programme.
+  - url: https://github.com/purplebricks
+    type: GitHubOrganization
+    note: Open-sourced internal libraries; no API contracts, no SDKs for a Purplebricks API.
+actions:
+  apisListed: 0
+  openapiDirectoryCreated: false
+  reason: |
+    No real OpenAPI, Swagger, GraphQL schema, AsyncAPI or OData $metadata document was found
+    anywhere on the Purplebricks estate, so no openapi/ directory was created and apis[] was
+    left empty. Nothing was invented. The repo is an honest identity-only bootstrap recording
+    a none-published API posture in a market with no MLS and no RESO.

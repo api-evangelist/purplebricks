@@ -1,0 +1,84 @@
+aid: purplebricks
+url: https://raw.githubusercontent.com/api-evangelist/purplebricks/refs/heads/main/apis.yml
+name: Purplebricks
+kind: company
+description: >-
+  Purplebricks is the United Kingdom's largest online (hybrid) estate agency,
+  founded in 2014 by Michael and Kenny Bruce and David Shepherd, selling and letting
+  residential property across England, Wales and Scotland through a fixed-fee, remote
+  model staffed by local property experts rather than a high-street branch network.
+  After a 2023 sale to rival online agent Strike for a nominal £1 the combined business
+  was rebranded back under the Purplebricks name, and in 2026 the founding Bruce brothers
+  returned alongside Sir Charles Dunstone's Freston Ventures. It sits on the brokerage
+  rung of the value chain — it originates the seller relationship and the listing, then
+  distributes that stock to Rightmove, Zoopla, OnTheMarket and PrimeLocation through the
+  UK's portal feed arrangements, because the UK has no MLS and therefore no shared
+  cooperative data exchange. API posture, stated honestly, is none-published: no developer,
+  partner or API portal exists, developer./developers./docs. do not resolve, api.purplebricks.co.uk
+  answers only with an Azure Front Door 404, and no OpenAPI, Swagger, GraphQL or OData
+  $metadata contract is served anywhere on the estate. The one API path that is publicly
+  discoverable — /outlook-api/v1/agent/outlook-sync, disallowed in robots.txt — returns 401
+  and is an internal agent-facing calendar sync, not a developer product. RESO is absent, as
+  expected outside North America. The only machine-readable public surface is schema.org
+  JSON-LD embedded in its pages, and the genuinely open UK property data layer it consumes
+  for its sold-prices tool belongs to government (HM Land Registry), not to Purplebricks.
+image: https://images.ctfassets.net/xhygqgfuea6b/3iPW7f24NM6u7Klc7YopsZ/43f36d4f236766caaa30f29fc85cafa1/purplebricks-logo.png
+tags:
+- Real Estate
+- United Kingdom
+- Property Listings
+- Online Estate Agency
+- Rentals
+- Lettings
+- PropTech
+- Mortgage
+- Conveyancing
+- Land Registry
+created: '2026-07-26'
+modified: '2026-07-26'
+specificationVersion: '0.19'
+apis: []
+common:
+- type: Website
+  url: https://www.purplebricks.co.uk/
+- type: PropertySearch
+  url: https://www.purplebricks.co.uk/search/property-for-sale
+- type: PropertySearch
+  url: https://www.purplebricks.co.uk/search/property-to-rent
+- type: HousePrices
+  url: https://www.purplebricks.co.uk/house-prices
+- type: Agents
+  url: https://www.purplebricks.co.uk/estate-agents
+- type: Landlords
+  url: https://www.purplebricks.co.uk/landlords
+- type: PortalDistribution
+  url: https://www.purplebricks.co.uk/where-we-advertise
+- type: Pricing
+  url: https://www.purplebricks.co.uk/services/our-packages
+- type: Mortgages
+  url: https://www.purplebricksmortgages.co.uk/
+- type: TermsOfService
+  url: https://www.purplebricks.co.uk/terms
+- type: Blog
+  url: https://www.purplebricks.co.uk/blog
+- type: TechBlog
+  url: https://purplebricks.io/
+- type: GitHubOrganization
+  url: https://github.com/purplebricks
+- type: Careers
+  url: https://purplebricks.bamboohr.com/careers
+- type: LinkedIn
+  url: https://www.linkedin.com/company/purplebricks-uk/
+- type: Twitter
+  url: https://x.com/purplebricksuk
+- type: Facebook
+  url: https://www.facebook.com/purplebricksUK
+- type: Instagram
+  url: https://www.instagram.com/purplebricksuk
+- type: YouTube
+  url: https://www.youtube.com/channel/UCXD3FPBFjPuMA4pCs-_KBJA
+- type: TikTok
+  url: https://www.tiktok.com/@purplebricksuk
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
