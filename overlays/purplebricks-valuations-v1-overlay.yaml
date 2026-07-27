@@ -1,0 +1,71 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Purplebricks.Valuations.Api 1.0 - Core
+  version: 1.0.0
+extends: openapi/purplebricks-valuations-v1-openapi.yml
+x-generated: '2026-07-26'
+x-method: generated
+x-note: Adds provenance metadata, a verified servers[] entry where the harvested document omitted or malformed it,
+  and 18 derived operationId values. The upstream Purplebricks documents declare almost no operationIds, summaries
+  or descriptions; this overlay never mutates the harvested original.
+actions:
+- target: $.info
+  update:
+    x-apievangelist-source: https://api.purplebricks.co.uk/valuations-api/swagger/v1/swagger.json
+    x-apievangelist-harvested: '2026-07-26'
+    x-apievangelist-access: publicly-served, Bearer-token protected, no public key issuance and no developer programme
+    x-apievangelist-swagger-ui: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+- target: $.paths['/v1/followup'].post
+  update:
+    operationId: postV1Followup
+- target: $.paths['/v1/followup/reschedule'].post
+  update:
+    operationId: postV1FollowupReschedule
+- target: $.paths['/v1/followup/updateleadtemp'].post
+  update:
+    operationId: postV1FollowupUpdateleadtemp
+- target: $.paths['/v1/followup/toaction'].get
+  update:
+    operationId: getV1FollowupToaction
+- target: $.paths['/v1/followup/lpplist'].get
+  update:
+    operationId: getV1FollowupLpplist
+- target: $.paths['/v1/followup/alterdateforproperty'].post
+  update:
+    operationId: postV1FollowupAlterdateforproperty
+- target: $.paths['/v1/leadcapture'].post
+  update:
+    operationId: postV1Leadcapture
+- target: $.paths['/v1/postcode/isintrialregion'].get
+  update:
+    operationId: getV1PostcodeIsintrialregion
+- target: $.paths['/v1/postcode/isintrialregionbyeventid'].get
+  update:
+    operationId: getV1PostcodeIsintrialregionbyeventid
+- target: $.paths['/v1/salesforcediarypilot/isindiarymanagementtrial/{postcode}'].get
+  update:
+    operationId: getV1SalesforcediarypilotIsindiarymanagementtrialPostcode
+- target: $.paths['/v1/creatio/users/{userId}/valuations'].get
+  update:
+    operationId: getV1CreatioUsersUserIdValuations
+- target: $.paths['/v1/valuationintent/getredirecturl'].get
+  update:
+    operationId: getV1ValuationintentGetredirecturl
+- target: $.paths['/v1/valuationintent/shoulduseinstantvaluationflow'].get
+  update:
+    operationId: getV1ValuationintentShoulduseinstantvaluationflow
+- target: $.paths['/v1/valuationintent/wasinstantvaluation'].get
+  update:
+    operationId: getV1ValuationintentWasinstantvaluation
+- target: $.paths['/v1/valuationintent/getpostdataharvestingredirect'].get
+  update:
+    operationId: getV1ValuationintentGetpostdataharvestingredirect
+- target: $.paths['/v1/valuationintent/bookinguserdata'].post
+  update:
+    operationId: postV1ValuationintentBookinguserdata
+- target: $.paths['/v1/valuationintent/requestvaluationavailability'].post
+  update:
+    operationId: postV1ValuationintentRequestvaluationavailability
+- target: $.paths['/v1/valuationreport/{id}'].get
+  update:
+    operationId: getV1ValuationreportId

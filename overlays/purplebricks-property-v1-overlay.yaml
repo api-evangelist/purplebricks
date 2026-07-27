@@ -1,0 +1,287 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Purplebricks Property API 1.0 - Platform
+  version: 1.0.0
+extends: openapi/purplebricks-property-v1-openapi.yml
+x-generated: '2026-07-26'
+x-method: generated
+x-note: Adds provenance metadata, a verified servers[] entry where the harvested document omitted or malformed it,
+  and 90 derived operationId values. The upstream Purplebricks documents declare almost no operationIds, summaries
+  or descriptions; this overlay never mutates the harvested original.
+actions:
+- target: $.info
+  update:
+    x-apievangelist-source: https://api.purplebricks.co.uk/property-api/swagger/v1/swagger.json
+    x-apievangelist-harvested: '2026-07-26'
+    x-apievangelist-access: publicly-served, Bearer-token protected, no public key issuance and no developer programme
+    x-apievangelist-swagger-ui: https://api.purplebricks.co.uk/property-api/swagger/index.html
+- target: $.paths['/v1/activeproperty/{id}'].get
+  update:
+    operationId: getV1ActivepropertyId
+- target: $.paths['/v1/activitydashboard/getactivitydocument'].get
+  update:
+    operationId: getV1ActivitydashboardGetactivitydocument
+- target: $.paths['/v1/activitydashboard/getpropertiesbyuserid'].get
+  update:
+    operationId: getV1ActivitydashboardGetpropertiesbyuserid
+- target: $.paths['/v1/activitydashboard/getpropertynotificationcount'].get
+  update:
+    operationId: getV1ActivitydashboardGetpropertynotificationcount
+- target: $.paths['/v1/address/createaddress'].post
+  update:
+    operationId: postV1AddressCreateaddress
+- target: $.paths['/v1/bland/property/{propertyId}'].get
+  update:
+    operationId: getV1BlandPropertyPropertyId
+- target: $.paths['/v1/bland/property'].post
+  update:
+    operationId: postV1BlandProperty
+- target: $.paths['/v1/countrywide/jobresult'].post
+  update:
+    operationId: postV1CountrywideJobresult
+- target: $.paths['/v1/dashboard'].get
+  update:
+    operationId: getV1Dashboard
+- target: $.paths['/v1/dashboard/externallinks'].get
+  update:
+    operationId: getV1DashboardExternallinks
+- target: $.paths['/v1/exposurereport/{propertyId}'].get
+  update:
+    operationId: getV1ExposurereportPropertyId
+- target: $.paths['/v1/exposurereport/{propertyId}/history'].get
+  update:
+    operationId: getV1ExposurereportPropertyIdHistory
+- target: $.paths['/v1/exposurereport/{propertyId}/{reportId}'].get
+  update:
+    operationId: getV1ExposurereportPropertyIdReportId
+- target: $.paths['/v1/exposurereport/{propertyId}/week-{weekNumber}'].get
+  update:
+    operationId: getV1ExposurereportPropertyIdWeekWeekNumber
+- target: $.paths['/v1/exposurereport/{propertyId}/market'].get
+  update:
+    operationId: getV1ExposurereportPropertyIdMarket
+- target: $.paths['/v1/exposurereport/{propertyId}/generate'].post
+  update:
+    operationId: postV1ExposurereportPropertyIdGenerate
+- target: $.paths['/v1/gotomarket/{propertyId}/progress'].get
+  update:
+    operationId: getV1GotomarketPropertyIdProgress
+- target: $.paths['/v1/gotomarket/{propertyId}/boardandkeysafepreference'].post
+  update:
+    operationId: postV1GotomarketPropertyIdBoardandkeysafepreference
+- target: $.paths['/v1/gotomarket/{propertyId}/propertytaxband'].post
+  update:
+    operationId: postV1GotomarketPropertyIdPropertytaxband
+- target: $.paths['/v1/gotomarket/{propertyId}/getimageuploaddetails'].get
+  update:
+    operationId: getV1GotomarketPropertyIdGetimageuploaddetails
+- target: $.paths['/v1/gotomarket/{propertyId}/saveimagedetails'].post
+  update:
+    operationId: postV1GotomarketPropertyIdSaveimagedetails
+- target: $.paths['/v1/gotomarket/{propertyId}/marketprice'].get
+  update:
+    operationId: getV1GotomarketPropertyIdMarketprice
+- target: $.paths['/v1/gotomarket/{propertyId}/marketprice/reject'].post
+  update:
+    operationId: postV1GotomarketPropertyIdMarketpriceReject
+- target: $.paths['/v1/gotomarket/{propertyId}/marketprice/accept'].post
+  update:
+    operationId: postV1GotomarketPropertyIdMarketpriceAccept
+- target: $.paths['/v1/gotomarket/{propertyId}/ownershipreview'].get
+  update:
+    operationId: getV1GotomarketPropertyIdOwnershipreview
+- target: $.paths['/v1/gotomarket/{propertyId}/ownershipreview/accept'].post
+  update:
+    operationId: postV1GotomarketPropertyIdOwnershipreviewAccept
+- target: $.paths['/v1/gotomarket/{propertyId}/ownershipreview/reject'].post
+  update:
+    operationId: postV1GotomarketPropertyIdOwnershipreviewReject
+- target: $.paths['/v1/gotomarket/{propertyId}/floorplan'].get
+  update:
+    operationId: getV1GotomarketPropertyIdFloorplan
+- target: $.paths['/v1/gotomarket/{propertyId}/propertydescription'].get
+  update:
+    operationId: getV1GotomarketPropertyIdPropertydescription
+- target: $.paths['/v1/gotomarket/{propertyId}/propertykeyfeatures'].get
+  update:
+    operationId: getV1GotomarketPropertyIdPropertykeyfeatures
+- target: $.paths['/v1/gotomarket/{propertyId}/approveall'].post
+  update:
+    operationId: postV1GotomarketPropertyIdApproveall
+- target: $.paths['/v1/gotomarket/{propertyId}/advertsummary'].get
+  update:
+    operationId: getV1GotomarketPropertyIdAdvertsummary
+- target: $.paths['/v1/inactiveproperty/{id}'].get
+  update:
+    operationId: getV1InactivepropertyId
+- target: $.paths['/v1/inactiveproperty/{id}'].post
+  update:
+    operationId: postV1InactivepropertyId
+- target: $.paths['/v1/instantinstruct'].post
+  update:
+    operationId: postV1Instantinstruct
+- target: $.paths['/v1/performancereport/internal/{propertyId}'].get
+  update:
+    operationId: getV1PerformancereportInternalPropertyId
+- target: $.paths['/v1/performancereport/internal/getadvertperformance/{propertyId}'].get
+  update:
+    operationId: getV1PerformancereportInternalGetadvertperformancePropertyId
+- target: $.paths['/v1/performancereport/internal/getadvertperformance'].get
+  update:
+    operationId: getV1PerformancereportInternalGetadvertperformance
+- target: $.paths['/v1/performancereport/internal/properties'].get
+  update:
+    operationId: getV1PerformancereportInternalProperties
+- target: $.paths['/v1/performancereport/internal/propertiesbyexpert'].get
+  update:
+    operationId: getV1PerformancereportInternalPropertiesbyexpert
+- target: $.paths['/v1/landregistry/transactions'].get
+  update:
+    operationId: getV1LandregistryTransactions
+- target: $.paths['/v1/owners/additional-sellers'].get
+  update:
+    operationId: getV1OwnersAdditionalSellers
+- target: $.paths['/v1/owners/additional-buyers'].get
+  update:
+    operationId: getV1OwnersAdditionalBuyers
+- target: $.paths['/v1/performancereport/{id}'].get
+  update:
+    operationId: getV1PerformancereportId
+- target: $.paths['/v1/performancereport/getadvertperformance'].get
+  update:
+    operationId: getV1PerformancereportGetadvertperformance
+- target: $.paths['/v1/preactive/{id}'].get
+  update:
+    operationId: getV1PreactiveId
+- target: $.paths['/v1/property/create'].post
+  update:
+    operationId: postV1PropertyCreate
+- target: $.paths['/v1/property/relistproperty'].post
+  update:
+    operationId: postV1PropertyRelistproperty
+- target: $.paths['/v1/property/getpropertylist'].get
+  update:
+    operationId: getV1PropertyGetpropertylist
+- target: $.paths['/v1/property/getproperty'].get
+  update:
+    operationId: getV1PropertyGetproperty
+- target: $.paths['/v1/property/getowners'].get
+  update:
+    operationId: getV1PropertyGetowners
+- target: $.paths['/v1/property/marketingprice'].post
+  update:
+    operationId: postV1PropertyMarketingprice
+- target: $.paths['/v1/property/addpropertymediadata'].put
+  update:
+    operationId: putV1PropertyAddpropertymediadata
+- target: $.paths['/v1/property/{propertyId}'].get
+  update:
+    operationId: getV1PropertyPropertyId
+- target: $.paths['/v1/property/{propertyId}/address'].get
+  update:
+    operationId: getV1PropertyPropertyIdAddress
+- target: $.paths['/v1/property/rentalprice'].post
+  update:
+    operationId: postV1PropertyRentalprice
+- target: $.paths['/v1/property/getagentforproperty'].get
+  update:
+    operationId: getV1PropertyGetagentforproperty
+- target: $.paths['/v1/property/getsalesaddonavailability'].get
+  update:
+    operationId: getV1PropertyGetsalesaddonavailability
+- target: $.paths['/v1/property/hasboardordered'].get
+  update:
+    operationId: getV1PropertyHasboardordered
+- target: $.paths['/v1/property/getpropertyhistory'].get
+  update:
+    operationId: getV1PropertyGetpropertyhistory
+- target: $.paths['/v1/property/getuserproperties'].get
+  update:
+    operationId: getV1PropertyGetuserproperties
+- target: $.paths['/v1/property/getportalenquiries'].get
+  update:
+    operationId: getV1PropertyGetportalenquiries
+- target: $.paths['/v1/property/getpropertytracks'].get
+  update:
+    operationId: getV1PropertyGetpropertytracks
+- target: $.paths['/v1/property/registertrackedrecord'].post
+  update:
+    operationId: postV1PropertyRegistertrackedrecord
+- target: $.paths['/v1/property/withdrawtrackedrecord'].delete
+  update:
+    operationId: deleteV1PropertyWithdrawtrackedrecord
+- target: $.paths['/v1/property/registernoteofinterest'].post
+  update:
+    operationId: postV1PropertyRegisternoteofinterest
+- target: $.paths['/v1/property/withdrawnoteofinterest'].delete
+  update:
+    operationId: deleteV1PropertyWithdrawnoteofinterest
+- target: $.paths['/v1/property/getpropertyactions'].get
+  update:
+    operationId: getV1PropertyGetpropertyactions
+- target: $.paths['/v1/property/createproperty'].post
+  update:
+    operationId: postV1PropertyCreateproperty
+- target: $.paths['/v1/property/resetproperty/{propertyId}/{userId}'].post
+  update:
+    operationId: postV1PropertyResetpropertyPropertyIdUserId
+- target: $.paths['/v1/property/sendinstantinstructcontactrequest'].post
+  update:
+    operationId: postV1PropertySendinstantinstructcontactrequest
+- target: $.paths['/v1/creatio/properties/{propertyId}'].get
+  update:
+    operationId: getV1CreatioPropertiesPropertyId
+- target: $.paths['/v1/creatio/properties/{propertyId}/notes'].get
+  update:
+    operationId: getV1CreatioPropertiesPropertyIdNotes
+- target: $.paths['/v1/propertybox/{propertyId}/propertyboxorderstatus'].get
+  update:
+    operationId: getV1PropertyboxPropertyIdPropertyboxorderstatus
+- target: $.paths['/v1/propertybox/{propertyId}/propertyboxdeeplink'].get
+  update:
+    operationId: getV1PropertyboxPropertyIdPropertyboxdeeplink
+- target: $.paths['/v1/propertyquestionnaireform/{id}'].get
+  update:
+    operationId: getV1PropertyquestionnaireformId
+- target: $.paths['/v1/propertysearchhits/{id}'].get
+  update:
+    operationId: getV1PropertysearchhitsId
+- target: $.paths['/v1/railwaystations/{postcode}'].get
+  update:
+    operationId: getV1RailwaystationsPostcode
+- target: $.paths['/v1/trackedproperties'].get
+  update:
+    operationId: getV1Trackedproperties
+- target: $.paths['/v1/trackedproperties/{propertyId}'].post
+  update:
+    operationId: postV1TrackedpropertiesPropertyId
+- target: $.paths['/v1/trackedproperties/{propertyId}'].delete
+  update:
+    operationId: deleteV1TrackedpropertiesPropertyId
+- target: $.paths['/v1/trackedproperties/{propertyId}/tracked'].get
+  update:
+    operationId: getV1TrackedpropertiesPropertyIdTracked
+- target: $.paths['/v1/trackedproperties/{propertyId}/note-of-interest'].post
+  update:
+    operationId: postV1TrackedpropertiesPropertyIdNoteOfInterest
+- target: $.paths['/v1/trackedproperties/{propertyId}/note-of-interest'].delete
+  update:
+    operationId: deleteV1TrackedpropertiesPropertyIdNoteOfInterest
+- target: $.paths['/v1/trackedproperties/{propertyId}/note-of-interest'].get
+  update:
+    operationId: getV1TrackedpropertiesPropertyIdNoteOfInterest
+- target: $.paths['/v1/creatio/users/{userId}/properties'].get
+  update:
+    operationId: getV1CreatioUsersUserIdProperties
+- target: $.paths['/v1/withdraw'].post
+  update:
+    operationId: postV1Withdraw
+- target: $.paths['/v1/request'].post
+  update:
+    operationId: postV1Request
+- target: $.paths['/v1/cancelrequest'].post
+  update:
+    operationId: postV1Cancelrequest
+- target: $.paths['/v1/creatio/withdraw'].post
+  update:
+    operationId: postV1CreatioWithdraw

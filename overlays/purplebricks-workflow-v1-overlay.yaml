@@ -1,0 +1,26 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Purplebricks Workflow API 1.0 - Platform
+  version: 1.0.0
+extends: openapi/purplebricks-workflow-v1-openapi.yml
+x-generated: '2026-07-26'
+x-method: generated
+x-note: Adds provenance metadata, a verified servers[] entry where the harvested document omitted or malformed it,
+  and 3 derived operationId values. The upstream Purplebricks documents declare almost no operationIds, summaries
+  or descriptions; this overlay never mutates the harvested original.
+actions:
+- target: $.info
+  update:
+    x-apievangelist-source: https://api.purplebricks.co.uk/workflow-api/swagger/v1/swagger.json
+    x-apievangelist-harvested: '2026-07-26'
+    x-apievangelist-access: publicly-served, Bearer-token protected, no public key issuance and no developer programme
+    x-apievangelist-swagger-ui: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+- target: $.paths['/v1/isinstructavailable'].get
+  update:
+    operationId: getV1Isinstructavailable
+- target: $.paths['/v1/step/canmove'].get
+  update:
+    operationId: getV1StepCanmove
+- target: $.paths['/v1/step/move'].post
+  update:
+    operationId: postV1StepMove

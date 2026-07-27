@@ -1,0 +1,42 @@
+generated: '2026-07-26'
+method: derived
+source: openapi/purplebricks-lettings-v1-openapi.yml + estate-wide scan of all 16 harvested specs
+asyncapi_published: false
+outbound_webhooks_published: false
+summary: 'Purplebricks publishes NO AsyncAPI document and NO outbound webhook or event surface. A third
+  party cannot subscribe to Purplebricks events. The only webhook surface anywhere in the estate is INBOUND:
+  the lettings service exposes two receiver endpoints that consume street.co.uk listing webhooks. That
+  is Purplebricks acting as a webhook consumer of a partner, not as an event publisher.'
+direction: inbound-only
+receivers:
+- path: /v1/streetwebhooks/listing
+  method: POST
+  service: lettings-api
+  summary: Handles street.co.uk listing webhook
+  partner: street.co.uk
+  direction: inbound
+  responses:
+    '204': The street.co.uk listing was successfully created
+    '400': ProblemDetails
+  source: openapi/purplebricks-lettings-v1-openapi.yml
+- path: /v1/streetwebhooks
+  method: POST
+  service: lettings-api
+  summary: Handles street.co.uk listing webhook
+  partner: street.co.uk
+  direction: inbound
+  responses:
+    '204': The street.co.uk listing was successfully created
+    '400': ProblemDetails
+  source: openapi/purplebricks-lettings-v1-openapi.yml
+related_event_evidence:
+- note: Purplebricks runs an internal Azure Service Bus event backbone — its open-source Pat.Sender /
+    Pat.Subscriber NuGet libraries (18 packages, ~1.1M downloads) are that backbone. None of it is exposed
+    publicly.
+  source: packages/purplebricks-packages.yml
+- note: communications-api models EmailLogOpenedDto and EmailLogLinkClickedDto — email engagement events
+    held internally, with no subscription surface.
+  source: openapi/purplebricks-communications-v1-openapi.yml
+rating_note: 'Deliberately NOT wired as a common[].type: Webhooks pointer. The webhooks_advertised check
+  means "this provider offers webhooks to consumers"; Purplebricks offers none. Recording the inbound
+  receiver honestly is the finding.'

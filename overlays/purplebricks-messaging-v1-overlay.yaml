@@ -1,0 +1,53 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Purplebricks.Messaging.Api 1.0 - Backend
+  version: 1.0.0
+extends: openapi/purplebricks-messaging-v1-openapi.yml
+x-generated: '2026-07-26'
+x-method: generated
+x-note: Adds provenance metadata, a verified servers[] entry where the harvested document omitted or malformed it,
+  and 12 derived operationId values. The upstream Purplebricks documents declare almost no operationIds, summaries
+  or descriptions; this overlay never mutates the harvested original.
+actions:
+- target: $.info
+  update:
+    x-apievangelist-source: https://api.purplebricks.co.uk/messaging-api/swagger/v1/swagger.json
+    x-apievangelist-harvested: '2026-07-26'
+    x-apievangelist-access: publicly-served, Bearer-token protected, no public key issuance and no developer programme
+    x-apievangelist-swagger-ui: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+- target: $.paths['/v1/messages'].get
+  update:
+    operationId: getV1Messages
+- target: $.paths['/v1/messages'].post
+  update:
+    operationId: postV1Messages
+- target: $.paths['/v1/messages/{messageId}'].get
+  update:
+    operationId: getV1MessagesMessageId
+- target: $.paths['/v1/messages/{messageId}'].put
+  update:
+    operationId: putV1MessagesMessageId
+- target: $.paths['/v1/messages/{messageId}/notes'].get
+  update:
+    operationId: getV1MessagesMessageIdNotes
+- target: $.paths['/v1/messages/{messageId}/notes'].post
+  update:
+    operationId: postV1MessagesMessageIdNotes
+- target: $.paths['/v1/messages/count'].get
+  update:
+    operationId: getV1MessagesCount
+- target: $.paths['/v1/threads'].get
+  update:
+    operationId: getV1Threads
+- target: $.paths['/v1/threads/{threadId}'].get
+  update:
+    operationId: getV1ThreadsThreadId
+- target: $.paths['/v1/threads/{threadId}/messages'].get
+  update:
+    operationId: getV1ThreadsThreadIdMessages
+- target: $.paths['/v1/threads/{threadId}/messages/count'].get
+  update:
+    operationId: getV1ThreadsThreadIdMessagesCount
+- target: $.paths['/v1/threads/{threadId}/read'].patch
+  update:
+    operationId: patchV1ThreadsThreadIdRead

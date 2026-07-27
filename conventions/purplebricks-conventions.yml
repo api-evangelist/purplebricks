@@ -1,0 +1,91 @@
+generated: '2026-07-26'
+method: derived
+source: openapi/ + live probes of api.purplebricks.co.uk
+summary: Cross-cutting request/response semantics derived from the sixteen publicly-served Purplebricks
+  OpenAPI documents. Purplebricks publishes no developer documentation, so every convention below is read
+  out of the contracts themselves rather than from a written guide.
+authentication:
+  style: bearer-token
+  header: Authorization
+  scheme_declared_as: apiKey in header (ASP.NET Swashbuckle convention)
+  applied: globally, via a root-level security requirement in every one of the sixteen documents
+  public_key_issuance: false
+  notes: No token endpoint, no OAuth 2.0 metadata, no OpenID Connect discovery and no signup path for
+    third parties. Tokens are issued internally.
+  artifact: authentication/purplebricks-authentication.yml
+idempotency:
+  supported: false
+  header: null
+  evidence: No Idempotency-Key (or equivalent) header parameter appears in any of the 205 operations across
+    the sixteen specs. The only header parameter declared anywhere in the estate is Authorization.
+  retry_guidance: None published. PUT operations (outlook-sync toggle, marketing preferences) are naturally
+    idempotent; POST creates (enquiries, quotes, appointments, OTP sends) are not, and rely on 409 Conflict
+    to signal duplicate state.
+pagination:
+  styles:
+  - style: cursor
+    params:
+    - cursor
+    - limit
+    used_by: messaging-api threads and messages
+  - style: page-number
+    params:
+    - page
+    - pageSize
+    - pageNumber
+    used_by: property-api dashboards and reports, valuations-api lead lists
+  response_fields: Page envelopes are per-service; no single shared pagination model is declared across
+    the estate.
+  sorting:
+    params:
+    - sort
+    - orderBy
+    - ascending
+versioning:
+  scheme: uri-path + Swagger document group
+  current: v1 across all thirteen services; v2 additionally served for property, messaging and valuations
+  path_prefix: /v1/… and /v2/…
+  document_url: https://api.purplebricks.co.uk/<service>-api/swagger/{v1|v2}/swagger.json
+  library: PB.ITOps.AspNetCore.Versioning — Purplebricks publishes its own ASP.NET API versioning convention
+    as an open-source NuGet package
+  artifact: lifecycle/purplebricks-lifecycle.yml
+error_envelope:
+  shape: Microsoft.AspNetCore.Mvc.ProblemDetails (RFC 7807)
+  artifact: errors/purplebricks-problem-types.yml
+rate_limiting:
+  signalled: true
+  mechanism: HTTP 429 declared in the contract on account-api phone-verification/OTP send and on viewings-api
+    booking operations
+  headers_documented: false
+  quota_published: false
+request_tracing:
+  request_id_header: null
+  evidence: No correlation/request-id header is declared in any spec.
+field_expansion:
+  supported: false
+metadata:
+  supported: false
+content_types:
+  request:
+  - application/json
+  - text/json
+  - application/*+json
+  response:
+  - application/json
+  - text/json
+  - text/plain
+identifiers:
+  style: GUID/UUID
+  examples:
+  - propertyId
+  - userId
+  - publicUserId
+  - agentPublicUserId
+  - threadId
+  - offerId
+  - eventId
+cross_links:
+- errors/purplebricks-problem-types.yml
+- lifecycle/purplebricks-lifecycle.yml
+- authentication/purplebricks-authentication.yml
+- conformance/purplebricks-conformance.yml

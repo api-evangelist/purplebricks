@@ -1,0 +1,35 @@
+generated: '2026-07-26'
+method: derived
+source: openapi/ + live probes
+versioning:
+  scheme: uri-path
+  current: v1
+  also_served:
+  - v2 (property, messaging, valuations)
+  document_groups: Swagger document groups per major version at /<service>-api/swagger/{v1|v2}/swagger.json
+  library: https://github.com/purplebricks/PB.ITOps.AspNetCore.Versioning
+deprecation:
+  policy_url: null
+  policy_published: false
+  sunset_header: false
+  evidence: 'No deprecation policy page exists; no operation in the sixteen specs carries deprecated:
+    true; no Sunset/Deprecation response header is declared.'
+sla:
+  url: null
+  uptime_target: null
+  published: false
+status_page: null
+status_page_evidence: status.purplebricks.co.uk does not resolve; no status/uptime page was found on any
+  Purplebricks host.
+support:
+  contact: https://www.purplebricks.co.uk/contact-us
+  faqs: https://www.purplebricks.co.uk/faqs
+  developer_support: null
+  note: Consumer support only. There is no developer support channel because there is no developer programme.
+deprecated_operations: []
+health_endpoints:
+- https://www.purplebricks.co.uk/outlook-api/health (200)
+note: 'These APIs are production internal/first-party services that happen to be publicly reachable and
+  publicly self-documenting. No lifecycle guarantees of any kind are offered to third parties: no versioning
+  promise beyond the URI path, no deprecation notice period, no SLA and no status page. Treat any integration
+  as unsupported and subject to change without notice.'

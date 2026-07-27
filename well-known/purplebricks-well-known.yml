@@ -1,0 +1,58 @@
+generated: '2026-07-26'
+method: searched
+source: live anonymous probes 2026-07-26
+summary: No /.well-known/ discovery document is served on any Purplebricks host. Every probe returned
+  404. Absence is the recorded finding.
+hosts:
+- host: https://www.purplebricks.co.uk
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://api.purplebricks.co.uk
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://purplebricks.io
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://www.purplebricksmortgages.co.uk
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+notes: 'The Purplebricks API estate is reachable and self-documenting through per-service Swagger UIs
+  (https://api.purplebricks.co.uk/<service>-api/swagger/index.html) but publishes no /.well-known/ layer:
+  no security.txt (RFC 9116), no OpenID Connect discovery, no RFC 8414 authorization-server metadata and
+  no RFC 9727 api-catalog. Bearer tokens are issued by an undisclosed internal issuer.'

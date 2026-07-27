@@ -1,0 +1,122 @@
+generated: '2026-07-26'
+method: derived
+source: openapi/ (16 harvested Purplebricks OpenAPI 3.0.1 documents)
+format: rfc7807
+note: Purplebricks returns ASP.NET Core ProblemDetails (RFC 7807 application/problem+json semantics, served
+  as application/json + text/json + text/plain). No RFC 9457 "type" URI registry is published — the type/title/status/detail/instance
+  members are the stock ASP.NET shape and are not documented anywhere outside the specs themselves.
+envelope:
+  schema: Microsoft.AspNetCore.Mvc.ProblemDetails
+  members:
+  - type
+  - title
+  - status
+  - detail
+  - instance
+  additional_properties: true
+  content_types:
+  - application/json
+  - text/json
+  - text/plain
+  validation_detail: FluentValidation.Results.ValidationFailure[] (propertyName, errorMessage, errorCode,
+    severity) appears on some 400 payloads
+problems:
+- status: 400
+  code: '400'
+  title: Bad Request
+  description: Request body or parameters failed validation. FluentValidation failures surface as ValidationFailure
+    entries.
+  occurrences: 113
+  schema: Microsoft.AspNetCore.Mvc.ProblemDetails
+  source_operations:
+  - openapi/purplebricks-account-v1-openapi.yml#POST /v1/expertcreated
+  - openapi/purplebricks-account-v1-openapi.yml#POST /v1/phoneverification/send
+  - openapi/purplebricks-account-v1-openapi.yml#POST /v1/phoneverification/verify
+  - openapi/purplebricks-account-v1-openapi.yml#POST /v1/user/sendpasswordreset
+- status: 401
+  code: '401'
+  title: Unauthorized
+  description: No Bearer token was presented, or the token was rejected. Every Purplebricks service applies
+    the Bearer scheme globally.
+  occurrences: 117
+  schema: Microsoft.AspNetCore.Mvc.ProblemDetails
+  source_operations:
+  - openapi/purplebricks-account-v1-openapi.yml#GET /v1/auth
+  - openapi/purplebricks-account-v1-openapi.yml#POST /v1/expertcreated
+  - openapi/purplebricks-account-v1-openapi.yml#GET /v1/marketingpreferences/{publicUserId}
+  - openapi/purplebricks-account-v1-openapi.yml#PUT /v1/marketingpreferences
+- status: 403
+  code: '403'
+  title: Forbidden
+  description: The authenticated principal is not permitted to act on this property, user or branch.
+  occurrences: 78
+  schema: Microsoft.AspNetCore.Mvc.ProblemDetails
+  source_operations:
+  - openapi/purplebricks-account-v1-openapi.yml#POST /v1/expertcreated
+  - openapi/purplebricks-account-v1-openapi.yml#GET /v1/marketingpreferences/{publicUserId}
+  - openapi/purplebricks-account-v1-openapi.yml#PUT /v1/marketingpreferences
+  - openapi/purplebricks-account-v1-openapi.yml#POST /v1/user/changeemail
+- status: 404
+  code: '404'
+  title: Not Found
+  description: The addressed property, user, thread, quote, branch or appointment does not exist.
+  occurrences: 91
+  schema: Microsoft.AspNetCore.Mvc.ProblemDetails
+  source_operations:
+  - openapi/purplebricks-account-v1-openapi.yml#GET /v1/emailconfirmation/getemailconfirmationdata/{token}
+  - openapi/purplebricks-account-v1-openapi.yml#POST /v1/expertcreated
+  - openapi/purplebricks-account-v1-openapi.yml#PUT /v1/marketingpreferences
+  - openapi/purplebricks-account-v1-openapi.yml#POST /v1/user/resendemailconfirmation
+- status: 405
+  code: '405'
+  title: Method Not Allowed
+  description: The HTTP method is not routed for this path.
+  occurrences: 1
+  schema: Microsoft.AspNetCore.Mvc.ProblemDetails
+  source_operations:
+  - openapi/purplebricks-property-v1-openapi.yml#GET /v1/property/{propertyId}/address
+- status: 409
+  code: '409'
+  title: Conflict
+  description: State conflict — the resource already exists, or the operation is not valid in the current
+    workflow state (duplicate account, double-booked viewing, already-instructed property).
+  occurrences: 18
+  schema: Microsoft.AspNetCore.Mvc.ProblemDetails
+  source_operations:
+  - openapi/purplebricks-account-v1-openapi.yml#POST /v1/expertcreated
+  - openapi/purplebricks-account-v1-openapi.yml#POST /v1/phoneverification/send
+  - openapi/purplebricks-account-v1-openapi.yml#POST /v1/user/resendemailconfirmation
+  - openapi/purplebricks-messaging-v1-openapi.yml#POST /v1/messages
+- status: 429
+  code: '429'
+  title: Too Many Requests
+  description: Rate limit exceeded. Declared on account phone-verification/OTP send and on viewings booking
+    operations.
+  occurrences: 3
+  schema: Microsoft.AspNetCore.Mvc.ProblemDetails
+  source_operations:
+  - openapi/purplebricks-account-v1-openapi.yml#POST /v1/phoneverification/send
+  - openapi/purplebricks-viewings-v1-openapi.yml#POST /v1/appointments
+  - openapi/purplebricks-viewings-v1-openapi.yml#POST /v1/bland/viewing
+- status: 500
+  code: '500'
+  title: Internal Server Error
+  description: Unhandled server error.
+  occurrences: 64
+  schema: Microsoft.AspNetCore.Mvc.ProblemDetails
+  source_operations:
+  - openapi/purplebricks-account-v1-openapi.yml#GET /v1/auth
+  - openapi/purplebricks-account-v1-openapi.yml#GET /v1/emailconfirmation/getemailconfirmationdata/{token}
+  - openapi/purplebricks-account-v1-openapi.yml#POST /v1/phoneverification/send
+  - openapi/purplebricks-account-v1-openapi.yml#POST /v1/user
+- status: null
+  code: default
+  title: Error
+  description: Catch-all error response declared alongside the enumerated statuses.
+  occurrences: 9
+  schema: Microsoft.AspNetCore.Mvc.ProblemDetails
+  source_operations:
+  - openapi/purplebricks-account-v1-openapi.yml#GET /v1/auth
+  - openapi/purplebricks-account-v1-openapi.yml#PUT /v1/marketingpreferences
+  - openapi/purplebricks-account-v1-openapi.yml#POST /v1/user
+  - openapi/purplebricks-conveyancing-v1-openapi.yml#GET /v1/conveyancingquote/quote/{quoteId}

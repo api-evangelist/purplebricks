@@ -1,0 +1,84 @@
+# Purplebricks
+
+> Purplebricks is the United Kingdom's largest online (hybrid) estate agency, selling and letting
+> residential property across England, Wales and Scotland on a fixed fee through local property
+> experts rather than a high-street branch network. It publishes no developer portal and no API
+> documentation — but its production estate serves sixteen real OpenAPI 3.0.1 documents and thirteen
+> live public Swagger UIs. Every operation requires a Bearer token that Purplebricks does not issue
+> to third parties. Treat this catalog as an observed, unsupported contract, not as a product.
+
+Generated: 2026-07-26 · method: generated · source: apis.yml + harvested artifacts in this repo
+Catalog: https://raw.githubusercontent.com/api-evangelist/purplebricks/refs/heads/main/apis.yml
+
+## Access posture
+
+- No developer portal, no partner programme, no signup, no key issuance, no OAuth token endpoint.
+- Auth on every service: `Authorization: Bearer <token>`, declared as an apiKey-in-header scheme.
+- No `/.well-known/` layer of any kind (security.txt, OpenID Connect, RFC 8414, api-catalog all 404).
+- No status page, no SLA, no deprecation policy, no changelog, no CLI, no client SDK in any language.
+- No MCP server. No GraphQL. No OData/RESO surface (the UK has no MLS).
+- Errors are ASP.NET `ProblemDetails` (RFC 7807) served as `application/json`.
+- No idempotency key exists in any of the 205 operations. Never blind-retry a POST.
+
+## APIs
+
+- [Property API](https://api.purplebricks.co.uk/property-api/swagger/index.html): 86 v1 paths plus an 11-path v2 — properties, owners, address, go-to-market, exposure and performance reports, Land Registry, dashboards, tracked properties
+- [Account API](https://api.purplebricks.co.uk/account-api/swagger/index.html): auth, users, email confirmation, phone verification/OTP, marketing preferences
+- [Valuations API](https://api.purplebricks.co.uk/valuations-api/swagger/index.html): lead capture, valuation intent, availability, follow-ups, valuation reports
+- [Viewings API](https://api.purplebricks.co.uk/viewings-api/swagger/index.html): appointments, open days, property access details, Bland voice-agent surface
+- [Messaging API](https://api.purplebricks.co.uk/messaging-api/swagger/index.html): cursor-paginated threads and messages
+- [Lettings API](https://api.purplebricks.co.uk/lettings-api/swagger/index.html): street.co.uk enquiries and inbound listing webhooks, pre-instruct, Teclet postcodes
+- [Branch API](https://api.purplebricks.co.uk/branch-api/swagger/index.html): Rightmove, Zoopla and OnTheMarket branch registries and property-to-branch resolution
+- [Communications API](https://api.purplebricks.co.uk/communications-api/swagger/index.html): contact-us, customer emails, UK TPS screening
+- [Conveyancing API](https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html): conveyancing quotes and fee groups
+- [Agent API](https://api.purplebricks.co.uk/agent-api/swagger/index.html): local property expert teams
+- [Feedback API](https://api.purplebricks.co.uk/feedback-api/swagger/index.html): viewing and vendor feedback
+- [Workflow API](https://api.purplebricks.co.uk/workflow-api/swagger/index.html): workflow steps and instruct availability
+- [Outlook Sync API](https://api.purplebricks.co.uk/outlook-api/swagger/index.html): agent Outlook calendar sync toggle
+
+## Specs
+
+- openapi/purplebricks-property-v1-openapi.yml
+- openapi/purplebricks-property-v2-openapi.yml
+- openapi/purplebricks-account-v1-openapi.yml
+- openapi/purplebricks-valuations-v1-openapi.yml
+- openapi/purplebricks-valuations-v2-openapi.yml
+- openapi/purplebricks-viewings-v1-openapi.yml
+- openapi/purplebricks-messaging-v1-openapi.yml
+- openapi/purplebricks-messaging-v2-openapi.yml
+- openapi/purplebricks-lettings-v1-openapi.yml
+- openapi/purplebricks-branch-v1-openapi.yml
+- openapi/purplebricks-communications-v1-openapi.yml
+- openapi/purplebricks-conveyancing-v1-openapi.yml
+- openapi/purplebricks-agent-v1-openapi.yml
+- openapi/purplebricks-feedback-v1-openapi.yml
+- openapi/purplebricks-workflow-v1-openapi.yml
+- openapi/purplebricks-outlook-v1-openapi.yml
+
+## Artifacts
+
+- authentication/purplebricks-authentication.yml — the single Bearer scheme applied across all sixteen documents
+- conventions/purplebricks-conventions.yml — pagination (cursor vs page), versioning, error envelope, rate-limit signalling, and the absence of idempotency
+- errors/purplebricks-problem-types.yml — RFC 7807 ProblemDetails catalog derived from 494 declared 4xx/5xx responses
+- data-model/purplebricks-data-model.yml — entity graph across 426 component schemas
+- lifecycle/purplebricks-lifecycle.yml — versioning, and the absence of deprecation policy, SLA and status page
+- conformance/purplebricks-conformance.yml — standards asserted and refuted, including RESO and OData absence
+- security/purplebricks-domain-security.yml — TLS/HSTS/SPF/DMARC/DNSSEC probe results
+- well-known/purplebricks-well-known.yml — every /.well-known/ probe, all 404
+- packages/purplebricks-packages.yml — 18 first-party NuGet packages, none of them an API client SDK
+- agentic-access/purplebricks-agentic-access.yml — recommended x-agentic-access contracts for all 205 operations
+- asyncapi/purplebricks-webhooks.yml — inbound street.co.uk webhook receivers; no outbound event surface
+- overlays/ — 16 OpenAPI Overlay 1.0.0 documents adding provenance, verified servers[] and 203 derived operationIds
+- skills/ — six packaged Agent Skills grounded in real method+path bindings
+- mcp/purplebricks-mcp.yml — candidate MCP tool set derived from the specs (no server exists)
+
+## Company
+
+- [Website](https://www.purplebricks.co.uk/)
+- [Property for sale](https://www.purplebricks.co.uk/search/property-for-sale)
+- [Property to rent](https://www.purplebricks.co.uk/search/property-to-rent)
+- [Sold house prices (HM Land Registry data)](https://www.purplebricks.co.uk/house-prices)
+- [Where we advertise (portal syndication)](https://www.purplebricks.co.uk/where-we-advertise)
+- [Packages and pricing](https://www.purplebricks.co.uk/services/our-packages)
+- [Engineering blog](https://purplebricks.io/)
+- [GitHub organization](https://github.com/purplebricks)

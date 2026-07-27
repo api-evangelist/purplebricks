@@ -1,0 +1,58 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Purplebricks.Branch.Api 1.0 - Squad Agents Experience
+  version: 1.0.0
+extends: openapi/purplebricks-branch-v1-openapi.yml
+x-generated: '2026-07-26'
+x-method: generated
+x-note: Adds provenance metadata, a verified servers[] entry where the harvested document omitted or malformed it,
+  and 12 derived operationId values. The upstream Purplebricks documents declare almost no operationIds, summaries
+  or descriptions; this overlay never mutates the harvested original.
+actions:
+- target: $.info
+  update:
+    x-apievangelist-source: https://api.purplebricks.co.uk/branch-api/swagger/v1/swagger.json
+    x-apievangelist-harvested: '2026-07-26'
+    x-apievangelist-access: publicly-served, Bearer-token protected, no public key issuance and no developer programme
+    x-apievangelist-swagger-ui: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+- target: $
+  update:
+    servers:
+    - url: https://api.purplebricks.co.uk/branch-api
+      description: Purplebricks production (verified reachable 2026-07-26)
+- target: $.paths['/v1/onthemarketbranch'].get
+  update:
+    operationId: getV1Onthemarketbranch
+- target: $.paths['/v1/onthemarketbranch/{branchId}'].get
+  update:
+    operationId: getV1OnthemarketbranchBranchId
+- target: $.paths['/v1/onthemarketbranch/search'].get
+  update:
+    operationId: getV1OnthemarketbranchSearch
+- target: $.paths['/v1/property/{propertyId}/rightmovebranch'].get
+  update:
+    operationId: getV1PropertyPropertyIdRightmovebranch
+- target: $.paths['/v1/property/{propertyId}/zooplabranch'].get
+  update:
+    operationId: getV1PropertyPropertyIdZooplabranch
+- target: $.paths['/v1/property/{propertyId}/onthemarketbranch'].get
+  update:
+    operationId: getV1PropertyPropertyIdOnthemarketbranch
+- target: $.paths['/v1/rightmovebranch'].get
+  update:
+    operationId: getV1Rightmovebranch
+- target: $.paths['/v1/rightmovebranch/{branchId}'].get
+  update:
+    operationId: getV1RightmovebranchBranchId
+- target: $.paths['/v1/rightmovebranch/search'].get
+  update:
+    operationId: getV1RightmovebranchSearch
+- target: $.paths['/v1/zooplabranch'].get
+  update:
+    operationId: getV1Zooplabranch
+- target: $.paths['/v1/zooplabranch/{branchId}'].get
+  update:
+    operationId: getV1ZooplabranchBranchId
+- target: $.paths['/v1/zooplabranch/search'].get
+  update:
+    operationId: getV1ZooplabranchSearch

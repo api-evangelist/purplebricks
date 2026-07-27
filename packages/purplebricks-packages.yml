@@ -1,0 +1,199 @@
+generated: '2026-07-26'
+method: searched
+source: https://www.nuget.org/profiles/purplebricks + https://github.com/purplebricks
+summary: 'Purplebricks publishes 18 first-party packages to NuGet, all of them internal .NET platform
+  infrastructure open-sourced from its Azure estate — chiefly the "Pat" family of Azure Service Bus sender/subscriber
+  libraries and PB.ITOps.AspNetCore.Versioning, the API versioning convention visible in the versioned
+  Swagger document groups. IMPORTANT: none of these is a client SDK for a Purplebricks API. No client
+  library exists for the property, account, valuations, viewings, messaging, lettings, branch, communications,
+  conveyancing, agent, feedback, workflow or outlook services, in any language. npm, PyPI, RubyGems, Packagist,
+  crates.io and pkg.go.dev return no first-party Purplebricks package.'
+api_client_sdks: []
+api_client_sdk_count: 0
+packages:
+- language: dotnet
+  registry: nuget
+  name: Pat.Subscriber
+  version: 4.0.51
+  description: Purplebricks message subscriber infrastructure
+  url: https://www.nuget.org/packages/Pat.Subscriber
+  install: dotnet add package Pat.Subscriber
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+- language: dotnet
+  registry: nuget
+  name: Pat.Sender
+  version: 6.0.31
+  description: Purplebricks message sending infrastructure
+  url: https://www.nuget.org/packages/Pat.Sender
+  install: dotnet add package Pat.Sender
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+- language: dotnet
+  registry: nuget
+  name: Pat.Subscriber.Telemetry.StatsD
+  version: 4.0.51
+  description: StatsD monitoring behaviour for Pat.Subscriber
+  url: https://www.nuget.org/packages/Pat.Subscriber.Telemetry.StatsD
+  install: dotnet add package Pat.Subscriber.Telemetry.StatsD
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+- language: dotnet
+  registry: nuget
+  name: Pat.Subscriber.NetCoreDependencyResolution
+  version: 4.0.51
+  description: .NET Core dependency resolution for Pat.Subscriber
+  url: https://www.nuget.org/packages/Pat.Subscriber.NetCoreDependencyResolution
+  install: dotnet add package Pat.Subscriber.NetCoreDependencyResolution
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+- language: dotnet
+  registry: nuget
+  name: Pat.Sender.NetCoreLog
+  version: 6.0.31
+  description: .NET Core logging adapter for Pat.Sender
+  url: https://www.nuget.org/packages/Pat.Sender.NetCoreLog
+  install: dotnet add package Pat.Sender.NetCoreLog
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+- language: dotnet
+  registry: nuget
+  name: Pat.Subscriber.RateLimiterPolicy
+  version: 4.0.51
+  description: Rate limiter policy for Pat.Subscriber
+  url: https://www.nuget.org/packages/Pat.Subscriber.RateLimiterPolicy
+  install: dotnet add package Pat.Subscriber.RateLimiterPolicy
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+- language: dotnet
+  registry: nuget
+  name: Pat.DataProtection
+  version: 3.0.0
+  description: Purplebricks data protection mechanism for message encryption/decryption
+  url: https://www.nuget.org/packages/Pat.DataProtection
+  install: dotnet add package Pat.DataProtection
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+- language: dotnet
+  registry: nuget
+  name: PB.ITOps.AspNetCore.Versioning
+  version: 2.0.2
+  description: Purplebricks convention for versioning ASP.NET Core web APIs
+  url: https://www.nuget.org/packages/PB.ITOps.AspNetCore.Versioning
+  install: dotnet add package PB.ITOps.AspNetCore.Versioning
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+- language: dotnet
+  registry: nuget
+  name: Pat.Subscriber.DataProtectionDecryption
+  version: 4.0.51
+  description: Decryption for Pat.Subscriber
+  url: https://www.nuget.org/packages/Pat.Subscriber.DataProtectionDecryption
+  install: dotnet add package Pat.Subscriber.DataProtectionDecryption
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+- language: dotnet
+  registry: nuget
+  name: Pat.Subscriber.StructureMap4DependencyResolution
+  version: 4.0.51
+  description: StructureMap dependency resolution for Pat.Subscriber
+  url: https://www.nuget.org/packages/Pat.Subscriber.StructureMap4DependencyResolution
+  install: dotnet add package Pat.Subscriber.StructureMap4DependencyResolution
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+- language: dotnet
+  registry: nuget
+  name: Pat.Subscriber.DataProtectionDecryption.NetCoreDependencyResolution
+  version: 4.0.51
+  description: Decryption with .NET Core dependency resolution
+  url: https://www.nuget.org/packages/Pat.Subscriber.DataProtectionDecryption.NetCoreDependencyResolution
+  install: dotnet add package Pat.Subscriber.DataProtectionDecryption.NetCoreDependencyResolution
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+- language: dotnet
+  registry: nuget
+  name: Pat.Subscriber.DataProtectionDecryption.StructureMap4DependencyResolution
+  version: 4.0.51
+  description: Decryption with StructureMap dependency resolution
+  url: https://www.nuget.org/packages/Pat.Subscriber.DataProtectionDecryption.StructureMap4DependencyResolution
+  install: dotnet add package Pat.Subscriber.DataProtectionDecryption.StructureMap4DependencyResolution
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+- language: dotnet
+  registry: nuget
+  name: Pat.Sender.Log4Net
+  version: 6.0.31
+  description: Log4Net logging adapter for Pat.Sender
+  url: https://www.nuget.org/packages/Pat.Sender.Log4Net
+  install: dotnet add package Pat.Sender.Log4Net
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+- language: dotnet
+  registry: nuget
+  name: Pat.Sender.DataProtectionEncryption
+  version: 3.0.17
+  description: Support for sending encrypted messages
+  url: https://www.nuget.org/packages/Pat.Sender.DataProtectionEncryption
+  install: dotnet add package Pat.Sender.DataProtectionEncryption
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+- language: dotnet
+  registry: nuget
+  name: Pat.Subscriber.Telemetry.AppInsights
+  version: 4.0.51
+  description: Application Insights telemetry for Pat.Subscriber
+  url: https://www.nuget.org/packages/Pat.Subscriber.Telemetry.AppInsights
+  install: dotnet add package Pat.Subscriber.Telemetry.AppInsights
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+- language: dotnet
+  registry: nuget
+  name: Pat.Sender.NetCoreDependencyResolution
+  version: 6.0.31
+  description: .NET Core dependency resolution helper for Pat.Sender
+  url: https://www.nuget.org/packages/Pat.Sender.NetCoreDependencyResolution
+  install: dotnet add package Pat.Sender.NetCoreDependencyResolution
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+- language: dotnet
+  registry: nuget
+  name: Pat.Subscriber.Tools
+  version: 2.0.10
+  description: Support tools for Pat.Subscriber
+  url: https://www.nuget.org/packages/Pat.Subscriber.Tools
+  install: dotnet add package Pat.Subscriber.Tools
+  official: true
+  api_client: false
+  category: internal-platform-infrastructure
+registries_probed:
+- registry: nuget
+  result: '18 first-party packages (owner: purplebricks)'
+- registry: npm
+  result: no first-party package
+- registry: pypi
+  result: 404 for purplebricks
+- registry: rubygems
+  result: no first-party package
+- registry: packagist
+  result: no first-party package
+- registry: crates.io
+  result: no first-party package
+- registry: pkg.go.dev
+  result: no first-party module
+source_repos: https://github.com/purplebricks

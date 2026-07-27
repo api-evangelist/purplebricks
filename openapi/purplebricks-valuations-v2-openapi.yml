@@ -1,0 +1,1155 @@
+openapi: 3.0.1
+info:
+  title: Purplebricks.Valuations.Api 2 - Core
+  description: '### The new home for accessing the valuations service library
+
+    ### [Purplebricks.Valuations.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/valuations-api)'
+  version: '2'
+servers:
+- url: https://api.purplebricks.co.uk/valuations-api
+paths:
+  /v2/valuations/{propertyId}/save:
+    get:
+      tags:
+      - Valuation
+      summary: Fetch saved form data for a property.
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.SavedValuationDto'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.SavedValuationDto'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.SavedValuationDto'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    post:
+      tags:
+      - Valuation
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.SavedValuationDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.SavedValuationDto'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.SavedValuationDto'
+      responses:
+        '201':
+          description: Created
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v2/valuations/{propertyId}:
+    get:
+      tags:
+      - Valuation
+      summary: Fetch Sprift valuation data for a property.
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.ValuationDataDto'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.ValuationDataDto'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.ValuationDataDto'
+        '204':
+          description: No Content
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    post:
+      tags:
+      - Valuation
+      summary: Send off the report data for real.
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: sendAuctionReferral
+        in: query
+        schema:
+          type: boolean
+          default: false
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v2/valuations/{propertyId}/status:
+    get:
+      tags:
+      - Valuation
+      summary: Fetch status and sent date for the latest valuation of a property.
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.ValuationStatusAndSentDateDto'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.ValuationStatusAndSentDateDto'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.ValuationStatusAndSentDateDto'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v2/valuations/report-view:
+    post:
+      tags:
+      - Valuation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.RecordValuationReportViewRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.RecordValuationReportViewRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.RecordValuationReportViewRequest'
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+components:
+  schemas:
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+      additionalProperties: {}
+    Purplebricks.Valuations.Api.Models.RecordValuationReportViewRequest:
+      type: object
+      properties:
+        valuationId:
+          type: integer
+          format: int32
+        userId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Valuations.Contract.Enums.LeadTemperature:
+      enum:
+      - NotSet
+      - Cold
+      - Warm
+      - Hot
+      type: string
+    Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome:
+      enum:
+      - NotSet
+      - NotInterested
+      - InstructingWithinAMonth
+      - InstructingWithinThreeMonths
+      - InstructingWithinSixMonths
+      - InstructingAfterSixMonths
+      - Instructed
+      - NoAnswer
+      - Campaign_03_ValuationToInstruct_C
+      - Campaign_03_ValuationToInstruct_W8_C
+      - Campaign_03_ValuationToInstruct_W12_C
+      - OtherEA
+      type: string
+    Purplebricks.Valuations.Domains.Models.Enums.EventType:
+      enum:
+      - Valuation
+      - Viewing
+      - OpenDay
+      - Busy
+      - VirtualValuation
+      type: string
+    Purplebricks.Valuations.Domains.Models.Enums.ValuationBuyerType:
+      enum:
+      - FirstTime
+      - Landlords
+      - Investors
+      - ProfessionalCouples
+      - Families
+      - Sharers
+      - DssTenants
+      - SingleLets
+      - Retirement
+      type: string
+    Purplebricks.Valuations.Domains.Models.Enums.ValuationFeature:
+      enum:
+      - OffRoadParking
+      - LargeGarden
+      - Extension
+      - NeedModernization
+      - ExcellentViews
+      - NewKitchen
+      - GamesRoom
+      - ModernInterior
+      - Garage
+      - Conservatory
+      - SolarPanels
+      - ExcellentFinish
+      - LargeKitchen
+      - NewBathroom
+      - Basement
+      - Spacious
+      - Tenure
+      - Furnished
+      - Unfurnished
+      - PartFurnished
+      - EnSuite
+      - DoubleGarage
+      - TripleGarage
+      type: string
+    Purplebricks.Valuations.Domains.Models.Enums.ValuationLocation:
+      enum:
+      - RuralLocation
+      - InnerCity
+      - PrestigiousLocation
+      - QuietLocation
+      - SoughtAfter
+      - LocalAmenities
+      - TransportLinks
+      - SchoolCatchmentArea
+      type: string
+    Purplebricks.Valuations.Repository.Dtos.LettingComparable:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        comparablesRef:
+          type: string
+          nullable: true
+        uprn:
+          type: integer
+          format: int64
+        floorAreaM2:
+          type: integer
+          format: int32
+        floorAreaSqft:
+          type: number
+          format: double
+        distance:
+          type: number
+          format: double
+        orzPostcode:
+          type: string
+          nullable: true
+        orzAddress:
+          type: string
+          nullable: true
+        orzPartialAddress:
+          type: string
+          nullable: true
+        orzPrice:
+          type: integer
+          format: int32
+        orzType:
+          type: string
+          nullable: true
+        orzBeds:
+          type: integer
+          format: int32
+        orzAgent:
+          type: string
+          nullable: true
+        orzFloorplanFilenames:
+          type: array
+          items:
+            type: string
+          nullable: true
+        orzListingImages:
+          type: array
+          items:
+            type: string
+          nullable: true
+        orzListingStatus:
+          type: string
+          nullable: true
+        lastStatusDate:
+          type: string
+          nullable: true
+        orzListingDate:
+          type: string
+          nullable: true
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Dtos.SalesComparable:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        comparablesRef:
+          type: string
+          nullable: true
+        uprn:
+          type: integer
+          format: int64
+        floorAreaM2:
+          type: integer
+          format: int32
+        floorAreaSqft:
+          type: number
+          format: double
+        distance:
+          type: number
+          format: double
+        postcode:
+          type: string
+          nullable: true
+        address:
+          type: string
+          nullable: true
+        partialAddress:
+          type: string
+          nullable: true
+        price:
+          type: integer
+          format: int32
+        type:
+          type: string
+          nullable: true
+        beds:
+          type: integer
+          format: int32
+        agent:
+          type: string
+          nullable: true
+        floorplanFilenames:
+          type: array
+          items:
+            type: string
+          nullable: true
+        listingImages:
+          type: array
+          items:
+            type: string
+          nullable: true
+        listingStatus:
+          type: string
+          nullable: true
+        lastStatusDate:
+          type: string
+          nullable: true
+        listingDate:
+          type: string
+          nullable: true
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Dtos.SavedValuationComparableDto:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        isSprift:
+          type: boolean
+        address:
+          type: string
+          nullable: true
+        propertyType:
+          type: string
+          nullable: true
+        bedrooms:
+          type: integer
+          format: int32
+        price:
+          type: integer
+          format: int32
+        status:
+          type: string
+          nullable: true
+        dateOfSale:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Dtos.SavedValuationDto:
+      required:
+      - propertyId
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        valuationDate:
+          type: string
+          nullable: true
+        comparables:
+          type: array
+          items:
+            $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.SavedValuationComparableDto'
+          nullable: true
+        location:
+          type: array
+          items:
+            type: string
+          nullable: true
+        typeOfBuyer:
+          type: array
+          items:
+            type: string
+          nullable: true
+        noSuitableComparables:
+          type: boolean
+        pricingFrom:
+          type: number
+          format: double
+        pricingTo:
+          type: number
+          format: double
+        recommendedMarketingPrice:
+          type: number
+          format: double
+        similarPropertiesRecentlySold:
+          type: integer
+          format: int32
+          nullable: true
+        similarPropertiesForSale:
+          type: integer
+          format: int32
+          nullable: true
+        excludeMarketData:
+          type: boolean
+        addPersonalisedMessage:
+          type: boolean
+        personalisedMessage:
+          type: string
+          nullable: true
+        comments:
+          type: string
+          nullable: true
+        rightmoveBestPriceGuideUrl:
+          type: string
+          nullable: true
+        excludeBestPriceGuide:
+          type: boolean
+        newVersion:
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Dtos.ValuationDataDto:
+      type: object
+      properties:
+        collectedAtUtc:
+          type: string
+          format: date-time
+          nullable: true
+        uprn:
+          type: integer
+          format: int64
+        salesComparables:
+          type: array
+          items:
+            $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.SalesComparable'
+          nullable: true
+        lettingComparables:
+          type: array
+          items:
+            $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.LettingComparable'
+          nullable: true
+        estimatedPrice:
+          type: integer
+          format: int32
+        upperConfidence:
+          type: integer
+          format: int32
+        lowerConfidence:
+          type: integer
+          format: int32
+        estimatedRentPrice:
+          type: integer
+          format: int32
+        rentUpperConfidence:
+          type: integer
+          format: int32
+        rentLowerConfidence:
+          type: integer
+          format: int32
+        grossRentalYieldPercentage:
+          type: number
+          format: double
+        confidenceBand:
+          type: string
+          nullable: true
+        rentConfidenceBand:
+          type: string
+          nullable: true
+        floorAreaM2:
+          type: integer
+          format: int32
+        floorAreaSqft:
+          type: number
+          format: double
+        plotSizeAcres:
+          type: number
+          format: double
+        lastSoldPrice:
+          type: integer
+          format: int32
+          nullable: true
+        lastSoldDate:
+          type: string
+          nullable: true
+        salePriceChange:
+          type: integer
+          format: int32
+          nullable: true
+        lastRentedPrice:
+          type: integer
+          format: int32
+          nullable: true
+        lastRentedDate:
+          type: string
+          nullable: true
+        rentalPriceChange:
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Dtos.ValuationStatusAndSentDateDto:
+      type: object
+      properties:
+        sentDate:
+          type: string
+          format: date-time
+          nullable: true
+        lastSavedDate:
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Entities.Address:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        line1:
+          type: string
+          nullable: true
+        line2:
+          type: string
+          nullable: true
+        town:
+          type: string
+          nullable: true
+        county:
+          type: string
+          nullable: true
+        postcode:
+          type: string
+          nullable: true
+        addressText:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Entities.BookingDiary:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        property:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.Property'
+        start:
+          type: string
+          format: date-time
+        eventType:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Domains.Models.Enums.EventType'
+        isByCancelled:
+          type: boolean
+        isToCancelled:
+          type: boolean
+        isToConfirm:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Entities.Property:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        addressId:
+          type: integer
+          format: int32
+          nullable: true
+        address:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.Address'
+        bookings:
+          type: array
+          items:
+            $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.BookingDiary'
+          nullable: true
+        userId:
+          type: integer
+          format: int32
+        toLet:
+          type: boolean
+        expertId:
+          type: integer
+          format: int32
+        expert:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.User'
+        accompaniedViewingExpertId:
+          type: integer
+          format: int32
+          nullable: true
+        accompaniedViewingExpert:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.User'
+        locationOwnerExpertId:
+          type: integer
+          format: int32
+          nullable: true
+        locationOwnerExpert:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.User'
+        accountManagerExpertId:
+          type: integer
+          format: int32
+          nullable: true
+        accountManagerExpert:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.User'
+        negotiationExpertId:
+          type: integer
+          format: int32
+          nullable: true
+        negotiationExpert:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.User'
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Entities.User:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int32
+        forename:
+          type: string
+          nullable: true
+        surname:
+          type: string
+          nullable: true
+        fullName:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        publicUserId:
+          type: string
+          format: uuid
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Entities.Valuation:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        status:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Enums.ValuationStatus'
+        formVersion:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Enums.ValuationFormVersion'
+        personalisedMessage:
+          maxLength: 2000
+          minLength: 0
+          type: string
+          nullable: true
+        featureExtra1:
+          maxLength: 60
+          minLength: 0
+          type: string
+          nullable: true
+        featureExtra2:
+          maxLength: 60
+          minLength: 0
+          type: string
+          nullable: true
+        propertiesInArea:
+          type: integer
+          format: int32
+        propertiesSameBedrooms:
+          type: integer
+          format: int32
+        numberOfBuyersInArea:
+          type: integer
+          format: int32
+        propertiesLowPrice:
+          type: number
+          format: double
+        propertiesHighPrice:
+          type: number
+          format: double
+        listPrice:
+          type: number
+          format: double
+        achieveLowPrice:
+          type: number
+          format: double
+        achieveHighPrice:
+          type: number
+          format: double
+        propertyId:
+          type: integer
+          format: int32
+        property:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.Property'
+        valuationBuyerType:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Domains.Models.Enums.ValuationBuyerType'
+        valuationLocation:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Domains.Models.Enums.ValuationLocation'
+        valuationFeature:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Domains.Models.Enums.ValuationFeature'
+        comments:
+          maxLength: 1000
+          minLength: 0
+          type: string
+          nullable: true
+        rightmoveBestPriceGuideUrl:
+          maxLength: 2000
+          minLength: 0
+          type: string
+          nullable: true
+        excludeBestPriceGuide:
+          type: boolean
+        valuationDate:
+          type: string
+          format: date-time
+        bookingDiaryId:
+          type: integer
+          format: int32
+          nullable: true
+        allowPurplebricksPlusAddOn:
+          type: boolean
+        modificationDate:
+          type: string
+          format: date-time
+          nullable: true
+        modifiedByUserId:
+          type: integer
+          format: int32
+          nullable: true
+        followUpOutcome:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome'
+        followUpOutcomeDate:
+          type: string
+          format: date-time
+          nullable: true
+        followUpOutcomeUserId:
+          type: integer
+          format: int32
+          nullable: true
+        isCompleted:
+          type: boolean
+          nullable: true
+        userViewCount:
+          type: integer
+          format: int32
+        lastViewedByCustomer:
+          type: string
+          format: date-time
+          nullable: true
+        valuationCompletedDate:
+          type: string
+          format: date-time
+          nullable: true
+        createdDate:
+          type: string
+          format: date-time
+          nullable: true
+        version:
+          type: integer
+          format: int32
+          nullable: true
+        nextFollowUpDate:
+          type: string
+          format: date-time
+          nullable: true
+        nextFollowUpUserId:
+          type: integer
+          format: int32
+          nullable: true
+        sentDate:
+          type: string
+          format: date-time
+          nullable: true
+        valuationFollowupHistories:
+          type: array
+          items:
+            $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.ValuationFollowupHistory'
+          nullable: true
+        otherEADetails:
+          type: string
+          nullable: true
+        leadTemperature:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Contract.Enums.LeadTemperature'
+        valuationHistories:
+          type: array
+          items:
+            $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.ValuationHistory'
+          nullable: true
+        booking:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.BookingDiary'
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Entities.ValuationFollowupHistory:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        valuationId:
+          type: integer
+          format: int32
+        valuation:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation'
+        followUpOutcome:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome'
+        followUpOutcomeUserId:
+          type: integer
+          format: int32
+          nullable: true
+        followUpOutcomeDate:
+          type: string
+          format: date-time
+          nullable: true
+        nextFollowUpDate:
+          type: string
+          format: date-time
+          nullable: true
+        nextFollowUpUserId:
+          type: integer
+          format: int32
+          nullable: true
+        otherEADetails:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Entities.ValuationHistory:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        valuationId:
+          type: integer
+          format: int32
+        valuation:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation'
+        achieveLowPrice:
+          type: number
+          format: double
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Enums.ValuationFormVersion:
+      enum:
+      - Legacy
+      - New
+      type: string
+    Purplebricks.Valuations.Repository.Enums.ValuationStatus:
+      enum:
+      - Draft
+      - Sent
+      type: string
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header
+security:
+- Bearer: []

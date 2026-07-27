@@ -1,0 +1,669 @@
+generated: '2026-07-26'
+method: derived
+source: openapi/ (16 documents, 426 unique component schemas, 205 operations)
+summary: Entity graph derived from the Purplebricks OpenAPI estate. The domain core is the Property record;
+  every other service hangs off it by propertyId (27 declared occurrences) or off the User/Agent identity
+  by userId / publicUserId / agentPublicUserId. Schema names carry their full .NET namespaces (Purplebricks.<Service>.<Layer>.<Model>)
+  and several are literal Cosmos DB document types (Purplebricks.CosmosDb.Documents.*), which exposes
+  the persistence model in the public contract.
+identifier_style: GUID/UUID
+entity_count: 58
+schema_count: 426
+primary_identifiers:
+- propertyId
+- userId
+- id
+- threadId
+- branchId
+- messageId
+- publicUserId
+- postcode
+- emailId
+- quoteId
+- thirdPartyPropertyId
+- reportId
+entities:
+- entity: Auth
+  service: account
+  spec: openapi/purplebricks-account-v1-openapi.yml
+  path_count: 1
+  identifiers: []
+  paths:
+  - /v1/auth
+- entity: EmailConfirmation
+  service: account
+  spec: openapi/purplebricks-account-v1-openapi.yml
+  path_count: 1
+  identifiers: []
+  paths:
+  - /v1/emailconfirmation/getemailconfirmationdata/{token}
+- entity: ExpertCreated
+  service: account
+  spec: openapi/purplebricks-account-v1-openapi.yml
+  path_count: 1
+  identifiers: []
+  paths:
+  - /v1/expertcreated
+- entity: MarketingPreferences
+  service: account
+  spec: openapi/purplebricks-account-v1-openapi.yml
+  path_count: 2
+  identifiers:
+  - publicUserId
+  paths:
+  - /v1/marketingpreferences
+  - /v1/marketingpreferences/{publicUserId}
+- entity: PhoneVerification
+  service: account
+  spec: openapi/purplebricks-account-v1-openapi.yml
+  path_count: 4
+  identifiers:
+  - userId
+  paths:
+  - /v1/phoneverification/manual-verify/{userId}
+  - /v1/phoneverification/send
+  - /v1/phoneverification/status
+  - /v1/phoneverification/verify
+- entity: User
+  service: account
+  spec: openapi/purplebricks-account-v1-openapi.yml
+  path_count: 6
+  identifiers: []
+  paths:
+  - /v1/user
+  - /v1/user/changeemail
+  - /v1/user/isusernametaken
+  - /v1/user/requestaccountdeletion
+  - /v1/user/resendemailconfirmation
+  - /v1/user/sendpasswordreset
+- entity: Team
+  service: agent
+  spec: openapi/purplebricks-agent-v1-openapi.yml
+  path_count: 2
+  identifiers: []
+  paths:
+  - /v1/team
+  - /v1/team/getagentmanager
+- entity: OnTheMarketBranch
+  service: branch
+  spec: openapi/purplebricks-branch-v1-openapi.yml
+  path_count: 3
+  identifiers:
+  - branchId
+  - propertyId
+  paths:
+  - /v1/onthemarketbranch
+  - /v1/onthemarketbranch/search
+  - /v1/onthemarketbranch/{branchId}
+- entity: Property
+  service: branch
+  spec: openapi/purplebricks-branch-v1-openapi.yml
+  path_count: 30
+  identifiers:
+  - id
+  - propertyId
+  - userId
+  paths:
+  - /v1/creatio/properties/{propertyId}
+  - /v1/creatio/properties/{propertyId}/notes
+  - /v1/property/addpropertymediadata
+  - /v1/property/create
+  - /v1/property/createproperty
+  - /v1/property/getagentforproperty
+- entity: RightmoveBranch
+  service: branch
+  spec: openapi/purplebricks-branch-v1-openapi.yml
+  path_count: 3
+  identifiers:
+  - branchId
+  - propertyId
+  paths:
+  - /v1/rightmovebranch
+  - /v1/rightmovebranch/search
+  - /v1/rightmovebranch/{branchId}
+- entity: ZooplaBranch
+  service: branch
+  spec: openapi/purplebricks-branch-v1-openapi.yml
+  path_count: 3
+  identifiers:
+  - branchId
+  - propertyId
+  paths:
+  - /v1/zooplabranch
+  - /v1/zooplabranch/search
+  - /v1/zooplabranch/{branchId}
+- entity: ContactUs
+  service: communications
+  spec: openapi/purplebricks-communications-v1-openapi.yml
+  path_count: 1
+  identifiers: []
+  paths:
+  - /v1/contactus
+- entity: CustomerEmails
+  service: communications
+  spec: openapi/purplebricks-communications-v1-openapi.yml
+  path_count: 2
+  identifiers:
+  - emailId
+  - userId
+  paths:
+  - /v1/customeremails/getemailbody/{emailId}
+  - /v1/customeremails/getemails/{userId}
+- entity: Tps
+  service: communications
+  spec: openapi/purplebricks-communications-v1-openapi.yml
+  path_count: 1
+  identifiers:
+  - publicUserId
+  - userId
+  paths:
+  - /v1/tps/tpsstatus
+- entity: ConveyancingQuote
+  service: conveyancing
+  spec: openapi/purplebricks-conveyancing-v1-openapi.yml
+  path_count: 3
+  identifiers:
+  - quoteId
+  paths:
+  - /v1/conveyancingquote/quote
+  - /v1/conveyancingquote/quote/{quoteId}
+  - /v1/conveyancingquote/quotes
+- entity: ManageFeedback
+  service: feedback
+  spec: openapi/purplebricks-feedback-v1-openapi.yml
+  path_count: 1
+  identifiers:
+  - propertyId
+  paths:
+  - /v1/managefeedback/allpropertyfeedback/{propertyId}
+- entity: Enquiries
+  service: lettings
+  spec: openapi/purplebricks-lettings-v1-openapi.yml
+  path_count: 3
+  identifiers: []
+  paths:
+  - /v1/enquiries/offer
+  - /v1/enquiries/valuation
+  - /v1/enquiries/viewing
+- entity: PreInstruct
+  service: lettings
+  spec: openapi/purplebricks-lettings-v1-openapi.yml
+  path_count: 2
+  identifiers:
+  - thirdPartyPropertyId
+  paths:
+  - /v1/preinstruct/thirdpartyproperty
+  - /v1/preinstruct/thirdpartyproperty/{thirdPartyPropertyId}
+- entity: StreetWebhooks
+  service: lettings
+  spec: openapi/purplebricks-lettings-v1-openapi.yml
+  path_count: 2
+  identifiers: []
+  paths:
+  - /v1/streetwebhooks
+  - /v1/streetwebhooks/listing
+- entity: TecletPostcode
+  service: lettings
+  spec: openapi/purplebricks-lettings-v1-openapi.yml
+  path_count: 2
+  identifiers:
+  - propertyId
+  paths:
+  - /v1/tecletpostcode/getbypostcode/{postcode}
+  - /v1/tecletpostcode/getbypropertyid/{propertyId}
+- entity: Messages
+  service: messaging
+  spec: openapi/purplebricks-messaging-v1-openapi.yml
+  path_count: 4
+  identifiers:
+  - messageId
+  - propertyId
+  - threadId
+  - userId
+  paths:
+  - /v1/messages
+  - /v1/messages/count
+  - /v1/messages/{messageId}
+  - /v1/messages/{messageId}/notes
+- entity: Threads
+  service: messaging
+  spec: openapi/purplebricks-messaging-v1-openapi.yml
+  path_count: 7
+  identifiers:
+  - propertyId
+  - threadId
+  - userId
+  paths:
+  - /v1/threads
+  - /v1/threads/{threadId}
+  - /v1/threads/{threadId}/messages
+  - /v1/threads/{threadId}/messages/count
+  - /v1/threads/{threadId}/read
+  - /v2/threads
+- entity: AgentOutlookSync
+  service: outlook
+  spec: openapi/purplebricks-outlook-v1-openapi.yml
+  path_count: 1
+  identifiers: []
+  paths:
+  - /v1/agent/outlook-sync
+- entity: ActiveProperty
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 2
+  identifiers:
+  - id
+  paths:
+  - /v1/activeproperty/{id}
+  - /v2/activeproperty/{id}
+- entity: ActivityDashboard
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 6
+  identifiers: []
+  paths:
+  - /v1/activitydashboard/getactivitydocument
+  - /v1/activitydashboard/getpropertiesbyuserid
+  - /v1/activitydashboard/getpropertynotificationcount
+  - /v2/activitydashboard/getactivitydocument
+  - /v2/activitydashboard/getpropertiesbyuserid
+  - /v2/activitydashboard/getpropertynotificationcount
+- entity: Address
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 2
+  identifiers: []
+  paths:
+  - /v1/address/createaddress
+  - /v2/address/createaddress
+- entity: Bland
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 5
+  identifiers:
+  - propertyId
+  paths:
+  - /v1/bland/property
+  - /v1/bland/property/{propertyId}
+  - /v1/bland/viewing
+  - /v1/bland/viewing/confirmrequestslot
+  - /v1/bland/viewing/reschedulerequestslot
+- entity: Countrywide
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 1
+  identifiers: []
+  paths:
+  - /v1/countrywide/jobresult
+- entity: Dashboard
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 4
+  identifiers:
+  - propertyId
+  paths:
+  - /v1/dashboard
+  - /v1/dashboard/externallinks
+  - /v2/dashboard
+  - /v2/dashboard/externallinks
+- entity: ExposureReport
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 6
+  identifiers:
+  - propertyId
+  - reportId
+  paths:
+  - /v1/exposurereport/{propertyId}
+  - /v1/exposurereport/{propertyId}/generate
+  - /v1/exposurereport/{propertyId}/history
+  - /v1/exposurereport/{propertyId}/market
+  - /v1/exposurereport/{propertyId}/week-{weekNumber}
+  - /v1/exposurereport/{propertyId}/{reportId}
+- entity: GoToMarket
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 17
+  identifiers:
+  - propertyId
+  paths:
+  - /v1/gotomarket/{propertyId}/advertsummary
+  - /v1/gotomarket/{propertyId}/approveall
+  - /v1/gotomarket/{propertyId}/boardandkeysafepreference
+  - /v1/gotomarket/{propertyId}/floorplan
+  - /v1/gotomarket/{propertyId}/getimageuploaddetails
+  - /v1/gotomarket/{propertyId}/marketprice
+- entity: InactiveProperty
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 1
+  identifiers:
+  - id
+  paths:
+  - /v1/inactiveproperty/{id}
+- entity: InstantInstruct
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 1
+  identifiers: []
+  paths:
+  - /v1/instantinstruct
+- entity: InternalPerformanceReport
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 5
+  identifiers:
+  - expertIds
+  - propertyId
+  paths:
+  - /v1/performancereport/internal/getadvertperformance
+  - /v1/performancereport/internal/getadvertperformance/{propertyId}
+  - /v1/performancereport/internal/properties
+  - /v1/performancereport/internal/propertiesbyexpert
+  - /v1/performancereport/internal/{propertyId}
+- entity: LandRegistry
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 1
+  identifiers: []
+  paths:
+  - /v1/landregistry/transactions
+- entity: Owners
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 2
+  identifiers:
+  - offerId
+  - propertyId
+  paths:
+  - /v1/owners/additional-buyers
+  - /v1/owners/additional-sellers
+- entity: PerformanceReport
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 4
+  identifiers:
+  - id
+  - propertyId
+  - userId
+  paths:
+  - /v1/performancereport/getadvertperformance
+  - /v1/performancereport/{id}
+  - /v2/performancereport/getadvertperformance
+  - /v2/performancereport/{id}
+- entity: Preactive
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 2
+  identifiers:
+  - id
+  paths:
+  - /v1/preactive/{id}
+  - /v2/preactive/{id}
+- entity: PropertyBox
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 2
+  identifiers:
+  - propertyId
+  paths:
+  - /v1/propertybox/{propertyId}/propertyboxdeeplink
+  - /v1/propertybox/{propertyId}/propertyboxorderstatus
+- entity: PropertyQuestionnaireForm
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 1
+  identifiers:
+  - id
+  paths:
+  - /v1/propertyquestionnaireform/{id}
+- entity: PropertySearchHits
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 1
+  identifiers:
+  - id
+  paths:
+  - /v1/propertysearchhits/{id}
+- entity: RailwayStations
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 1
+  identifiers: []
+  paths:
+  - /v1/railwaystations/{postcode}
+- entity: TrackedProperties
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 4
+  identifiers:
+  - propertyId
+  paths:
+  - /v1/trackedproperties
+  - /v1/trackedproperties/{propertyId}
+  - /v1/trackedproperties/{propertyId}/note-of-interest
+  - /v1/trackedproperties/{propertyId}/tracked
+- entity: Users
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 4
+  identifiers:
+  - userId
+  paths:
+  - /v1/creatio/users/{userId}/properties
+  - /v1/creatio/users/{userId}/valuations
+  - /v1/creatio/users/{userId}/viewings
+  - /v1/creatio/users/{userId}/viewings/feedback
+- entity: Withdraw
+  service: property
+  spec: openapi/purplebricks-property-v1-openapi.yml
+  path_count: 4
+  identifiers: []
+  paths:
+  - /v1/cancelrequest
+  - /v1/creatio/withdraw
+  - /v1/request
+  - /v1/withdraw
+- entity: FollowUp
+  service: valuations
+  spec: openapi/purplebricks-valuations-v1-openapi.yml
+  path_count: 6
+  identifiers:
+  - userId
+  paths:
+  - /v1/followup
+  - /v1/followup/alterdateforproperty
+  - /v1/followup/lpplist
+  - /v1/followup/reschedule
+  - /v1/followup/toaction
+  - /v1/followup/updateleadtemp
+- entity: LeadCapture
+  service: valuations
+  spec: openapi/purplebricks-valuations-v1-openapi.yml
+  path_count: 1
+  identifiers: []
+  paths:
+  - /v1/leadcapture
+- entity: PostCode
+  service: valuations
+  spec: openapi/purplebricks-valuations-v1-openapi.yml
+  path_count: 2
+  identifiers:
+  - eventId
+  paths:
+  - /v1/postcode/isintrialregion
+  - /v1/postcode/isintrialregionbyeventid
+- entity: SalesforceDiaryPilot
+  service: valuations
+  spec: openapi/purplebricks-valuations-v1-openapi.yml
+  path_count: 1
+  identifiers: []
+  paths:
+  - /v1/salesforcediarypilot/isindiarymanagementtrial/{postcode}
+- entity: ValuationIntent
+  service: valuations
+  spec: openapi/purplebricks-valuations-v1-openapi.yml
+  path_count: 6
+  identifiers:
+  - propertyId
+  paths:
+  - /v1/valuationintent/bookinguserdata
+  - /v1/valuationintent/getpostdataharvestingredirect
+  - /v1/valuationintent/getredirecturl
+  - /v1/valuationintent/requestvaluationavailability
+  - /v1/valuationintent/shoulduseinstantvaluationflow
+  - /v1/valuationintent/wasinstantvaluation
+- entity: ValuationReport
+  service: valuations
+  spec: openapi/purplebricks-valuations-v1-openapi.yml
+  path_count: 1
+  identifiers:
+  - id
+  paths:
+  - /v1/valuationreport/{id}
+- entity: Valuation
+  service: valuations
+  spec: openapi/purplebricks-valuations-v2-openapi.yml
+  path_count: 4
+  identifiers:
+  - propertyId
+  paths:
+  - /v2/valuations/report-view
+  - /v2/valuations/{propertyId}
+  - /v2/valuations/{propertyId}/save
+  - /v2/valuations/{propertyId}/status
+- entity: AccessDetails
+  service: viewings
+  spec: openapi/purplebricks-viewings-v1-openapi.yml
+  path_count: 3
+  identifiers:
+  - propertyId
+  - userId
+  paths:
+  - /v1/accessdetails/{propertyId}
+  - /v1/accessdetails/{propertyId}/revealkeysafecode
+  - /v1/accessdetails/{propertyId}/summary
+- entity: Appointments
+  service: viewings
+  spec: openapi/purplebricks-viewings-v1-openapi.yml
+  path_count: 2
+  identifiers: []
+  paths:
+  - /v1/appointments
+  - /v1/appointments/cancel
+- entity: OpenDays
+  service: viewings
+  spec: openapi/purplebricks-viewings-v1-openapi.yml
+  path_count: 2
+  identifiers:
+  - propertyId
+  paths:
+  - /v1/properties/{propertyId}/opendays/past
+  - /v1/properties/{propertyId}/opendays/upcoming
+- entity: Properties
+  service: viewings
+  spec: openapi/purplebricks-viewings-v1-openapi.yml
+  path_count: 2
+  identifiers:
+  - propertyId
+  paths:
+  - /v1/creatio/properties/{propertyId}/viewings
+  - /v1/properties/{propertyId}
+- entity: IsInstructAvailable
+  service: workflow
+  spec: openapi/purplebricks-workflow-v1-openapi.yml
+  path_count: 1
+  identifiers:
+  - propertyId
+  paths:
+  - /v1/isinstructavailable
+- entity: Step
+  service: workflow
+  spec: openapi/purplebricks-workflow-v1-openapi.yml
+  path_count: 2
+  identifiers:
+  - propertyId
+  paths:
+  - /v1/step/canmove
+  - /v1/step/move
+relationships:
+- from: Property
+  to: Owners
+  type: has_many
+  via: propertyId
+  evidence: openapi/purplebricks-property-v1-openapi.yml /v1/property/{propertyId}/owners
+- from: Property
+  to: Address
+  type: has_one
+  via: propertyId
+  evidence: openapi/purplebricks-property-v1-openapi.yml /v1/property/{propertyId}/address
+- from: Property
+  to: Appointments
+  type: has_many
+  via: propertyId
+  evidence: openapi/purplebricks-viewings-v1-openapi.yml (propertyId query parameter, 27 occurrences estate-wide)
+- from: Property
+  to: Threads
+  type: has_many
+  via: propertyId
+  evidence: openapi/purplebricks-messaging-v1-openapi.yml
+- from: Property
+  to: PerformanceReport
+  type: has_one
+  via: propertyId
+  evidence: openapi/purplebricks-property-v1-openapi.yml PerformanceReport / ExposureReport tags
+- from: Property
+  to: LandRegistry
+  type: has_one
+  via: propertyId
+  evidence: openapi/purplebricks-property-v1-openapi.yml LandRegistry tag
+- from: Thread
+  to: Messages
+  type: has_many
+  via: threadId
+  evidence: openapi/purplebricks-messaging-v1-openapi.yml /v1/threads/{threadId}/messages
+- from: User
+  to: MarketingPreferences
+  type: has_one
+  via: userId
+  evidence: openapi/purplebricks-account-v1-openapi.yml MarketingPreferences tag
+- from: User
+  to: PhoneVerification
+  type: has_many
+  via: userId
+  evidence: openapi/purplebricks-account-v1-openapi.yml PhoneVerification tag
+- from: Agent
+  to: Team
+  type: belongs_to
+  via: agentPublicUserId
+  evidence: openapi/purplebricks-agent-v1-openapi.yml Team tag
+- from: Agent
+  to: OutlookSync
+  type: has_one
+  via: agentPublicUserId
+  evidence: openapi/purplebricks-outlook-v1-openapi.yml Model.agentPublicUserId
+- from: Branch
+  to: RightmoveBranch
+  type: has_one
+  via: branch
+  evidence: openapi/purplebricks-branch-v1-openapi.yml RightmoveBranch tag
+- from: Branch
+  to: ZooplaBranch
+  type: has_one
+  via: branch
+  evidence: openapi/purplebricks-branch-v1-openapi.yml ZooplaBranch tag
+- from: Branch
+  to: OnTheMarketBranch
+  type: has_one
+  via: branch
+  evidence: openapi/purplebricks-branch-v1-openapi.yml OnTheMarketBranch tag
+- from: ValuationIntent
+  to: ValuationReport
+  type: has_one
+  via: valuation
+  evidence: openapi/purplebricks-valuations-v1-openapi.yml ValuationIntent / ValuationReport tags
+- from: ConveyancingQuote
+  to: ConveyancingQuoteFee
+  type: has_many
+  via: quote
+  evidence: openapi/purplebricks-conveyancing-v1-openapi.yml ConveyancingQuoteFeeGroupModel

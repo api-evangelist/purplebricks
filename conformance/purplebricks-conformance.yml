@@ -1,0 +1,57 @@
+generated: '2026-07-26'
+method: derived
+source: openapi/ + live probes
+standards:
+- id: openapi-3.0
+  conforms: true
+  evidence: 'All sixteen harvested documents declare openapi: 3.0.1 and parse cleanly.'
+- id: rfc7807-problem-details
+  conforms: true
+  evidence: Every 4xx/5xx response references Microsoft.AspNetCore.Mvc.ProblemDetails with type/title/status/detail/instance
+    members.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No application/problem+json media type and no published problem type URI registry; the ASP.NET
+    7807 shape is served as application/json.
+- id: oauth2
+  conforms: false
+  evidence: No oauth2 securityScheme in any spec; auth is declared as apiKey-in-header carrying a Bearer
+    token. No RFC 8414 metadata document (404).
+- id: oidc
+  conforms: false
+  evidence: https://www.purplebricks.co.uk/.well-known/openid-configuration -> 404 on every host probed.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt -> 404 on all four Purplebricks hosts.
+- id: rfc9727-api-catalog
+  conforms: false
+  evidence: /.well-known/api-catalog -> 404 on all hosts.
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: 'No Sunset or Deprecation header, and no deprecated: true operation, appears in any of the
+    sixteen specs.'
+- id: reso-data-dictionary
+  conforms: false
+  evidence: No RESO reference anywhere in the estate. RESO is a North American MLS standard and the UK
+    has no MLS; the branch-api instead models Rightmove, Zoopla and OnTheMarket portal branches directly.
+- id: reso-web-api
+  conforms: false
+  evidence: No OData surface; https://www.purplebricks.co.uk/$metadata -> 404.
+- id: odata
+  conforms: false
+  evidence: No $metadata document and no OData query conventions in any spec.
+- id: json-api
+  conforms: false
+  evidence: Plain JSON resource payloads; no application/vnd.api+json.
+- id: uk-tps
+  conforms: true
+  evidence: communications-api exposes a Tps surface returning CustomerTpsStatus — the UK Telephone Preference
+    Service suppression check required of outbound direct marketing.
+- id: uk-land-registry
+  conforms: true
+  evidence: property-api exposes a LandRegistry tag; the consumer /house-prices tool is attributed to
+    HM Land Registry Price Paid data.
+compliance_program:
+  published: false
+  evidence: No trust centre, no SOC 2 / ISO 27001 / PCI DSS certification page, and no security page were
+    found on any Purplebricks host (probe-security-programs.py returned vdp=none trust=none).

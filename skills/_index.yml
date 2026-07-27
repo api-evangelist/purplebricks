@@ -1,0 +1,77 @@
+generated: '2026-07-26'
+method: generated
+source: openapi/ (16 harvested Purplebricks OpenAPI documents) + conventions/ + errors/ + agentic-access/
+note: Purplebricks publishes no AGENTS.md, no skills and no developer documentation of any kind. These
+  skills are generated from the publicly-served OpenAPI documents and are grounded in verbatim method+path
+  bindings; the operationId values are those assigned by this repo's overlays, because the upstream documents
+  declare almost none. Every skill is gated on a Bearer token Purplebricks does not issue to third parties.
+skills:
+- file: purplebricks-book-a-valuation.md
+  name: Book a Purplebricks free valuation
+  description: Capture a seller lead, check postcode eligibility, request valuation availability and schedule
+    the follow-up through the Purplebricks Valuations API.
+  api: openapi/purplebricks-valuations-v1-openapi.yml
+  operations:
+  - postV1Leadcapture
+  - getV1PostcodeIsintrialregion
+  - getV1ValuationintentShoulduseinstantvaluationflow
+  - postV1ValuationintentRequestvaluationavailability
+  - postV1ValuationintentBookinguserdata
+  - postV1Followup
+  - getV1ValuationreportId
+- file: purplebricks-go-to-market-listing.md
+  name: Take a Purplebricks property to market
+  description: Drive a property from instruction through market price agreement, media and copy approval
+    to a live advert using the Purplebricks Property API go-to-market surface.
+  api: openapi/purplebricks-property-v1-openapi.yml
+  operations:
+  - getV1PropertyPropertyId
+  - getV1GotomarketPropertyIdProgress
+  - getV1GotomarketPropertyIdMarketprice
+  - postV1GotomarketPropertyIdMarketpriceAccept
+  - postV1GotomarketPropertyIdApproveall
+  - getV1GotomarketPropertyIdAdvertsummary
+  - getV1ExposurereportPropertyId
+- file: purplebricks-book-a-viewing.md
+  name: Book and manage a Purplebricks viewing
+  description: Create, confirm, reschedule and cancel property viewing appointments, and read access details
+    and open days, through the Purplebricks Viewings API.
+  api: openapi/purplebricks-viewings-v1-openapi.yml
+  operations:
+  - getV1PropertiesPropertyIdOpendaysUpcoming
+  - postV1Appointments
+  - postV1AppointmentsCancel
+  - getV1AccessdetailsPropertyId
+  - getV1CreatioUsersUserIdViewings
+- file: purplebricks-messaging-thread.md
+  name: Work a Purplebricks message thread
+  description: List threads, read and page messages, post replies and mark threads read using the Purplebricks
+    Messaging API cursor pagination.
+  api: openapi/purplebricks-messaging-v1-openapi.yml
+  operations:
+  - getV1Threads
+  - getV1ThreadsThreadId
+  - getV1ThreadsThreadIdMessages
+  - patchV1ThreadsThreadIdRead
+  - postV1Messages
+  - getV1MessagesCount
+- file: purplebricks-conveyancing-quote.md
+  name: Generate a Purplebricks conveyancing quote
+  description: Create and retrieve conveyancing quotes with their fee groups for the legal leg of a Purplebricks
+    sale.
+  api: openapi/purplebricks-conveyancing-v1-openapi.yml
+  operations:
+  - postV1ConveyancingquoteQuote
+  - getV1ConveyancingquoteQuotes
+  - getV1ConveyancingquoteQuoteQuoteId
+- file: purplebricks-portal-branch-lookup.md
+  name: Resolve a Purplebricks property to its portal branches
+  description: Look up the Rightmove, Zoopla and OnTheMarket branch a Purplebricks property syndicates
+    through, and search the branch registries.
+  api: openapi/purplebricks-branch-v1-openapi.yml
+  operations:
+  - getV1PropertyPropertyIdRightmovebranch
+  - getV1PropertyPropertyIdZooplabranch
+  - getV1PropertyPropertyIdOnthemarketbranch
+  - getV1RightmovebranchBranchId
+  - getV1RightmovebranchSearch

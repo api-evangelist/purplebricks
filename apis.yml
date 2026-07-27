@@ -2,26 +2,25 @@ aid: purplebricks
 url: https://raw.githubusercontent.com/api-evangelist/purplebricks/refs/heads/main/apis.yml
 name: Purplebricks
 kind: company
-description: >-
-  Purplebricks is the United Kingdom's largest online (hybrid) estate agency,
-  founded in 2014 by Michael and Kenny Bruce and David Shepherd, selling and letting
-  residential property across England, Wales and Scotland through a fixed-fee, remote
-  model staffed by local property experts rather than a high-street branch network.
-  After a 2023 sale to rival online agent Strike for a nominal £1 the combined business
-  was rebranded back under the Purplebricks name, and in 2026 the founding Bruce brothers
-  returned alongside Sir Charles Dunstone's Freston Ventures. It sits on the brokerage
-  rung of the value chain — it originates the seller relationship and the listing, then
-  distributes that stock to Rightmove, Zoopla, OnTheMarket and PrimeLocation through the
-  UK's portal feed arrangements, because the UK has no MLS and therefore no shared
-  cooperative data exchange. API posture, stated honestly, is none-published: no developer,
-  partner or API portal exists, developer./developers./docs. do not resolve, api.purplebricks.co.uk
-  answers only with an Azure Front Door 404, and no OpenAPI, Swagger, GraphQL or OData
-  $metadata contract is served anywhere on the estate. The one API path that is publicly
-  discoverable — /outlook-api/v1/agent/outlook-sync, disallowed in robots.txt — returns 401
-  and is an internal agent-facing calendar sync, not a developer product. RESO is absent, as
-  expected outside North America. The only machine-readable public surface is schema.org
-  JSON-LD embedded in its pages, and the genuinely open UK property data layer it consumes
-  for its sold-prices tool belongs to government (HM Land Registry), not to Purplebricks.
+description: 'Purplebricks is the United Kingdom''s largest online (hybrid) estate agency, founded
+  in 2014 by Michael and Kenny Bruce and David Shepherd, selling and letting residential property
+  across England, Wales and Scotland through a fixed-fee, remote model staffed by local property
+  experts rather than a high-street branch network. After a 2023 sale to rival online agent Strike
+  for a nominal one pound the combined business was rebranded back under the Purplebricks name, and
+  in 2026 the founding Bruce brothers returned alongside Sir Charles Dunstone''s Freston Ventures.
+  It sits on the brokerage rung of the value chain, originating the seller relationship and the listing
+  and then distributing that stock to Rightmove, Zoopla, OnTheMarket and PrimeLocation through the
+  UK''s portal feed arrangements, because the UK has no MLS and therefore no shared cooperative data
+  exchange. Its API posture is best described as published-but-undeclared: there is no developer
+  portal, no partner programme, no signup and no documentation site, yet the estate serves sixteen
+  real OpenAPI 3.0.1 documents and thirteen live public Swagger UIs across api.purplebricks.co.uk
+  and www.purplebricks.co.uk, covering property, account, valuations, viewings, messaging, lettings,
+  branch/portal syndication, communications, conveyancing, agent, feedback, workflow and Outlook
+  calendar sync. Every operation is Bearer-token protected with no public key issuance, errors are
+  ASP.NET ProblemDetails (RFC 7807), and the branch service exposes the Rightmove, Zoopla and OnTheMarket
+  syndication seam directly. RESO is absent, as expected outside North America, and the genuinely
+  open UK property data layer it consumes for its sold-prices tool belongs to government (HM Land
+  Registry), not to Purplebricks.'
 image: https://images.ctfassets.net/xhygqgfuea6b/3iPW7f24NM6u7Klc7YopsZ/43f36d4f236766caaa30f29fc85cafa1/purplebricks-logo.png
 tags:
 - Real Estate
@@ -34,11 +33,372 @@ tags:
 - Mortgage
 - Conveyancing
 - Land Registry
+- OpenAPI
+- Microservices
+- Swagger
+- Azure
 created: '2026-07-26'
 modified: '2026-07-26'
 specificationVersion: '0.19'
-apis: []
+apis:
+- name: Purplebricks Property API
+  description: 'The largest of the publicly-reachable Purplebricks microservice APIs (86 v1 paths
+    plus an 11-path v2), covering the property record end to end: active, preactive, inactive and
+    withdrawn properties, property boxes, owners, address lookup, go-to-market and instant-instruct
+    flows, tracked properties, property search hits, seller and agent dashboards, exposure, performance
+    and internal performance reports, property questionnaire forms, railway-station proximity, Countrywide
+    and Land Registry lookups. Bearer-token protected and undocumented outside the live Swagger UI
+    it serves itself.'
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - property
+  - listings
+  - real-estate
+  - land-registry
+  - dashboards
+  - reporting
+  properties:
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: OpenAPI
+    url: openapi/purplebricks-property-v1-openapi.yml
+  - type: OpenAPI
+    url: openapi/purplebricks-property-v2-openapi.yml
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: Overlay
+    url: overlays/purplebricks-property-v1-overlay.yaml
+- name: Purplebricks Account API
+  description: 'Identity and account service for Purplebricks customers: authentication, user records,
+    email confirmation, phone verification, marketing preferences and the expert-created account
+    path. Bearer-token protected; rate limiting is visible in the contract via documented 429 responses.'
+  humanURL: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/account-api
+  tags:
+  - identity
+  - accounts
+  - authentication
+  - user-management
+  - marketing-preferences
+  properties:
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: OpenAPI
+    url: openapi/purplebricks-account-v1-openapi.yml
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: Overlay
+    url: overlays/purplebricks-account-v1-overlay.yaml
+- name: Purplebricks Valuations API
+  description: 'Free-valuation funnel service: valuation intent capture, lead capture, postcode resolution,
+    valuation reports, follow-up scheduling and a Salesforce diary pilot, plus a v2 valuation surface.
+    This is the API behind the book-your-free-valuation journey that opens every Purplebricks seller
+    relationship.'
+  humanURL: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/valuations-api
+  tags:
+  - valuations
+  - lead-capture
+  - sales-funnel
+  - salesforce
+  - postcode
+  properties:
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: OpenAPI
+    url: openapi/purplebricks-valuations-v1-openapi.yml
+  - type: OpenAPI
+    url: openapi/purplebricks-valuations-v2-openapi.yml
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: Overlay
+    url: overlays/purplebricks-valuations-v1-overlay.yaml
+- name: Purplebricks Viewings API
+  description: 'Viewing and appointment service: appointments, open days, property access details,
+    per-property and per-user viewing surfaces, and a Bland voice-agent integration surface. Documents
+    409 conflict and 429 rate-limit responses on booking operations.'
+  humanURL: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/viewings-api
+  tags:
+  - viewings
+  - appointments
+  - scheduling
+  - open-days
+  - voice-agents
+  properties:
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: OpenAPI
+    url: openapi/purplebricks-viewings-v1-openapi.yml
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: Overlay
+    url: overlays/purplebricks-viewings-v1-overlay.yaml
+- name: Purplebricks Messaging API
+  description: 'Threaded messaging between customers, sellers and local property experts: message
+    threads, individual messages, read state, system messages and cursor-paginated thread listings,
+    with a v2 thread surface alongside v1.'
+  humanURL: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/messaging-api
+  tags:
+  - messaging
+  - threads
+  - notifications
+  - customer-communication
+  properties:
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: OpenAPI
+    url: openapi/purplebricks-messaging-v1-openapi.yml
+  - type: OpenAPI
+    url: openapi/purplebricks-messaging-v2-openapi.yml
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: Overlay
+    url: overlays/purplebricks-messaging-v1-overlay.yaml
+- name: Purplebricks Lettings API
+  description: Lettings integration service run by the Team Integrations squad. Creates valuation,
+    viewing and offer enquiries in street.co.uk, handles inbound street.co.uk listing webhooks, exposes
+    the pre-instruct third-party property surface, and resolves Teclet postcodes. The clearest evidence
+    in the estate of the UK lettings stack Purplebricks integrates with.
+  humanURL: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/lettings-api
+  tags:
+  - lettings
+  - integrations
+  - webhooks
+  - street-co-uk
+  - teclet
+  - enquiries
+  properties:
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: OpenAPI
+    url: openapi/purplebricks-lettings-v1-openapi.yml
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: Overlay
+    url: overlays/purplebricks-lettings-v1-overlay.yaml
+- name: Purplebricks Branch API
+  description: 'Portal syndication service exposing Rightmove, Zoopla and OnTheMarket branch records
+    alongside property operations. This is the machine-readable trace of the UK no-MLS seam: an agency
+    pushing branch and listing state into the portal duopoly rather than into a shared cooperative.'
+  humanURL: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/branch-api
+  tags:
+  - portal-syndication
+  - rightmove
+  - zoopla
+  - onthemarket
+  - branches
+  properties:
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: OpenAPI
+    url: openapi/purplebricks-branch-v1-openapi.yml
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: Overlay
+    url: overlays/purplebricks-branch-v1-overlay.yaml
+- name: Purplebricks Communications API
+  description: Outbound and inbound communication service covering the contact-us surface, customer
+    emails and TPS (Telephone Preference Service) screening — the UK direct-marketing suppression
+    check that any regulated outbound calling programme has to run.
+  humanURL: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/communications-api
+  tags:
+  - communications
+  - email
+  - contact
+  - tps
+  - compliance
+  properties:
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: OpenAPI
+    url: openapi/purplebricks-communications-v1-openapi.yml
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: Overlay
+    url: overlays/purplebricks-communications-v1-overlay.yaml
+- name: Purplebricks Conveyancing API
+  description: Conveyancing quote service run by PB Digital, generating and retrieving conveyancing
+    quotes for the legal leg of a Purplebricks sale.
+  humanURL: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/conveyancing-api
+  tags:
+  - conveyancing
+  - quotes
+  - legal
+  - property-transaction
+  properties:
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: OpenAPI
+    url: openapi/purplebricks-conveyancing-v1-openapi.yml
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: Overlay
+    url: overlays/purplebricks-conveyancing-v1-overlay.yaml
+- name: Purplebricks Agent API
+  description: Small agent-experience service exposing team lookups for the local property experts
+    who staff the Purplebricks model in place of high-street branches.
+  humanURL: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/agent-api
+  tags:
+  - agents
+  - teams
+  - local-property-experts
+  properties:
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: OpenAPI
+    url: openapi/purplebricks-agent-v1-openapi.yml
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: Overlay
+    url: overlays/purplebricks-agent-v1-overlay.yaml
+- name: Purplebricks Feedback API
+  description: Single-surface feedback management service used to manage viewing and vendor feedback
+    across the platform.
+  humanURL: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/feedback-api
+  tags:
+  - feedback
+  - reviews
+  - customer-experience
+  properties:
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: OpenAPI
+    url: openapi/purplebricks-feedback-v1-openapi.yml
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: Overlay
+    url: overlays/purplebricks-feedback-v1-overlay.yaml
+- name: Purplebricks Workflow API
+  description: Platform workflow service exposing workflow steps and an instruct-availability check
+    that gates whether a seller can be instructed at a given point in the journey.
+  humanURL: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/workflow-api
+  tags:
+  - workflow
+  - orchestration
+  - instruction
+  - platform
+  properties:
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: OpenAPI
+    url: openapi/purplebricks-workflow-v1-openapi.yml
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: Overlay
+    url: overlays/purplebricks-workflow-v1-overlay.yaml
+- name: Purplebricks Outlook Sync API
+  description: Agent-facing microservice that reads and toggles Outlook calendar synchronisation
+    for a local property expert. The only Purplebricks API path disclosed in robots.txt, and the
+    thread that led to the rest of the publicly-served Swagger estate.
+  humanURL: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/outlook-api
+  tags:
+  - calendar
+  - outlook
+  - agents
+  - integrations
+  properties:
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: OpenAPI
+    url: openapi/purplebricks-outlook-v1-openapi.yml
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: Overlay
+    url: overlays/purplebricks-outlook-v1-overlay.yaml
 common:
+- type: DomainSecurity
+  url: security/purplebricks-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/purplebricks-agentic-access.yml
 - type: Website
   url: https://www.purplebricks.co.uk/
 - type: PropertySearch
@@ -79,6 +439,69 @@ common:
   url: https://www.youtube.com/channel/UCXD3FPBFjPuMA4pCs-_KBJA
 - type: TikTok
   url: https://www.tiktok.com/@purplebricksuk
+- type: Authentication
+  url: authentication/purplebricks-authentication.yml
+- type: Conventions
+  url: conventions/purplebricks-conventions.yml
+- type: ErrorCatalog
+  url: errors/purplebricks-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/purplebricks-lifecycle.yml
+- type: Conformance
+  url: conformance/purplebricks-conformance.yml
+- type: DataModel
+  url: data-model/purplebricks-data-model.yml
+- type: Packages
+  url: packages/purplebricks-packages.yml
+- type: LLMsTxt
+  url: llms/purplebricks-llms.txt
+- type: APIReference
+  url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+- type: AgentSkill
+  url: skills/_index.yml
+- type: AgentSkill
+  name: Book a Purplebricks free valuation
+  url: skills/purplebricks-book-a-valuation.md
+- type: AgentSkill
+  name: Take a Purplebricks property to market
+  url: skills/purplebricks-go-to-market-listing.md
+- type: AgentSkill
+  name: Book and manage a Purplebricks viewing
+  url: skills/purplebricks-book-a-viewing.md
+- type: AgentSkill
+  name: Work a Purplebricks message thread
+  url: skills/purplebricks-messaging-thread.md
+- type: AgentSkill
+  name: Generate a Purplebricks conveyancing quote
+  url: skills/purplebricks-conveyancing-quote.md
+- type: AgentSkill
+  name: Resolve a Purplebricks property to its portal branches
+  url: skills/purplebricks-portal-branch-lookup.md
+- type: PrivacyPolicy
+  url: https://www.purplebricks.co.uk/terms/privacy-policy
+- type: TermsOfUse
+  url: https://www.purplebricks.co.uk/terms/terms-of-use
+- type: SignUp
+  url: https://www.purplebricks.co.uk/register
+- type: Login
+  url: https://www.purplebricks.co.uk/account/login
+- type: Support
+  url: https://www.purplebricks.co.uk/contact-us
+- type: HelpCenter
+  url: https://www.purplebricks.co.uk/faqs
+- type: Robots
+  url: https://www.purplebricks.co.uk/robots.txt
+- type: Sitemap
+  url: https://www.purplebricks.co.uk/sitemap.xml
+- type: WellKnownProbe
+  url: well-known/purplebricks-well-known.yml
+  name: /.well-known/ probe results (all 404 — no discovery layer published)
+- type: Webhooks-Inbound
+  url: asyncapi/purplebricks-webhooks.yml
+  name: Inbound street.co.uk webhook receivers only — no outbound event surface
+- type: MCPCandidate
+  url: mcp/purplebricks-mcp.yml
+  name: Derived candidate MCP tool set — Purplebricks operates no MCP server
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

@@ -1,0 +1,28 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Purplebricks.Microservice.Outlook.Api 1.0 - Squad Agents and Intel
+  version: 1.0.0
+extends: openapi/purplebricks-outlook-v1-openapi.yml
+x-generated: '2026-07-26'
+x-method: generated
+x-note: Adds provenance metadata, a verified servers[] entry where the harvested document omitted or malformed it,
+  and 2 derived operationId values. The upstream Purplebricks documents declare almost no operationIds, summaries
+  or descriptions; this overlay never mutates the harvested original.
+actions:
+- target: $.info
+  update:
+    x-apievangelist-source: https://api.purplebricks.co.uk/outlook-api/swagger/v1/swagger.json
+    x-apievangelist-harvested: '2026-07-26'
+    x-apievangelist-access: publicly-served, Bearer-token protected, no public key issuance and no developer programme
+    x-apievangelist-swagger-ui: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- target: $
+  update:
+    servers:
+    - url: https://api.purplebricks.co.uk/outlook-api
+      description: Purplebricks production (verified reachable 2026-07-26)
+- target: $.paths['/v1/agent/outlook-sync'].get
+  update:
+    operationId: getV1AgentOutlookSync
+- target: $.paths['/v1/agent/outlook-sync'].put
+  update:
+    operationId: putV1AgentOutlookSync

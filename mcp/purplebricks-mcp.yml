@@ -1,0 +1,1052 @@
+generated: '2026-07-26'
+method: derived
+status: candidate
+source: openapi/ (16 harvested Purplebricks OpenAPI documents)
+published_server: false
+search_evidence:
+- No MCP server is referenced anywhere on purplebricks.co.uk, purplebricks.io or github.com/purplebricks.
+- No entry for Purplebricks in the official MCP registry or in @modelcontextprotocol npm scope.
+- https://mcp.purplebricks.co.uk/ does not resolve.
+server:
+  name: purplebricks
+  transport: http
+  url: null
+note: Candidate tool set derived one-per-operation from the publicly-served Purplebricks OpenAPI documents.
+  Purplebricks operates no MCP server. Every tool would require a Bearer token that Purplebricks does
+  not issue to third parties, so this is a design artifact, not an operable server.
+tool_count: 205
+tools:
+- name: get_account_v1_auth
+  description: GET /v1/auth on the Purplebricks account API
+  source_operation: openapi/purplebricks-account-v1-openapi.yml#GET /v1/auth
+  tags:
+  - Auth
+- name: get_account_v1_emailconfirmation_getemailconfirmationdata_token
+  description: GET /v1/emailconfirmation/getemailconfirmationdata/{token} on the Purplebricks account
+    API
+  source_operation: openapi/purplebricks-account-v1-openapi.yml#GET /v1/emailconfirmation/getemailconfirmationdata/{token}
+  tags:
+  - EmailConfirmation
+- name: post_account_v1_expertcreated
+  description: POST /v1/expertcreated on the Purplebricks account API
+  source_operation: openapi/purplebricks-account-v1-openapi.yml#POST /v1/expertcreated
+  tags:
+  - ExpertCreated
+- name: put_account_v1_marketingpreferences
+  description: PUT /v1/marketingpreferences on the Purplebricks account API
+  source_operation: openapi/purplebricks-account-v1-openapi.yml#PUT /v1/marketingpreferences
+  tags:
+  - MarketingPreferences
+- name: get_account_v1_marketingpreferences_publicuserid
+  description: GET /v1/marketingpreferences/{publicUserId} on the Purplebricks account API
+  source_operation: openapi/purplebricks-account-v1-openapi.yml#GET /v1/marketingpreferences/{publicUserId}
+  tags:
+  - MarketingPreferences
+- name: post_account_v1_phoneverification_manual_verify_userid
+  description: POST /v1/phoneverification/manual-verify/{userId} on the Purplebricks account API
+  source_operation: openapi/purplebricks-account-v1-openapi.yml#POST /v1/phoneverification/manual-verify/{userId}
+  tags:
+  - PhoneVerification
+- name: post_account_v1_phoneverification_send
+  description: POST /v1/phoneverification/send on the Purplebricks account API
+  source_operation: openapi/purplebricks-account-v1-openapi.yml#POST /v1/phoneverification/send
+  tags:
+  - PhoneVerification
+- name: get_account_v1_phoneverification_status
+  description: GET /v1/phoneverification/status on the Purplebricks account API
+  source_operation: openapi/purplebricks-account-v1-openapi.yml#GET /v1/phoneverification/status
+  tags:
+  - PhoneVerification
+- name: post_account_v1_phoneverification_verify
+  description: POST /v1/phoneverification/verify on the Purplebricks account API
+  source_operation: openapi/purplebricks-account-v1-openapi.yml#POST /v1/phoneverification/verify
+  tags:
+  - PhoneVerification
+- name: post_account_v1_user
+  description: POST /v1/user on the Purplebricks account API
+  source_operation: openapi/purplebricks-account-v1-openapi.yml#POST /v1/user
+  tags:
+  - User
+- name: post_account_v1_user_changeemail
+  description: POST /v1/user/changeemail on the Purplebricks account API
+  source_operation: openapi/purplebricks-account-v1-openapi.yml#POST /v1/user/changeemail
+  tags:
+  - User
+- name: get_account_v1_user_isusernametaken
+  description: GET /v1/user/isusernametaken on the Purplebricks account API
+  source_operation: openapi/purplebricks-account-v1-openapi.yml#GET /v1/user/isusernametaken
+  tags:
+  - User
+- name: post_account_v1_user_requestaccountdeletion
+  description: POST /v1/user/requestaccountdeletion on the Purplebricks account API
+  source_operation: openapi/purplebricks-account-v1-openapi.yml#POST /v1/user/requestaccountdeletion
+  tags:
+  - User
+- name: post_account_v1_user_resendemailconfirmation
+  description: POST /v1/user/resendemailconfirmation on the Purplebricks account API
+  source_operation: openapi/purplebricks-account-v1-openapi.yml#POST /v1/user/resendemailconfirmation
+  tags:
+  - User
+- name: post_account_v1_user_sendpasswordreset
+  description: POST /v1/user/sendpasswordreset on the Purplebricks account API
+  source_operation: openapi/purplebricks-account-v1-openapi.yml#POST /v1/user/sendpasswordreset
+  tags:
+  - User
+- name: get_agent_v1_team
+  description: GET /v1/team on the Purplebricks agent API
+  source_operation: openapi/purplebricks-agent-v1-openapi.yml#GET /v1/team
+  tags:
+  - Team
+- name: get_agent_v1_team_getagentmanager
+  description: GET /v1/team/getagentmanager on the Purplebricks agent API
+  source_operation: openapi/purplebricks-agent-v1-openapi.yml#GET /v1/team/getagentmanager
+  tags:
+  - Team
+- name: get_branch_v1_onthemarketbranch
+  description: GET /v1/onthemarketbranch on the Purplebricks branch API
+  source_operation: openapi/purplebricks-branch-v1-openapi.yml#GET /v1/onthemarketbranch
+  tags:
+  - OnTheMarketBranch
+- name: get_branch_v1_onthemarketbranch_search
+  description: GET /v1/onthemarketbranch/search on the Purplebricks branch API
+  source_operation: openapi/purplebricks-branch-v1-openapi.yml#GET /v1/onthemarketbranch/search
+  tags:
+  - OnTheMarketBranch
+- name: get_branch_v1_onthemarketbranch_branchid
+  description: GET /v1/onthemarketbranch/{branchId} on the Purplebricks branch API
+  source_operation: openapi/purplebricks-branch-v1-openapi.yml#GET /v1/onthemarketbranch/{branchId}
+  tags:
+  - OnTheMarketBranch
+- name: get_branch_v1_property_propertyid_onthemarketbranch
+  description: GET /v1/property/{propertyId}/onthemarketbranch on the Purplebricks branch API
+  source_operation: openapi/purplebricks-branch-v1-openapi.yml#GET /v1/property/{propertyId}/onthemarketbranch
+  tags:
+  - Property
+- name: get_branch_v1_property_propertyid_rightmovebranch
+  description: GET /v1/property/{propertyId}/rightmovebranch on the Purplebricks branch API
+  source_operation: openapi/purplebricks-branch-v1-openapi.yml#GET /v1/property/{propertyId}/rightmovebranch
+  tags:
+  - Property
+- name: get_branch_v1_property_propertyid_zooplabranch
+  description: GET /v1/property/{propertyId}/zooplabranch on the Purplebricks branch API
+  source_operation: openapi/purplebricks-branch-v1-openapi.yml#GET /v1/property/{propertyId}/zooplabranch
+  tags:
+  - Property
+- name: get_branch_v1_rightmovebranch
+  description: GET /v1/rightmovebranch on the Purplebricks branch API
+  source_operation: openapi/purplebricks-branch-v1-openapi.yml#GET /v1/rightmovebranch
+  tags:
+  - RightmoveBranch
+- name: get_branch_v1_rightmovebranch_search
+  description: GET /v1/rightmovebranch/search on the Purplebricks branch API
+  source_operation: openapi/purplebricks-branch-v1-openapi.yml#GET /v1/rightmovebranch/search
+  tags:
+  - RightmoveBranch
+- name: get_branch_v1_rightmovebranch_branchid
+  description: GET /v1/rightmovebranch/{branchId} on the Purplebricks branch API
+  source_operation: openapi/purplebricks-branch-v1-openapi.yml#GET /v1/rightmovebranch/{branchId}
+  tags:
+  - RightmoveBranch
+- name: get_branch_v1_zooplabranch
+  description: GET /v1/zooplabranch on the Purplebricks branch API
+  source_operation: openapi/purplebricks-branch-v1-openapi.yml#GET /v1/zooplabranch
+  tags:
+  - ZooplaBranch
+- name: get_branch_v1_zooplabranch_search
+  description: GET /v1/zooplabranch/search on the Purplebricks branch API
+  source_operation: openapi/purplebricks-branch-v1-openapi.yml#GET /v1/zooplabranch/search
+  tags:
+  - ZooplaBranch
+- name: get_branch_v1_zooplabranch_branchid
+  description: GET /v1/zooplabranch/{branchId} on the Purplebricks branch API
+  source_operation: openapi/purplebricks-branch-v1-openapi.yml#GET /v1/zooplabranch/{branchId}
+  tags:
+  - ZooplaBranch
+- name: post_communications_v1_contactus
+  description: POST /v1/contactus on the Purplebricks communications API
+  source_operation: openapi/purplebricks-communications-v1-openapi.yml#POST /v1/contactus
+  tags:
+  - ContactUs
+- name: get_communications_v1_customeremails_getemailbody_emailid
+  description: GET /v1/customeremails/getemailbody/{emailId} on the Purplebricks communications API
+  source_operation: openapi/purplebricks-communications-v1-openapi.yml#GET /v1/customeremails/getemailbody/{emailId}
+  tags:
+  - CustomerEmails
+- name: get_communications_v1_customeremails_getemails_userid
+  description: GET /v1/customeremails/getemails/{userId} on the Purplebricks communications API
+  source_operation: openapi/purplebricks-communications-v1-openapi.yml#GET /v1/customeremails/getemails/{userId}
+  tags:
+  - CustomerEmails
+- name: get_communications_v1_tps_tpsstatus
+  description: GET /v1/tps/tpsstatus on the Purplebricks communications API
+  source_operation: openapi/purplebricks-communications-v1-openapi.yml#GET /v1/tps/tpsstatus
+  tags:
+  - Tps
+- name: post_conveyancing_v1_conveyancingquote_quote
+  description: POST /v1/conveyancingquote/quote on the Purplebricks conveyancing API
+  source_operation: openapi/purplebricks-conveyancing-v1-openapi.yml#POST /v1/conveyancingquote/quote
+  tags:
+  - ConveyancingQuote
+- name: get_conveyancing_v1_conveyancingquote_quote_quoteid
+  description: GET /v1/conveyancingquote/quote/{quoteId} on the Purplebricks conveyancing API
+  source_operation: openapi/purplebricks-conveyancing-v1-openapi.yml#GET /v1/conveyancingquote/quote/{quoteId}
+  tags:
+  - ConveyancingQuote
+- name: get_conveyancing_v1_conveyancingquote_quotes
+  description: GET /v1/conveyancingquote/quotes on the Purplebricks conveyancing API
+  source_operation: openapi/purplebricks-conveyancing-v1-openapi.yml#GET /v1/conveyancingquote/quotes
+  tags:
+  - ConveyancingQuote
+- name: get_feedback_v1_managefeedback_allpropertyfeedback_propertyid
+  description: GET /v1/managefeedback/allpropertyfeedback/{propertyId} on the Purplebricks feedback API
+  source_operation: openapi/purplebricks-feedback-v1-openapi.yml#GET /v1/managefeedback/allpropertyfeedback/{propertyId}
+  tags:
+  - ManageFeedback
+- name: post_lettings_v1_enquiries_offer
+  description: Creates an offer enquiry in street.co.uk
+  source_operation: openapi/purplebricks-lettings-v1-openapi.yml#POST /v1/enquiries/offer
+  tags:
+  - Enquiries
+- name: post_lettings_v1_enquiries_valuation
+  description: Creates a valuation enquiry in street.co.uk
+  source_operation: openapi/purplebricks-lettings-v1-openapi.yml#POST /v1/enquiries/valuation
+  tags:
+  - Enquiries
+- name: post_lettings_v1_enquiries_viewing
+  description: Creates a viewing enquiry in street.co.uk
+  source_operation: openapi/purplebricks-lettings-v1-openapi.yml#POST /v1/enquiries/viewing
+  tags:
+  - Enquiries
+- name: post_lettings_v1_preinstruct_thirdpartyproperty
+  description: POST /v1/preinstruct/thirdpartyproperty on the Purplebricks lettings API
+  source_operation: openapi/purplebricks-lettings-v1-openapi.yml#POST /v1/preinstruct/thirdpartyproperty
+  tags:
+  - PreInstruct
+- name: get_lettings_v1_preinstruct_thirdpartyproperty_thirdpartypropert
+  description: GET /v1/preinstruct/thirdpartyproperty/{thirdPartyPropertyId} on the Purplebricks lettings
+    API
+  source_operation: openapi/purplebricks-lettings-v1-openapi.yml#GET /v1/preinstruct/thirdpartyproperty/{thirdPartyPropertyId}
+  tags:
+  - PreInstruct
+- name: post_lettings_v1_streetwebhooks
+  description: Handles street.co.uk listing webhook
+  source_operation: openapi/purplebricks-lettings-v1-openapi.yml#POST /v1/streetwebhooks
+  tags:
+  - StreetWebhooks
+- name: post_lettings_v1_streetwebhooks_listing
+  description: Handles street.co.uk listing webhook
+  source_operation: openapi/purplebricks-lettings-v1-openapi.yml#POST /v1/streetwebhooks/listing
+  tags:
+  - StreetWebhooks
+- name: get_lettings_v1_tecletpostcode_getbypostcode_postcode
+  description: GET /v1/tecletpostcode/getbypostcode/{postcode} on the Purplebricks lettings API
+  source_operation: openapi/purplebricks-lettings-v1-openapi.yml#GET /v1/tecletpostcode/getbypostcode/{postcode}
+  tags:
+  - TecletPostcode
+- name: get_lettings_v1_tecletpostcode_getbypropertyid_propertyid
+  description: GET /v1/tecletpostcode/getbypropertyid/{propertyId} on the Purplebricks lettings API
+  source_operation: openapi/purplebricks-lettings-v1-openapi.yml#GET /v1/tecletpostcode/getbypropertyid/{propertyId}
+  tags:
+  - TecletPostcode
+- name: get_messaging_v1_messages
+  description: GET /v1/messages on the Purplebricks messaging API
+  source_operation: openapi/purplebricks-messaging-v1-openapi.yml#GET /v1/messages
+  tags:
+  - Messages
+- name: post_messaging_v1_messages
+  description: POST /v1/messages on the Purplebricks messaging API
+  source_operation: openapi/purplebricks-messaging-v1-openapi.yml#POST /v1/messages
+  tags:
+  - Messages
+- name: get_messaging_v1_messages_count
+  description: GET /v1/messages/count on the Purplebricks messaging API
+  source_operation: openapi/purplebricks-messaging-v1-openapi.yml#GET /v1/messages/count
+  tags:
+  - Messages
+- name: get_messaging_v1_messages_messageid
+  description: GET /v1/messages/{messageId} on the Purplebricks messaging API
+  source_operation: openapi/purplebricks-messaging-v1-openapi.yml#GET /v1/messages/{messageId}
+  tags:
+  - Messages
+- name: put_messaging_v1_messages_messageid
+  description: PUT /v1/messages/{messageId} on the Purplebricks messaging API
+  source_operation: openapi/purplebricks-messaging-v1-openapi.yml#PUT /v1/messages/{messageId}
+  tags:
+  - Messages
+- name: get_messaging_v1_messages_messageid_notes
+  description: GET /v1/messages/{messageId}/notes on the Purplebricks messaging API
+  source_operation: openapi/purplebricks-messaging-v1-openapi.yml#GET /v1/messages/{messageId}/notes
+  tags:
+  - Messages
+- name: post_messaging_v1_messages_messageid_notes
+  description: POST /v1/messages/{messageId}/notes on the Purplebricks messaging API
+  source_operation: openapi/purplebricks-messaging-v1-openapi.yml#POST /v1/messages/{messageId}/notes
+  tags:
+  - Messages
+- name: get_messaging_v1_threads
+  description: GET /v1/threads on the Purplebricks messaging API
+  source_operation: openapi/purplebricks-messaging-v1-openapi.yml#GET /v1/threads
+  tags:
+  - Threads
+- name: get_messaging_v1_threads_threadid
+  description: GET /v1/threads/{threadId} on the Purplebricks messaging API
+  source_operation: openapi/purplebricks-messaging-v1-openapi.yml#GET /v1/threads/{threadId}
+  tags:
+  - Threads
+- name: get_messaging_v1_threads_threadid_messages
+  description: GET /v1/threads/{threadId}/messages on the Purplebricks messaging API
+  source_operation: openapi/purplebricks-messaging-v1-openapi.yml#GET /v1/threads/{threadId}/messages
+  tags:
+  - Threads
+- name: get_messaging_v1_threads_threadid_messages_count
+  description: GET /v1/threads/{threadId}/messages/count on the Purplebricks messaging API
+  source_operation: openapi/purplebricks-messaging-v1-openapi.yml#GET /v1/threads/{threadId}/messages/count
+  tags:
+  - Threads
+- name: patch_messaging_v1_threads_threadid_read
+  description: PATCH /v1/threads/{threadId}/read on the Purplebricks messaging API
+  source_operation: openapi/purplebricks-messaging-v1-openapi.yml#PATCH /v1/threads/{threadId}/read
+  tags:
+  - Threads
+- name: get_messaging_v2_threads
+  description: GET /v2/threads on the Purplebricks messaging API
+  source_operation: openapi/purplebricks-messaging-v2-openapi.yml#GET /v2/threads
+  tags:
+  - Threads
+- name: get_messaging_v2_threads_threadid
+  description: GET /v2/threads/{threadId} on the Purplebricks messaging API
+  source_operation: openapi/purplebricks-messaging-v2-openapi.yml#GET /v2/threads/{threadId}
+  tags:
+  - Threads
+- name: get_outlook_v1_agent_outlook_sync
+  description: GET /v1/agent/outlook-sync on the Purplebricks outlook API
+  source_operation: openapi/purplebricks-outlook-v1-openapi.yml#GET /v1/agent/outlook-sync
+  tags:
+  - AgentOutlookSync
+- name: put_outlook_v1_agent_outlook_sync
+  description: PUT /v1/agent/outlook-sync on the Purplebricks outlook API
+  source_operation: openapi/purplebricks-outlook-v1-openapi.yml#PUT /v1/agent/outlook-sync
+  tags:
+  - AgentOutlookSync
+- name: get_property_v1_activeproperty_id
+  description: GET /v1/activeproperty/{id} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/activeproperty/{id}
+  tags:
+  - ActiveProperty
+- name: get_property_v1_activitydashboard_getactivitydocument
+  description: GET /v1/activitydashboard/getactivitydocument on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/activitydashboard/getactivitydocument
+  tags:
+  - ActivityDashboard
+- name: get_property_v1_activitydashboard_getpropertiesbyuserid
+  description: GET /v1/activitydashboard/getpropertiesbyuserid on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/activitydashboard/getpropertiesbyuserid
+  tags:
+  - ActivityDashboard
+- name: get_property_v1_activitydashboard_getpropertynotificationcount
+  description: GET /v1/activitydashboard/getpropertynotificationcount on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/activitydashboard/getpropertynotificationcount
+  tags:
+  - ActivityDashboard
+- name: post_property_v1_address_createaddress
+  description: POST /v1/address/createaddress on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/address/createaddress
+  tags:
+  - Address
+- name: post_property_v1_bland_property
+  description: POST /v1/bland/property on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/bland/property
+  tags:
+  - Bland
+- name: get_property_v1_bland_property_propertyid
+  description: GET /v1/bland/property/{propertyId} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/bland/property/{propertyId}
+  tags:
+  - Bland
+- name: post_property_v1_cancelrequest
+  description: POST /v1/cancelrequest on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/cancelrequest
+  tags:
+  - Withdraw
+- name: post_property_v1_countrywide_jobresult
+  description: POST /v1/countrywide/jobresult on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/countrywide/jobresult
+  tags:
+  - Countrywide
+- name: get_property_v1_creatio_properties_propertyid
+  description: GET /v1/creatio/properties/{propertyId} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/creatio/properties/{propertyId}
+  tags:
+  - Property
+- name: get_property_v1_creatio_properties_propertyid_notes
+  description: GET /v1/creatio/properties/{propertyId}/notes on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/creatio/properties/{propertyId}/notes
+  tags:
+  - Property
+- name: get_property_v1_creatio_users_userid_properties
+  description: GET /v1/creatio/users/{userId}/properties on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/creatio/users/{userId}/properties
+  tags:
+  - Users
+- name: post_property_v1_creatio_withdraw
+  description: POST /v1/creatio/withdraw on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/creatio/withdraw
+  tags:
+  - Withdraw
+- name: get_property_v1_dashboard
+  description: GET /v1/dashboard on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/dashboard
+  tags:
+  - Dashboard
+- name: get_property_v1_dashboard_externallinks
+  description: GET /v1/dashboard/externallinks on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/dashboard/externallinks
+  tags:
+  - Dashboard
+- name: get_property_v1_exposurereport_propertyid
+  description: GET /v1/exposurereport/{propertyId} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/exposurereport/{propertyId}
+  tags:
+  - ExposureReport
+- name: post_property_v1_exposurereport_propertyid_generate
+  description: POST /v1/exposurereport/{propertyId}/generate on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/exposurereport/{propertyId}/generate
+  tags:
+  - ExposureReport
+- name: get_property_v1_exposurereport_propertyid_history
+  description: GET /v1/exposurereport/{propertyId}/history on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/exposurereport/{propertyId}/history
+  tags:
+  - ExposureReport
+- name: get_property_v1_exposurereport_propertyid_market
+  description: GET /v1/exposurereport/{propertyId}/market on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/exposurereport/{propertyId}/market
+  tags:
+  - ExposureReport
+- name: get_property_v1_exposurereport_propertyid_week_weeknumber
+  description: GET /v1/exposurereport/{propertyId}/week-{weekNumber} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/exposurereport/{propertyId}/week-{weekNumber}
+  tags:
+  - ExposureReport
+- name: get_property_v1_exposurereport_propertyid_reportid
+  description: GET /v1/exposurereport/{propertyId}/{reportId} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/exposurereport/{propertyId}/{reportId}
+  tags:
+  - ExposureReport
+- name: get_property_v1_gotomarket_propertyid_advertsummary
+  description: GET /v1/gotomarket/{propertyId}/advertsummary on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/gotomarket/{propertyId}/advertsummary
+  tags:
+  - GoToMarket
+- name: post_property_v1_gotomarket_propertyid_approveall
+  description: POST /v1/gotomarket/{propertyId}/approveall on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/gotomarket/{propertyId}/approveall
+  tags:
+  - GoToMarket
+- name: post_property_v1_gotomarket_propertyid_boardandkeysafepreference
+  description: POST /v1/gotomarket/{propertyId}/boardandkeysafepreference on the Purplebricks property
+    API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/gotomarket/{propertyId}/boardandkeysafepreference
+  tags:
+  - GoToMarket
+- name: get_property_v1_gotomarket_propertyid_floorplan
+  description: GET /v1/gotomarket/{propertyId}/floorplan on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/gotomarket/{propertyId}/floorplan
+  tags:
+  - GoToMarket
+- name: get_property_v1_gotomarket_propertyid_getimageuploaddetails
+  description: GET /v1/gotomarket/{propertyId}/getimageuploaddetails on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/gotomarket/{propertyId}/getimageuploaddetails
+  tags:
+  - GoToMarket
+- name: get_property_v1_gotomarket_propertyid_marketprice
+  description: GET /v1/gotomarket/{propertyId}/marketprice on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/gotomarket/{propertyId}/marketprice
+  tags:
+  - GoToMarket
+- name: post_property_v1_gotomarket_propertyid_marketprice_accept
+  description: POST /v1/gotomarket/{propertyId}/marketprice/accept on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/gotomarket/{propertyId}/marketprice/accept
+  tags:
+  - GoToMarket
+- name: post_property_v1_gotomarket_propertyid_marketprice_reject
+  description: POST /v1/gotomarket/{propertyId}/marketprice/reject on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/gotomarket/{propertyId}/marketprice/reject
+  tags:
+  - GoToMarket
+- name: get_property_v1_gotomarket_propertyid_ownershipreview
+  description: GET /v1/gotomarket/{propertyId}/ownershipreview on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/gotomarket/{propertyId}/ownershipreview
+  tags:
+  - GoToMarket
+- name: post_property_v1_gotomarket_propertyid_ownershipreview_accept
+  description: POST /v1/gotomarket/{propertyId}/ownershipreview/accept on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/gotomarket/{propertyId}/ownershipreview/accept
+  tags:
+  - GoToMarket
+- name: post_property_v1_gotomarket_propertyid_ownershipreview_reject
+  description: POST /v1/gotomarket/{propertyId}/ownershipreview/reject on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/gotomarket/{propertyId}/ownershipreview/reject
+  tags:
+  - GoToMarket
+- name: get_property_v1_gotomarket_propertyid_progress
+  description: GET /v1/gotomarket/{propertyId}/progress on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/gotomarket/{propertyId}/progress
+  tags:
+  - GoToMarket
+- name: get_property_v1_gotomarket_propertyid_propertydescription
+  description: GET /v1/gotomarket/{propertyId}/propertydescription on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/gotomarket/{propertyId}/propertydescription
+  tags:
+  - GoToMarket
+- name: get_property_v1_gotomarket_propertyid_propertykeyfeatures
+  description: GET /v1/gotomarket/{propertyId}/propertykeyfeatures on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/gotomarket/{propertyId}/propertykeyfeatures
+  tags:
+  - GoToMarket
+- name: post_property_v1_gotomarket_propertyid_propertytaxband
+  description: POST /v1/gotomarket/{propertyId}/propertytaxband on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/gotomarket/{propertyId}/propertytaxband
+  tags:
+  - GoToMarket
+- name: post_property_v1_gotomarket_propertyid_saveimagedetails
+  description: POST /v1/gotomarket/{propertyId}/saveimagedetails on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/gotomarket/{propertyId}/saveimagedetails
+  tags:
+  - GoToMarket
+- name: get_property_v1_inactiveproperty_id
+  description: GET /v1/inactiveproperty/{id} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/inactiveproperty/{id}
+  tags:
+  - InactiveProperty
+- name: post_property_v1_inactiveproperty_id
+  description: POST /v1/inactiveproperty/{id} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/inactiveproperty/{id}
+  tags:
+  - InactiveProperty
+- name: post_property_v1_instantinstruct
+  description: POST /v1/instantinstruct on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/instantinstruct
+  tags:
+  - InstantInstruct
+- name: get_property_v1_landregistry_transactions
+  description: "Gets property transaction records from the UK Land Registry.\r\nThis endpoint is publicly\
+    \ accessible without authentication."
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/landregistry/transactions
+  tags:
+  - LandRegistry
+- name: get_property_v1_owners_additional_buyers
+  description: GET /v1/owners/additional-buyers on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/owners/additional-buyers
+  tags:
+  - Owners
+- name: get_property_v1_owners_additional_sellers
+  description: GET /v1/owners/additional-sellers on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/owners/additional-sellers
+  tags:
+  - Owners
+- name: get_property_v1_performancereport_getadvertperformance
+  description: GET /v1/performancereport/getadvertperformance on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/performancereport/getadvertperformance
+  tags:
+  - PerformanceReport
+- name: get_property_v1_performancereport_internal_getadvertperformance
+  description: GET /v1/performancereport/internal/getadvertperformance on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/performancereport/internal/getadvertperformance
+  tags:
+  - InternalPerformanceReport
+- name: get_property_v1_performancereport_internal_getadvertperformance_
+  description: GET /v1/performancereport/internal/getadvertperformance/{propertyId} on the Purplebricks
+    property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/performancereport/internal/getadvertperformance/{propertyId}
+  tags:
+  - InternalPerformanceReport
+- name: get_property_v1_performancereport_internal_properties
+  description: GET /v1/performancereport/internal/properties on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/performancereport/internal/properties
+  tags:
+  - InternalPerformanceReport
+- name: get_property_v1_performancereport_internal_propertiesbyexpert
+  description: GET /v1/performancereport/internal/propertiesbyexpert on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/performancereport/internal/propertiesbyexpert
+  tags:
+  - InternalPerformanceReport
+- name: get_property_v1_performancereport_internal_propertyid
+  description: GET /v1/performancereport/internal/{propertyId} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/performancereport/internal/{propertyId}
+  tags:
+  - InternalPerformanceReport
+- name: get_property_v1_performancereport_id
+  description: GET /v1/performancereport/{id} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/performancereport/{id}
+  tags:
+  - PerformanceReport
+- name: get_property_v1_preactive_id
+  description: GET /v1/preactive/{id} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/preactive/{id}
+  tags:
+  - Preactive
+- name: put_property_v1_property_addpropertymediadata
+  description: PUT /v1/property/addpropertymediadata on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#PUT /v1/property/addpropertymediadata
+  tags:
+  - Property
+- name: post_property_v1_property_create
+  description: POST /v1/property/create on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/property/create
+  tags:
+  - Property
+- name: post_property_v1_property_createproperty
+  description: POST /v1/property/createproperty on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/property/createproperty
+  tags:
+  - Property
+- name: get_property_v1_property_getagentforproperty
+  description: GET /v1/property/getagentforproperty on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/property/getagentforproperty
+  tags:
+  - Property
+- name: get_property_v1_property_getowners
+  description: GET /v1/property/getowners on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/property/getowners
+  tags:
+  - Property
+- name: get_property_v1_property_getportalenquiries
+  description: GET /v1/property/getportalenquiries on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/property/getportalenquiries
+  tags:
+  - Property
+- name: get_property_v1_property_getproperty
+  description: GET /v1/property/getproperty on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/property/getproperty
+  tags:
+  - Property
+- name: get_property_v1_property_getpropertyactions
+  description: GET /v1/property/getpropertyactions on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/property/getpropertyactions
+  tags:
+  - Property
+- name: get_property_v1_property_getpropertyhistory
+  description: GET /v1/property/getpropertyhistory on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/property/getpropertyhistory
+  tags:
+  - Property
+- name: get_property_v1_property_getpropertylist
+  description: GET /v1/property/getpropertylist on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/property/getpropertylist
+  tags:
+  - Property
+- name: get_property_v1_property_getpropertytracks
+  description: GET /v1/property/getpropertytracks on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/property/getpropertytracks
+  tags:
+  - Property
+- name: get_property_v1_property_getsalesaddonavailability
+  description: GET /v1/property/getsalesaddonavailability on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/property/getsalesaddonavailability
+  tags:
+  - Property
+- name: get_property_v1_property_getuserproperties
+  description: GET /v1/property/getuserproperties on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/property/getuserproperties
+  tags:
+  - Property
+- name: get_property_v1_property_hasboardordered
+  description: GET /v1/property/hasboardordered on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/property/hasboardordered
+  tags:
+  - Property
+- name: post_property_v1_property_marketingprice
+  description: POST /v1/property/marketingprice on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/property/marketingprice
+  tags:
+  - Property
+- name: post_property_v1_property_registernoteofinterest
+  description: POST /v1/property/registernoteofinterest on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/property/registernoteofinterest
+  tags:
+  - Property
+- name: post_property_v1_property_registertrackedrecord
+  description: POST /v1/property/registertrackedrecord on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/property/registertrackedrecord
+  tags:
+  - Property
+- name: post_property_v1_property_relistproperty
+  description: POST /v1/property/relistproperty on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/property/relistproperty
+  tags:
+  - Property
+- name: post_property_v1_property_rentalprice
+  description: POST /v1/property/rentalprice on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/property/rentalprice
+  tags:
+  - Property
+- name: post_property_v1_property_resetproperty_propertyid_userid
+  description: POST /v1/property/resetproperty/{propertyId}/{userId} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/property/resetproperty/{propertyId}/{userId}
+  tags:
+  - Property
+- name: post_property_v1_property_sendinstantinstructcontactrequest
+  description: POST /v1/property/sendinstantinstructcontactrequest on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/property/sendinstantinstructcontactrequest
+  tags:
+  - Property
+- name: delete_property_v1_property_withdrawnoteofinterest
+  description: DELETE /v1/property/withdrawnoteofinterest on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#DELETE /v1/property/withdrawnoteofinterest
+  tags:
+  - Property
+- name: delete_property_v1_property_withdrawtrackedrecord
+  description: DELETE /v1/property/withdrawtrackedrecord on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#DELETE /v1/property/withdrawtrackedrecord
+  tags:
+  - Property
+- name: get_property_v1_property_propertyid
+  description: GET /v1/property/{propertyId} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/property/{propertyId}
+  tags:
+  - Property
+- name: get_property_v1_property_propertyid_address
+  description: GET /v1/property/{propertyId}/address on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/property/{propertyId}/address
+  tags:
+  - Property
+- name: get_property_v1_propertybox_propertyid_propertyboxdeeplink
+  description: GET /v1/propertybox/{propertyId}/propertyboxdeeplink on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/propertybox/{propertyId}/propertyboxdeeplink
+  tags:
+  - PropertyBox
+- name: get_property_v1_propertybox_propertyid_propertyboxorderstatus
+  description: GET /v1/propertybox/{propertyId}/propertyboxorderstatus on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/propertybox/{propertyId}/propertyboxorderstatus
+  tags:
+  - PropertyBox
+- name: get_property_v1_propertyquestionnaireform_id
+  description: GET /v1/propertyquestionnaireform/{id} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/propertyquestionnaireform/{id}
+  tags:
+  - PropertyQuestionnaireForm
+- name: get_property_v1_propertysearchhits_id
+  description: GET /v1/propertysearchhits/{id} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/propertysearchhits/{id}
+  tags:
+  - PropertySearchHits
+- name: get_property_v1_railwaystations_postcode
+  description: GET /v1/railwaystations/{postcode} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/railwaystations/{postcode}
+  tags:
+  - RailwayStations
+- name: post_property_v1_request
+  description: POST /v1/request on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/request
+  tags:
+  - Withdraw
+- name: get_property_v1_trackedproperties
+  description: GET /v1/trackedproperties on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/trackedproperties
+  tags:
+  - TrackedProperties
+- name: post_property_v1_trackedproperties_propertyid
+  description: POST /v1/trackedproperties/{propertyId} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/trackedproperties/{propertyId}
+  tags:
+  - TrackedProperties
+- name: delete_property_v1_trackedproperties_propertyid
+  description: DELETE /v1/trackedproperties/{propertyId} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#DELETE /v1/trackedproperties/{propertyId}
+  tags:
+  - TrackedProperties
+- name: post_property_v1_trackedproperties_propertyid_note_of_interest
+  description: POST /v1/trackedproperties/{propertyId}/note-of-interest on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/trackedproperties/{propertyId}/note-of-interest
+  tags:
+  - TrackedProperties
+- name: delete_property_v1_trackedproperties_propertyid_note_of_interest
+  description: DELETE /v1/trackedproperties/{propertyId}/note-of-interest on the Purplebricks property
+    API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#DELETE /v1/trackedproperties/{propertyId}/note-of-interest
+  tags:
+  - TrackedProperties
+- name: get_property_v1_trackedproperties_propertyid_note_of_interest
+  description: GET /v1/trackedproperties/{propertyId}/note-of-interest on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/trackedproperties/{propertyId}/note-of-interest
+  tags:
+  - TrackedProperties
+- name: get_property_v1_trackedproperties_propertyid_tracked
+  description: GET /v1/trackedproperties/{propertyId}/tracked on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#GET /v1/trackedproperties/{propertyId}/tracked
+  tags:
+  - TrackedProperties
+- name: post_property_v1_withdraw
+  description: POST /v1/withdraw on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v1-openapi.yml#POST /v1/withdraw
+  tags:
+  - Withdraw
+- name: get_property_v2_activeproperty_id
+  description: GET /v2/activeproperty/{id} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v2-openapi.yml#GET /v2/activeproperty/{id}
+  tags:
+  - ActiveProperty
+- name: get_property_v2_activitydashboard_getactivitydocument
+  description: GET /v2/activitydashboard/getactivitydocument on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v2-openapi.yml#GET /v2/activitydashboard/getactivitydocument
+  tags:
+  - ActivityDashboard
+- name: get_property_v2_activitydashboard_getpropertiesbyuserid
+  description: GET /v2/activitydashboard/getpropertiesbyuserid on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v2-openapi.yml#GET /v2/activitydashboard/getpropertiesbyuserid
+  tags:
+  - ActivityDashboard
+- name: get_property_v2_activitydashboard_getpropertynotificationcount
+  description: GET /v2/activitydashboard/getpropertynotificationcount on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v2-openapi.yml#GET /v2/activitydashboard/getpropertynotificationcount
+  tags:
+  - ActivityDashboard
+- name: post_property_v2_address_createaddress
+  description: POST /v2/address/createaddress on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v2-openapi.yml#POST /v2/address/createaddress
+  tags:
+  - Address
+- name: get_property_v2_dashboard
+  description: GET /v2/dashboard on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v2-openapi.yml#GET /v2/dashboard
+  tags:
+  - Dashboard
+- name: get_property_v2_dashboard_externallinks
+  description: GET /v2/dashboard/externallinks on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v2-openapi.yml#GET /v2/dashboard/externallinks
+  tags:
+  - Dashboard
+- name: post_property_v2_gotomarket_propertyid_boardandkeysafepreference
+  description: POST /v2/gotomarket/{propertyId}/boardandkeysafepreference on the Purplebricks property
+    API
+  source_operation: openapi/purplebricks-property-v2-openapi.yml#POST /v2/gotomarket/{propertyId}/boardandkeysafepreference
+  tags:
+  - GoToMarket
+- name: get_property_v2_performancereport_getadvertperformance
+  description: GET /v2/performancereport/getadvertperformance on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v2-openapi.yml#GET /v2/performancereport/getadvertperformance
+  tags:
+  - PerformanceReport
+- name: get_property_v2_performancereport_id
+  description: GET /v2/performancereport/{id} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v2-openapi.yml#GET /v2/performancereport/{id}
+  tags:
+  - PerformanceReport
+- name: get_property_v2_preactive_id
+  description: GET /v2/preactive/{id} on the Purplebricks property API
+  source_operation: openapi/purplebricks-property-v2-openapi.yml#GET /v2/preactive/{id}
+  tags:
+  - Preactive
+- name: get_valuations_v1_creatio_users_userid_valuations
+  description: GET /v1/creatio/users/{userId}/valuations on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#GET /v1/creatio/users/{userId}/valuations
+  tags:
+  - Users
+- name: post_valuations_v1_followup
+  description: POST /v1/followup on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#POST /v1/followup
+  tags:
+  - FollowUp
+- name: post_valuations_v1_followup_alterdateforproperty
+  description: POST /v1/followup/alterdateforproperty on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#POST /v1/followup/alterdateforproperty
+  tags:
+  - FollowUp
+- name: get_valuations_v1_followup_lpplist
+  description: GET /v1/followup/lpplist on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#GET /v1/followup/lpplist
+  tags:
+  - FollowUp
+- name: post_valuations_v1_followup_reschedule
+  description: POST /v1/followup/reschedule on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#POST /v1/followup/reschedule
+  tags:
+  - FollowUp
+- name: get_valuations_v1_followup_toaction
+  description: GET /v1/followup/toaction on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#GET /v1/followup/toaction
+  tags:
+  - FollowUp
+- name: post_valuations_v1_followup_updateleadtemp
+  description: POST /v1/followup/updateleadtemp on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#POST /v1/followup/updateleadtemp
+  tags:
+  - FollowUp
+- name: post_valuations_v1_leadcapture
+  description: POST /v1/leadcapture on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#POST /v1/leadcapture
+  tags:
+  - LeadCapture
+- name: get_valuations_v1_postcode_isintrialregion
+  description: GET /v1/postcode/isintrialregion on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#GET /v1/postcode/isintrialregion
+  tags:
+  - PostCode
+- name: get_valuations_v1_postcode_isintrialregionbyeventid
+  description: GET /v1/postcode/isintrialregionbyeventid on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#GET /v1/postcode/isintrialregionbyeventid
+  tags:
+  - PostCode
+- name: get_valuations_v1_salesforcediarypilot_isindiarymanagementtrial_
+  description: GET /v1/salesforcediarypilot/isindiarymanagementtrial/{postcode} on the Purplebricks valuations
+    API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#GET /v1/salesforcediarypilot/isindiarymanagementtrial/{postcode}
+  tags:
+  - SalesforceDiaryPilot
+- name: post_valuations_v1_valuationintent_bookinguserdata
+  description: POST /v1/valuationintent/bookinguserdata on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#POST /v1/valuationintent/bookinguserdata
+  tags:
+  - ValuationIntent
+- name: get_valuations_v1_valuationintent_getpostdataharvestingredirect
+  description: GET /v1/valuationintent/getpostdataharvestingredirect on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#GET /v1/valuationintent/getpostdataharvestingredirect
+  tags:
+  - ValuationIntent
+- name: get_valuations_v1_valuationintent_getredirecturl
+  description: GET /v1/valuationintent/getredirecturl on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#GET /v1/valuationintent/getredirecturl
+  tags:
+  - ValuationIntent
+- name: post_valuations_v1_valuationintent_requestvaluationavailability
+  description: POST /v1/valuationintent/requestvaluationavailability on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#POST /v1/valuationintent/requestvaluationavailability
+  tags:
+  - ValuationIntent
+- name: get_valuations_v1_valuationintent_shoulduseinstantvaluationflow
+  description: GET /v1/valuationintent/shoulduseinstantvaluationflow on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#GET /v1/valuationintent/shoulduseinstantvaluationflow
+  tags:
+  - ValuationIntent
+- name: get_valuations_v1_valuationintent_wasinstantvaluation
+  description: GET /v1/valuationintent/wasinstantvaluation on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#GET /v1/valuationintent/wasinstantvaluation
+  tags:
+  - ValuationIntent
+- name: get_valuations_v1_valuationreport_id
+  description: GET /v1/valuationreport/{id} on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v1-openapi.yml#GET /v1/valuationreport/{id}
+  tags:
+  - ValuationReport
+- name: post_valuations_v2_valuations_report_view
+  description: POST /v2/valuations/report-view on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v2-openapi.yml#POST /v2/valuations/report-view
+  tags:
+  - Valuation
+- name: get_valuations_v2_valuations_propertyid
+  description: Fetch Sprift valuation data for a property.
+  source_operation: openapi/purplebricks-valuations-v2-openapi.yml#GET /v2/valuations/{propertyId}
+  tags:
+  - Valuation
+- name: post_valuations_v2_valuations_propertyid
+  description: Send off the report data for real.
+  source_operation: openapi/purplebricks-valuations-v2-openapi.yml#POST /v2/valuations/{propertyId}
+  tags:
+  - Valuation
+- name: get_valuations_v2_valuations_propertyid_save
+  description: Fetch saved form data for a property.
+  source_operation: openapi/purplebricks-valuations-v2-openapi.yml#GET /v2/valuations/{propertyId}/save
+  tags:
+  - Valuation
+- name: post_valuations_v2_valuations_propertyid_save
+  description: POST /v2/valuations/{propertyId}/save on the Purplebricks valuations API
+  source_operation: openapi/purplebricks-valuations-v2-openapi.yml#POST /v2/valuations/{propertyId}/save
+  tags:
+  - Valuation
+- name: get_valuations_v2_valuations_propertyid_status
+  description: Fetch status and sent date for the latest valuation of a property.
+  source_operation: openapi/purplebricks-valuations-v2-openapi.yml#GET /v2/valuations/{propertyId}/status
+  tags:
+  - Valuation
+- name: get_viewings_v1_accessdetails_propertyid
+  description: GET /v1/accessdetails/{propertyId} on the Purplebricks viewings API
+  source_operation: openapi/purplebricks-viewings-v1-openapi.yml#GET /v1/accessdetails/{propertyId}
+  tags:
+  - AccessDetails
+- name: post_viewings_v1_accessdetails_propertyid
+  description: POST /v1/accessdetails/{propertyId} on the Purplebricks viewings API
+  source_operation: openapi/purplebricks-viewings-v1-openapi.yml#POST /v1/accessdetails/{propertyId}
+  tags:
+  - AccessDetails
+- name: get_viewings_v1_accessdetails_propertyid_revealkeysafecode
+  description: GET /v1/accessdetails/{propertyId}/revealkeysafecode on the Purplebricks viewings API
+  source_operation: openapi/purplebricks-viewings-v1-openapi.yml#GET /v1/accessdetails/{propertyId}/revealkeysafecode
+  tags:
+  - AccessDetails
+- name: get_viewings_v1_accessdetails_propertyid_summary
+  description: GET /v1/accessdetails/{propertyId}/summary on the Purplebricks viewings API
+  source_operation: openapi/purplebricks-viewings-v1-openapi.yml#GET /v1/accessdetails/{propertyId}/summary
+  tags:
+  - AccessDetails
+- name: post_viewings_v1_appointments
+  description: Books a viewing appointment.
+  source_operation: openapi/purplebricks-viewings-v1-openapi.yml#POST /v1/appointments
+  tags:
+  - Appointments
+- name: post_viewings_v1_appointments_cancel
+  description: POST /v1/appointments/cancel on the Purplebricks viewings API
+  source_operation: openapi/purplebricks-viewings-v1-openapi.yml#POST /v1/appointments/cancel
+  tags:
+  - Appointments
+- name: post_viewings_v1_bland_viewing
+  description: Books a viewing appointment via Bland AI integration.
+  source_operation: openapi/purplebricks-viewings-v1-openapi.yml#POST /v1/bland/viewing
+  tags:
+  - Bland
+- name: post_viewings_v1_bland_viewing_confirmrequestslot
+  description: POST /v1/bland/viewing/confirmrequestslot on the Purplebricks viewings API
+  source_operation: openapi/purplebricks-viewings-v1-openapi.yml#POST /v1/bland/viewing/confirmrequestslot
+  tags:
+  - Bland
+- name: post_viewings_v1_bland_viewing_reschedulerequestslot
+  description: POST /v1/bland/viewing/reschedulerequestslot on the Purplebricks viewings API
+  source_operation: openapi/purplebricks-viewings-v1-openapi.yml#POST /v1/bland/viewing/reschedulerequestslot
+  tags:
+  - Bland
+- name: get_viewings_v1_creatio_properties_propertyid_viewings
+  description: GET /v1/creatio/properties/{propertyId}/viewings on the Purplebricks viewings API
+  source_operation: openapi/purplebricks-viewings-v1-openapi.yml#GET /v1/creatio/properties/{propertyId}/viewings
+  tags:
+  - Properties
+- name: get_viewings_v1_creatio_users_userid_viewings
+  description: GET /v1/creatio/users/{userId}/viewings on the Purplebricks viewings API
+  source_operation: openapi/purplebricks-viewings-v1-openapi.yml#GET /v1/creatio/users/{userId}/viewings
+  tags:
+  - Users
+- name: get_viewings_v1_creatio_users_userid_viewings_feedback
+  description: GET /v1/creatio/users/{userId}/viewings/feedback on the Purplebricks viewings API
+  source_operation: openapi/purplebricks-viewings-v1-openapi.yml#GET /v1/creatio/users/{userId}/viewings/feedback
+  tags:
+  - Users
+- name: get_viewings_v1_properties_propertyid
+  description: Returns the basic details of a property for which a viewing appointment can be booked against.
+  source_operation: openapi/purplebricks-viewings-v1-openapi.yml#GET /v1/properties/{propertyId}
+  tags:
+  - Properties
+- name: get_viewings_v1_properties_propertyid_opendays_past
+  description: Returns the details of any past open days for a property. May return an empty result set.
+  source_operation: openapi/purplebricks-viewings-v1-openapi.yml#GET /v1/properties/{propertyId}/opendays/past
+  tags:
+  - OpenDays
+- name: get_viewings_v1_properties_propertyid_opendays_upcoming
+  description: Returns the details of any upcoming open days for a property. May return an empty result
+    set.
+  source_operation: openapi/purplebricks-viewings-v1-openapi.yml#GET /v1/properties/{propertyId}/opendays/upcoming
+  tags:
+  - OpenDays
+- name: get_workflow_v1_isinstructavailable
+  description: GET /v1/isinstructavailable on the Purplebricks workflow API
+  source_operation: openapi/purplebricks-workflow-v1-openapi.yml#GET /v1/isinstructavailable
+  tags:
+  - IsInstructAvailable
+- name: get_workflow_v1_step_canmove
+  description: GET /v1/step/canmove on the Purplebricks workflow API
+  source_operation: openapi/purplebricks-workflow-v1-openapi.yml#GET /v1/step/canmove
+  tags:
+  - Step
+- name: post_workflow_v1_step_move
+  description: POST /v1/step/move on the Purplebricks workflow API
+  source_operation: openapi/purplebricks-workflow-v1-openapi.yml#POST /v1/step/move
+  tags:
+  - Step

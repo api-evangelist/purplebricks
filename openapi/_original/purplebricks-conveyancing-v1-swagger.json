@@ -1,0 +1,741 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "PB Conveyancing Api 1.0 - PB Digital",
+    "description": "### PB Conveyancing Api\n### [PB Conveyancing Api Git Repository](https://github.com)",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.purplebricks.co.uk/conveyancing-api"
+    }
+  ],
+  "paths": {
+    "/v1/conveyancingquote/quote/{quoteId}": {
+      "get": {
+        "tags": [
+          "ConveyancingQuote"
+        ],
+        "parameters": [
+          {
+            "name": "quoteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteModel"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/conveyancingquote/quotes": {
+      "get": {
+        "tags": [
+          "ConveyancingQuote"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteModel"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteModel"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/conveyancingquote/quote": {
+      "post": {
+        "tags": [
+          "ConveyancingQuote"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Request.CreateQuoteRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Request.CreateQuoteRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Request.CreateQuoteRequestModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Microsoft.AspNetCore.Mvc.ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.ContactTypeModel": {
+        "enum": [
+          "Primary",
+          "Additional"
+        ],
+        "type": "string"
+      },
+      "Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.FeeTypeModel": {
+        "enum": [
+          "Other",
+          "ConveyancingFee",
+          "ThirdPartyExpense",
+          "AdditionalFeesDisbursements"
+        ],
+        "type": "string"
+      },
+      "Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.PositionTypeModel": {
+        "enum": [
+          "FirstTimeBuyer",
+          "BuyingWithMortgage",
+          "OfferMade",
+          "NewBuild",
+          "SecondHomeOrInvestment",
+          "PropertyIsMortgaged"
+        ],
+        "type": "string"
+      },
+      "Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.PropertyQuoteTypeModel": {
+        "enum": [
+          "Purchase",
+          "Sale"
+        ],
+        "type": "string"
+      },
+      "Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.QuoteStatusTypeModel": {
+        "enum": [
+          "Requested",
+          "Generated",
+          "Accepted",
+          "Declined"
+        ],
+        "type": "string"
+      },
+      "Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.QuoteTypeModel": {
+        "enum": [
+          "Purchase",
+          "Sale",
+          "PurchaseAndSale"
+        ],
+        "type": "string"
+      },
+      "Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.TenureTypeModel": {
+        "enum": [
+          "Freehold",
+          "Leasehold"
+        ],
+        "type": "string"
+      },
+      "Purplebricks.Conveyancing.Api.Contract.Models.Request.CreateQuoteContactRequestModel": {
+        "type": "object",
+        "properties": {
+          "contactType": {
+            "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.ContactTypeModel"
+          },
+          "forename": {
+            "type": "string",
+            "nullable": true
+          },
+          "surname": {
+            "type": "string",
+            "nullable": true
+          },
+          "contactNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine1": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine2": {
+            "type": "string",
+            "nullable": true
+          },
+          "district": {
+            "type": "string",
+            "nullable": true
+          },
+          "town": {
+            "type": "string",
+            "nullable": true
+          },
+          "county": {
+            "type": "string",
+            "nullable": true
+          },
+          "postcode": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Purplebricks.Conveyancing.Api.Contract.Models.Request.CreateQuotePropertyRequestModel": {
+        "type": "object",
+        "properties": {
+          "propertyQuoteType": {
+            "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.PropertyQuoteTypeModel"
+          },
+          "propertyId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "tenureType": {
+            "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.TenureTypeModel"
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "positionTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.PositionTypeModel"
+            },
+            "nullable": true
+          },
+          "addressLine1": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine2": {
+            "type": "string",
+            "nullable": true
+          },
+          "district": {
+            "type": "string",
+            "nullable": true
+          },
+          "town": {
+            "type": "string",
+            "nullable": true
+          },
+          "county": {
+            "type": "string",
+            "nullable": true
+          },
+          "postcode": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Purplebricks.Conveyancing.Api.Contract.Models.Request.CreateQuoteRequestModel": {
+        "type": "object",
+        "properties": {
+          "quoteType": {
+            "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.QuoteTypeModel"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Request.CreateQuoteContactRequestModel"
+            },
+            "nullable": true
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Request.CreateQuotePropertyRequestModel"
+            },
+            "nullable": true
+          },
+          "comments": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteContactModel": {
+        "type": "object",
+        "properties": {
+          "contactType": {
+            "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.ContactTypeModel"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "forename": {
+            "type": "string",
+            "nullable": true
+          },
+          "surname": {
+            "type": "string",
+            "nullable": true
+          },
+          "contactNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine1": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine2": {
+            "type": "string",
+            "nullable": true
+          },
+          "district": {
+            "type": "string",
+            "nullable": true
+          },
+          "town": {
+            "type": "string",
+            "nullable": true
+          },
+          "county": {
+            "type": "string",
+            "nullable": true
+          },
+          "postcode": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteFeeGroupModel": {
+        "type": "object",
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "feeType": {
+            "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.FeeTypeModel"
+          },
+          "fees": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteFeeModel"
+            },
+            "nullable": true
+          },
+          "totalAmount": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteFeeModel": {
+        "type": "object",
+        "properties": {
+          "propertyQuoteType": {
+            "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.PropertyQuoteTypeModel"
+          },
+          "feeType": {
+            "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.FeeTypeModel"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteModel": {
+        "type": "object",
+        "properties": {
+          "quoteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "providerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "providerReferenceId": {
+            "type": "string",
+            "nullable": true
+          },
+          "quoteType": {
+            "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.QuoteTypeModel"
+          },
+          "quoteStatus": {
+            "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.QuoteStatusTypeModel"
+          },
+          "properties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuotePropertyModel"
+            },
+            "nullable": true
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteContactModel"
+            },
+            "nullable": true
+          },
+          "comments": {
+            "type": "string",
+            "nullable": true
+          },
+          "fees": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteFeeModel"
+            },
+            "nullable": true
+          },
+          "feeGroups": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuoteFeeGroupModel"
+              }
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Purplebricks.Conveyancing.Api.Contract.Models.Response.ConveyancingQuotePropertyModel": {
+        "type": "object",
+        "properties": {
+          "propertyQuoteType": {
+            "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.PropertyQuoteTypeModel"
+          },
+          "tenureType": {
+            "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.TenureTypeModel"
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "positionFlags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Purplebricks.Conveyancing.Api.Contract.Models.Common.Types.PositionTypeModel"
+            },
+            "nullable": true
+          },
+          "addressLine1": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine2": {
+            "type": "string",
+            "nullable": true
+          },
+          "district": {
+            "type": "string",
+            "nullable": true
+          },
+          "town": {
+            "type": "string",
+            "nullable": true
+          },
+          "county": {
+            "type": "string",
+            "nullable": true
+          },
+          "postcode": {
+            "type": "string",
+            "nullable": true
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "Authorization header using Bearer scheme",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
