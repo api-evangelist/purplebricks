@@ -1,0 +1,67 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "PB Conveyancing Api 1.0 - PB Digital",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ConveyancingQuote",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v1/conveyancingquote/quote/{quoteId}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/conveyancing-api/v1/conveyancingquote/quote/:quoteId",
+            "params": [
+              {
+                "name": "quoteId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/conveyancingquote/quotes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/conveyancing-api/v1/conveyancingquote/quotes"
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/conveyancingquote/quote",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/conveyancing-api/v1/conveyancingquote/quote",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

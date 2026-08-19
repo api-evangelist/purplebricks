@@ -1,0 +1,383 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Purplebricks.Messaging.Api 1.0 - Backend",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Messages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v1/messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/messaging-api/v1/messages",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "threadId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isRead",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeSystemMessages",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ascending",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/messaging-api/v1/messages",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/messages/{messageId}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/messaging-api/v1/messages/:messageId",
+            "params": [
+              {
+                "name": "messageId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PUT /v1/messages/{messageId}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.purplebricks.co.uk/messaging-api/v1/messages/:messageId",
+            "params": [
+              {
+                "name": "messageId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/messages/{messageId}/notes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/messaging-api/v1/messages/:messageId/notes",
+            "params": [
+              {
+                "name": "messageId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/messages/{messageId}/notes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/messaging-api/v1/messages/:messageId/notes",
+            "params": [
+              {
+                "name": "messageId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/messages/count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/messaging-api/v1/messages/count",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeSystemMessages",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Threads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v1/threads",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/messaging-api/v1/threads",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fromDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeSystemMessages",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/threads/{threadId}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/messaging-api/v1/threads/:threadId",
+            "params": [
+              {
+                "name": "threadId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/threads/{threadId}/messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/messaging-api/v1/threads/:threadId/messages",
+            "params": [
+              {
+                "name": "threadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isRead",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeSystemMessages",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ascending",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/threads/{threadId}/messages/count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/messaging-api/v1/threads/:threadId/messages/count",
+            "params": [
+              {
+                "name": "threadId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isRead",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeSystemMessages",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PATCH /v1/threads/{threadId}/read",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.purplebricks.co.uk/messaging-api/v1/threads/:threadId/read",
+            "params": [
+              {
+                "name": "threadId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,986 @@
+{
+  "item": [
+    {
+      "id": "99970920-69a0-4941-b06b-3636bab046f7",
+      "name": "ContactUs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2ab77ade-3c68-4748-b239-ab0c6fd8f52c",
+          "name": "/v1/contactus",
+          "request": {
+            "name": "/v1/contactus",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "contactus"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"emailAddress\": \"<string>\",\n  \"reason\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"address\": {\n    \"propertyNumberOrName\": \"<string>\",\n    \"street\": \"<string>\",\n    \"city\": \"<string>\",\n    \"postcode\": \"<string>\"\n  },\n  \"salesOrLettings\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "af68531d-7e22-451c-93c5-0056b0847a83",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "contactus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"emailAddress\": \"<string>\",\n  \"reason\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"address\": {\n    \"propertyNumberOrName\": \"<string>\",\n    \"street\": \"<string>\",\n    \"city\": \"<string>\",\n    \"postcode\": \"<string>\"\n  },\n  \"salesOrLettings\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cdfe8fc3-9f45-48d3-ae62-c197a34b2b95",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "contactus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"emailAddress\": \"<string>\",\n  \"reason\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"address\": {\n    \"propertyNumberOrName\": \"<string>\",\n    \"street\": \"<string>\",\n    \"city\": \"<string>\",\n    \"postcode\": \"<string>\"\n  },\n  \"salesOrLettings\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 2212,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "73e5aaeb-dc12-46fa-a531-c072efff5dcc",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "contactus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"subject\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"emailAddress\": \"<string>\",\n  \"reason\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"address\": {\n    \"propertyNumberOrName\": \"<string>\",\n    \"street\": \"<string>\",\n    \"city\": \"<string>\",\n    \"postcode\": \"<string>\"\n  },\n  \"salesOrLettings\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "750892c0-e43d-448b-bbb0-6f021218ef95",
+      "name": "CustomerEmails",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b464e876-7c92-4a63-9708-89a0198ca1e7",
+          "name": "/v1/customeremails/getemails/:userId",
+          "request": {
+            "name": "/v1/customeremails/getemails/:userId",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "customeremails",
+                "getemails",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d86376d8-8ac9-4c7b-a1b6-eee8667889c7",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "customeremails",
+                    "getemails",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 1368,\n    \"recipientUserId\": 4345,\n    \"recipientAddress\": \"string\",\n    \"emailId\": \"59114f87-54b2-4995-75ba-e03e07c504be\",\n    \"subject\": \"string\",\n    \"errorMessage\": \"string\",\n    \"bodyUrl\": \"string\",\n    \"dateSent\": \"1968-02-20T18:56:58.335Z\",\n    \"opens\": [\n      {\n        \"id\": 3834,\n        \"emailId\": \"5526216e-faf3-4003-1ec1-bee1a8d89a0b\",\n        \"dateViewed\": \"2003-08-23T17:34:23.817Z\"\n      },\n      {\n        \"id\": 4866,\n        \"emailId\": \"9651ba61-96ae-3f0b-fa01-fd5f0c4558a7\",\n        \"dateViewed\": \"1993-10-27T13:07:27.612Z\"\n      }\n    ],\n    \"clicks\": [\n      {\n        \"id\": 2968,\n        \"emailId\": \"78cbfa6c-ecd0-4a85-8653-29f828e6f467\",\n        \"linkReference\": \"string\",\n        \"userId\": 8142,\n        \"dateClicked\": \"2012-07-13T01:33:39.432Z\"\n      },\n      {\n        \"id\": 9862,\n        \"emailId\": \"16d7084f-322d-f0e2-a45f-5fae7db12521\",\n        \"linkReference\": \"string\",\n        \"userId\": 7806,\n        \"dateClicked\": \"1963-05-18T05:41:13.478Z\"\n      }\n    ]\n  },\n  {\n    \"id\": 2307,\n    \"recipientUserId\": 1316,\n    \"recipientAddress\": \"string\",\n    \"emailId\": \"c8ca0cbc-b6c8-9837-872e-1a2516accccc\",\n    \"subject\": \"string\",\n    \"errorMessage\": \"string\",\n    \"bodyUrl\": \"string\",\n    \"dateSent\": \"1959-06-28T21:22:19.411Z\",\n    \"opens\": [\n      {\n        \"id\": 7645,\n        \"emailId\": \"3ebf58c1-9f56-b28b-01bb-141a4f5d3d02\",\n        \"dateViewed\": \"1994-03-02T10:30:08.600Z\"\n      },\n      {\n        \"id\": 4935,\n        \"emailId\": \"4c31892b-0b1a-3e7a-f303-930c895d775f\",\n        \"dateViewed\": \"1974-02-28T22:11:24.008Z\"\n      }\n    ],\n    \"clicks\": [\n      {\n        \"id\": 5312,\n        \"emailId\": \"8060561e-b5f2-74c5-be06-b09194de7bd2\",\n        \"linkReference\": \"string\",\n        \"userId\": 539,\n        \"dateClicked\": \"1959-10-01T14:05:52.841Z\"\n      },\n      {\n        \"id\": 5455,\n        \"emailId\": \"f777b7f9-a46c-9a31-efa8-65789534f41f\",\n        \"linkReference\": \"string\",\n        \"userId\": 3528,\n        \"dateClicked\": \"2004-10-17T11:55:31.608Z\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "760f9735-3808-4752-a10b-2eba6067a929",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "customeremails",
+                    "getemails",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 2212,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a8270410-af2f-4b72-8e0d-fd3238791941",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "customeremails",
+                    "getemails",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 2212,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "abd82b61-dea9-4a50-a66e-0d1ef7f70320",
+          "name": "/v1/customeremails/getemailbody/:emailId",
+          "request": {
+            "name": "/v1/customeremails/getemailbody/:emailId",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "customeremails",
+                "getemailbody",
+                ":emailId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "emailId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c94d068c-b441-4e0b-9b83-1e7687ef49dd",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "customeremails",
+                    "getemailbody",
+                    ":emailId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "emailId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1155,\n  \"recipientUserId\": 2631,\n  \"recipientAddress\": \"string\",\n  \"emailId\": \"1003952b-1b9c-2886-3a35-fb447e53607f\",\n  \"subject\": \"string\",\n  \"errorMessage\": \"string\",\n  \"bodyUrl\": \"string\",\n  \"dateSent\": \"1952-02-18T03:20:36.216Z\",\n  \"opens\": [\n    {\n      \"id\": 1,\n      \"emailId\": \"a3f4f2bb-02ff-53cc-8793-68b38a1a1d26\",\n      \"dateViewed\": \"1997-04-19T05:14:38.233Z\"\n    },\n    {\n      \"id\": 2147,\n      \"emailId\": \"69055972-5161-f0c3-9270-ea18bc56812b\",\n      \"dateViewed\": \"1961-05-18T13:18:31.815Z\"\n    }\n  ],\n  \"clicks\": [\n    {\n      \"id\": 1717,\n      \"emailId\": \"c4620a76-44b3-24b3-3229-8007758aa035\",\n      \"linkReference\": \"string\",\n      \"userId\": 8664,\n      \"dateClicked\": \"1963-09-25T12:27:35.984Z\"\n    },\n    {\n      \"id\": 9155,\n      \"emailId\": \"f7d599c4-83ee-9ce0-7859-1d76de623df2\",\n      \"linkReference\": \"string\",\n      \"userId\": 8541,\n      \"dateClicked\": \"1974-10-10T17:38:56.975Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a02029ea-7ea3-4f7e-becb-b5feb64baa33",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "customeremails",
+                    "getemailbody",
+                    ":emailId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "emailId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 2212,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8a5aa928-8637-4463-abe9-f9b4270a526c",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "customeremails",
+                    "getemailbody",
+                    ":emailId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "emailId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 2212,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c1865bff-4b77-45ec-b445-19ddb83a43f2",
+      "name": "Tps",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "019417a2-cfff-4571-89ba-9d7a749d4b86",
+          "name": "/v1/tps/tpsstatus",
+          "request": {
+            "name": "/v1/tps/tpsstatus",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "tps",
+                "tpsstatus"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "publicUserId",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "userId",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "63a75436-167c-4ad9-8ccd-e05de2ebe5e0",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tps",
+                    "tpsstatus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "publicUserId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"registered\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0961dd3c-a86a-42ca-8187-eb03e0bd2fba",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tps",
+                    "tpsstatus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "publicUserId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 2212,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e4ddf2b2-3b22-4073-807a-91f4c12072d2",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tps",
+                    "tpsstatus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "publicUserId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 2212,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "901f8366-00b2-4950-9541-40dc17e63749",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tps",
+                    "tpsstatus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "publicUserId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 2212,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f7283bed-5ecb-4f70-a792-1b5d82ef69c8",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "tps",
+                    "tpsstatus"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "publicUserId",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "userId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.purplebricks.co.uk/communications-api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "66528358-9217-4432-8261-96130073d053",
+    "name": "Purplebricks.Communications.Api 1.0 - Core Team",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "### Displays customer's email history records\n### [Purplebricks.Communications.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/communications-api)",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,421 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Purplebricks.Valuations.Api 1.0 - Core",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "FollowUp",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /v1/followup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/followup",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/followup/reschedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/followup/reschedule",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/followup/updateleadtemp",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/followup/updateleadtemp",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/followup/toaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/followup/toaction",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "nextFollowUpDateLimit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userFullNameFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "addressFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "temperatureFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "packageNameFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/followup/lpplist",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/followup/lpplist",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/followup/alterdateforproperty",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/followup/alterdateforproperty",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "LeadCapture",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /v1/leadcapture",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/leadcapture",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "PostCode",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v1/postcode/isintrialregion",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/postcode/isintrialregion",
+            "params": [
+              {
+                "name": "postCode",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/postcode/isintrialregionbyeventid",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/postcode/isintrialregionbyeventid",
+            "params": [
+              {
+                "name": "eventId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "SalesforceDiaryPilot",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v1/salesforcediarypilot/isindiarymanagementtrial/{postcode}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/salesforcediarypilot/isindiarymanagementtrial/:postcode",
+            "params": [
+              {
+                "name": "postcode",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v1/creatio/users/{userId}/valuations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/creatio/users/:userId/valuations",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ValuationIntent",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v1/valuationintent/getredirecturl",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/valuationintent/getredirecturl",
+            "params": [
+              {
+                "name": "intent",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/valuationintent/shoulduseinstantvaluationflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/valuationintent/shoulduseinstantvaluationflow",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/valuationintent/wasinstantvaluation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/valuationintent/wasinstantvaluation",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/valuationintent/getpostdataharvestingredirect",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/valuationintent/getpostdataharvestingredirect",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/valuationintent/bookinguserdata",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/valuationintent/bookinguserdata",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/valuationintent/requestvaluationavailability",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/valuationintent/requestvaluationavailability",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ValuationReport",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v1/valuationreport/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v1/valuationreport/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

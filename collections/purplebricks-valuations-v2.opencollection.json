@@ -1,0 +1,138 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Purplebricks.Valuations.Api 2 - Core",
+    "version": "2"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Valuation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch saved form data for a property.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v2/valuations/:propertyId/save",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Fetch saved form data for a property."
+        },
+        {
+          "info": {
+            "name": "POST /v2/valuations/{propertyId}/save",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v2/valuations/:propertyId/save",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "Fetch Sprift valuation data for a property.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v2/valuations/:propertyId",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Fetch Sprift valuation data for a property."
+        },
+        {
+          "info": {
+            "name": "Send off the report data for real.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v2/valuations/:propertyId",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sendAuctionReferral",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Send off the report data for real."
+        },
+        {
+          "info": {
+            "name": "Fetch status and sent date for the latest valuation of a property.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v2/valuations/:propertyId/status",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Fetch status and sent date for the latest valuation of a property."
+        },
+        {
+          "info": {
+            "name": "POST /v2/valuations/report-view",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/valuations-api/v2/valuations/report-view",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

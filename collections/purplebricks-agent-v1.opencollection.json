@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Purplebricks.Agent.Api 1.0 - Squad Agents Experience",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Team",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v1/team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https:///agent/v1/team",
+            "params": [
+              {
+                "name": "agentEmail",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/team/getagentmanager",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https:///agent/v1/team/getagentmanager",
+            "params": [
+              {
+                "name": "agentEmail",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

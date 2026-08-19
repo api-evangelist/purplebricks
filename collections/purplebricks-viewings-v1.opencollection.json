@@ -1,0 +1,325 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Purplebricks.Viewings.Api 1.0 - Customer Experience",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AccessDetails",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v1/accessdetails/{propertyId}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/viewings-api/v1/accessdetails/:propertyId",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/accessdetails/{propertyId}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/viewings-api/v1/accessdetails/:propertyId",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/accessdetails/{propertyId}/summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/viewings-api/v1/accessdetails/:propertyId/summary",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/accessdetails/{propertyId}/revealkeysafecode",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/viewings-api/v1/accessdetails/:propertyId/revealkeysafecode",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Appointments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Books a viewing appointment.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/viewings-api/v1/appointments",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Books a viewing appointment."
+        },
+        {
+          "info": {
+            "name": "POST /v1/appointments/cancel",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/viewings-api/v1/appointments/cancel",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Bland",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Books a viewing appointment via Bland AI integration.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/viewings-api/v1/bland/viewing",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Books a viewing appointment via Bland AI integration."
+        },
+        {
+          "info": {
+            "name": "POST /v1/bland/viewing/confirmrequestslot",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/viewings-api/v1/bland/viewing/confirmrequestslot",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/bland/viewing/reschedulerequestslot",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/viewings-api/v1/bland/viewing/reschedulerequestslot",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "OpenDays",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns the details of any upcoming open days for a property. May return an empty result set.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/viewings-api/v1/properties/:propertyId/opendays/upcoming",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the details of any upcoming open days for a property. May return an empty result set."
+        },
+        {
+          "info": {
+            "name": "Returns the details of any past open days for a property. May return an empty result set.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/viewings-api/v1/properties/:propertyId/opendays/past",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the details of any past open days for a property. May return an empty result set."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Properties",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns the basic details of a property for which a viewing appointment can be booked against.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/viewings-api/v1/properties/:propertyId",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns the basic details of a property for which a viewing appointment can be booked against."
+        },
+        {
+          "info": {
+            "name": "GET /v1/creatio/properties/{propertyId}/viewings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/viewings-api/v1/creatio/properties/:propertyId/viewings",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v1/creatio/users/{userId}/viewings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/viewings-api/v1/creatio/users/:userId/viewings",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v1/creatio/users/{userId}/viewings/feedback",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/viewings-api/v1/creatio/users/:userId/viewings/feedback",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

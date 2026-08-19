@@ -1,0 +1,1759 @@
+{
+  "item": [
+    {
+      "id": "b4911ac3-7e92-42f5-b0af-08020217dce3",
+      "name": "Valuation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0c88994c-945c-4c4e-90a6-022d6377f2ca",
+          "name": "Fetch saved form data for a property.",
+          "request": {
+            "name": "Fetch saved form data for a property.",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "valuations",
+                ":propertyId",
+                "save"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "propertyId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "935f0627-ffac-4728-ae3b-a426e7248496",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId",
+                    "save"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"propertyId\": 2215,\n  \"valuationDate\": \"string\",\n  \"comparables\": [\n    {\n      \"id\": \"string\",\n      \"isSprift\": false,\n      \"address\": \"string\",\n      \"propertyType\": \"string\",\n      \"bedrooms\": 6835,\n      \"price\": 7175,\n      \"status\": \"string\",\n      \"dateOfSale\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"isSprift\": true,\n      \"address\": \"string\",\n      \"propertyType\": \"string\",\n      \"bedrooms\": 6269,\n      \"price\": 8098,\n      \"status\": \"string\",\n      \"dateOfSale\": \"string\"\n    }\n  ],\n  \"location\": [\n    \"string\",\n    \"string\"\n  ],\n  \"typeOfBuyer\": [\n    \"string\",\n    \"string\"\n  ],\n  \"noSuitableComparables\": true,\n  \"pricingFrom\": 3172.331262361322,\n  \"pricingTo\": 6011.5025306988655,\n  \"recommendedMarketingPrice\": 5977.144781658283,\n  \"similarPropertiesRecentlySold\": 5447,\n  \"similarPropertiesForSale\": 1378,\n  \"excludeMarketData\": false,\n  \"addPersonalisedMessage\": false,\n  \"personalisedMessage\": \"string\",\n  \"comments\": \"string\",\n  \"rightmoveBestPriceGuideUrl\": \"string\",\n  \"excludeBestPriceGuide\": false,\n  \"newVersion\": 3086\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "01b1eec2-956f-4eb8-b063-1423206b85b3",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId",
+                    "save"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5b7d9d1a-4ca3-40e3-ba23-ed6f79f9914f",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId",
+                    "save"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b6af0a4-f61d-4788-82d4-5f1223897a5f",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId",
+                    "save"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1513f42e-3f35-4182-b71c-e060160c67ae",
+          "name": "/v2/valuations/:propertyId/save",
+          "request": {
+            "name": "/v2/valuations/:propertyId/save",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "valuations",
+                ":propertyId",
+                "save"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "propertyId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"propertyId\": \"<integer>\",\n  \"valuationDate\": \"<string>\",\n  \"comparables\": [\n    {\n      \"id\": \"<string>\",\n      \"isSprift\": \"<boolean>\",\n      \"address\": \"<string>\",\n      \"propertyType\": \"<string>\",\n      \"bedrooms\": \"<integer>\",\n      \"price\": \"<integer>\",\n      \"status\": \"<string>\",\n      \"dateOfSale\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"isSprift\": \"<boolean>\",\n      \"address\": \"<string>\",\n      \"propertyType\": \"<string>\",\n      \"bedrooms\": \"<integer>\",\n      \"price\": \"<integer>\",\n      \"status\": \"<string>\",\n      \"dateOfSale\": \"<string>\"\n    }\n  ],\n  \"location\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"typeOfBuyer\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"noSuitableComparables\": \"<boolean>\",\n  \"pricingFrom\": \"<double>\",\n  \"pricingTo\": \"<double>\",\n  \"recommendedMarketingPrice\": \"<double>\",\n  \"similarPropertiesRecentlySold\": \"<integer>\",\n  \"similarPropertiesForSale\": \"<integer>\",\n  \"excludeMarketData\": \"<boolean>\",\n  \"addPersonalisedMessage\": \"<boolean>\",\n  \"personalisedMessage\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"rightmoveBestPriceGuideUrl\": \"<string>\",\n  \"excludeBestPriceGuide\": \"<boolean>\",\n  \"newVersion\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ba231ac0-4a69-4fa1-a776-eb1223484f89",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId",
+                    "save"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"propertyId\": \"<integer>\",\n  \"valuationDate\": \"<string>\",\n  \"comparables\": [\n    {\n      \"id\": \"<string>\",\n      \"isSprift\": \"<boolean>\",\n      \"address\": \"<string>\",\n      \"propertyType\": \"<string>\",\n      \"bedrooms\": \"<integer>\",\n      \"price\": \"<integer>\",\n      \"status\": \"<string>\",\n      \"dateOfSale\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"isSprift\": \"<boolean>\",\n      \"address\": \"<string>\",\n      \"propertyType\": \"<string>\",\n      \"bedrooms\": \"<integer>\",\n      \"price\": \"<integer>\",\n      \"status\": \"<string>\",\n      \"dateOfSale\": \"<string>\"\n    }\n  ],\n  \"location\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"typeOfBuyer\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"noSuitableComparables\": \"<boolean>\",\n  \"pricingFrom\": \"<double>\",\n  \"pricingTo\": \"<double>\",\n  \"recommendedMarketingPrice\": \"<double>\",\n  \"similarPropertiesRecentlySold\": \"<integer>\",\n  \"similarPropertiesForSale\": \"<integer>\",\n  \"excludeMarketData\": \"<boolean>\",\n  \"addPersonalisedMessage\": \"<boolean>\",\n  \"personalisedMessage\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"rightmoveBestPriceGuideUrl\": \"<string>\",\n  \"excludeBestPriceGuide\": \"<boolean>\",\n  \"newVersion\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 7377,\n  \"status\": \"Sent\",\n  \"formVersion\": \"Legacy\",\n  \"personalisedMessage\": \"string\",\n  \"featureExtra1\": \"st\",\n  \"featureExtra2\": \"string\",\n  \"propertiesInArea\": 1920,\n  \"propertiesSameBedrooms\": 7607,\n  \"numberOfBuyersInArea\": 5280,\n  \"propertiesLowPrice\": 2859.788245185799,\n  \"propertiesHighPrice\": 5923.5286882873,\n  \"listPrice\": 649.2983647084405,\n  \"achieveLowPrice\": 9886.902278551646,\n  \"achieveHighPrice\": 9834.216530630518,\n  \"propertyId\": 4477,\n  \"property\": {\n    \"id\": 4203,\n    \"addressId\": 4845,\n    \"address\": {\n      \"id\": 2237,\n      \"line1\": \"string\",\n      \"line2\": \"string\",\n      \"town\": \"string\",\n      \"county\": \"string\",\n      \"postcode\": \"string\",\n      \"addressText\": \"string\"\n    },\n    \"bookings\": [\n      {\n        \"id\": 7627,\n        \"propertyId\": 7223,\n        \"property\": {\n          \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.Property detected>\"\n        },\n        \"start\": \"1983-03-21T11:40:10.389Z\",\n        \"eventType\": \"Viewing\",\n        \"isByCancelled\": true,\n        \"isToCancelled\": false,\n        \"isToConfirm\": true\n      },\n      {\n        \"id\": 9779,\n        \"propertyId\": 1263,\n        \"property\": {\n          \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.Property detected>\"\n        },\n        \"start\": \"1987-07-21T04:59:27.739Z\",\n        \"eventType\": \"Valuation\",\n        \"isByCancelled\": false,\n        \"isToCancelled\": true,\n        \"isToConfirm\": true\n      }\n    ],\n    \"userId\": 2166,\n    \"toLet\": true,\n    \"expertId\": 9991,\n    \"expert\": {\n      \"userId\": 8653,\n      \"forename\": \"string\",\n      \"surname\": \"string\",\n      \"fullName\": \"string\",\n      \"email\": \"string\",\n      \"publicUserId\": \"bc42c1d7-1ca1-8a5a-b3ca-2e9da9a6ff11\"\n    },\n    \"accompaniedViewingExpertId\": 1073,\n    \"accompaniedViewingExpert\": {\n      \"userId\": 9123,\n      \"forename\": \"string\",\n      \"surname\": \"string\",\n      \"fullName\": \"string\",\n      \"email\": \"string\",\n      \"publicUserId\": \"b5684114-d11e-696c-96da-a2969772dffd\"\n    },\n    \"locationOwnerExpertId\": 1635,\n    \"locationOwnerExpert\": {\n      \"userId\": 7490,\n      \"forename\": \"string\",\n      \"surname\": \"string\",\n      \"fullName\": \"string\",\n      \"email\": \"string\",\n      \"publicUserId\": \"a765bc10-632d-0fa7-766f-a36514181b7d\"\n    },\n    \"accountManagerExpertId\": 5473,\n    \"accountManagerExpert\": {\n      \"userId\": 5453,\n      \"forename\": \"string\",\n      \"surname\": \"string\",\n      \"fullName\": \"string\",\n      \"email\": \"string\",\n      \"publicUserId\": \"5dd8b5d7-3cf5-aa56-06c0-e2faed24a25a\"\n    },\n    \"negotiationExpertId\": 6126,\n    \"negotiationExpert\": {\n      \"userId\": 8786,\n      \"forename\": \"string\",\n      \"surname\": \"string\",\n      \"fullName\": \"string\",\n      \"email\": \"string\",\n      \"publicUserId\": \"eaf6f3db-c667-9dde-b991-c60b52b168be\"\n    }\n  },\n  \"valuationBuyerType\": \"Retirement\",\n  \"valuationLocation\": \"SchoolCatchmentArea\",\n  \"valuationFeature\": \"Basement\",\n  \"comments\": \"string\",\n  \"rightmoveBestPriceGuideUrl\": \"string\",\n  \"excludeBestPriceGuide\": true,\n  \"valuationDate\": \"1981-06-05T22:52:01.736Z\",\n  \"bookingDiaryId\": 3113,\n  \"allowPurplebricksPlusAddOn\": false,\n  \"modificationDate\": \"2024-01-06T13:19:03.026Z\",\n  \"modifiedByUserId\": 9025,\n  \"followUpOutcome\": \"NotInterested\",\n  \"followUpOutcomeDate\": \"1971-03-24T02:31:57.187Z\",\n  \"followUpOutcomeUserId\": 7957,\n  \"isCompleted\": true,\n  \"userViewCount\": 1611,\n  \"lastViewedByCustomer\": \"2017-04-01T18:34:59.997Z\",\n  \"valuationCompletedDate\": \"1975-09-05T17:58:42.039Z\",\n  \"createdDate\": \"2014-07-10T09:49:31.026Z\",\n  \"version\": 395,\n  \"nextFollowUpDate\": \"1952-01-24T14:46:25.896Z\",\n  \"nextFollowUpUserId\": 5441,\n  \"sentDate\": \"1993-12-09T23:00:22.657Z\",\n  \"valuationFollowupHistories\": [\n    {\n      \"id\": 9079,\n      \"valuationId\": 7553,\n      \"valuation\": {\n        \"id\": 9193,\n        \"status\": \"Sent\",\n        \"formVersion\": \"Legacy\",\n        \"personalisedMessage\": \"string\",\n        \"featureExtra1\": \"string\",\n        \"featureExtra2\": \"string\",\n        \"propertiesInArea\": 5648,\n        \"propertiesSameBedrooms\": 290,\n        \"numberOfBuyersInArea\": 4648,\n        \"propertiesLowPrice\": 5359.192087819736,\n        \"propertiesHighPrice\": 1391.6352563320468,\n        \"listPrice\": 3536.7534133292056,\n        \"achieveLowPrice\": 7379.945654938431,\n        \"achieveHighPrice\": 1798.3803477663673,\n        \"propertyId\": 7463,\n        \"property\": {\n          \"id\": 9799,\n          \"addressId\": 2620,\n          \"address\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"line1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"line2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"town\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"county\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"postcode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"addressText\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"bookings\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"userId\": 7493,\n          \"toLet\": true,\n          \"expertId\": 3090,\n          \"expert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"accompaniedViewingExpertId\": 7725,\n          \"accompaniedViewingExpert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"locationOwnerExpertId\": 9936,\n          \"locationOwnerExpert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"accountManagerExpertId\": 6022,\n          \"accountManagerExpert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"negotiationExpertId\": 1762,\n          \"negotiationExpert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"valuationBuyerType\": \"Sharers\",\n        \"valuationLocation\": \"SchoolCatchmentArea\",\n        \"valuationFeature\": \"NeedModernization\",\n        \"comments\": \"string\",\n        \"rightmoveBestPriceGuideUrl\": \"string\",\n        \"excludeBestPriceGuide\": true,\n        \"valuationDate\": \"2024-03-25T22:12:10.171Z\",\n        \"bookingDiaryId\": 5276,\n        \"allowPurplebricksPlusAddOn\": true,\n        \"modificationDate\": \"1980-07-29T20:02:12.334Z\",\n        \"modifiedByUserId\": 6685,\n        \"followUpOutcome\": \"Campaign_03_ValuationToInstruct_W12_C\",\n        \"followUpOutcomeDate\": \"1971-08-03T12:09:13.641Z\",\n        \"followUpOutcomeUserId\": 7029,\n        \"isCompleted\": false,\n        \"userViewCount\": 6666,\n        \"lastViewedByCustomer\": \"1976-05-05T20:38:51.406Z\",\n        \"valuationCompletedDate\": \"1970-08-27T03:56:21.996Z\",\n        \"createdDate\": \"2014-08-30T16:43:09.437Z\",\n        \"version\": 1509,\n        \"nextFollowUpDate\": \"1973-03-10T04:32:46.641Z\",\n        \"nextFollowUpUserId\": 3435,\n        \"sentDate\": \"2003-10-31T06:09:28.146Z\",\n        \"valuationFollowupHistories\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.ValuationFollowupHistory detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.ValuationFollowupHistory detected>\"\n          }\n        ],\n        \"otherEADetails\": \"string\",\n        \"leadTemperature\": \"Warm\",\n        \"valuationHistories\": [\n          {\n            \"id\": 9417,\n            \"valuationId\": 8750,\n            \"valuation\": {\n              \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation detected>\"\n            },\n            \"achieveLowPrice\": 4777.1647487781875\n          },\n          {\n            \"id\": 8554,\n            \"valuationId\": 2923,\n            \"valuation\": {\n              \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation detected>\"\n            },\n            \"achieveLowPrice\": 7091.535738296523\n          }\n        ],\n        \"booking\": {\n          \"id\": 3714,\n          \"propertyId\": 3160,\n          \"property\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"addressId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"bookings\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"toLet\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"expertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"expert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accompaniedViewingExpertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accompaniedViewingExpert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"locationOwnerExpertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"locationOwnerExpert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accountManagerExpertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accountManagerExpert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"negotiationExpertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"negotiationExpert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"start\": \"1979-08-09T14:06:57.082Z\",\n          \"eventType\": \"Viewing\",\n          \"isByCancelled\": true,\n          \"isToCancelled\": true,\n          \"isToConfirm\": false\n        }\n      },\n      \"followUpOutcome\": \"Campaign_03_ValuationToInstruct_W12_C\",\n      \"followUpOutcomeUserId\": 7590,\n      \"followUpOutcomeDate\": \"1956-12-05T03:37:50.055Z\",\n      \"nextFollowUpDate\": \"2010-11-11T09:20:27.026Z\",\n      \"nextFollowUpUserId\": 944,\n      \"otherEADetails\": \"string\"\n    },\n    {\n      \"id\": 4752,\n      \"valuationId\": 9188,\n      \"valuation\": {\n        \"id\": 4228,\n        \"status\": \"Draft\",\n        \"formVersion\": \"New\",\n        \"personalisedMessage\": \"string\",\n        \"featureExtra1\": \"string\",\n        \"featureExtra2\": \"string\",\n        \"propertiesInArea\": 2380,\n        \"propertiesSameBedrooms\": 6162,\n        \"numberOfBuyersInArea\": 9789,\n        \"propertiesLowPrice\": 2980.106480149851,\n        \"propertiesHighPrice\": 8040.11214734034,\n        \"listPrice\": 8659.458439829023,\n        \"achieveLowPrice\": 1620.5112102043006,\n        \"achieveHighPrice\": 7146.368520221128,\n        \"propertyId\": 2755,\n        \"property\": {\n          \"id\": 6542,\n          \"addressId\": 8650,\n          \"address\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"line1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"line2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"town\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"county\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"postcode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"addressText\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"bookings\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"userId\": 7357,\n          \"toLet\": true,\n          \"expertId\": 8852,\n          \"expert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"accompaniedViewingExpertId\": 9372,\n          \"accompaniedViewingExpert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"locationOwnerExpertId\": 5240,\n          \"locationOwnerExpert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"accountManagerExpertId\": 2655,\n          \"accountManagerExpert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"negotiationExpertId\": 1124,\n          \"negotiationExpert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"valuationBuyerType\": \"Sharers\",\n        \"valuationLocation\": \"SoughtAfter\",\n        \"valuationFeature\": \"NeedModernization\",\n        \"comments\": \"string\",\n        \"rightmoveBestPriceGuideUrl\": \"string\",\n        \"excludeBestPriceGuide\": true,\n        \"valuationDate\": \"2006-02-11T09:22:41.603Z\",\n        \"bookingDiaryId\": 5521,\n        \"allowPurplebricksPlusAddOn\": false,\n        \"modificationDate\": \"2011-03-18T11:05:55.892Z\",\n        \"modifiedByUserId\": 5321,\n        \"followUpOutcome\": \"InstructingAfterSixMonths\",\n        \"followUpOutcomeDate\": \"2017-11-29T15:06:46.065Z\",\n        \"followUpOutcomeUserId\": 1323,\n        \"isCompleted\": false,\n        \"userViewCount\": 3874,\n        \"lastViewedByCustomer\": \"1984-12-04T05:50:40.521Z\",\n        \"valuationCompletedDate\": \"1993-01-07T04:10:23.585Z\",\n        \"createdDate\": \"2018-01-27T13:05:07.248Z\",\n        \"version\": 1766,\n        \"nextFollowUpDate\": \"1962-10-13T09:34:09.021Z\",\n        \"nextFollowUpUserId\": 229,\n        \"sentDate\": \"2018-08-20T18:42:47.305Z\",\n        \"valuationFollowupHistories\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.ValuationFollowupHistory detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.ValuationFollowupHistory detected>\"\n          }\n        ],\n        \"otherEADetails\": \"string\",\n        \"leadTemperature\": \"Warm\",\n        \"valuationHistories\": [\n          {\n            \"id\": 5927,\n            \"valuationId\": 4687,\n            \"valuation\": {\n              \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation detected>\"\n            },\n            \"achieveLowPrice\": 8899.072083934472\n          },\n          {\n            \"id\": 7371,\n            \"valuationId\": 8858,\n            \"valuation\": {\n              \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation detected>\"\n            },\n            \"achieveLowPrice\": 2410.876564317287\n          }\n        ],\n        \"booking\": {\n          \"id\": 1258,\n          \"propertyId\": 1648,\n          \"property\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"addressId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"bookings\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"toLet\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"expertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"expert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accompaniedViewingExpertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accompaniedViewingExpert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"locationOwnerExpertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"locationOwnerExpert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accountManagerExpertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accountManagerExpert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"negotiationExpertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"negotiationExpert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"start\": \"1983-12-18T22:00:30.974Z\",\n          \"eventType\": \"VirtualValuation\",\n          \"isByCancelled\": true,\n          \"isToCancelled\": true,\n          \"isToConfirm\": false\n        }\n      },\n      \"followUpOutcome\": \"InstructingWithinAMonth\",\n      \"followUpOutcomeUserId\": 3123,\n      \"followUpOutcomeDate\": \"2026-05-15T23:09:42.766Z\",\n      \"nextFollowUpDate\": \"1965-01-18T11:18:35.069Z\",\n      \"nextFollowUpUserId\": 4392,\n      \"otherEADetails\": \"string\"\n    }\n  ],\n  \"otherEADetails\": \"string\",\n  \"leadTemperature\": \"NotSet\",\n  \"valuationHistories\": [\n    {\n      \"id\": 5340,\n      \"valuationId\": 2197,\n      \"valuation\": {\n        \"id\": 2490,\n        \"status\": \"Sent\",\n        \"formVersion\": \"New\",\n        \"personalisedMessage\": \"string\",\n        \"featureExtra1\": \"string\",\n        \"featureExtra2\": \"string\",\n        \"propertiesInArea\": 684,\n        \"propertiesSameBedrooms\": 8370,\n        \"numberOfBuyersInArea\": 2192,\n        \"propertiesLowPrice\": 8345.359551626221,\n        \"propertiesHighPrice\": 5938.13394488049,\n        \"listPrice\": 5340.061103100088,\n        \"achieveLowPrice\": 209.07824005603538,\n        \"achieveHighPrice\": 5138.526187326414,\n        \"propertyId\": 8016,\n        \"property\": {\n          \"id\": 5405,\n          \"addressId\": 6881,\n          \"address\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"line1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"line2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"town\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"county\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"postcode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"addressText\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"bookings\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"userId\": 4383,\n          \"toLet\": false,\n          \"expertId\": 9360,\n          \"expert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"accompaniedViewingExpertId\": 5705,\n          \"accompaniedViewingExpert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"locationOwnerExpertId\": 927,\n          \"locationOwnerExpert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"accountManagerExpertId\": 9479,\n          \"accountManagerExpert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"negotiationExpertId\": 1402,\n          \"negotiationExpert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"valuationBuyerType\": \"Families\",\n        \"valuationLocation\": \"PrestigiousLocation\",\n        \"valuationFeature\": \"Extension\",\n        \"comments\": \"string\",\n        \"rightmoveBestPriceGuideUrl\": \"string\",\n        \"excludeBestPriceGuide\": false,\n        \"valuationDate\": \"2015-11-21T07:17:00.945Z\",\n        \"bookingDiaryId\": 2590,\n        \"allowPurplebricksPlusAddOn\": true,\n        \"modificationDate\": \"1978-05-28T07:10:44.903Z\",\n        \"modifiedByUserId\": 7921,\n        \"followUpOutcome\": \"OtherEA\",\n        \"followUpOutcomeDate\": \"2014-02-05T04:09:59.933Z\",\n        \"followUpOutcomeUserId\": 1012,\n        \"isCompleted\": true,\n        \"userViewCount\": 1799,\n        \"lastViewedByCustomer\": \"2008-12-04T10:30:25.208Z\",\n        \"valuationCompletedDate\": \"2022-10-14T01:35:53.940Z\",\n        \"createdDate\": \"2008-08-03T08:31:24.130Z\",\n        \"version\": 5784,\n        \"nextFollowUpDate\": \"1952-08-14T06:36:18.041Z\",\n        \"nextFollowUpUserId\": 9988,\n        \"sentDate\": \"2006-08-21T04:27:19.692Z\",\n        \"valuationFollowupHistories\": [\n          {\n            \"id\": 6081,\n            \"valuationId\": 6102,\n            \"valuation\": {\n              \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation detected>\"\n            },\n            \"followUpOutcome\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"followUpOutcomeUserId\": 9009,\n            \"followUpOutcomeDate\": \"2017-03-30T21:10:39.839Z\",\n            \"nextFollowUpDate\": \"1950-07-20T16:54:17.611Z\",\n            \"nextFollowUpUserId\": 9990,\n            \"otherEADetails\": \"string\"\n          },\n          {\n            \"id\": 408,\n            \"valuationId\": 5173,\n            \"valuation\": {\n              \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation detected>\"\n            },\n            \"followUpOutcome\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"followUpOutcomeUserId\": 9290,\n            \"followUpOutcomeDate\": \"1950-06-16T21:14:42.514Z\",\n            \"nextFollowUpDate\": \"1983-02-08T21:00:19.383Z\",\n            \"nextFollowUpUserId\": 6355,\n            \"otherEADetails\": \"string\"\n          }\n        ],\n        \"otherEADetails\": \"string\",\n        \"leadTemperature\": \"Warm\",\n        \"valuationHistories\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.ValuationHistory detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.ValuationHistory detected>\"\n          }\n        ],\n        \"booking\": {\n          \"id\": 8212,\n          \"propertyId\": 5442,\n          \"property\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"addressId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"bookings\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"toLet\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"expertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"expert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accompaniedViewingExpertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accompaniedViewingExpert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"locationOwnerExpertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"locationOwnerExpert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accountManagerExpertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accountManagerExpert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"negotiationExpertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"negotiationExpert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"start\": \"1993-05-03T08:19:33.821Z\",\n          \"eventType\": \"Valuation\",\n          \"isByCancelled\": true,\n          \"isToCancelled\": true,\n          \"isToConfirm\": false\n        }\n      },\n      \"achieveLowPrice\": 6625.740871847844\n    },\n    {\n      \"id\": 2508,\n      \"valuationId\": 3127,\n      \"valuation\": {\n        \"id\": 6871,\n        \"status\": \"Draft\",\n        \"formVersion\": \"Legacy\",\n        \"personalisedMessage\": \"string\",\n        \"featureExtra1\": \"string\",\n        \"featureExtra2\": \"string\",\n        \"propertiesInArea\": 2562,\n        \"propertiesSameBedrooms\": 1671,\n        \"numberOfBuyersInArea\": 1203,\n        \"propertiesLowPrice\": 6052.366822614859,\n        \"propertiesHighPrice\": 1995.6486783199434,\n        \"listPrice\": 2959.091105753815,\n        \"achieveLowPrice\": 5021.328850904205,\n        \"achieveHighPrice\": 3689.217832975278,\n        \"propertyId\": 5215,\n        \"property\": {\n          \"id\": 1987,\n          \"addressId\": 2581,\n          \"address\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"line1\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"line2\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"town\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"county\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"postcode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"addressText\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"bookings\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"userId\": 3298,\n          \"toLet\": true,\n          \"expertId\": 6105,\n          \"expert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"accompaniedViewingExpertId\": 1445,\n          \"accompaniedViewingExpert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"locationOwnerExpertId\": 4952,\n          \"locationOwnerExpert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"accountManagerExpertId\": 983,\n          \"accountManagerExpert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"negotiationExpertId\": 3178,\n          \"negotiationExpert\": {\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"forename\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"surname\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"fullName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"publicUserId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"valuationBuyerType\": \"Landlords\",\n        \"valuationLocation\": \"RuralLocation\",\n        \"valuationFeature\": \"Conservatory\",\n        \"comments\": \"string\",\n        \"rightmoveBestPriceGuideUrl\": \"string\",\n        \"excludeBestPriceGuide\": false,\n        \"valuationDate\": \"1982-09-30T15:14:49.756Z\",\n        \"bookingDiaryId\": 5848,\n        \"allowPurplebricksPlusAddOn\": true,\n        \"modificationDate\": \"1953-02-26T16:56:10.175Z\",\n        \"modifiedByUserId\": 8398,\n        \"followUpOutcome\": \"InstructingWithinSixMonths\",\n        \"followUpOutcomeDate\": \"1960-09-04T13:01:16.663Z\",\n        \"followUpOutcomeUserId\": 2727,\n        \"isCompleted\": false,\n        \"userViewCount\": 8515,\n        \"lastViewedByCustomer\": \"1956-04-15T06:08:31.886Z\",\n        \"valuationCompletedDate\": \"1969-09-28T17:15:53.082Z\",\n        \"createdDate\": \"1975-07-27T08:41:38.902Z\",\n        \"version\": 2818,\n        \"nextFollowUpDate\": \"2025-01-23T07:50:44.654Z\",\n        \"nextFollowUpUserId\": 2424,\n        \"sentDate\": \"1957-06-10T15:40:20.370Z\",\n        \"valuationFollowupHistories\": [\n          {\n            \"id\": 7740,\n            \"valuationId\": 3642,\n            \"valuation\": {\n              \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation detected>\"\n            },\n            \"followUpOutcome\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"followUpOutcomeUserId\": 5957,\n            \"followUpOutcomeDate\": \"2013-07-16T10:07:03.528Z\",\n            \"nextFollowUpDate\": \"2026-05-06T04:30:19.155Z\",\n            \"nextFollowUpUserId\": 4800,\n            \"otherEADetails\": \"string\"\n          },\n          {\n            \"id\": 5449,\n            \"valuationId\": 5229,\n            \"valuation\": {\n              \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation detected>\"\n            },\n            \"followUpOutcome\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"followUpOutcomeUserId\": 728,\n            \"followUpOutcomeDate\": \"2002-10-19T18:37:33.261Z\",\n            \"nextFollowUpDate\": \"2014-03-08T12:41:51.990Z\",\n            \"nextFollowUpUserId\": 1041,\n            \"otherEADetails\": \"string\"\n          }\n        ],\n        \"otherEADetails\": \"string\",\n        \"leadTemperature\": \"Warm\",\n        \"valuationHistories\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.ValuationHistory detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.ValuationHistory detected>\"\n          }\n        ],\n        \"booking\": {\n          \"id\": 3860,\n          \"propertyId\": 9647,\n          \"property\": {\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"addressId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"bookings\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"userId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"toLet\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"expertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"expert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accompaniedViewingExpertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accompaniedViewingExpert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"locationOwnerExpertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"locationOwnerExpert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accountManagerExpertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accountManagerExpert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"negotiationExpertId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"negotiationExpert\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"start\": \"2003-11-02T08:55:32.309Z\",\n          \"eventType\": \"VirtualValuation\",\n          \"isByCancelled\": true,\n          \"isToCancelled\": true,\n          \"isToConfirm\": false\n        }\n      },\n      \"achieveLowPrice\": 2997.684729691704\n    }\n  ],\n  \"booking\": {\n    \"id\": 1,\n    \"propertyId\": 4589,\n    \"property\": {\n      \"id\": 1584,\n      \"addressId\": 7004,\n      \"address\": {\n        \"id\": 9231,\n        \"line1\": \"string\",\n        \"line2\": \"string\",\n        \"town\": \"string\",\n        \"county\": \"string\",\n        \"postcode\": \"string\",\n        \"addressText\": \"string\"\n      },\n      \"bookings\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.BookingDiary detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/Purplebricks.Valuations.Repository.Entities.BookingDiary detected>\"\n        }\n      ],\n      \"userId\": 1082,\n      \"toLet\": true,\n      \"expertId\": 2987,\n      \"expert\": {\n        \"userId\": 1625,\n        \"forename\": \"string\",\n        \"surname\": \"string\",\n        \"fullName\": \"string\",\n        \"email\": \"string\",\n        \"publicUserId\": \"d915b515-148b-45e8-6699-79f99814dc86\"\n      },\n      \"accompaniedViewingExpertId\": 5764,\n      \"accompaniedViewingExpert\": {\n        \"userId\": 2827,\n        \"forename\": \"string\",\n        \"surname\": \"string\",\n        \"fullName\": \"string\",\n        \"email\": \"string\",\n        \"publicUserId\": \"36900ed0-3579-b132-4223-64d6f7b4a042\"\n      },\n      \"locationOwnerExpertId\": 9744,\n      \"locationOwnerExpert\": {\n        \"userId\": 2125,\n        \"forename\": \"string\",\n        \"surname\": \"string\",\n        \"fullName\": \"string\",\n        \"email\": \"string\",\n        \"publicUserId\": \"a04bfd0a-6a6f-5770-73ee-649172570d39\"\n      },\n      \"accountManagerExpertId\": 9632,\n      \"accountManagerExpert\": {\n        \"userId\": 9414,\n        \"forename\": \"string\",\n        \"surname\": \"string\",\n        \"fullName\": \"string\",\n        \"email\": \"string\",\n        \"publicUserId\": \"0b116393-3cb0-a93c-c4ea-192d394695a5\"\n      },\n      \"negotiationExpertId\": 5048,\n      \"negotiationExpert\": {\n        \"userId\": 5607,\n        \"forename\": \"string\",\n        \"surname\": \"string\",\n        \"fullName\": \"string\",\n        \"email\": \"string\",\n        \"publicUserId\": \"e20bfcdb-bba7-3ec7-e429-3e2a0101b2bb\"\n      }\n    },\n    \"start\": \"2017-07-15T05:41:44.823Z\",\n    \"eventType\": \"VirtualValuation\",\n    \"isByCancelled\": true,\n    \"isToCancelled\": false,\n    \"isToConfirm\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f82bc0b0-dcf8-497e-a79d-3c17997d2d67",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId",
+                    "save"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"propertyId\": \"<integer>\",\n  \"valuationDate\": \"<string>\",\n  \"comparables\": [\n    {\n      \"id\": \"<string>\",\n      \"isSprift\": \"<boolean>\",\n      \"address\": \"<string>\",\n      \"propertyType\": \"<string>\",\n      \"bedrooms\": \"<integer>\",\n      \"price\": \"<integer>\",\n      \"status\": \"<string>\",\n      \"dateOfSale\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"isSprift\": \"<boolean>\",\n      \"address\": \"<string>\",\n      \"propertyType\": \"<string>\",\n      \"bedrooms\": \"<integer>\",\n      \"price\": \"<integer>\",\n      \"status\": \"<string>\",\n      \"dateOfSale\": \"<string>\"\n    }\n  ],\n  \"location\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"typeOfBuyer\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"noSuitableComparables\": \"<boolean>\",\n  \"pricingFrom\": \"<double>\",\n  \"pricingTo\": \"<double>\",\n  \"recommendedMarketingPrice\": \"<double>\",\n  \"similarPropertiesRecentlySold\": \"<integer>\",\n  \"similarPropertiesForSale\": \"<integer>\",\n  \"excludeMarketData\": \"<boolean>\",\n  \"addPersonalisedMessage\": \"<boolean>\",\n  \"personalisedMessage\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"rightmoveBestPriceGuideUrl\": \"<string>\",\n  \"excludeBestPriceGuide\": \"<boolean>\",\n  \"newVersion\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "426f1aa3-b00e-43b5-b092-916e06dc748b",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId",
+                    "save"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"propertyId\": \"<integer>\",\n  \"valuationDate\": \"<string>\",\n  \"comparables\": [\n    {\n      \"id\": \"<string>\",\n      \"isSprift\": \"<boolean>\",\n      \"address\": \"<string>\",\n      \"propertyType\": \"<string>\",\n      \"bedrooms\": \"<integer>\",\n      \"price\": \"<integer>\",\n      \"status\": \"<string>\",\n      \"dateOfSale\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"isSprift\": \"<boolean>\",\n      \"address\": \"<string>\",\n      \"propertyType\": \"<string>\",\n      \"bedrooms\": \"<integer>\",\n      \"price\": \"<integer>\",\n      \"status\": \"<string>\",\n      \"dateOfSale\": \"<string>\"\n    }\n  ],\n  \"location\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"typeOfBuyer\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"noSuitableComparables\": \"<boolean>\",\n  \"pricingFrom\": \"<double>\",\n  \"pricingTo\": \"<double>\",\n  \"recommendedMarketingPrice\": \"<double>\",\n  \"similarPropertiesRecentlySold\": \"<integer>\",\n  \"similarPropertiesForSale\": \"<integer>\",\n  \"excludeMarketData\": \"<boolean>\",\n  \"addPersonalisedMessage\": \"<boolean>\",\n  \"personalisedMessage\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"rightmoveBestPriceGuideUrl\": \"<string>\",\n  \"excludeBestPriceGuide\": \"<boolean>\",\n  \"newVersion\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5c88b811-2fa8-4eaa-8743-8af56f0a695f",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId",
+                    "save"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"propertyId\": \"<integer>\",\n  \"valuationDate\": \"<string>\",\n  \"comparables\": [\n    {\n      \"id\": \"<string>\",\n      \"isSprift\": \"<boolean>\",\n      \"address\": \"<string>\",\n      \"propertyType\": \"<string>\",\n      \"bedrooms\": \"<integer>\",\n      \"price\": \"<integer>\",\n      \"status\": \"<string>\",\n      \"dateOfSale\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"isSprift\": \"<boolean>\",\n      \"address\": \"<string>\",\n      \"propertyType\": \"<string>\",\n      \"bedrooms\": \"<integer>\",\n      \"price\": \"<integer>\",\n      \"status\": \"<string>\",\n      \"dateOfSale\": \"<string>\"\n    }\n  ],\n  \"location\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"typeOfBuyer\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"noSuitableComparables\": \"<boolean>\",\n  \"pricingFrom\": \"<double>\",\n  \"pricingTo\": \"<double>\",\n  \"recommendedMarketingPrice\": \"<double>\",\n  \"similarPropertiesRecentlySold\": \"<integer>\",\n  \"similarPropertiesForSale\": \"<integer>\",\n  \"excludeMarketData\": \"<boolean>\",\n  \"addPersonalisedMessage\": \"<boolean>\",\n  \"personalisedMessage\": \"<string>\",\n  \"comments\": \"<string>\",\n  \"rightmoveBestPriceGuideUrl\": \"<string>\",\n  \"excludeBestPriceGuide\": \"<boolean>\",\n  \"newVersion\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "68c69929-b337-4783-8c9b-d34610a1e40e",
+          "name": "Fetch Sprift valuation data for a property.",
+          "request": {
+            "name": "Fetch Sprift valuation data for a property.",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "valuations",
+                ":propertyId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "propertyId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "32ccc499-c4c6-4da1-ba83-9e9ffeb1088d",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"collectedAtUtc\": \"2004-01-11T13:42:16.187Z\",\n  \"uprn\": 1534,\n  \"salesComparables\": [\n    {\n      \"id\": \"string\",\n      \"comparablesRef\": \"string\",\n      \"uprn\": 4420,\n      \"floorAreaM2\": 6157,\n      \"floorAreaSqft\": 4362.332046929972,\n      \"distance\": 7800.827366995058,\n      \"postcode\": \"string\",\n      \"address\": \"string\",\n      \"partialAddress\": \"string\",\n      \"price\": 217,\n      \"type\": \"string\",\n      \"beds\": 9117,\n      \"agent\": \"string\",\n      \"floorplanFilenames\": [\n        \"string\",\n        \"string\"\n      ],\n      \"listingImages\": [\n        \"string\",\n        \"string\"\n      ],\n      \"listingStatus\": \"string\",\n      \"lastStatusDate\": \"string\",\n      \"listingDate\": \"string\",\n      \"latitude\": 7179.430315906025,\n      \"longitude\": 3631.0739291396176\n    },\n    {\n      \"id\": \"string\",\n      \"comparablesRef\": \"string\",\n      \"uprn\": 5178,\n      \"floorAreaM2\": 4994,\n      \"floorAreaSqft\": 2694.7093557853154,\n      \"distance\": 3546.317123864927,\n      \"postcode\": \"string\",\n      \"address\": \"string\",\n      \"partialAddress\": \"string\",\n      \"price\": 1192,\n      \"type\": \"string\",\n      \"beds\": 9067,\n      \"agent\": \"string\",\n      \"floorplanFilenames\": [\n        \"string\",\n        \"string\"\n      ],\n      \"listingImages\": [\n        \"string\",\n        \"string\"\n      ],\n      \"listingStatus\": \"string\",\n      \"lastStatusDate\": \"string\",\n      \"listingDate\": \"string\",\n      \"latitude\": 5446.818505018232,\n      \"longitude\": 9802.916304296557\n    }\n  ],\n  \"lettingComparables\": [\n    {\n      \"id\": \"string\",\n      \"comparablesRef\": \"string\",\n      \"uprn\": 4448,\n      \"floorAreaM2\": 1513,\n      \"floorAreaSqft\": 2143.8179577096093,\n      \"distance\": 4797.23112617921,\n      \"orzPostcode\": \"string\",\n      \"orzAddress\": \"string\",\n      \"orzPartialAddress\": \"string\",\n      \"orzPrice\": 236,\n      \"orzType\": \"string\",\n      \"orzBeds\": 8114,\n      \"orzAgent\": \"string\",\n      \"orzFloorplanFilenames\": [\n        \"string\",\n        \"string\"\n      ],\n      \"orzListingImages\": [\n        \"string\",\n        \"string\"\n      ],\n      \"orzListingStatus\": \"string\",\n      \"lastStatusDate\": \"string\",\n      \"orzListingDate\": \"string\",\n      \"latitude\": 5825.229333071159,\n      \"longitude\": 1804.3020032173406\n    },\n    {\n      \"id\": \"string\",\n      \"comparablesRef\": \"string\",\n      \"uprn\": 6902,\n      \"floorAreaM2\": 9021,\n      \"floorAreaSqft\": 5370.690779619186,\n      \"distance\": 8315.254568491191,\n      \"orzPostcode\": \"string\",\n      \"orzAddress\": \"string\",\n      \"orzPartialAddress\": \"string\",\n      \"orzPrice\": 5391,\n      \"orzType\": \"string\",\n      \"orzBeds\": 9099,\n      \"orzAgent\": \"string\",\n      \"orzFloorplanFilenames\": [\n        \"string\",\n        \"string\"\n      ],\n      \"orzListingImages\": [\n        \"string\",\n        \"string\"\n      ],\n      \"orzListingStatus\": \"string\",\n      \"lastStatusDate\": \"string\",\n      \"orzListingDate\": \"string\",\n      \"latitude\": 3368.5951660265046,\n      \"longitude\": 4665.155972719262\n    }\n  ],\n  \"estimatedPrice\": 9414,\n  \"upperConfidence\": 1974,\n  \"lowerConfidence\": 1281,\n  \"estimatedRentPrice\": 8272,\n  \"rentUpperConfidence\": 8780,\n  \"rentLowerConfidence\": 7533,\n  \"grossRentalYieldPercentage\": 4963.103373034554,\n  \"confidenceBand\": \"string\",\n  \"rentConfidenceBand\": \"string\",\n  \"floorAreaM2\": 7847,\n  \"floorAreaSqft\": 644.2301521425464,\n  \"plotSizeAcres\": 8141.031472144687,\n  \"lastSoldPrice\": 1227,\n  \"lastSoldDate\": \"string\",\n  \"salePriceChange\": 7864,\n  \"lastRentedPrice\": 3986,\n  \"lastRentedDate\": \"string\",\n  \"rentalPriceChange\": 7724\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f7de32bd-e632-4b49-9bb3-e9826091364c",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fea19a17-bada-4295-b54e-601c13921f9d",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4727eaa4-fe62-4148-a036-6ef0938e6cb9",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "33629834-adfc-40b7-aa53-40118714be1a",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "76f6997d-90e5-4d6f-8e29-13167d208e1f",
+          "name": "Send off the report data for real.",
+          "request": {
+            "name": "Send off the report data for real.",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "valuations",
+                ":propertyId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sendAuctionReferral",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "propertyId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d4f701f4-7071-4e04-af8b-9da1baa8653e",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sendAuctionReferral",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a69c083d-66cf-4f01-a3fd-81246b10fd39",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sendAuctionReferral",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "610fadf7-c983-47ea-8a53-90e58df79d33",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sendAuctionReferral",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "231ce5c6-5c21-48d8-a2dd-db6ed1f35320",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sendAuctionReferral",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4be9e40a-29fd-4004-a3cc-28405da7b3eb",
+          "name": "Fetch status and sent date for the latest valuation of a property.",
+          "request": {
+            "name": "Fetch status and sent date for the latest valuation of a property.",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "valuations",
+                ":propertyId",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "propertyId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74c604a5-dcc0-4731-950c-d37386ddcc02",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"sentDate\": \"1984-04-28T05:50:08.054Z\",\n  \"lastSavedDate\": \"1966-02-27T23:09:13.077Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0725833c-3337-45c1-902c-2cdc2a925dac",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b9f4bdf7-9926-4183-9881-d3e42f44193d",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fed113ad-e292-4f14-af7d-201b51addb67",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7c617bd3-117a-4b32-a1d7-5dbebf0bfeaf",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    ":propertyId",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "02fa6816-00e6-4be2-a7d5-3a081b3f9bf3",
+          "name": "/v2/valuations/report-view",
+          "request": {
+            "name": "/v2/valuations/report-view",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "valuations",
+                "report-view"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"valuationId\": \"<integer>\",\n  \"userId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a7391697-ad6d-4e9f-8f1f-0173814a3063",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    "report-view"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valuationId\": \"<integer>\",\n  \"userId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e8dcd400-acc7-4a24-9807-bb15364750f0",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    "report-view"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valuationId\": \"<integer>\",\n  \"userId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a4a64291-0604-4a2b-aa44-a79ca90ddad1",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    "report-view"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valuationId\": \"<integer>\",\n  \"userId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "199d68a8-3fd9-42c6-b870-a2b8bafdca98",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "valuations",
+                    "report-view"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"valuationId\": \"<integer>\",\n  \"userId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 7692,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.purplebricks.co.uk/valuations-api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "fff972ef-e9c0-4e4c-a09d-f42b1337dc62",
+    "name": "Purplebricks.Valuations.Api 2 - Core",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "### The new home for accessing the valuations service library\n### [Purplebricks.Valuations.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/valuations-api)",
+      "type": "text/plain"
+    }
+  }
+}

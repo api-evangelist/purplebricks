@@ -1,0 +1,249 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Purplebricks Property API 2.0 - Platform",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ActiveProperty",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v2/activeproperty/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/property-api/v2/activeproperty/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ActivityDashboard",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v2/activitydashboard/getactivitydocument",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/property-api/v2/activitydashboard/getactivitydocument"
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v2/activitydashboard/getpropertiesbyuserid",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/property-api/v2/activitydashboard/getpropertiesbyuserid"
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v2/activitydashboard/getpropertynotificationcount",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/property-api/v2/activitydashboard/getpropertynotificationcount"
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Address",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /v2/address/createaddress",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/property-api/v2/address/createaddress",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Dashboard",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v2/dashboard",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/property-api/v2/dashboard"
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v2/dashboard/externallinks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/property-api/v2/dashboard/externallinks",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "GoToMarket",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /v2/gotomarket/{propertyId}/boardandkeysafepreference",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/property-api/v2/gotomarket/:propertyId/boardandkeysafepreference",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "PerformanceReport",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v2/performancereport/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/property-api/v2/performancereport/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /v2/performancereport/getadvertperformance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/property-api/v2/performancereport/getadvertperformance",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Preactive",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v2/preactive/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/property-api/v2/preactive/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

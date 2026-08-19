@@ -1050,3 +1050,9 @@ tools:
   source_operation: openapi/purplebricks-workflow-v1-openapi.yml#POST /v1/step/move
   tags:
   - Step
+deployment:
+  mode: none
+  verified: derived
+  tools: 205
+  checked: '2026-08-12'
+  source: catalog MCP census

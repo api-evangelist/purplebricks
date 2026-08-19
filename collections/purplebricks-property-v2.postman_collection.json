@@ -1,0 +1,1801 @@
+{
+  "item": [
+    {
+      "id": "eb128efe-71fa-44ae-8c02-bace1ef889e7",
+      "name": "ActiveProperty",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "936e74cc-8857-4673-8299-9ac397551036",
+          "name": "/v2/activeproperty/:id",
+          "request": {
+            "name": "/v2/activeproperty/:id",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "activeproperty",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "57992504-a874-4d6b-9070-e099e2462c48",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "activeproperty",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4280,\n  \"listingId\": \"string\",\n  \"userId\": 6574,\n  \"address\": \"string\",\n  \"published\": \"1960-11-02T00:27:27.863Z\",\n  \"price\": 4943.873975699506,\n  \"priceText\": \"string\",\n  \"minPrice\": 9986.742227365141,\n  \"maxPrice\": 7336.634157572547,\n  \"rentFrequency\": \"Weekly\",\n  \"images\": [\n    {\n      \"id\": 3415,\n      \"url\": \"string\",\n      \"thumbnailUrl\": \"string\",\n      \"title\": \"string\"\n    },\n    {\n      \"id\": 3244,\n      \"url\": \"string\",\n      \"thumbnailUrl\": \"string\",\n      \"title\": \"string\"\n    }\n  ],\n  \"toLet\": true,\n  \"hasOtherProperties\": true,\n  \"priceQualifier\": \"OffersOver\",\n  \"closingDate\": \"1980-02-28T02:53:50.556Z\",\n  \"valuationPrice\": 9295.998592134958,\n  \"hasMarketingReport\": true,\n  \"hasBoardOrdered\": true,\n  \"isScottishSaleProperty\": false,\n  \"instructedDate\": \"1968-09-06T14:54:36.966Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c1341436-27c0-4fc8-8322-8c9694650bc4",
+      "name": "ActivityDashboard",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "117069f6-e087-4dd9-94ad-f0f4615355e9",
+          "name": "/v2/activitydashboard/getactivitydocument",
+          "request": {
+            "name": "/v2/activitydashboard/getactivitydocument",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "activitydashboard",
+                "getactivitydocument"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aa70fa62-fe82-4d61-aa0c-81c58edce39c",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "activitydashboard",
+                    "getactivitydocument"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"offers\": {\n    \"id\": \"string\",\n    \"lastUpdated\": \"1993-07-15T23:21:54.232Z\",\n    \"offerToReview\": [\n      {\n        \"offerId\": 992,\n        \"propertyId\": 4043,\n        \"toLet\": false,\n        \"propertyAddress\": \"string\",\n        \"buyerName\": \"string\",\n        \"propertyRegionType\": \"Pennsylvania\"\n      },\n      {\n        \"offerId\": 5054,\n        \"propertyId\": 4144,\n        \"toLet\": true,\n        \"propertyAddress\": \"string\",\n        \"buyerName\": \"string\",\n        \"propertyRegionType\": \"Connecticut\"\n      }\n    ],\n    \"updateToOffer\": [\n      {\n        \"offerId\": 6454,\n        \"propertyId\": 5158,\n        \"toLet\": false,\n        \"propertyAddress\": \"string\",\n        \"buyerName\": \"string\",\n        \"propertyRegionType\": \"England\"\n      },\n      {\n        \"offerId\": 5976,\n        \"propertyId\": 3039,\n        \"toLet\": false,\n        \"propertyAddress\": \"string\",\n        \"buyerName\": \"string\",\n        \"propertyRegionType\": \"NewJersey\"\n      }\n    ],\n    \"lawyerDetailsRequired\": [\n      {\n        \"offerId\": 8063,\n        \"propertyId\": 5796,\n        \"toLet\": true,\n        \"propertyAddress\": \"string\",\n        \"buyerName\": \"string\",\n        \"propertyRegionType\": \"NewJersey\"\n      },\n      {\n        \"offerId\": 7159,\n        \"propertyId\": 5963,\n        \"toLet\": false,\n        \"propertyAddress\": \"string\",\n        \"buyerName\": \"string\",\n        \"propertyRegionType\": \"Victoria\"\n      }\n    ],\n    \"payReferencingFee\": [\n      {\n        \"offerId\": 3067,\n        \"propertyId\": 1534,\n        \"toLet\": true,\n        \"propertyAddress\": \"string\",\n        \"buyerName\": \"string\",\n        \"propertyRegionType\": \"California\"\n      },\n      {\n        \"offerId\": 1664,\n        \"propertyId\": 9533,\n        \"toLet\": true,\n        \"propertyAddress\": \"string\",\n        \"buyerName\": \"string\",\n        \"propertyRegionType\": \"WesternAustralia\"\n      }\n    ],\n    \"submitReferencing\": [\n      {\n        \"offerId\": 7624,\n        \"propertyId\": 5442,\n        \"toLet\": false,\n        \"propertyAddress\": \"string\",\n        \"buyerName\": \"string\",\n        \"propertyRegionType\": \"Scotland\"\n      },\n      {\n        \"offerId\": 5332,\n        \"propertyId\": 5878,\n        \"toLet\": true,\n        \"propertyAddress\": \"string\",\n        \"buyerName\": \"string\",\n        \"propertyRegionType\": \"Victoria\"\n      }\n    ]\n  },\n  \"viewings\": {\n    \"id\": \"string\",\n    \"lastUpdated\": \"1973-07-24T13:20:42.094Z\",\n    \"outcomeOfViewing\": [\n      {\n        \"viewingId\": 3711,\n        \"propertyId\": 1326,\n        \"propertyAddress\": \"string\"\n      },\n      {\n        \"viewingId\": 4069,\n        \"propertyId\": 6609,\n        \"propertyAddress\": \"string\"\n      }\n    ]\n  },\n  \"diary\": {\n    \"id\": \"string\",\n    \"lastUpdated\": \"1970-11-03T03:57:15.690Z\",\n    \"appointmentInDiary\": [\n      {\n        \"appointmentId\": 8607,\n        \"propertyId\": 9409,\n        \"appointmentDateTime\": \"2010-03-10T03:07:33.914Z\"\n      },\n      {\n        \"appointmentId\": 2693,\n        \"propertyId\": 1757,\n        \"appointmentDateTime\": \"1957-03-25T21:32:43.472Z\"\n      }\n    ]\n  },\n  \"messages\": {\n    \"id\": \"string\",\n    \"lastUpdated\": \"2021-07-01T02:38:34.726Z\",\n    \"unreadMessage\": [\n      {\n        \"messageId\": 6853,\n        \"propertyId\": 3229,\n        \"from\": \"string\"\n      },\n      {\n        \"messageId\": 9667,\n        \"propertyId\": 2742,\n        \"from\": \"string\"\n      }\n    ]\n  },\n  \"feedback\": {\n    \"id\": \"string\",\n    \"lastUpdated\": \"1962-04-25T05:12:48.886Z\",\n    \"provideFeedback\": [\n      {\n        \"feedbackId\": 4392,\n        \"propertyId\": 7834,\n        \"propertyAddress\": \"string\",\n        \"from\": \"string\"\n      },\n      {\n        \"feedbackId\": 8016,\n        \"propertyId\": 5803,\n        \"propertyAddress\": \"string\",\n        \"from\": \"string\"\n      }\n    ],\n    \"feedbackToReview\": [\n      {\n        \"feedbackId\": 7937,\n        \"propertyId\": 1542,\n        \"propertyAddress\": \"string\",\n        \"from\": \"string\"\n      },\n      {\n        \"feedbackId\": 7728,\n        \"propertyId\": 3264,\n        \"propertyAddress\": \"string\",\n        \"from\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fb01d53c-bc8f-4939-9fea-e8bc21969310",
+          "name": "/v2/activitydashboard/getpropertiesbyuserid",
+          "request": {
+            "name": "/v2/activitydashboard/getpropertiesbyuserid",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "activitydashboard",
+                "getpropertiesbyuserid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "685df53b-fb4d-476c-b673-2ab0b55bdcd4",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "activitydashboard",
+                    "getpropertiesbyuserid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"propertyId\": 4233,\n    \"address\": \"string\",\n    \"appointmentDate\": \"2015-11-03T03:49:13.226Z\",\n    \"isLive\": true,\n    \"lastActionCompleted\": \"Closing\",\n    \"imageUrl\": \"string\",\n    \"propertyTimeZone\": \"Australia/Perth\"\n  },\n  {\n    \"propertyId\": 117,\n    \"address\": \"string\",\n    \"appointmentDate\": \"1964-01-28T01:33:33.818Z\",\n    \"isLive\": false,\n    \"lastActionCompleted\": \"ForceContractsExchangedCoolingOffPeriod\",\n    \"imageUrl\": \"string\",\n    \"propertyTimeZone\": \"America/North_Dakota/New_Salem\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f7dec592-17ff-47b2-bdbd-c4a219f496e0",
+          "name": "/v2/activitydashboard/getpropertynotificationcount",
+          "request": {
+            "name": "/v2/activitydashboard/getpropertynotificationcount",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "activitydashboard",
+                "getpropertynotificationcount"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "69099422-71f3-4826-b9c7-3687da0f91f6",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "activitydashboard",
+                    "getpropertynotificationcount"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"diaryNotification\": [\n    {\n      \"propertyId\": 6980,\n      \"numOfItems\": 5518\n    },\n    {\n      \"propertyId\": 545,\n      \"numOfItems\": 6333\n    }\n  ],\n  \"viewingNotification\": [\n    {\n      \"propertyId\": 6149,\n      \"numOfItems\": 3451\n    },\n    {\n      \"propertyId\": 6699,\n      \"numOfItems\": 249\n    }\n  ],\n  \"offersNotification\": [\n    {\n      \"propertyId\": 5706,\n      \"numOfItems\": 5943\n    },\n    {\n      \"propertyId\": 5301,\n      \"numOfItems\": 8142\n    }\n  ],\n  \"messagesNotification\": [\n    {\n      \"propertyId\": 5637,\n      \"numOfItems\": 7497\n    },\n    {\n      \"propertyId\": 9329,\n      \"numOfItems\": 4565\n    }\n  ],\n  \"feedbackNotification\": [\n    {\n      \"propertyId\": 8254,\n      \"numOfItems\": 3698\n    },\n    {\n      \"propertyId\": 6953,\n      \"numOfItems\": 6147\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f4e162e7-4fba-4b70-a37a-1beec27dd2b3",
+      "name": "Address",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dd6e2ea1-a316-4c51-95ee-c470eeb08006",
+          "name": "/v2/address/createaddress",
+          "request": {
+            "name": "/v2/address/createaddress",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "address",
+                "createaddress"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"line1\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"town\": \"<string>\",\n  \"line2\": \"<string>\",\n  \"county\": \"<string>\",\n  \"country\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bd4273bb-0f4e-44e4-8229-aa0025925b01",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "address",
+                    "createaddress"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"line1\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"town\": \"<string>\",\n  \"line2\": \"<string>\",\n  \"county\": \"<string>\",\n  \"country\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "1270",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2c7732e5-cf9b-49b8-8e9d-2df2c3210f34",
+      "name": "Dashboard",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d47122b7-11eb-4bab-b56d-a4d942b2efc7",
+          "name": "/v2/dashboard",
+          "request": {
+            "name": "/v2/dashboard",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "dashboard"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a3969250-9a3d-464b-9bd8-656e056733b7",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "dashboard"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"primiaryZone\": \"string\",\n  \"isUserValidated\": false,\n  \"properties\": [\n    {\n      \"id\": 7762,\n      \"listingId\": \"string\",\n      \"address\": \"string\",\n      \"addressLine1\": \"string\",\n      \"addressLine2\": \"string\",\n      \"addressTown\": \"string\",\n      \"addressCounty\": \"string\",\n      \"addressCountry\": \"string\",\n      \"addressPostcode\": \"string\",\n      \"lastActionCompleted\": \"ForceSoldSubjectToContract\",\n      \"marketPrice\": 6558.0807492735275,\n      \"bookAgentDate\": \"1969-03-29T00:15:14.159Z\",\n      \"bookAgentDatePropertyLocalised\": \"1949-08-19T04:03:02.416Z\",\n      \"scheduledPublishDate\": \"1995-04-04T07:16:50.646Z\",\n      \"contractsExchangedDate\": \"2009-09-06T04:29:41.234Z\",\n      \"publishDate\": \"1973-04-28T03:35:40.546Z\",\n      \"lastActionDate\": \"2007-10-09T08:31:43.532Z\",\n      \"epcIsValid\": false,\n      \"appointmentId\": 4621,\n      \"toLet\": true,\n      \"regulatoryCertificateType\": \"HomeReport\",\n      \"primaryImageUrl\": \"string\",\n      \"primaryImageThumbnailUrl\": \"string\",\n      \"priceQualifier\": \"OffersOver\",\n      \"acceptedOfferAmount\": 8764.667357919454,\n      \"tenancyStatus\": \"GuarantorGreen\",\n      \"rentFrequency\": \"Yearly\",\n      \"regulatoryCertificateIsBeingValidated\": false,\n      \"regionType\": \"string\",\n      \"hasMarketingReport\": true,\n      \"hasPendingPurplebricksDeferredPaymentTransfer\": false,\n      \"hasAuctionDate\": true,\n      \"hasContract\": true,\n      \"isCompliant\": false,\n      \"marketPriceFormatted\": \"string\",\n      \"propertyTimeZone\": \"America/Indiana/Vincennes\",\n      \"isInstantInstruct\": false,\n      \"minAdvertPrice\": 4581,\n      \"maxAdvertPrice\": 5439,\n      \"comingSoon\": false\n    },\n    {\n      \"id\": 1794,\n      \"listingId\": \"string\",\n      \"address\": \"string\",\n      \"addressLine1\": \"string\",\n      \"addressLine2\": \"string\",\n      \"addressTown\": \"string\",\n      \"addressCounty\": \"string\",\n      \"addressCountry\": \"string\",\n      \"addressPostcode\": \"string\",\n      \"lastActionCompleted\": \"DiyAdvertAmended\",\n      \"marketPrice\": 5254.352333195111,\n      \"bookAgentDate\": \"1972-02-06T01:23:57.596Z\",\n      \"bookAgentDatePropertyLocalised\": \"1974-01-31T15:23:41.705Z\",\n      \"scheduledPublishDate\": \"1989-03-21T07:34:47.696Z\",\n      \"contractsExchangedDate\": \"1971-07-01T13:48:09.665Z\",\n      \"publishDate\": \"2004-08-26T19:03:28.826Z\",\n      \"lastActionDate\": \"1973-10-02T01:12:43.022Z\",\n      \"epcIsValid\": true,\n      \"appointmentId\": 1345,\n      \"toLet\": true,\n      \"regulatoryCertificateType\": \"Hmo\",\n      \"primaryImageUrl\": \"string\",\n      \"primaryImageThumbnailUrl\": \"string\",\n      \"priceQualifier\": \"Poa\",\n      \"acceptedOfferAmount\": 76.42898622375105,\n      \"tenancyStatus\": \"GuarantorInProgress\",\n      \"rentFrequency\": \"Quarterly\",\n      \"regulatoryCertificateIsBeingValidated\": false,\n      \"regionType\": \"string\",\n      \"hasMarketingReport\": true,\n      \"hasPendingPurplebricksDeferredPaymentTransfer\": true,\n      \"hasAuctionDate\": true,\n      \"hasContract\": false,\n      \"isCompliant\": true,\n      \"marketPriceFormatted\": \"string\",\n      \"propertyTimeZone\": \"Australia/Brisbane\",\n      \"isInstantInstruct\": true,\n      \"minAdvertPrice\": 7297,\n      \"maxAdvertPrice\": 8252,\n      \"comingSoon\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "df0d006a-ff8f-4c09-a3a4-fd03e7f9707f",
+          "name": "/v2/dashboard/externallinks",
+          "request": {
+            "name": "/v2/dashboard/externallinks",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "dashboard",
+                "externallinks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "propertyId",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "931e6a24-0a74-490b-94bd-47b7d0d28a9c",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "dashboard",
+                    "externallinks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "propertyId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"rightMoveAdvertUrl\": \"string\",\n  \"zooplaAdvertUrl\": \"string\",\n  \"onTheMarketAdvertUrl\": \"string\",\n  \"purplebricksPropertyUrlPath\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "03300089-3971-4d6b-b5e1-498fa4074f09",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "dashboard",
+                    "externallinks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "propertyId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 9099,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cf696831-daf9-4e3a-a61d-8769ee28386d",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "dashboard",
+                    "externallinks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "propertyId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 9099,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c6a4f27f-0f5e-4d18-84d7-49c567561565",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "dashboard",
+                    "externallinks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "propertyId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 9099,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3a08221f-e90b-4a92-83be-668a030b6599",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "dashboard",
+                    "externallinks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "propertyId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 9099,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4432e8b8-44c4-42ab-aa14-00aad4fe8fad",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "dashboard",
+                    "externallinks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "propertyId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f5c318a7-5e9e-4f5d-b0a8-5ab836a6be0f",
+      "name": "GoToMarket",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0f0e8aa5-ed56-4433-a217-57181e38362f",
+          "name": "/v2/gotomarket/:propertyId/boardandkeysafepreference",
+          "request": {
+            "name": "/v2/gotomarket/:propertyId/boardandkeysafepreference",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "gotomarket",
+                ":propertyId",
+                "boardandkeysafepreference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "propertyId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"requiresStandingBoard\": \"<boolean>\",\n  \"requiresKeySafe\": \"<boolean>\",\n  \"keySafeNotes\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9c7bf9bd-1087-4e1f-93a0-a1dfbcaafe9b",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gotomarket",
+                    ":propertyId",
+                    "boardandkeysafepreference"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requiresStandingBoard\": \"<boolean>\",\n  \"requiresKeySafe\": \"<boolean>\",\n  \"keySafeNotes\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9e9038fe-a918-4cfb-8ff4-d6104185e79b",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gotomarket",
+                    ":propertyId",
+                    "boardandkeysafepreference"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requiresStandingBoard\": \"<boolean>\",\n  \"requiresKeySafe\": \"<boolean>\",\n  \"keySafeNotes\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 9099,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b4821bb4-e7ef-4684-be6d-15ffd3db6979",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gotomarket",
+                    ":propertyId",
+                    "boardandkeysafepreference"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requiresStandingBoard\": \"<boolean>\",\n  \"requiresKeySafe\": \"<boolean>\",\n  \"keySafeNotes\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 9099,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e8bb4542-ef34-4e5d-a9fb-ce16fad2a702",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gotomarket",
+                    ":propertyId",
+                    "boardandkeysafepreference"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requiresStandingBoard\": \"<boolean>\",\n  \"requiresKeySafe\": \"<boolean>\",\n  \"keySafeNotes\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 9099,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d2a95bba-b1e5-4fc3-9a9b-4f7b1a0b357d",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "gotomarket",
+                    ":propertyId",
+                    "boardandkeysafepreference"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "propertyId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"requiresStandingBoard\": \"<boolean>\",\n  \"requiresKeySafe\": \"<boolean>\",\n  \"keySafeNotes\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "817c6978-3afd-467b-af71-46c74030cc0b",
+      "name": "PerformanceReport",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6aa9f679-7a20-44f2-bd4b-7a0068389bd5",
+          "name": "/v2/performancereport/:id",
+          "request": {
+            "name": "/v2/performancereport/:id",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "performancereport",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "userId",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "14140efc-9954-4500-b7c7-c4d01c26ace7",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "performancereport",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "userId",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"propertyDetails\": {\n    \"address\": \"string\",\n    \"isRegionScotland\": true,\n    \"toLet\": false,\n    \"publishDate\": \"2015-02-15T19:25:29.653Z\",\n    \"marketDate\": \"2005-04-25T01:33:16.721Z\",\n    \"imageUrl\": \"string\",\n    \"marketPrice\": 8269.769453906303,\n    \"minAdvertPrice\": 3649,\n    \"maxAdvertPrice\": 7736,\n    \"priceText\": \"string\",\n    \"lastActionCompleted\": \"DiyAdvertRejected\",\n    \"rentFrequency\": \"Daily\",\n    \"isAuction\": true,\n    \"postcode\": \"string\",\n    \"propertyTypeName\": \"string\",\n    \"latitude\": 4841.452584999663,\n    \"longitude\": 1197.283460733587\n  },\n  \"daysOnMarket\": 1635,\n  \"numberTracking\": 2989,\n  \"numberOfNotesOfInterest\": 8379,\n  \"upcomingViewingsCount\": 878,\n  \"attendedViewingsCount\": 1494,\n  \"upcomingOrAttendedViewingsCount\": 1670,\n  \"viewingsAwaitingConfirmationCount\": 4797,\n  \"viewingsCancelledCount\": 5792,\n  \"unattendedViewingsCount\": 3281,\n  \"unconfirmedViewingsCancelledCount\": 3060,\n  \"offersReceivedCount\": 8328,\n  \"newOffersCount\": 2931,\n  \"negotiatingOffersCount\": 4053,\n  \"declinedOffersCount\": 6691,\n  \"activeOffersCount\": 8060,\n  \"timesViewed\": 3890,\n  \"timesViewedLastSeven\": 5836,\n  \"contractDownloadsCount\": 6204,\n  \"awaitingFeedbackCount\": 8791,\n  \"averageFeedback\": {\n    \"count\": 674,\n    \"presentation\": 5083,\n    \"suitability\": 7502,\n    \"price\": 967\n  },\n  \"offers\": [\n    {\n      \"date\": \"2023-09-17T09:29:44.000Z\",\n      \"name\": \"string\",\n      \"email\": \"string\",\n      \"userId\": 6128,\n      \"price\": 1288.160095171964,\n      \"status\": \"Declined\"\n    },\n    {\n      \"date\": \"1973-10-18T17:11:05.156Z\",\n      \"name\": \"string\",\n      \"email\": \"string\",\n      \"userId\": 7745,\n      \"price\": 4251.227941622788,\n      \"status\": \"WithdrawOffer\"\n    }\n  ],\n  \"viewings\": [\n    {\n      \"appointmentReference\": \"4fb194bd-6390-aa1c-a398-87daa3f566ee\",\n      \"dateBooked\": \"1971-03-30T05:01:31.243Z\",\n      \"dateViewed\": \"2026-07-03T13:12:09.987Z\",\n      \"viewerName\": \"string\",\n      \"email\": \"string\",\n      \"viewerId\": 7142,\n      \"primaryContactNumber\": \"string\",\n      \"isCancelled\": false,\n      \"isRearranged\": false,\n      \"isConfirmed\": false,\n      \"isAttended\": false,\n      \"buyerAdditionalData\": {\n        \"moveTimeframe\": \"string\",\n        \"timeOnMarket\": \"string\",\n        \"viewingPurpose\": \"string\",\n        \"hasPortfolio\": \"string\",\n        \"propertyToSell\": \"string\",\n        \"saleProgression\": \"string\",\n        \"mortgageRequired\": \"string\",\n        \"mortgageStatus\": \"string\"\n      },\n      \"tenantAdditionalData\": {\n        \"lettingTerms\": \"string\",\n        \"employmentStatus\": \"string\",\n        \"poorCreditHistory\": \"string\",\n        \"havePets\": \"string\",\n        \"otherPets\": \"string\",\n        \"isSmoker\": \"string\",\n        \"moveTimeframe\": \"string\"\n      },\n      \"whoNeedsToConfirm\": \"string\",\n      \"bookingId\": 5917,\n      \"rearrangedBookingId\": 3836,\n      \"feedbackPresentation\": 156,\n      \"feedbackSuitability\": 6904,\n      \"feedbackPrice\": 1567\n    },\n    {\n      \"appointmentReference\": \"2115c62d-5a89-0aca-1a3f-88da1076f077\",\n      \"dateBooked\": \"1951-11-19T23:38:55.713Z\",\n      \"dateViewed\": \"1996-05-25T06:41:02.362Z\",\n      \"viewerName\": \"string\",\n      \"email\": \"string\",\n      \"viewerId\": 3037,\n      \"primaryContactNumber\": \"string\",\n      \"isCancelled\": true,\n      \"isRearranged\": true,\n      \"isConfirmed\": false,\n      \"isAttended\": true,\n      \"buyerAdditionalData\": {\n        \"moveTimeframe\": \"string\",\n        \"timeOnMarket\": \"string\",\n        \"viewingPurpose\": \"string\",\n        \"hasPortfolio\": \"string\",\n        \"propertyToSell\": \"string\",\n        \"saleProgression\": \"string\",\n        \"mortgageRequired\": \"string\",\n        \"mortgageStatus\": \"string\"\n      },\n      \"tenantAdditionalData\": {\n        \"lettingTerms\": \"string\",\n        \"employmentStatus\": \"string\",\n        \"poorCreditHistory\": \"string\",\n        \"havePets\": \"string\",\n        \"otherPets\": \"string\",\n        \"isSmoker\": \"string\",\n        \"moveTimeframe\": \"string\"\n      },\n      \"whoNeedsToConfirm\": \"string\",\n      \"bookingId\": 6043,\n      \"rearrangedBookingId\": 4600,\n      \"feedbackPresentation\": 8514,\n      \"feedbackSuitability\": 8238,\n      \"feedbackPrice\": 6843\n    }\n  ],\n  \"blockedViewings\": [\n    {\n      \"userId\": 201,\n      \"name\": \"string\",\n      \"email\": \"string\",\n      \"attemptDate\": \"1949-06-07T09:11:19.368Z\",\n      \"blockedForPets\": false,\n      \"blockedForSmoker\": false,\n      \"blockedForDhs\": true\n    },\n    {\n      \"userId\": 5189,\n      \"name\": \"string\",\n      \"email\": \"string\",\n      \"attemptDate\": \"1988-05-10T18:37:18.346Z\",\n      \"blockedForPets\": false,\n      \"blockedForSmoker\": false,\n      \"blockedForDhs\": false\n    }\n  ],\n  \"rightmovePerformance\": {\n    \"totalViews\": 933,\n    \"viewsInLast7Days\": 4527,\n    \"totalSearchHits\": 2548,\n    \"searchHitsInLast7Days\": 5943,\n    \"totalEnquiries\": 1162,\n    \"rightmoveEnquiries\": 2263,\n    \"searchHitsAndViewsLastUpdatedDate\": \"1969-11-30T09:58:32.872Z\",\n    \"enquiriesLastUpdatedDate\": \"1997-08-30T09:31:26.023Z\"\n  },\n  \"notesOfInterestDetails\": [\n    {\n      \"name\": \"string\",\n      \"phoneNumber\": \"string\",\n      \"email\": \"string\",\n      \"userId\": 4408\n    },\n    {\n      \"name\": \"string\",\n      \"phoneNumber\": \"string\",\n      \"email\": \"string\",\n      \"userId\": 7105\n    }\n  ],\n  \"upcomingOrAttendedViewings\": [\n    {\n      \"appointmentReference\": \"5d15543b-a9c1-5552-6180-92dff6398b07\",\n      \"dateBooked\": \"2024-05-14T15:28:08.536Z\",\n      \"dateViewed\": \"1964-12-11T20:51:55.096Z\",\n      \"viewerName\": \"string\",\n      \"email\": \"string\",\n      \"viewerId\": 9627,\n      \"primaryContactNumber\": \"string\",\n      \"isCancelled\": false,\n      \"isRearranged\": true,\n      \"isConfirmed\": false,\n      \"isAttended\": false,\n      \"buyerAdditionalData\": {\n        \"moveTimeframe\": \"string\",\n        \"timeOnMarket\": \"string\",\n        \"viewingPurpose\": \"string\",\n        \"hasPortfolio\": \"string\",\n        \"propertyToSell\": \"string\",\n        \"saleProgression\": \"string\",\n        \"mortgageRequired\": \"string\",\n        \"mortgageStatus\": \"string\"\n      },\n      \"tenantAdditionalData\": {\n        \"lettingTerms\": \"string\",\n        \"employmentStatus\": \"string\",\n        \"poorCreditHistory\": \"string\",\n        \"havePets\": \"string\",\n        \"otherPets\": \"string\",\n        \"isSmoker\": \"string\",\n        \"moveTimeframe\": \"string\"\n      },\n      \"whoNeedsToConfirm\": \"string\",\n      \"bookingId\": 3394,\n      \"rearrangedBookingId\": 3329,\n      \"feedbackPresentation\": 1389,\n      \"feedbackSuitability\": 273,\n      \"feedbackPrice\": 7568\n    },\n    {\n      \"appointmentReference\": \"1609757a-c0de-c13f-e0c1-b7a601dfae98\",\n      \"dateBooked\": \"1968-04-21T02:13:57.393Z\",\n      \"dateViewed\": \"1994-11-30T02:20:39.551Z\",\n      \"viewerName\": \"string\",\n      \"email\": \"string\",\n      \"viewerId\": 52,\n      \"primaryContactNumber\": \"string\",\n      \"isCancelled\": false,\n      \"isRearranged\": true,\n      \"isConfirmed\": true,\n      \"isAttended\": true,\n      \"buyerAdditionalData\": {\n        \"moveTimeframe\": \"string\",\n        \"timeOnMarket\": \"string\",\n        \"viewingPurpose\": \"string\",\n        \"hasPortfolio\": \"string\",\n        \"propertyToSell\": \"string\",\n        \"saleProgression\": \"string\",\n        \"mortgageRequired\": \"string\",\n        \"mortgageStatus\": \"string\"\n      },\n      \"tenantAdditionalData\": {\n        \"lettingTerms\": \"string\",\n        \"employmentStatus\": \"string\",\n        \"poorCreditHistory\": \"string\",\n        \"havePets\": \"string\",\n        \"otherPets\": \"string\",\n        \"isSmoker\": \"string\",\n        \"moveTimeframe\": \"string\"\n      },\n      \"whoNeedsToConfirm\": \"string\",\n      \"bookingId\": 4836,\n      \"rearrangedBookingId\": 7428,\n      \"feedbackPresentation\": 7415,\n      \"feedbackSuitability\": 9946,\n      \"feedbackPrice\": 7005\n    }\n  ],\n  \"viewingsAwaitingConfirmation\": [\n    {\n      \"appointmentReference\": \"07771949-e7fc-d4a3-7171-8138d29380f3\",\n      \"dateBooked\": \"1971-05-19T14:28:53.650Z\",\n      \"dateViewed\": \"2009-02-14T12:31:36.191Z\",\n      \"viewerName\": \"string\",\n      \"email\": \"string\",\n      \"viewerId\": 9110,\n      \"primaryContactNumber\": \"string\",\n      \"isCancelled\": true,\n      \"isRearranged\": false,\n      \"isConfirmed\": false,\n      \"isAttended\": true,\n      \"buyerAdditionalData\": {\n        \"moveTimeframe\": \"string\",\n        \"timeOnMarket\": \"string\",\n        \"viewingPurpose\": \"string\",\n        \"hasPortfolio\": \"string\",\n        \"propertyToSell\": \"string\",\n        \"saleProgression\": \"string\",\n        \"mortgageRequired\": \"string\",\n        \"mortgageStatus\": \"string\"\n      },\n      \"tenantAdditionalData\": {\n        \"lettingTerms\": \"string\",\n        \"employmentStatus\": \"string\",\n        \"poorCreditHistory\": \"string\",\n        \"havePets\": \"string\",\n        \"otherPets\": \"string\",\n        \"isSmoker\": \"string\",\n        \"moveTimeframe\": \"string\"\n      },\n      \"whoNeedsToConfirm\": \"string\",\n      \"bookingId\": 2892,\n      \"rearrangedBookingId\": 7303,\n      \"feedbackPresentation\": 8808,\n      \"feedbackSuitability\": 7689,\n      \"feedbackPrice\": 6566\n    },\n    {\n      \"appointmentReference\": \"7af54e75-b7ba-4c61-de56-dd83ee3cc90f\",\n      \"dateBooked\": \"1991-05-10T14:42:21.217Z\",\n      \"dateViewed\": \"2002-04-03T00:21:31.932Z\",\n      \"viewerName\": \"string\",\n      \"email\": \"string\",\n      \"viewerId\": 5966,\n      \"primaryContactNumber\": \"string\",\n      \"isCancelled\": true,\n      \"isRearranged\": false,\n      \"isConfirmed\": false,\n      \"isAttended\": false,\n      \"buyerAdditionalData\": {\n        \"moveTimeframe\": \"string\",\n        \"timeOnMarket\": \"string\",\n        \"viewingPurpose\": \"string\",\n        \"hasPortfolio\": \"string\",\n        \"propertyToSell\": \"string\",\n        \"saleProgression\": \"string\",\n        \"mortgageRequired\": \"string\",\n        \"mortgageStatus\": \"string\"\n      },\n      \"tenantAdditionalData\": {\n        \"lettingTerms\": \"string\",\n        \"employmentStatus\": \"string\",\n        \"poorCreditHistory\": \"string\",\n        \"havePets\": \"string\",\n        \"otherPets\": \"string\",\n        \"isSmoker\": \"string\",\n        \"moveTimeframe\": \"string\"\n      },\n      \"whoNeedsToConfirm\": \"string\",\n      \"bookingId\": 1561,\n      \"rearrangedBookingId\": 8273,\n      \"feedbackPresentation\": 4440,\n      \"feedbackSuitability\": 1149,\n      \"feedbackPrice\": 3515\n    }\n  ],\n  \"viewingsCancelled\": [\n    {\n      \"appointmentReference\": \"a1ee7e02-94b9-4b70-7eaf-c1fe82e15623\",\n      \"dateBooked\": \"1954-12-07T00:25:50.816Z\",\n      \"dateViewed\": \"1951-06-23T21:57:41.096Z\",\n      \"viewerName\": \"string\",\n      \"email\": \"string\",\n      \"viewerId\": 1493,\n      \"primaryContactNumber\": \"string\",\n      \"isCancelled\": true,\n      \"isRearranged\": true,\n      \"isConfirmed\": false,\n      \"isAttended\": true,\n      \"buyerAdditionalData\": {\n        \"moveTimeframe\": \"string\",\n        \"timeOnMarket\": \"string\",\n        \"viewingPurpose\": \"string\",\n        \"hasPortfolio\": \"string\",\n        \"propertyToSell\": \"string\",\n        \"saleProgression\": \"string\",\n        \"mortgageRequired\": \"string\",\n        \"mortgageStatus\": \"string\"\n      },\n      \"tenantAdditionalData\": {\n        \"lettingTerms\": \"string\",\n        \"employmentStatus\": \"string\",\n        \"poorCreditHistory\": \"string\",\n        \"havePets\": \"string\",\n        \"otherPets\": \"string\",\n        \"isSmoker\": \"string\",\n        \"moveTimeframe\": \"string\"\n      },\n      \"whoNeedsToConfirm\": \"string\",\n      \"bookingId\": 4271,\n      \"rearrangedBookingId\": 7282,\n      \"feedbackPresentation\": 3614,\n      \"feedbackSuitability\": 7947,\n      \"feedbackPrice\": 9014\n    },\n    {\n      \"appointmentReference\": \"44290c76-96e5-7867-32d3-8743d930f0b5\",\n      \"dateBooked\": \"1985-06-17T02:02:02.736Z\",\n      \"dateViewed\": \"1954-01-20T12:29:28.085Z\",\n      \"viewerName\": \"string\",\n      \"email\": \"string\",\n      \"viewerId\": 3664,\n      \"primaryContactNumber\": \"string\",\n      \"isCancelled\": true,\n      \"isRearranged\": true,\n      \"isConfirmed\": false,\n      \"isAttended\": true,\n      \"buyerAdditionalData\": {\n        \"moveTimeframe\": \"string\",\n        \"timeOnMarket\": \"string\",\n        \"viewingPurpose\": \"string\",\n        \"hasPortfolio\": \"string\",\n        \"propertyToSell\": \"string\",\n        \"saleProgression\": \"string\",\n        \"mortgageRequired\": \"string\",\n        \"mortgageStatus\": \"string\"\n      },\n      \"tenantAdditionalData\": {\n        \"lettingTerms\": \"string\",\n        \"employmentStatus\": \"string\",\n        \"poorCreditHistory\": \"string\",\n        \"havePets\": \"string\",\n        \"otherPets\": \"string\",\n        \"isSmoker\": \"string\",\n        \"moveTimeframe\": \"string\"\n      },\n      \"whoNeedsToConfirm\": \"string\",\n      \"bookingId\": 9640,\n      \"rearrangedBookingId\": 6586,\n      \"feedbackPresentation\": 8927,\n      \"feedbackSuitability\": 1524,\n      \"feedbackPrice\": 4906\n    }\n  ],\n  \"unconfirmedViewingsCancelled\": [\n    {\n      \"appointmentReference\": \"665c85fa-2e39-17e3-3ab0-d67676e1deca\",\n      \"dateBooked\": \"1973-01-16T03:24:35.549Z\",\n      \"dateViewed\": \"2016-04-24T20:43:37.647Z\",\n      \"viewerName\": \"string\",\n      \"email\": \"string\",\n      \"viewerId\": 3393,\n      \"primaryContactNumber\": \"string\",\n      \"isCancelled\": false,\n      \"isRearranged\": true,\n      \"isConfirmed\": true,\n      \"isAttended\": false,\n      \"buyerAdditionalData\": {\n        \"moveTimeframe\": \"string\",\n        \"timeOnMarket\": \"string\",\n        \"viewingPurpose\": \"string\",\n        \"hasPortfolio\": \"string\",\n        \"propertyToSell\": \"string\",\n        \"saleProgression\": \"string\",\n        \"mortgageRequired\": \"string\",\n        \"mortgageStatus\": \"string\"\n      },\n      \"tenantAdditionalData\": {\n        \"lettingTerms\": \"string\",\n        \"employmentStatus\": \"string\",\n        \"poorCreditHistory\": \"string\",\n        \"havePets\": \"string\",\n        \"otherPets\": \"string\",\n        \"isSmoker\": \"string\",\n        \"moveTimeframe\": \"string\"\n      },\n      \"whoNeedsToConfirm\": \"string\",\n      \"bookingId\": 8485,\n      \"rearrangedBookingId\": 6551,\n      \"feedbackPresentation\": 859,\n      \"feedbackSuitability\": 8521,\n      \"feedbackPrice\": 5505\n    },\n    {\n      \"appointmentReference\": \"b31c374d-fe3d-4315-7881-f7412a709ae8\",\n      \"dateBooked\": \"1995-05-13T10:44:20.683Z\",\n      \"dateViewed\": \"1949-06-20T08:53:28.067Z\",\n      \"viewerName\": \"string\",\n      \"email\": \"string\",\n      \"viewerId\": 9415,\n      \"primaryContactNumber\": \"string\",\n      \"isCancelled\": true,\n      \"isRearranged\": false,\n      \"isConfirmed\": true,\n      \"isAttended\": true,\n      \"buyerAdditionalData\": {\n        \"moveTimeframe\": \"string\",\n        \"timeOnMarket\": \"string\",\n        \"viewingPurpose\": \"string\",\n        \"hasPortfolio\": \"string\",\n        \"propertyToSell\": \"string\",\n        \"saleProgression\": \"string\",\n        \"mortgageRequired\": \"string\",\n        \"mortgageStatus\": \"string\"\n      },\n      \"tenantAdditionalData\": {\n        \"lettingTerms\": \"string\",\n        \"employmentStatus\": \"string\",\n        \"poorCreditHistory\": \"string\",\n        \"havePets\": \"string\",\n        \"otherPets\": \"string\",\n        \"isSmoker\": \"string\",\n        \"moveTimeframe\": \"string\"\n      },\n      \"whoNeedsToConfirm\": \"string\",\n      \"bookingId\": 3847,\n      \"rearrangedBookingId\": 3373,\n      \"feedbackPresentation\": 3689,\n      \"feedbackSuitability\": 5372,\n      \"feedbackPrice\": 6826\n    }\n  ],\n  \"unattendedViewings\": [\n    {\n      \"appointmentReference\": \"96213cdf-498a-4a21-673a-52ef0aad778a\",\n      \"dateBooked\": \"1982-01-26T18:48:15.527Z\",\n      \"dateViewed\": \"1966-11-06T07:02:23.196Z\",\n      \"viewerName\": \"string\",\n      \"email\": \"string\",\n      \"viewerId\": 2394,\n      \"primaryContactNumber\": \"string\",\n      \"isCancelled\": false,\n      \"isRearranged\": false,\n      \"isConfirmed\": true,\n      \"isAttended\": false,\n      \"buyerAdditionalData\": {\n        \"moveTimeframe\": \"string\",\n        \"timeOnMarket\": \"string\",\n        \"viewingPurpose\": \"string\",\n        \"hasPortfolio\": \"string\",\n        \"propertyToSell\": \"string\",\n        \"saleProgression\": \"string\",\n        \"mortgageRequired\": \"string\",\n        \"mortgageStatus\": \"string\"\n      },\n      \"tenantAdditionalData\": {\n        \"lettingTerms\": \"string\",\n        \"employmentStatus\": \"string\",\n        \"poorCreditHistory\": \"string\",\n        \"havePets\": \"string\",\n        \"otherPets\": \"string\",\n        \"isSmoker\": \"string\",\n        \"moveTimeframe\": \"string\"\n      },\n      \"whoNeedsToConfirm\": \"string\",\n      \"bookingId\": 3719,\n      \"rearrangedBookingId\": 3955,\n      \"feedbackPresentation\": 8307,\n      \"feedbackSuitability\": 848,\n      \"feedbackPrice\": 2618\n    },\n    {\n      \"appointmentReference\": \"c82d01da-b2ff-68ad-3be5-abace41bfd2e\",\n      \"dateBooked\": \"2000-09-01T14:01:08.820Z\",\n      \"dateViewed\": \"1978-06-24T06:40:16.560Z\",\n      \"viewerName\": \"string\",\n      \"email\": \"string\",\n      \"viewerId\": 8971,\n      \"primaryContactNumber\": \"string\",\n      \"isCancelled\": false,\n      \"isRearranged\": false,\n      \"isConfirmed\": true,\n      \"isAttended\": false,\n      \"buyerAdditionalData\": {\n        \"moveTimeframe\": \"string\",\n        \"timeOnMarket\": \"string\",\n        \"viewingPurpose\": \"string\",\n        \"hasPortfolio\": \"string\",\n        \"propertyToSell\": \"string\",\n        \"saleProgression\": \"string\",\n        \"mortgageRequired\": \"string\",\n        \"mortgageStatus\": \"string\"\n      },\n      \"tenantAdditionalData\": {\n        \"lettingTerms\": \"string\",\n        \"employmentStatus\": \"string\",\n        \"poorCreditHistory\": \"string\",\n        \"havePets\": \"string\",\n        \"otherPets\": \"string\",\n        \"isSmoker\": \"string\",\n        \"moveTimeframe\": \"string\"\n      },\n      \"whoNeedsToConfirm\": \"string\",\n      \"bookingId\": 569,\n      \"rearrangedBookingId\": 597,\n      \"feedbackPresentation\": 119,\n      \"feedbackSuitability\": 2542,\n      \"feedbackPrice\": 6404\n    }\n  ],\n  \"propertyTimeZone\": \"Australia/Darwin\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ad6dae4-a356-4775-b8dd-db5501ae6217",
+          "name": "/v2/performancereport/getadvertperformance",
+          "request": {
+            "name": "/v2/performancereport/getadvertperformance",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "performancereport",
+                "getadvertperformance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "propertyId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "to",
+                  "value": "<dateTime>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5b09697e-7924-4d37-bb69-c8abfd89e909",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "performancereport",
+                    "getadvertperformance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "propertyId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"earlierDataAvailable\": false,\n  \"laterDataAvailable\": true,\n  \"dates\": [\n    {\n      \"date\": \"1982-11-04T10:46:55.703Z\",\n      \"searches\": 7883,\n      \"views\": 3852,\n      \"viewings\": 4920\n    },\n    {\n      \"date\": \"2012-10-25T01:31:00.526Z\",\n      \"searches\": 8940,\n      \"views\": 2002,\n      \"viewings\": 4168\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a475daea-83d5-467c-996f-f237406a4c10",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "performancereport",
+                    "getadvertperformance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "propertyId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f4ce735b-e412-46bd-a8fb-0f1c91b0412b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "performancereport",
+                    "getadvertperformance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "propertyId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 9099,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "945cae1e-dcc9-4890-aba8-c944021bcf42",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "performancereport",
+                    "getadvertperformance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "propertyId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "to",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 9099,\n  \"detail\": \"string\",\n  \"instance\": \"string\",\n  \"key_0\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8f3303f5-c707-4f70-8549-f852b96c1cf6",
+      "name": "Preactive",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a7904465-b4b3-4708-bee4-7f1b47577bde",
+          "name": "/v2/preactive/:id",
+          "request": {
+            "name": "/v2/preactive/:id",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "preactive",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0d97f63d-3c86-4bf2-962d-7a1fc615c9e1",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "preactive",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2761,\n  \"expert\": {\n    \"forename\": \"string\",\n    \"surname\": \"string\",\n    \"imageUrl\": \"string\",\n    \"phoneNumber\": \"string\",\n    \"agentId\": 9211\n  },\n  \"address\": \"string\",\n  \"valuationId\": 6055,\n  \"hasValuation\": true,\n  \"initialBoardOrdered\": false,\n  \"bookExpertDate\": \"1981-02-20T14:58:18.573Z\",\n  \"bookingId\": 3336,\n  \"bookingIsConfirmed\": true,\n  \"instructDate\": \"1999-03-11T15:40:55.289Z\",\n  \"publishDate\": \"2003-11-23T02:48:48.751Z\",\n  \"scheduledMarketingDate\": \"2006-06-05T09:30:04.062Z\",\n  \"lastActionCompleted\": \"UnderOffer\",\n  \"toLet\": false,\n  \"shoppingCart\": {\n    \"id\": 783,\n    \"vatRate\": 3679.0573113748937,\n    \"vatTotal\": 7619.9098632219675,\n    \"total\": 1934.5854644515082,\n    \"voucherDiscount\": 1018.9707899801837,\n    \"itemCount\": 2110,\n    \"items\": [\n      {\n        \"itemId\": 9831,\n        \"shoppingCartId\": 3349,\n        \"addOnId\": 5707,\n        \"description\": \"string\",\n        \"value\": 1872.2667631368217,\n        \"quantity\": 4990,\n        \"zeroValueText\": \"string\",\n        \"type\": \"ProfessionalPhotos\",\n        \"isVatExcluded\": false\n      },\n      {\n        \"itemId\": 9317,\n        \"shoppingCartId\": 4944,\n        \"addOnId\": 8315,\n        \"description\": \"string\",\n        \"value\": 9679.89194024964,\n        \"quantity\": 2756,\n        \"zeroValueText\": \"string\",\n        \"type\": \"RealEstateAuFeatureListing\",\n        \"isVatExcluded\": true\n      }\n    ],\n    \"voucher\": {\n      \"id\": 681,\n      \"shoppingCartId\": 8462,\n      \"voucherId\": 5763,\n      \"amount\": 8009.087446943813,\n      \"code\": \"string\",\n      \"voucherType\": \"Amount\",\n      \"addOnIds\": [\n        902,\n        4541\n      ]\n    },\n    \"payAtSettlementTotal\": 2727.6948130130195,\n    \"payNowTotal\": 6936.4710701192835,\n    \"isInstruction\": true\n  },\n  \"propertiesCount\": 7904,\n  \"approveListingCurrentStep\": 255,\n  \"isDiy\": false,\n  \"diyViewModel\": {\n    \"titleDeedValidated\": true,\n    \"idValidated\": false,\n    \"advertPhotosValidated\": true\n  },\n  \"regulatoryCertificateType\": \"Epc\",\n  \"regulatoryCertificateIsOrdered\": false,\n  \"regulatoryCertificateIsBeingValidated\": false,\n  \"isSalesContractAvailable\": true,\n  \"pageToDisplay\": \"string\",\n  \"propertyTimeZone\": \"America/Indiana/Petersburg\",\n  \"isInstantInstruct\": false,\n  \"comingSoon\": false,\n  \"isDeferred\": true,\n  \"marketingFee\": 5356.874334305772,\n  \"paymentMethod\": \"PayPalCredit\",\n  \"paymentDateTime\": \"1996-05-19T01:13:39.322Z\",\n  \"hasOwnershipStatus\": true,\n  \"paymentSwitchAvailable\": true,\n  \"isScottishSaleProperty\": true,\n  \"homeReportExpiryDate\": \"1949-01-05T17:44:10.719Z\",\n  \"freePackageOrdered\": false,\n  \"orderedBcProductIds\": [\n    150,\n    2127\n  ],\n  \"instantValuationConfidenceLevel\": \"string\",\n  \"eventType\": \"Valuation\",\n  \"customerCanUploadPhotos\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.purplebricks.co.uk/property-api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "cfb9df33-f113-4ff7-9b52-243d7920b125",
+    "name": "Purplebricks Property API 2.0 - Platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "### All Ex Uber Property related controllers are here.\n### [Purplebricks Property API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/property-api)",
+      "type": "text/plain"
+    }
+  }
+}

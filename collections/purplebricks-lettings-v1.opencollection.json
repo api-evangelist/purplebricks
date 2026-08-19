@@ -1,0 +1,182 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Purplebricks.Lettings.Api 1 - Team Integrations",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Enquiries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Creates a valuation enquiry in street.co.uk",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/lettings-api/v1/enquiries/valuation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a valuation enquiry in street.co.uk"
+        },
+        {
+          "info": {
+            "name": "Creates a viewing enquiry in street.co.uk",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/lettings-api/v1/enquiries/viewing",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a viewing enquiry in street.co.uk"
+        },
+        {
+          "info": {
+            "name": "Creates an offer enquiry in street.co.uk",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/lettings-api/v1/enquiries/offer",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an offer enquiry in street.co.uk"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "PreInstruct",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /v1/preinstruct/thirdpartyproperty/{thirdPartyPropertyId}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/lettings-api/v1/preinstruct/thirdpartyproperty/:thirdPartyPropertyId",
+            "params": [
+              {
+                "name": "thirdPartyPropertyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /v1/preinstruct/thirdpartyproperty",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/lettings-api/v1/preinstruct/thirdpartyproperty",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "StreetWebhooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Handles street.co.uk listing webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/lettings-api/v1/streetwebhooks/listing"
+          },
+          "docs": "Handles street.co.uk listing webhook"
+        },
+        {
+          "info": {
+            "name": "Handles street.co.uk listing webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.purplebricks.co.uk/lettings-api/v1/streetwebhooks"
+          },
+          "docs": "Handles street.co.uk listing webhook"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "TecletPostcode",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GetByPostcode",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/lettings-api/v1/tecletpostcode/getbypostcode/:postcode",
+            "params": [
+              {
+                "name": "postcode",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GetByPropertyId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.purplebricks.co.uk/lettings-api/v1/tecletpostcode/getbypropertyid/:propertyId",
+            "params": [
+              {
+                "name": "propertyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

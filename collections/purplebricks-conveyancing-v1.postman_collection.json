@@ -1,0 +1,823 @@
+{
+  "item": [
+    {
+      "id": "a655c3fa-a0cc-4415-804f-96aa51dc1905",
+      "name": "ConveyancingQuote",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3033ca44-7634-49fe-a27c-dcb061efa482",
+          "name": "/v1/conveyancingquote/quote/:quoteId",
+          "request": {
+            "name": "/v1/conveyancingquote/quote/:quoteId",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "conveyancingquote",
+                "quote",
+                ":quoteId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "quoteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "156c9252-b508-437b-99a5-722eb511b38e",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "conveyancingquote",
+                    "quote",
+                    ":quoteId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "quoteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"quoteId\": 7244,\n  \"providerName\": \"string\",\n  \"providerReferenceId\": \"string\",\n  \"quoteType\": \"Purchase\",\n  \"quoteStatus\": \"Declined\",\n  \"properties\": [\n    {\n      \"propertyQuoteType\": \"Sale\",\n      \"tenureType\": \"Freehold\",\n      \"price\": 4141.165028866497,\n      \"positionFlags\": [\n        \"FirstTimeBuyer\",\n        \"SecondHomeOrInvestment\"\n      ],\n      \"addressLine1\": \"string\",\n      \"addressLine2\": \"string\",\n      \"district\": \"string\",\n      \"town\": \"string\",\n      \"county\": \"string\",\n      \"postcode\": \"string\",\n      \"country\": \"string\"\n    },\n    {\n      \"propertyQuoteType\": \"Sale\",\n      \"tenureType\": \"Leasehold\",\n      \"price\": 7127.2221592244105,\n      \"positionFlags\": [\n        \"BuyingWithMortgage\",\n        \"FirstTimeBuyer\"\n      ],\n      \"addressLine1\": \"string\",\n      \"addressLine2\": \"string\",\n      \"district\": \"string\",\n      \"town\": \"string\",\n      \"county\": \"string\",\n      \"postcode\": \"string\",\n      \"country\": \"string\"\n    }\n  ],\n  \"contacts\": [\n    {\n      \"contactType\": \"Additional\",\n      \"userId\": 1079,\n      \"forename\": \"string\",\n      \"surname\": \"string\",\n      \"contactNumber\": \"string\",\n      \"emailAddress\": \"string\",\n      \"addressLine1\": \"string\",\n      \"addressLine2\": \"string\",\n      \"district\": \"string\",\n      \"town\": \"string\",\n      \"county\": \"string\",\n      \"postcode\": \"string\",\n      \"country\": \"string\"\n    },\n    {\n      \"contactType\": \"Additional\",\n      \"userId\": 2162,\n      \"forename\": \"string\",\n      \"surname\": \"string\",\n      \"contactNumber\": \"string\",\n      \"emailAddress\": \"string\",\n      \"addressLine1\": \"string\",\n      \"addressLine2\": \"string\",\n      \"district\": \"string\",\n      \"town\": \"string\",\n      \"county\": \"string\",\n      \"postcode\": \"string\",\n      \"country\": \"string\"\n    }\n  ],\n  \"comments\": \"string\",\n  \"fees\": [\n    {\n      \"propertyQuoteType\": \"Purchase\",\n      \"feeType\": \"Other\",\n      \"description\": \"string\",\n      \"amount\": 2630.8409062796254\n    },\n    {\n      \"propertyQuoteType\": \"Purchase\",\n      \"feeType\": \"ThirdPartyExpense\",\n      \"description\": \"string\",\n      \"amount\": 7858.032470055963\n    }\n  ],\n  \"feeGroups\": {\n    \"key_0\": [\n      {\n        \"sequence\": 8619,\n        \"feeType\": \"ConveyancingFee\",\n        \"fees\": [\n          {\n            \"propertyQuoteType\": \"Sale\",\n            \"feeType\": \"Other\",\n            \"description\": \"string\",\n            \"amount\": 1192.3511451187262\n          },\n          {\n            \"propertyQuoteType\": \"Purchase\",\n            \"feeType\": \"AdditionalFeesDisbursements\",\n            \"description\": \"string\",\n            \"amount\": 3238.468508314096\n          }\n        ],\n        \"totalAmount\": 2130.4220929897742\n      },\n      {\n        \"sequence\": 5373,\n        \"feeType\": \"AdditionalFeesDisbursements\",\n        \"fees\": [\n          {\n            \"propertyQuoteType\": \"Purchase\",\n            \"feeType\": \"Other\",\n            \"description\": \"string\",\n            \"amount\": 9819.670565629787\n          },\n          {\n            \"propertyQuoteType\": \"Purchase\",\n            \"feeType\": \"ConveyancingFee\",\n            \"description\": \"string\",\n            \"amount\": 136.65608236833603\n          }\n        ],\n        \"totalAmount\": 1250.2843247735584\n      }\n    ],\n    \"key_1\": [\n      {\n        \"sequence\": 4392,\n        \"feeType\": \"AdditionalFeesDisbursements\",\n        \"fees\": [\n          {\n            \"propertyQuoteType\": \"Sale\",\n            \"feeType\": \"ThirdPartyExpense\",\n            \"description\": \"string\",\n            \"amount\": 4820.020172934901\n          },\n          {\n            \"propertyQuoteType\": \"Purchase\",\n            \"feeType\": \"AdditionalFeesDisbursements\",\n            \"description\": \"string\",\n            \"amount\": 4775.002901785965\n          }\n        ],\n        \"totalAmount\": 6626.678068414247\n      },\n      {\n        \"sequence\": 536,\n        \"feeType\": \"ThirdPartyExpense\",\n        \"fees\": [\n          {\n            \"propertyQuoteType\": \"Purchase\",\n            \"feeType\": \"ConveyancingFee\",\n            \"description\": \"string\",\n            \"amount\": 7888.632581997379\n          },\n          {\n            \"propertyQuoteType\": \"Sale\",\n            \"feeType\": \"AdditionalFeesDisbursements\",\n            \"description\": \"string\",\n            \"amount\": 2906.529860560658\n          }\n        ],\n        \"totalAmount\": 1592.8245268864193\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bd59b7f1-ae14-45fd-b0cb-0dfa9c4a415f",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "conveyancingquote",
+                    "quote",
+                    ":quoteId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "quoteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 1155,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "63b875d6-4d8d-4dd8-9dda-efe0ba0961e7",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "conveyancingquote",
+                    "quote",
+                    ":quoteId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "quoteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 1155,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4ff65334-65fa-44e3-a283-0ba0fbc15034",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "conveyancingquote",
+                    "quote",
+                    ":quoteId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "quoteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f8812b07-2b02-4518-8196-c24d405973bd",
+              "name": "Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "conveyancingquote",
+                    "quote",
+                    ":quoteId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "quoteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 1155,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e8552127-42cf-4d68-86d8-6c345abc00eb",
+          "name": "/v1/conveyancingquote/quotes",
+          "request": {
+            "name": "/v1/conveyancingquote/quotes",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "conveyancingquote",
+                "quotes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "33913131-c2e6-4231-9997-2c5576ad79b2",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "conveyancingquote",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"quoteId\": 6275,\n    \"providerName\": \"string\",\n    \"providerReferenceId\": \"string\",\n    \"quoteType\": \"PurchaseAndSale\",\n    \"quoteStatus\": \"Requested\",\n    \"properties\": [\n      {\n        \"propertyQuoteType\": \"Sale\",\n        \"tenureType\": \"Freehold\",\n        \"price\": 5087.530840065807,\n        \"positionFlags\": [\n          \"SecondHomeOrInvestment\",\n          \"BuyingWithMortgage\"\n        ],\n        \"addressLine1\": \"string\",\n        \"addressLine2\": \"string\",\n        \"district\": \"string\",\n        \"town\": \"string\",\n        \"county\": \"string\",\n        \"postcode\": \"string\",\n        \"country\": \"string\"\n      },\n      {\n        \"propertyQuoteType\": \"Sale\",\n        \"tenureType\": \"Leasehold\",\n        \"price\": 2692.403302362,\n        \"positionFlags\": [\n          \"OfferMade\",\n          \"FirstTimeBuyer\"\n        ],\n        \"addressLine1\": \"string\",\n        \"addressLine2\": \"string\",\n        \"district\": \"string\",\n        \"town\": \"string\",\n        \"county\": \"string\",\n        \"postcode\": \"string\",\n        \"country\": \"string\"\n      }\n    ],\n    \"contacts\": [\n      {\n        \"contactType\": \"Additional\",\n        \"userId\": 8083,\n        \"forename\": \"string\",\n        \"surname\": \"string\",\n        \"contactNumber\": \"string\",\n        \"emailAddress\": \"string\",\n        \"addressLine1\": \"string\",\n        \"addressLine2\": \"string\",\n        \"district\": \"string\",\n        \"town\": \"string\",\n        \"county\": \"string\",\n        \"postcode\": \"string\",\n        \"country\": \"string\"\n      },\n      {\n        \"contactType\": \"Primary\",\n        \"userId\": 8723,\n        \"forename\": \"string\",\n        \"surname\": \"string\",\n        \"contactNumber\": \"string\",\n        \"emailAddress\": \"string\",\n        \"addressLine1\": \"string\",\n        \"addressLine2\": \"string\",\n        \"district\": \"string\",\n        \"town\": \"string\",\n        \"county\": \"string\",\n        \"postcode\": \"string\",\n        \"country\": \"string\"\n      }\n    ],\n    \"comments\": \"string\",\n    \"fees\": [\n      {\n        \"propertyQuoteType\": \"Purchase\",\n        \"feeType\": \"AdditionalFeesDisbursements\",\n        \"description\": \"string\",\n        \"amount\": 8629.870015920395\n      },\n      {\n        \"propertyQuoteType\": \"Sale\",\n        \"feeType\": \"Other\",\n        \"description\": \"string\",\n        \"amount\": 5793.832460461202\n      }\n    ],\n    \"feeGroups\": {\n      \"key_0\": [\n        {\n          \"sequence\": 8141,\n          \"feeType\": \"Other\",\n          \"fees\": [\n            {\n              \"propertyQuoteType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"feeType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"propertyQuoteType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"feeType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"totalAmount\": 4958.817047625999\n        },\n        {\n          \"sequence\": 7519,\n          \"feeType\": \"Other\",\n          \"fees\": [\n            {\n              \"propertyQuoteType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"feeType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"propertyQuoteType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"feeType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"totalAmount\": 1401.1419362646593\n        }\n      ],\n      \"key_1\": [\n        {\n          \"sequence\": 1444,\n          \"feeType\": \"Other\",\n          \"fees\": [\n            {\n              \"propertyQuoteType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"feeType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"propertyQuoteType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"feeType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"totalAmount\": 2364.239855108737\n        },\n        {\n          \"sequence\": 551,\n          \"feeType\": \"ThirdPartyExpense\",\n          \"fees\": [\n            {\n              \"propertyQuoteType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"feeType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"propertyQuoteType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"feeType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"totalAmount\": 2393.38795553765\n        }\n      ]\n    }\n  },\n  {\n    \"quoteId\": 8349,\n    \"providerName\": \"string\",\n    \"providerReferenceId\": \"string\",\n    \"quoteType\": \"Sale\",\n    \"quoteStatus\": \"Generated\",\n    \"properties\": [\n      {\n        \"propertyQuoteType\": \"Purchase\",\n        \"tenureType\": \"Leasehold\",\n        \"price\": 5070.120624684077,\n        \"positionFlags\": [\n          \"FirstTimeBuyer\",\n          \"FirstTimeBuyer\"\n        ],\n        \"addressLine1\": \"string\",\n        \"addressLine2\": \"string\",\n        \"district\": \"string\",\n        \"town\": \"string\",\n        \"county\": \"string\",\n        \"postcode\": \"string\",\n        \"country\": \"string\"\n      },\n      {\n        \"propertyQuoteType\": \"Purchase\",\n        \"tenureType\": \"Freehold\",\n        \"price\": 2975.4326260316698,\n        \"positionFlags\": [\n          \"FirstTimeBuyer\",\n          \"FirstTimeBuyer\"\n        ],\n        \"addressLine1\": \"string\",\n        \"addressLine2\": \"string\",\n        \"district\": \"string\",\n        \"town\": \"string\",\n        \"county\": \"string\",\n        \"postcode\": \"string\",\n        \"country\": \"string\"\n      }\n    ],\n    \"contacts\": [\n      {\n        \"contactType\": \"Additional\",\n        \"userId\": 2933,\n        \"forename\": \"string\",\n        \"surname\": \"string\",\n        \"contactNumber\": \"string\",\n        \"emailAddress\": \"string\",\n        \"addressLine1\": \"string\",\n        \"addressLine2\": \"string\",\n        \"district\": \"string\",\n        \"town\": \"string\",\n        \"county\": \"string\",\n        \"postcode\": \"string\",\n        \"country\": \"string\"\n      },\n      {\n        \"contactType\": \"Primary\",\n        \"userId\": 6807,\n        \"forename\": \"string\",\n        \"surname\": \"string\",\n        \"contactNumber\": \"string\",\n        \"emailAddress\": \"string\",\n        \"addressLine1\": \"string\",\n        \"addressLine2\": \"string\",\n        \"district\": \"string\",\n        \"town\": \"string\",\n        \"county\": \"string\",\n        \"postcode\": \"string\",\n        \"country\": \"string\"\n      }\n    ],\n    \"comments\": \"string\",\n    \"fees\": [\n      {\n        \"propertyQuoteType\": \"Sale\",\n        \"feeType\": \"AdditionalFeesDisbursements\",\n        \"description\": \"string\",\n        \"amount\": 5858.0012594581\n      },\n      {\n        \"propertyQuoteType\": \"Sale\",\n        \"feeType\": \"ConveyancingFee\",\n        \"description\": \"string\",\n        \"amount\": 125.61191149732865\n      }\n    ],\n    \"feeGroups\": {\n      \"key_0\": [\n        {\n          \"sequence\": 16,\n          \"feeType\": \"Other\",\n          \"fees\": [\n            {\n              \"propertyQuoteType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"feeType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"propertyQuoteType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"feeType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"totalAmount\": 1762.7195340015867\n        },\n        {\n          \"sequence\": 95,\n          \"feeType\": \"Other\",\n          \"fees\": [\n            {\n              \"propertyQuoteType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"feeType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"propertyQuoteType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"feeType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"totalAmount\": 5425.382107429203\n        }\n      ],\n      \"key_1\": [\n        {\n          \"sequence\": 3900,\n          \"feeType\": \"Other\",\n          \"fees\": [\n            {\n              \"propertyQuoteType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"feeType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"propertyQuoteType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"feeType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"totalAmount\": 9570.3552271478\n        },\n        {\n          \"sequence\": 8213,\n          \"feeType\": \"AdditionalFeesDisbursements\",\n          \"fees\": [\n            {\n              \"propertyQuoteType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"feeType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"propertyQuoteType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"feeType\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"amount\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"totalAmount\": 7413.036211219147\n        }\n      ]\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10e8eadc-5784-4283-958a-d937d1503f4b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "conveyancingquote",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 1155,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d8abc761-54f7-494e-bcda-564437082658",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "conveyancingquote",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ad28bd68-03f3-4308-8e3e-44524adee3e2",
+              "name": "Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "conveyancingquote",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 1155,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "db5e88ca-a36f-410d-be7e-0c0a5c539400",
+          "name": "/v1/conveyancingquote/quote",
+          "request": {
+            "name": "/v1/conveyancingquote/quote",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "conveyancingquote",
+                "quote"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quoteType\": \"<string>\",\n  \"contacts\": [\n    {\n      \"contactType\": \"<string>\",\n      \"forename\": \"<string>\",\n      \"surname\": \"<string>\",\n      \"contactNumber\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    },\n    {\n      \"contactType\": \"<string>\",\n      \"forename\": \"<string>\",\n      \"surname\": \"<string>\",\n      \"contactNumber\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    }\n  ],\n  \"properties\": [\n    {\n      \"propertyQuoteType\": \"<string>\",\n      \"propertyId\": \"<integer>\",\n      \"tenureType\": \"<string>\",\n      \"price\": \"<double>\",\n      \"positionTypes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    },\n    {\n      \"propertyQuoteType\": \"<string>\",\n      \"propertyId\": \"<integer>\",\n      \"tenureType\": \"<string>\",\n      \"price\": \"<double>\",\n      \"positionTypes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    }\n  ],\n  \"comments\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4b676c77-126d-42aa-a9c2-668656def3cb",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "conveyancingquote",
+                    "quote"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quoteType\": \"<string>\",\n  \"contacts\": [\n    {\n      \"contactType\": \"<string>\",\n      \"forename\": \"<string>\",\n      \"surname\": \"<string>\",\n      \"contactNumber\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    },\n    {\n      \"contactType\": \"<string>\",\n      \"forename\": \"<string>\",\n      \"surname\": \"<string>\",\n      \"contactNumber\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    }\n  ],\n  \"properties\": [\n    {\n      \"propertyQuoteType\": \"<string>\",\n      \"propertyId\": \"<integer>\",\n      \"tenureType\": \"<string>\",\n      \"price\": \"<double>\",\n      \"positionTypes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    },\n    {\n      \"propertyQuoteType\": \"<string>\",\n      \"propertyId\": \"<integer>\",\n      \"tenureType\": \"<string>\",\n      \"price\": \"<double>\",\n      \"positionTypes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    }\n  ],\n  \"comments\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"quoteId\": 44,\n  \"providerName\": \"string\",\n  \"providerReferenceId\": \"string\",\n  \"quoteType\": \"<string>\",\n  \"quoteStatus\": \"Generated\",\n  \"properties\": [\n    {\n      \"propertyQuoteType\": \"<string>\",\n      \"tenureType\": \"<string>\",\n      \"price\": 1002.8542100264203,\n      \"positionFlags\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"addressLine1\": \"string\",\n      \"addressLine2\": \"string\",\n      \"district\": \"string\",\n      \"town\": \"string\",\n      \"county\": \"string\",\n      \"postcode\": \"string\",\n      \"country\": \"string\"\n    },\n    {\n      \"propertyQuoteType\": \"<string>\",\n      \"tenureType\": \"<string>\",\n      \"price\": 6683.429006970234,\n      \"positionFlags\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"addressLine1\": \"string\",\n      \"addressLine2\": \"string\",\n      \"district\": \"string\",\n      \"town\": \"string\",\n      \"county\": \"string\",\n      \"postcode\": \"string\",\n      \"country\": \"string\"\n    }\n  ],\n  \"contacts\": [\n    {\n      \"contactType\": \"<string>\",\n      \"userId\": 6604,\n      \"forename\": \"string\",\n      \"surname\": \"string\",\n      \"contactNumber\": \"string\",\n      \"emailAddress\": \"string\",\n      \"addressLine1\": \"string\",\n      \"addressLine2\": \"string\",\n      \"district\": \"string\",\n      \"town\": \"string\",\n      \"county\": \"string\",\n      \"postcode\": \"string\",\n      \"country\": \"string\"\n    },\n    {\n      \"contactType\": \"<string>\",\n      \"userId\": 435,\n      \"forename\": \"string\",\n      \"surname\": \"string\",\n      \"contactNumber\": \"string\",\n      \"emailAddress\": \"string\",\n      \"addressLine1\": \"string\",\n      \"addressLine2\": \"string\",\n      \"district\": \"string\",\n      \"town\": \"string\",\n      \"county\": \"string\",\n      \"postcode\": \"string\",\n      \"country\": \"string\"\n    }\n  ],\n  \"comments\": \"string\",\n  \"fees\": [\n    {\n      \"propertyQuoteType\": \"<string>\",\n      \"feeType\": \"ConveyancingFee\",\n      \"description\": \"string\",\n      \"amount\": 1260.14565136914\n    },\n    {\n      \"propertyQuoteType\": \"<string>\",\n      \"feeType\": \"ConveyancingFee\",\n      \"description\": \"string\",\n      \"amount\": 8235.160202860921\n    }\n  ],\n  \"feeGroups\": {\n    \"key_0\": [\n      {\n        \"sequence\": 4873,\n        \"feeType\": \"ConveyancingFee\",\n        \"fees\": [\n          {\n            \"propertyQuoteType\": \"<string>\",\n            \"feeType\": \"ConveyancingFee\",\n            \"description\": \"string\",\n            \"amount\": 2256.5162696933517\n          },\n          {\n            \"propertyQuoteType\": \"<string>\",\n            \"feeType\": \"ConveyancingFee\",\n            \"description\": \"string\",\n            \"amount\": 3105.6555603026713\n          }\n        ],\n        \"totalAmount\": 4764.9003008836235\n      },\n      {\n        \"sequence\": 8388,\n        \"feeType\": \"Other\",\n        \"fees\": [\n          {\n            \"propertyQuoteType\": \"<string>\",\n            \"feeType\": \"AdditionalFeesDisbursements\",\n            \"description\": \"string\",\n            \"amount\": 5586.5044235574815\n          },\n          {\n            \"propertyQuoteType\": \"<string>\",\n            \"feeType\": \"ThirdPartyExpense\",\n            \"description\": \"string\",\n            \"amount\": 6569.4990870913125\n          }\n        ],\n        \"totalAmount\": 3463.6853418493897\n      }\n    ],\n    \"key_1\": [\n      {\n        \"sequence\": 1485,\n        \"feeType\": \"ThirdPartyExpense\",\n        \"fees\": [\n          {\n            \"propertyQuoteType\": \"<string>\",\n            \"feeType\": \"Other\",\n            \"description\": \"string\",\n            \"amount\": 9823.189996481762\n          },\n          {\n            \"propertyQuoteType\": \"<string>\",\n            \"feeType\": \"ConveyancingFee\",\n            \"description\": \"string\",\n            \"amount\": 2170.27047491826\n          }\n        ],\n        \"totalAmount\": 6962.163062792021\n      },\n      {\n        \"sequence\": 311,\n        \"feeType\": \"AdditionalFeesDisbursements\",\n        \"fees\": [\n          {\n            \"propertyQuoteType\": \"<string>\",\n            \"feeType\": \"AdditionalFeesDisbursements\",\n            \"description\": \"string\",\n            \"amount\": 9525.244242781951\n          },\n          {\n            \"propertyQuoteType\": \"<string>\",\n            \"feeType\": \"AdditionalFeesDisbursements\",\n            \"description\": \"string\",\n            \"amount\": 6125.015060004321\n          }\n        ],\n        \"totalAmount\": 8346.310833621055\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6d9a89a9-e480-42c9-a180-799f86aca4fb",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "conveyancingquote",
+                    "quote"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quoteType\": \"<string>\",\n  \"contacts\": [\n    {\n      \"contactType\": \"<string>\",\n      \"forename\": \"<string>\",\n      \"surname\": \"<string>\",\n      \"contactNumber\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    },\n    {\n      \"contactType\": \"<string>\",\n      \"forename\": \"<string>\",\n      \"surname\": \"<string>\",\n      \"contactNumber\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    }\n  ],\n  \"properties\": [\n    {\n      \"propertyQuoteType\": \"<string>\",\n      \"propertyId\": \"<integer>\",\n      \"tenureType\": \"<string>\",\n      \"price\": \"<double>\",\n      \"positionTypes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    },\n    {\n      \"propertyQuoteType\": \"<string>\",\n      \"propertyId\": \"<integer>\",\n      \"tenureType\": \"<string>\",\n      \"price\": \"<double>\",\n      \"positionTypes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    }\n  ],\n  \"comments\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 1155,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3318db1b-5d69-480c-be92-fa5ee8927fd5",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "conveyancingquote",
+                    "quote"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quoteType\": \"<string>\",\n  \"contacts\": [\n    {\n      \"contactType\": \"<string>\",\n      \"forename\": \"<string>\",\n      \"surname\": \"<string>\",\n      \"contactNumber\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    },\n    {\n      \"contactType\": \"<string>\",\n      \"forename\": \"<string>\",\n      \"surname\": \"<string>\",\n      \"contactNumber\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    }\n  ],\n  \"properties\": [\n    {\n      \"propertyQuoteType\": \"<string>\",\n      \"propertyId\": \"<integer>\",\n      \"tenureType\": \"<string>\",\n      \"price\": \"<double>\",\n      \"positionTypes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    },\n    {\n      \"propertyQuoteType\": \"<string>\",\n      \"propertyId\": \"<integer>\",\n      \"tenureType\": \"<string>\",\n      \"price\": \"<double>\",\n      \"positionTypes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    }\n  ],\n  \"comments\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"status\": 1155,\n  \"detail\": \"string\",\n  \"instance\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "71a76c14-23e2-4801-bafa-c91a5d219929",
+              "name": "Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "conveyancingquote",
+                    "quote"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"quoteType\": \"<string>\",\n  \"contacts\": [\n    {\n      \"contactType\": \"<string>\",\n      \"forename\": \"<string>\",\n      \"surname\": \"<string>\",\n      \"contactNumber\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    },\n    {\n      \"contactType\": \"<string>\",\n      \"forename\": \"<string>\",\n      \"surname\": \"<string>\",\n      \"contactNumber\": \"<string>\",\n      \"emailAddress\": \"<string>\",\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    }\n  ],\n  \"properties\": [\n    {\n      \"propertyQuoteType\": \"<string>\",\n      \"propertyId\": \"<integer>\",\n      \"tenureType\": \"<string>\",\n      \"price\": \"<double>\",\n      \"positionTypes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    },\n    {\n      \"propertyQuoteType\": \"<string>\",\n      \"propertyId\": \"<integer>\",\n      \"tenureType\": \"<string>\",\n      \"price\": \"<double>\",\n      \"positionTypes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"addressLine1\": \"<string>\",\n      \"addressLine2\": \"<string>\",\n      \"district\": \"<string>\",\n      \"town\": \"<string>\",\n      \"county\": \"<string>\",\n      \"postcode\": \"<string>\",\n      \"country\": \"<string>\"\n    }\n  ],\n  \"comments\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.purplebricks.co.uk/conveyancing-api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bffed3e3-281c-4647-9da5-a8fd525564b3",
+    "name": "PB Conveyancing Api 1.0 - PB Digital",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "### PB Conveyancing Api\n### [PB Conveyancing Api Git Repository](https://github.com)",
+      "type": "text/plain"
+    }
+  }
+}
