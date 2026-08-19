@@ -39,7 +39,7 @@ tags:
 - Azure
 created: '2026-07-26'
 modified: '2026-07-26'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - name: Purplebricks Property API
   description: 'The largest of the publicly-reachable Purplebricks microservice APIs (86 v1 paths
