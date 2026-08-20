@@ -23,6 +23,21 @@ description: 'Purplebricks is the United Kingdom''s largest online (hybrid) esta
   Registry), not to Purplebricks.'
 image: https://images.ctfassets.net/xhygqgfuea6b/3iPW7f24NM6u7Klc7YopsZ/43f36d4f236766caaa30f29fc85cafa1/purplebricks-logo.png
 tags:
+- Real-Estate
+- United Kingdom
+- Property Listings
+- Online Estate Agency
+- Rentals
+- Lettings
+- PropTech
+- Mortgage
+- Conveyancing
+- Land Registry
+- OpenAPI
+- Microservices
+- Swagger
+- Azure
+tags_raw:
 - Real Estate
 - United Kingdom
 - Property Listings
@@ -52,6 +67,13 @@ apis:
   humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/property-api
   tags:
+  - Property
+  - Listings
+  - Real-Estate
+  - Land Registry
+  - Dashboards
+  - Reporting
+  tags_raw:
   - property
   - listings
   - real-estate
@@ -82,6 +104,12 @@ apis:
   humanURL: https://api.purplebricks.co.uk/account-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/account-api
   tags:
+  - Identity
+  - Account
+  - Authentication
+  - User Management
+  - Marketing Preferences
+  tags_raw:
   - identity
   - accounts
   - authentication
@@ -110,6 +138,12 @@ apis:
   humanURL: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/valuations-api
   tags:
+  - Valuations
+  - Lead Capture
+  - sales-funnel
+  - Salesforce
+  - Postcode
+  tags_raw:
   - valuations
   - lead-capture
   - sales-funnel
@@ -139,6 +173,12 @@ apis:
   humanURL: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/viewings-api
   tags:
+  - Viewings
+  - Appointments
+  - Scheduling
+  - open-days
+  - Voice Agents
+  tags_raw:
   - viewings
   - appointments
   - scheduling
@@ -166,6 +206,11 @@ apis:
   humanURL: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/messaging-api
   tags:
+  - Messaging
+  - Threads
+  - Notification
+  - Customer Communication
+  tags_raw:
   - messaging
   - threads
   - notifications
@@ -195,6 +240,13 @@ apis:
   humanURL: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/lettings-api
   tags:
+  - Lettings
+  - Integration
+  - Webhook
+  - street-co-uk
+  - teclet
+  - Enquiries
+  tags_raw:
   - lettings
   - integrations
   - webhooks
@@ -227,6 +279,12 @@ apis:
   - rightmove
   - zoopla
   - onthemarket
+  - Branches
+  tags_raw:
+  - portal-syndication
+  - rightmove
+  - zoopla
+  - onthemarket
   - branches
   properties:
   - type: APIReference
@@ -250,6 +308,12 @@ apis:
   humanURL: https://api.purplebricks.co.uk/communications-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/communications-api
   tags:
+  - Communications
+  - Email
+  - Contact
+  - tps
+  - Compliance
+  tags_raw:
   - communications
   - email
   - contact
@@ -276,6 +340,11 @@ apis:
   humanURL: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/conveyancing-api
   tags:
+  - Conveyancing
+  - Quotes
+  - Legal
+  - property-transaction
+  tags_raw:
   - conveyancing
   - quotes
   - legal
@@ -301,6 +370,10 @@ apis:
   humanURL: https://api.purplebricks.co.uk/agent-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/agent-api
   tags:
+  - Agents
+  - Team
+  - local-property-experts
+  tags_raw:
   - agents
   - teams
   - local-property-experts
@@ -325,6 +398,10 @@ apis:
   humanURL: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/feedback-api
   tags:
+  - Feedback
+  - Reviews
+  - Customer Experience
+  tags_raw:
   - feedback
   - reviews
   - customer-experience
@@ -349,6 +426,11 @@ apis:
   humanURL: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/workflow-api
   tags:
+  - Workflows
+  - Orchestration
+  - instruction
+  - Platform
+  tags_raw:
   - workflow
   - orchestration
   - instruction
@@ -375,6 +457,11 @@ apis:
   humanURL: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/outlook-api
   tags:
+  - Calendar
+  - Outlook
+  - Agents
+  - Integration
+  tags_raw:
   - calendar
   - outlook
   - agents
