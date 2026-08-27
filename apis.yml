@@ -56,432 +56,3981 @@ created: '2026-07-26'
 modified: '2026-07-26'
 specificationVersion: '0.23'
 apis:
-- name: Purplebricks Property API
-  description: 'The largest of the publicly-reachable Purplebricks microservice APIs (86 v1 paths
-    plus an 11-path v2), covering the property record end to end: active, preactive, inactive and
-    withdrawn properties, property boxes, owners, address lookup, go-to-market and instant-instruct
-    flows, tracked properties, property search hits, seller and agent dashboards, exposure, performance
-    and internal performance reports, property questionnaire forms, railway-station proximity, Countrywide
-    and Land Registry lookups. Bearer-token protected and undocumented outside the live Swagger UI
-    it serves itself.'
+- aid: purplebricks:purplebricks-accessdetails-api
+  name: Purplebricks Access Details API
+  description: The AccessDetails API from Purplebricks — 3 operation(s) for accessdetails.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - AccessDetails
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-accessdetails-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-activeproperty-api
+  name: Purplebricks Active Property API
+  description: The ActiveProperty API from Purplebricks — 2 operation(s) for activeproperty.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - ActiveProperty
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-activeproperty-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-activitydashboard-api
+  name: Purplebricks Activity Dashboard API
+  description: The ActivityDashboard API from Purplebricks — 6 operation(s) for activitydashboard.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - ActivityDashboard
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-activitydashboard-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-address-api
+  name: Purplebricks Address API
+  description: The Address API from Purplebricks — 2 operation(s) for address.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Address
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-address-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-agentoutlooksync-api
+  name: Purplebricks Agent Outlook Sync API
+  description: The AgentOutlookSync API from Purplebricks — 1 operation(s) for agentoutlooksync.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - AgentOutlookSync
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-agentoutlooksync-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-appointments-api
+  name: Purplebricks Appointments API
+  description: The Appointments API from Purplebricks — 2 operation(s) for appointments.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Appointments
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-appointments-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-auth-api
+  name: Purplebricks Auth API
+  description: The Auth API from Purplebricks — 1 operation(s) for auth.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Auth
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-auth-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-bland-api
+  name: Purplebricks Bland API
+  description: The Bland API from Purplebricks — 5 operation(s) for bland.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Bland
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-bland-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-contactus-api
+  name: Purplebricks Contact Us API
+  description: The ContactUs API from Purplebricks — 1 operation(s) for contactus.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - ContactUs
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-contactus-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-conveyancingquote-api
+  name: Purplebricks Conveyancing Quote API
+  description: The ConveyancingQuote API from Purplebricks — 3 operation(s) for conveyancingquote.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - ConveyancingQuote
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-conveyancingquote-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-countrywide-api
+  name: Purplebricks Countrywide API
+  description: The Countrywide API from Purplebricks — 1 operation(s) for countrywide.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Countrywide
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-countrywide-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-customeremails-api
+  name: Purplebricks Customer Emails API
+  description: The CustomerEmails API from Purplebricks — 2 operation(s) for customeremails.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - CustomerEmails
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-customeremails-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-dashboard-api
+  name: Purplebricks Dashboard API
+  description: The Dashboard API from Purplebricks — 4 operation(s) for dashboard.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Dashboard
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-dashboard-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-emailconfirmation-api
+  name: Purplebricks Email Confirmation API
+  description: The EmailConfirmation API from Purplebricks — 1 operation(s) for emailconfirmation.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - EmailConfirmation
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-emailconfirmation-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-enquiries-api
+  name: Purplebricks Enquiries API
+  description: The Enquiries API from Purplebricks — 3 operation(s) for enquiries.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Enquiries
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-enquiries-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-expertcreated-api
+  name: Purplebricks Expert Created API
+  description: The ExpertCreated API from Purplebricks — 1 operation(s) for expertcreated.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - ExpertCreated
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-expertcreated-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-exposurereport-api
+  name: Purplebricks Exposure Report API
+  description: The ExposureReport API from Purplebricks — 6 operation(s) for exposurereport.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - ExposureReport
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-exposurereport-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-followup-api
+  name: Purplebricks Follow Up API
+  description: The FollowUp API from Purplebricks — 6 operation(s) for followup.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - FollowUp
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-followup-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-gotomarket-api
+  name: Purplebricks Go To Market API
+  description: The GoToMarket API from Purplebricks — 17 operation(s) for gotomarket.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - GoToMarket
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-gotomarket-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-inactiveproperty-api
+  name: Purplebricks Inactive Property API
+  description: The InactiveProperty API from Purplebricks — 1 operation(s) for inactiveproperty.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - InactiveProperty
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-inactiveproperty-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-instantinstruct-api
+  name: Purplebricks Instant Instruct API
+  description: The InstantInstruct API from Purplebricks — 1 operation(s) for instantinstruct.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - InstantInstruct
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-instantinstruct-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-internalperformancereport-api
+  name: Purplebricks Internal Performance Report API
+  description: >-
+    The InternalPerformanceReport API from Purplebricks — 5 operation(s) for internalperformancereport.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - InternalPerformanceReport
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-internalperformancereport-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-isinstructavailable-api
+  name: Purplebricks Is Instruct Available API
+  description: The IsInstructAvailable API from Purplebricks — 1 operation(s) for isinstructavailable.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - IsInstructAvailable
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-isinstructavailable-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-landregistry-api
+  name: Purplebricks Land Registry API
+  description: The LandRegistry API from Purplebricks — 1 operation(s) for landregistry.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - LandRegistry
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-landregistry-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-leadcapture-api
+  name: Purplebricks Lead Capture API
+  description: The LeadCapture API from Purplebricks — 1 operation(s) for leadcapture.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - LeadCapture
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-leadcapture-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-managefeedback-api
+  name: Purplebricks Manage Feedback API
+  description: The ManageFeedback API from Purplebricks — 1 operation(s) for managefeedback.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - ManageFeedback
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-managefeedback-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-marketingpreferences-api
+  name: Purplebricks Marketing Preferences API
+  description: >-
+    The MarketingPreferences API from Purplebricks — 2 operation(s) for marketingpreferences.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - MarketingPreferences
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-marketingpreferences-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-messages-api
+  name: Purplebricks Messages API
+  description: The Messages API from Purplebricks — 4 operation(s) for messages.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Messages
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-messages-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-onthemarketbranch-api
+  name: Purplebricks On The Market Branch API
+  description: The OnTheMarketBranch API from Purplebricks — 3 operation(s) for onthemarketbranch.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - OnTheMarketBranch
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-onthemarketbranch-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-opendays-api
+  name: Purplebricks Open Days API
+  description: The OpenDays API from Purplebricks — 2 operation(s) for opendays.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - OpenDays
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-opendays-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-owners-api
+  name: Purplebricks Owners API
+  description: The Owners API from Purplebricks — 2 operation(s) for owners.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Owners
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-owners-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-performancereport-api
+  name: Purplebricks Performance Report API
+  description: The PerformanceReport API from Purplebricks — 4 operation(s) for performancereport.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - PerformanceReport
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-performancereport-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-phoneverification-api
+  name: Purplebricks Phone Verification API
+  description: The PhoneVerification API from Purplebricks — 4 operation(s) for phoneverification.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - PhoneVerification
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-phoneverification-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-postcode-api
+  name: Purplebricks Post Code API
+  description: The PostCode API from Purplebricks — 2 operation(s) for postcode.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - PostCode
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-postcode-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-preactive-api
+  name: Purplebricks Preactive API
+  description: The Preactive API from Purplebricks — 2 operation(s) for preactive.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Preactive
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-preactive-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-preinstruct-api
+  name: Purplebricks Pre Instruct API
+  description: The PreInstruct API from Purplebricks — 2 operation(s) for preinstruct.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - PreInstruct
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-preinstruct-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-properties-api
+  name: Purplebricks Properties API
+  description: The Properties API from Purplebricks — 2 operation(s) for properties.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Properties
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-properties-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-property-api
+  name: Purplebricks Property API
+  description: The Property API from Purplebricks — 30 operation(s) for property.
   humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/property-api
   tags:
   - Property
-  - Listings
-  - Real-Estate
-  - Land Registry
-  - Dashboards
-  - Reporting
-  tags_raw:
-  - property
-  - listings
-  - real-estate
-  - land-registry
-  - dashboards
-  - reporting
   properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-property-api-openapi.yml
   - type: APIReference
     url: https://api.purplebricks.co.uk/property-api/swagger/index.html
   - type: SwaggerUI
     url: https://api.purplebricks.co.uk/property-api/swagger/index.html
-  - type: OpenAPI
-    url: openapi/purplebricks-property-v1-openapi.yml
-  - type: OpenAPI
-    url: openapi/purplebricks-property-v2-openapi.yml
   - type: Authentication
     url: authentication/purplebricks-authentication.yml
   - type: Conventions
     url: conventions/purplebricks-conventions.yml
   - type: ErrorCatalog
     url: errors/purplebricks-problem-types.yml
-  - type: Overlay
-    url: overlays/purplebricks-property-v1-overlay.yaml
-- name: Purplebricks Account API
-  description: 'Identity and account service for Purplebricks customers: authentication, user records,
-    email confirmation, phone verification, marketing preferences and the expert-created account
-    path. Bearer-token protected; rate limiting is visible in the contract via documented 429 responses.'
-  humanURL: https://api.purplebricks.co.uk/account-api/swagger/index.html
-  baseURL: https://api.purplebricks.co.uk/account-api
-  tags:
-  - Identity
-  - Account
-  - Authentication
-  - User Management
-  - Marketing Preferences
-  tags_raw:
-  - identity
-  - accounts
-  - authentication
-  - user-management
-  - marketing-preferences
-  properties:
   - type: APIReference
     url: https://api.purplebricks.co.uk/account-api/swagger/index.html
   - type: SwaggerUI
     url: https://api.purplebricks.co.uk/account-api/swagger/index.html
-  - type: OpenAPI
-    url: openapi/purplebricks-account-v1-openapi.yml
-  - type: Authentication
-    url: authentication/purplebricks-authentication.yml
-  - type: Conventions
-    url: conventions/purplebricks-conventions.yml
-  - type: ErrorCatalog
-    url: errors/purplebricks-problem-types.yml
-  - type: Overlay
-    url: overlays/purplebricks-account-v1-overlay.yaml
-- name: Purplebricks Valuations API
-  description: 'Free-valuation funnel service: valuation intent capture, lead capture, postcode resolution,
-    valuation reports, follow-up scheduling and a Salesforce diary pilot, plus a v2 valuation surface.
-    This is the API behind the book-your-free-valuation journey that opens every Purplebricks seller
-    relationship.'
-  humanURL: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
-  baseURL: https://api.purplebricks.co.uk/valuations-api
-  tags:
-  - Valuations
-  - Lead Capture
-  - sales-funnel
-  - Salesforce
-  - Postcode
-  tags_raw:
-  - valuations
-  - lead-capture
-  - sales-funnel
-  - salesforce
-  - postcode
-  properties:
   - type: APIReference
     url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
   - type: SwaggerUI
     url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
-  - type: OpenAPI
-    url: openapi/purplebricks-valuations-v1-openapi.yml
-  - type: OpenAPI
-    url: openapi/purplebricks-valuations-v2-openapi.yml
-  - type: Authentication
-    url: authentication/purplebricks-authentication.yml
-  - type: Conventions
-    url: conventions/purplebricks-conventions.yml
-  - type: ErrorCatalog
-    url: errors/purplebricks-problem-types.yml
-  - type: Overlay
-    url: overlays/purplebricks-valuations-v1-overlay.yaml
-- name: Purplebricks Viewings API
-  description: 'Viewing and appointment service: appointments, open days, property access details,
-    per-property and per-user viewing surfaces, and a Bland voice-agent integration surface. Documents
-    409 conflict and 429 rate-limit responses on booking operations.'
-  humanURL: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
-  baseURL: https://api.purplebricks.co.uk/viewings-api
-  tags:
-  - Viewings
-  - Appointments
-  - Scheduling
-  - open-days
-  - Voice Agents
-  tags_raw:
-  - viewings
-  - appointments
-  - scheduling
-  - open-days
-  - voice-agents
-  properties:
   - type: APIReference
     url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
   - type: SwaggerUI
     url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
-  - type: OpenAPI
-    url: openapi/purplebricks-viewings-v1-openapi.yml
-  - type: Authentication
-    url: authentication/purplebricks-authentication.yml
-  - type: Conventions
-    url: conventions/purplebricks-conventions.yml
-  - type: ErrorCatalog
-    url: errors/purplebricks-problem-types.yml
-  - type: Overlay
-    url: overlays/purplebricks-viewings-v1-overlay.yaml
-- name: Purplebricks Messaging API
-  description: 'Threaded messaging between customers, sellers and local property experts: message
-    threads, individual messages, read state, system messages and cursor-paginated thread listings,
-    with a v2 thread surface alongside v1.'
-  humanURL: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
-  baseURL: https://api.purplebricks.co.uk/messaging-api
-  tags:
-  - Messaging
-  - Threads
-  - Notification
-  - Customer Communication
-  tags_raw:
-  - messaging
-  - threads
-  - notifications
-  - customer-communication
-  properties:
   - type: APIReference
     url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
   - type: SwaggerUI
     url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
-  - type: OpenAPI
-    url: openapi/purplebricks-messaging-v1-openapi.yml
-  - type: OpenAPI
-    url: openapi/purplebricks-messaging-v2-openapi.yml
-  - type: Authentication
-    url: authentication/purplebricks-authentication.yml
-  - type: Conventions
-    url: conventions/purplebricks-conventions.yml
-  - type: ErrorCatalog
-    url: errors/purplebricks-problem-types.yml
-  - type: Overlay
-    url: overlays/purplebricks-messaging-v1-overlay.yaml
-- name: Purplebricks Lettings API
-  description: Lettings integration service run by the Team Integrations squad. Creates valuation,
-    viewing and offer enquiries in street.co.uk, handles inbound street.co.uk listing webhooks, exposes
-    the pre-instruct third-party property surface, and resolves Teclet postcodes. The clearest evidence
-    in the estate of the UK lettings stack Purplebricks integrates with.
-  humanURL: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
-  baseURL: https://api.purplebricks.co.uk/lettings-api
-  tags:
-  - Lettings
-  - Integration
-  - Webhook
-  - street-co-uk
-  - teclet
-  - Enquiries
-  tags_raw:
-  - lettings
-  - integrations
-  - webhooks
-  - street-co-uk
-  - teclet
-  - enquiries
-  properties:
   - type: APIReference
     url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
   - type: SwaggerUI
     url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
-  - type: OpenAPI
-    url: openapi/purplebricks-lettings-v1-openapi.yml
-  - type: Authentication
-    url: authentication/purplebricks-authentication.yml
-  - type: Conventions
-    url: conventions/purplebricks-conventions.yml
-  - type: ErrorCatalog
-    url: errors/purplebricks-problem-types.yml
-  - type: Overlay
-    url: overlays/purplebricks-lettings-v1-overlay.yaml
-- name: Purplebricks Branch API
-  description: 'Portal syndication service exposing Rightmove, Zoopla and OnTheMarket branch records
-    alongside property operations. This is the machine-readable trace of the UK no-MLS seam: an agency
-    pushing branch and listing state into the portal duopoly rather than into a shared cooperative.'
-  humanURL: https://api.purplebricks.co.uk/branch-api/swagger/index.html
-  baseURL: https://api.purplebricks.co.uk/branch-api
-  tags:
-  - portal-syndication
-  - rightmove
-  - zoopla
-  - onthemarket
-  - Branches
-  tags_raw:
-  - portal-syndication
-  - rightmove
-  - zoopla
-  - onthemarket
-  - branches
-  properties:
   - type: APIReference
     url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
   - type: SwaggerUI
     url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
-  - type: OpenAPI
-    url: openapi/purplebricks-branch-v1-openapi.yml
-  - type: Authentication
-    url: authentication/purplebricks-authentication.yml
-  - type: Conventions
-    url: conventions/purplebricks-conventions.yml
-  - type: ErrorCatalog
-    url: errors/purplebricks-problem-types.yml
-  - type: Overlay
-    url: overlays/purplebricks-branch-v1-overlay.yaml
-- name: Purplebricks Communications API
-  description: Outbound and inbound communication service covering the contact-us surface, customer
-    emails and TPS (Telephone Preference Service) screening — the UK direct-marketing suppression
-    check that any regulated outbound calling programme has to run.
-  humanURL: https://api.purplebricks.co.uk/communications-api/swagger/index.html
-  baseURL: https://api.purplebricks.co.uk/communications-api
-  tags:
-  - Communications
-  - Email
-  - Contact
-  - tps
-  - Compliance
-  tags_raw:
-  - communications
-  - email
-  - contact
-  - tps
-  - compliance
-  properties:
   - type: APIReference
     url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
   - type: SwaggerUI
     url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
-  - type: OpenAPI
-    url: openapi/purplebricks-communications-v1-openapi.yml
-  - type: Authentication
-    url: authentication/purplebricks-authentication.yml
-  - type: Conventions
-    url: conventions/purplebricks-conventions.yml
-  - type: ErrorCatalog
-    url: errors/purplebricks-problem-types.yml
-  - type: Overlay
-    url: overlays/purplebricks-communications-v1-overlay.yaml
-- name: Purplebricks Conveyancing API
-  description: Conveyancing quote service run by PB Digital, generating and retrieving conveyancing
-    quotes for the legal leg of a Purplebricks sale.
-  humanURL: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
-  baseURL: https://api.purplebricks.co.uk/conveyancing-api
-  tags:
-  - Conveyancing
-  - Quotes
-  - Legal
-  - property-transaction
-  tags_raw:
-  - conveyancing
-  - quotes
-  - legal
-  - property-transaction
-  properties:
   - type: APIReference
     url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
   - type: SwaggerUI
     url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-propertybox-api
+  name: Purplebricks Property Box API
+  description: The PropertyBox API from Purplebricks — 2 operation(s) for propertybox.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - PropertyBox
+  properties:
   - type: OpenAPI
-    url: openapi/purplebricks-conveyancing-v1-openapi.yml
+    url: openapi/purplebricks-propertybox-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
   - type: Authentication
     url: authentication/purplebricks-authentication.yml
   - type: Conventions
     url: conventions/purplebricks-conventions.yml
   - type: ErrorCatalog
     url: errors/purplebricks-problem-types.yml
-  - type: Overlay
-    url: overlays/purplebricks-conveyancing-v1-overlay.yaml
-- name: Purplebricks Agent API
-  description: Small agent-experience service exposing team lookups for the local property experts
-    who staff the Purplebricks model in place of high-street branches.
-  humanURL: https://api.purplebricks.co.uk/agent-api/swagger/index.html
-  baseURL: https://api.purplebricks.co.uk/agent-api
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-propertyquestionnaireform-api
+  name: Purplebricks Property Questionnaire Form API
+  description: >-
+    The PropertyQuestionnaireForm API from Purplebricks — 1 operation(s) for propertyquestionnaireform.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
   tags:
-  - Agents
+  - PropertyQuestionnaireForm
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-propertyquestionnaireform-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-propertysearchhits-api
+  name: Purplebricks Property Search Hits API
+  description: The PropertySearchHits API from Purplebricks — 1 operation(s) for propertysearchhits.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - PropertySearchHits
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-propertysearchhits-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-railwaystations-api
+  name: Purplebricks Railway Stations API
+  description: The RailwayStations API from Purplebricks — 1 operation(s) for railwaystations.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - RailwayStations
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-railwaystations-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-rightmovebranch-api
+  name: Purplebricks Rightmove Branch API
+  description: The RightmoveBranch API from Purplebricks — 3 operation(s) for rightmovebranch.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - RightmoveBranch
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-rightmovebranch-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-salesforcediarypilot-api
+  name: Purplebricks Salesforce Diary Pilot API
+  description: >-
+    The SalesforceDiaryPilot API from Purplebricks — 1 operation(s) for salesforcediarypilot.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - SalesforceDiaryPilot
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-salesforcediarypilot-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-step-api
+  name: Purplebricks Step API
+  description: The Step API from Purplebricks — 2 operation(s) for step.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Step
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-step-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-streetwebhooks-api
+  name: Purplebricks Street Webhooks API
+  description: The StreetWebhooks API from Purplebricks — 2 operation(s) for streetwebhooks.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - StreetWebhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-streetwebhooks-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-team-api
+  name: Purplebricks Team API
+  description: The Team API from Purplebricks — 2 operation(s) for team.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
   - Team
-  - local-property-experts
-  tags_raw:
-  - agents
-  - teams
-  - local-property-experts
   properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-team-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
   - type: APIReference
     url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
   - type: SwaggerUI
     url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
-  - type: OpenAPI
-    url: openapi/purplebricks-agent-v1-openapi.yml
-  - type: Authentication
-    url: authentication/purplebricks-authentication.yml
-  - type: Conventions
-    url: conventions/purplebricks-conventions.yml
-  - type: ErrorCatalog
-    url: errors/purplebricks-problem-types.yml
-  - type: Overlay
-    url: overlays/purplebricks-agent-v1-overlay.yaml
-- name: Purplebricks Feedback API
-  description: Single-surface feedback management service used to manage viewing and vendor feedback
-    across the platform.
-  humanURL: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
-  baseURL: https://api.purplebricks.co.uk/feedback-api
-  tags:
-  - Feedback
-  - Reviews
-  - Customer Experience
-  tags_raw:
-  - feedback
-  - reviews
-  - customer-experience
-  properties:
   - type: APIReference
     url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
   - type: SwaggerUI
     url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
-  - type: OpenAPI
-    url: openapi/purplebricks-feedback-v1-openapi.yml
-  - type: Authentication
-    url: authentication/purplebricks-authentication.yml
-  - type: Conventions
-    url: conventions/purplebricks-conventions.yml
-  - type: ErrorCatalog
-    url: errors/purplebricks-problem-types.yml
-  - type: Overlay
-    url: overlays/purplebricks-feedback-v1-overlay.yaml
-- name: Purplebricks Workflow API
-  description: Platform workflow service exposing workflow steps and an instruct-availability check
-    that gates whether a seller can be instructed at a given point in the journey.
-  humanURL: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
-  baseURL: https://api.purplebricks.co.uk/workflow-api
-  tags:
-  - Workflows
-  - Orchestration
-  - instruction
-  - Platform
-  tags_raw:
-  - workflow
-  - orchestration
-  - instruction
-  - platform
-  properties:
   - type: APIReference
     url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
   - type: SwaggerUI
     url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
-  - type: OpenAPI
-    url: openapi/purplebricks-workflow-v1-openapi.yml
-  - type: Authentication
-    url: authentication/purplebricks-authentication.yml
-  - type: Conventions
-    url: conventions/purplebricks-conventions.yml
-  - type: ErrorCatalog
-    url: errors/purplebricks-problem-types.yml
-  - type: Overlay
-    url: overlays/purplebricks-workflow-v1-overlay.yaml
-- name: Purplebricks Outlook Sync API
-  description: Agent-facing microservice that reads and toggles Outlook calendar synchronisation
-    for a local property expert. The only Purplebricks API path disclosed in robots.txt, and the
-    thread that led to the rest of the publicly-served Swagger estate.
-  humanURL: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
-  baseURL: https://api.purplebricks.co.uk/outlook-api
-  tags:
-  - Calendar
-  - Outlook
-  - Agents
-  - Integration
-  tags_raw:
-  - calendar
-  - outlook
-  - agents
-  - integrations
-  properties:
   - type: APIReference
     url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
   - type: SwaggerUI
     url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-tecletpostcode-api
+  name: Purplebricks Teclet Postcode API
+  description: The TecletPostcode API from Purplebricks — 2 operation(s) for tecletpostcode.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - TecletPostcode
+  properties:
   - type: OpenAPI
-    url: openapi/purplebricks-outlook-v1-openapi.yml
+    url: openapi/purplebricks-tecletpostcode-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
   - type: Authentication
     url: authentication/purplebricks-authentication.yml
   - type: Conventions
     url: conventions/purplebricks-conventions.yml
   - type: ErrorCatalog
     url: errors/purplebricks-problem-types.yml
-  - type: Overlay
-    url: overlays/purplebricks-outlook-v1-overlay.yaml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-threads-api
+  name: Purplebricks Threads API
+  description: The Threads API from Purplebricks — 7 operation(s) for threads.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Threads
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-threads-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-tps-api
+  name: Purplebricks Tps API
+  description: The Tps API from Purplebricks — 1 operation(s) for tps.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Tps
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-tps-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-trackedproperties-api
+  name: Purplebricks Tracked Properties API
+  description: The TrackedProperties API from Purplebricks — 4 operation(s) for trackedproperties.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - TrackedProperties
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-trackedproperties-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-user-api
+  name: Purplebricks User API
+  description: The User API from Purplebricks — 6 operation(s) for user.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-user-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-users-api
+  name: Purplebricks Users API
+  description: The Users API from Purplebricks — 4 operation(s) for users.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-users-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-valuation-api
+  name: Purplebricks Valuation API
+  description: The Valuation API from Purplebricks — 4 operation(s) for valuation.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Valuation
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-valuation-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-valuationintent-api
+  name: Purplebricks Valuation Intent API
+  description: The ValuationIntent API from Purplebricks — 6 operation(s) for valuationintent.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - ValuationIntent
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-valuationintent-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-valuationreport-api
+  name: Purplebricks Valuation Report API
+  description: The ValuationReport API from Purplebricks — 1 operation(s) for valuationreport.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - ValuationReport
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-valuationreport-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-withdraw-api
+  name: Purplebricks Withdraw API
+  description: The Withdraw API from Purplebricks — 4 operation(s) for withdraw.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - Withdraw
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-withdraw-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+- aid: purplebricks:purplebricks-zooplabranch-api
+  name: Purplebricks Zoopla Branch API
+  description: The ZooplaBranch API from Purplebricks — 3 operation(s) for zooplabranch.
+  humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  baseURL: https://api.purplebricks.co.uk/property-api
+  tags:
+  - ZooplaBranch
+  properties:
+  - type: OpenAPI
+    url: openapi/purplebricks-zooplabranch-api-openapi.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/property-api/swagger/index.html
+  - type: Authentication
+    url: authentication/purplebricks-authentication.yml
+  - type: Conventions
+    url: conventions/purplebricks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/purplebricks-problem-types.yml
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/account-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/valuations-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/viewings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/messaging-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/lettings-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/branch-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/communications-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/conveyancing-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/agent-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/feedback-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/workflow-api/swagger/index.html
+  - type: APIReference
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
+  - type: SwaggerUI
+    url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
 common:
+- type: Overlay
+  url: overlays/purplebricks-property-v1-overlay.yaml
+- type: Overlay
+  url: overlays/purplebricks-account-v1-overlay.yaml
+- type: Overlay
+  url: overlays/purplebricks-valuations-v1-overlay.yaml
+- type: Overlay
+  url: overlays/purplebricks-viewings-v1-overlay.yaml
+- type: Overlay
+  url: overlays/purplebricks-messaging-v1-overlay.yaml
+- type: Overlay
+  url: overlays/purplebricks-lettings-v1-overlay.yaml
+- type: Overlay
+  url: overlays/purplebricks-branch-v1-overlay.yaml
+- type: Overlay
+  url: overlays/purplebricks-communications-v1-overlay.yaml
+- type: Overlay
+  url: overlays/purplebricks-conveyancing-v1-overlay.yaml
+- type: Overlay
+  url: overlays/purplebricks-agent-v1-overlay.yaml
+- type: Overlay
+  url: overlays/purplebricks-feedback-v1-overlay.yaml
+- type: Overlay
+  url: overlays/purplebricks-workflow-v1-overlay.yaml
+- type: Overlay
+  url: overlays/purplebricks-outlook-v1-overlay.yaml
 - type: DomainSecurity
   url: security/purplebricks-domain-security.yml
 - type: AgenticAccess
