@@ -21,6 +21,18 @@ description: 'Purplebricks is the United Kingdom''s largest online (hybrid) esta
   syndication seam directly. RESO is absent, as expected outside North America, and the genuinely
   open UK property data layer it consumes for its sold-prices tool belongs to government (HM Land
   Registry), not to Purplebricks.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://images.ctfassets.net/xhygqgfuea6b/3iPW7f24NM6u7Klc7YopsZ/43f36d4f236766caaa30f29fc85cafa1/purplebricks-logo.png
 tags:
 - Real-Estate
@@ -4005,6 +4017,9 @@ apis:
   - type: SwaggerUI
     url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
 common:
+- type: CapabilityMap
+  url: capabilities/purplebricks-capability-edges.yml
+  name: Purplebricks Business Capability Map
 - type: Overlay
   url: overlays/purplebricks-property-v1-overlay.yaml
 - type: Overlay
