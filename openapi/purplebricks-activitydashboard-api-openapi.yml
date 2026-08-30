@@ -1,0 +1,548 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Activity Dashboard API
+  version: '1.0'
+  description: 'Operations tagged ActivityDashboard across 2 of this provider''s published API definitions: purplebricks-property-v1-openapi.yml, purplebricks-property-v2-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.purplebricks.co.uk/property-api
+security:
+- Bearer: []
+tags:
+- name: ActivityDashboard
+paths:
+  /v1/activitydashboard/getactivitydocument:
+    get:
+      tags:
+      - ActivityDashboard
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.ActivityDashboardDocument'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.ActivityDashboardDocument'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.ActivityDashboardDocument'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/activitydashboard/getpropertiesbyuserid:
+    get:
+      tags:
+      - ActivityDashboard
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyModel'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyModel'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/activitydashboard/getpropertynotificationcount:
+    get:
+      tags:
+      - ActivityDashboard
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardTotalsModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardTotalsModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardTotalsModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v2/activitydashboard/getactivitydocument:
+    get:
+      tags:
+      - ActivityDashboard
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.ActivityDashboardDocument'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.ActivityDashboardDocument'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.ActivityDashboardDocument'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v2/activitydashboard/getpropertiesbyuserid:
+    get:
+      tags:
+      - ActivityDashboard
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyModel'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyModel'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v2/activitydashboard/getpropertynotificationcount:
+    get:
+      tags:
+      - ActivityDashboard
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardTotalsModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardTotalsModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardTotalsModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+components:
+  schemas:
+    Purplebricks.CosmosDb.Enums.RegionType:
+      enum:
+      - England
+      - Scotland
+      - Wales
+      - NorthernIreland
+      - Queensland
+      - Victoria
+      - NewSouthWales
+      - WesternAustralia
+      - SouthAustralia
+      - California
+      - NewYork
+      - Connecticut
+      - NewJersey
+      - Pennsylvania
+      type: string
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardDiaryDocument:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        lastUpdated:
+          type: string
+          format: date-time
+        appointmentInDiary:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationDiaryModel'
+      additionalProperties: false
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardMessageDocument:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        lastUpdated:
+          type: string
+          format: date-time
+        unreadMessage:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationMessageModel'
+      additionalProperties: false
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationFeedbackModel:
+      type: object
+      properties:
+        feedbackId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        propertyAddress:
+          type:
+          - string
+          - 'null'
+        from:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardFeedbackDocument:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        lastUpdated:
+          type: string
+          format: date-time
+        provideFeedback:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationFeedbackModel'
+        feedbackToReview:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationFeedbackModel'
+      additionalProperties: false
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardViewingDocument:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        lastUpdated:
+          type: string
+          format: date-time
+        outcomeOfViewing:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationViewingModel'
+      additionalProperties: false
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationOfferModel:
+      type: object
+      properties:
+        offerId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        toLet:
+          type: boolean
+        propertyAddress:
+          type:
+          - string
+          - 'null'
+        buyerName:
+          type:
+          - string
+          - 'null'
+        propertyRegionType:
+          $ref: '#/components/schemas/Purplebricks.CosmosDb.Enums.RegionType'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        address:
+          type:
+          - string
+          - 'null'
+        appointmentDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        isLive:
+          type: boolean
+        lastActionCompleted:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WorkflowStepType'
+        imageUrl:
+          type:
+          - string
+          - 'null'
+        propertyTimeZone:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.IanaTimeZone'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyCountModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        numOfItems:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.IanaTimeZone:
+      enum:
+      - Not Set
+      - Europe/London
+      - Australia/Perth
+      - Australia/Eucla
+      - Australia/Adelaide
+      - Australia/Broken_Hill
+      - Australia/Darwin
+      - Australia/Brisbane
+      - Australia/Currie
+      - Australia/Hobart
+      - Australia/Lindeman
+      - Australia/Melbourne
+      - Australia/Sydney
+      - Australia/Lord_Howe
+      - Antarctica/Macquarie
+      - America/Los_Angeles
+      - America/New_York
+      - America/Detroit
+      - America/Kentucky/Louisville
+      - America/Kentucky/Monticello
+      - America/Indiana/Indianapolis
+      - America/Indiana/Vincennes
+      - America/Indiana/Winamac
+      - America/Indiana/Marengo
+      - America/Indiana/Petersburg
+      - America/Indiana/Vevay
+      - America/Chicago
+      - America/Indiana/Tell_City
+      - America/Indiana/Knox
+      - America/Menominee
+      - America/North_Dakota/Center
+      - America/North_Dakota/New_Salem
+      - America/North_Dakota/Beulah
+      - America/Boise
+      - America/Phoenix
+      - America/Anchorage
+      - America/Juneau
+      - America/Sitka
+      - America/Yakutat
+      - America/Nome
+      - America/Adak
+      - America/Metlakatla
+      - Pacific/Honolulu
+      - America/Denver
+      - Pacific/Auckland
+      type: string
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationDiaryModel:
+      type: object
+      properties:
+        appointmentId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        appointmentDateTime:
+          type: string
+          format: date-time
+      additionalProperties: false
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.ActivityDashboardDocument:
+      type: object
+      properties:
+        offers:
+          $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardOfferDocument'
+        viewings:
+          $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardViewingDocument'
+        diary:
+          $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardDiaryDocument'
+        messages:
+          $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardMessageDocument'
+        feedback:
+          $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardFeedbackDocument'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardTotalsModel:
+      type: object
+      properties:
+        diaryNotification:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyCountModel'
+        viewingNotification:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyCountModel'
+        offersNotification:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyCountModel'
+        messagesNotification:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyCountModel'
+        feedbackNotification:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyCountModel'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.WorkflowStepType:
+      enum:
+      - Create
+      - BookValuation
+      - Valuation
+      - Instruct
+      - CreateAdvert
+      - RejectAdvert
+      - AmendAdvert
+      - ApproveAdvert
+      - SchedulePendingRegCert
+      - Schedule
+      - PublishPendingRegCert
+      - Publish
+      - Withdraw
+      - Suspend
+      - SuspendByUser
+      - SuspendAccount
+      - UnderOffer
+      - SoldSubjectToContract
+      - DiyAdvertStarted
+      - LetSubjectToContract
+      - DeclineOffer
+      - UpdateProperty
+      - AcceptableOffer
+      - ApplicationReceived
+      - AcceptableOfferNotMarketed
+      - WithdrawOffer
+      - UpdateAdvert
+      - DiyAdvertCreated
+      - DiyAdvertRejected
+      - ApprovePhoto
+      - ContractsExchanged
+      - Completion
+      - DiyAdvertAmended
+      - DiyAdvertRejectAmendments
+      - SchedulePendingContract
+      - PublishPendingContract
+      - UpdatePropertyDiary
+      - ContractsExchangedCoolingOffPeriod
+      - ForceSold
+      - ForceSoldSubjectToContract
+      - ForceContractsExchanged
+      - ForceCompletion
+      - SoldSubjectToEscrow
+      - PendingEscrow
+      - Closing
+      - ForceAcceptableOffer
+      - ForceAcceptableOfferNotMarketed
+      - ForceContractsExchangedCoolingOffPeriod
+      - InstantValuation
+      - FakeValuation
+      - Cancelled
+      type: string
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardOfferDocument:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        lastUpdated:
+          type: string
+          format: date-time
+        offerToReview:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationOfferModel'
+        updateToOffer:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationOfferModel'
+        lawyerDetailsRequired:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationOfferModel'
+        payReferencingFee:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationOfferModel'
+        submitReferencing:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationOfferModel'
+      additionalProperties: false
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationMessageModel:
+      type: object
+      properties:
+        messageId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        from:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationViewingModel:
+      type: object
+      properties:
+        viewingId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        propertyAddress:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header
+x-refined-from:
+- purplebricks-property-v1-openapi.yml
+- purplebricks-property-v2-openapi.yml

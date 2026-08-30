@@ -1,0 +1,306 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Property API 1.0 - Platform Instant Instruct API
+  description: '### All Ex Uber Property related controllers are here.
+
+    ### [Purplebricks Property API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/property-api)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/property-api
+security:
+- Bearer: []
+tags:
+- name: InstantInstruct
+paths:
+  /v1/instantinstruct:
+    post:
+      tags:
+      - InstantInstruct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyDetailsWithTenancyInfoInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyDetailsWithTenancyInfoInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyDetailsWithTenancyInfoInputModel'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.InstantInstructPropertyViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.InstantInstructPropertyViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.InstantInstructPropertyViewModel'
+components:
+  schemas:
+    Purplebricks.Property.Business.InputModels.PropertyDetailsWithTenancyInfoInputModel:
+      type: object
+      properties:
+        propertyDetails:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyDetails'
+        tenancyData:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.TenancyDataInputModel'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.Deposit:
+      enum:
+      - OneMonth
+      - OneAndHalfMonths
+      - TwoMonths
+      type: string
+    Purplebricks.Property.Domain.Enums.LettingServiceLevel:
+      enum:
+      - TenantFind
+      - RentCollect
+      - FullyManaged
+      type: string
+    Purplebricks.Property.Business.InputModels.PropertyDetails:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        userId:
+          type: integer
+          format: int32
+        expertId:
+          type: integer
+          format: int32
+        line1:
+          maxLength: 200
+          type:
+          - string
+          - 'null'
+        line2:
+          maxLength: 200
+          type:
+          - string
+          - 'null'
+        unitNumber:
+          maxLength: 50
+          type:
+          - string
+          - 'null'
+        town:
+          maxLength: 200
+          type:
+          - string
+          - 'null'
+        county:
+          maxLength: 200
+          type:
+          - string
+          - 'null'
+        state:
+          maxLength: 50
+          type:
+          - string
+          - 'null'
+        postcode:
+          maxLength: 10
+          type:
+          - string
+          - 'null'
+        country:
+          maxLength: 200
+          type:
+          - string
+          - 'null'
+        bedrooms:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        receptions:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        bathrooms:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        garage:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Garage'
+        parking:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Parking'
+        garden:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Garden'
+        doubleGlazing:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Glazing'
+        centralHeating:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Heating'
+        tenure:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Tenure'
+        lease:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        propertyToLet:
+          type: boolean
+        isPbEmployee:
+          type: boolean
+        isDiy:
+          type: boolean
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        locationGroupId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.RentFrequency:
+      enum:
+      - Yearly
+      - Quarterly
+      - Monthly
+      - Weekly
+      - Daily
+      type: string
+    Purplebricks.Property.Business.InputModels.TenancyDataInputModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        lettingTerms:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.LettingTerms'
+        availableFrom:
+          type:
+          - string
+          - 'null'
+        depositRequired:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Deposit'
+        additionalDeposit:
+          type: integer
+          format: int32
+        furnished:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Furnished'
+        studentLet:
+          type: boolean
+        shared:
+          type: boolean
+        taxBand:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.TaxBand'
+        dhsPermitted:
+          type: boolean
+        petsPermitted:
+          type: boolean
+        smokersPermitted:
+          type: boolean
+        dhsBlocked:
+          type: boolean
+        petsBlocked:
+          type: boolean
+        smokersBlocked:
+          type: boolean
+        rentFrequency:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.RentFrequency'
+        serviceLevel:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.LettingServiceLevel'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.Parking:
+      enum:
+      - None
+      - Allocated
+      - Communal
+      - Covered
+      - Driveway
+      - Gated
+      - OffStreet
+      - OnStreet
+      type: string
+    Purplebricks.Property.Domain.Enums.LettingTerms:
+      enum:
+      - SixMonths
+      - OneYearOrMore
+      type: string
+    Purplebricks.Property.Domain.Enums.Glazing:
+      enum:
+      - Full
+      - Part
+      - None
+      type: string
+    Purplebricks.Property.Business.ViewModels.InstantInstructPropertyViewModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        hideNavigation:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.Furnished:
+      enum:
+      - Furnished
+      - PartFurnished
+      - Unfurnished
+      type: string
+    Purplebricks.Property.Domain.Enums.Garage:
+      enum:
+      - OneCar
+      - TwoOrMoreCars
+      - None
+      type: string
+    Purplebricks.Property.Domain.Enums.Tenure:
+      enum:
+      - Freehold
+      - Leasehold
+      - ShareOfFreehold
+      - SharedOwnership
+      - Commonhold
+      type: string
+    Purplebricks.Property.Domain.Enums.Garden:
+      enum:
+      - None
+      - Garden
+      - PrivateGarden
+      type: string
+    Purplebricks.Property.Domain.Enums.Heating:
+      enum:
+      - None
+      - AirConditioning
+      - Central
+      - Electric
+      - GasCentral
+      - Oil
+      - Solar
+      - UnderFloor
+      type: string
+    Purplebricks.Property.Domain.Enums.TaxBand:
+      enum:
+      - A
+      - B
+      - C
+      - D
+      - E
+      - F
+      - G
+      - H
+      - I
+      - TBC
+      - Exempt
+      type: string
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

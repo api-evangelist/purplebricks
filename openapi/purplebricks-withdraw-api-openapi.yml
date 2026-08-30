@@ -1,0 +1,433 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Property API 1.0 - Platform Withdraw API
+  description: '### All Ex Uber Property related controllers are here.
+
+    ### [Purplebricks Property API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/property-api)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/property-api
+security:
+- Bearer: []
+tags:
+- name: Withdraw
+paths:
+  /v1/withdraw:
+    post:
+      tags:
+      - Withdraw
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.WithdrawPropertyRequestModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.WithdrawPropertyRequestModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.WithdrawPropertyRequestModel'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.WithdrawPropertyResponseModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.WithdrawPropertyResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.WithdrawPropertyResponseModel'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+  /v1/request:
+    post:
+      tags:
+      - Withdraw
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.RequestWithdrawProperty'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.RequestWithdrawProperty'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.RequestWithdrawProperty'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.WithdrawPropertyResponseModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.WithdrawPropertyResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.WithdrawPropertyResponseModel'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+  /v1/cancelrequest:
+    post:
+      tags:
+      - Withdraw
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.CancelRequestWithdrawProperty'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.CancelRequestWithdrawProperty'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.CancelRequestWithdrawProperty'
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+  /v1/creatio/withdraw:
+    post:
+      tags:
+      - Withdraw
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.WithdrawPropertyRequestModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.WithdrawPropertyRequestModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.WithdrawPropertyRequestModel'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.WithdrawPropertyResponseModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.WithdrawPropertyResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.WithdrawPropertyResponseModel'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+components:
+  schemas:
+    Purplebricks.Property.Domain.Enums.WithdrawPropertyReason:
+      enum:
+      - NoLongerSelling
+      - NoLongerLetting
+      - MarketingBreak
+      - SoldSTC_OtherAgent
+      - SoldSTC_PrivateSale
+      - LetSTC_OtherAgent
+      - LetSTC_PrivateSale
+      - SoldWithPurplebricks
+      - LetWithPurplebricks
+      type: string
+    Purplebricks.Property.Domain.Models.CancelRequestWithdrawProperty:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Models.RequestWithdrawProperty:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        withdrawPropertyReason:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WithdrawPropertyReason'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Security.Auth.AuthUser:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int32
+          readOnly: true
+        publicUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+          readOnly: true
+        impersonatorUserId:
+          type: integer
+          format: int32
+          readOnly: true
+        impersonatorPublicUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+          readOnly: true
+      additionalProperties: false
+    Purplebricks.Property.Domain.Models.WithdrawPropertyResponseModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        propertyWithdrawn:
+          type: boolean
+        nonWithdrawalReason:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Models.WithdrawPropertyRequestModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        withdrawalReason:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WithdrawPropertyReason'
+        user:
+          $ref: '#/components/schemas/Purplebricks.Security.Auth.AuthUser'
+        collectBoard:
+          type: boolean
+        ipAddress:
+          type:
+          - string
+          - 'null'
+        forceAdvertWithdrawal:
+          type: boolean
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

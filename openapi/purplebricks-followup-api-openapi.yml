@@ -1,0 +1,733 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks.Valuations.Api 1.0 - Core Follow Up API
+  description: '### The new home for accessing the valuations service library
+
+    ### [Purplebricks.Valuations.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/valuations-api)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/valuations-api
+security:
+- Bearer: []
+tags:
+- name: FollowUp
+paths:
+  /v1/followup:
+    post:
+      tags:
+      - FollowUp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.ValuationFollowUpInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.ValuationFollowUpInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.ValuationFollowUpInputModel'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/followup/reschedule:
+    post:
+      tags:
+      - FollowUp
+      parameters:
+      - name: userId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.ValuationFollowUpInputModel'
+          text/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.ValuationFollowUpInputModel'
+          application/*+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.ValuationFollowUpInputModel'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/followup/updateleadtemp:
+    post:
+      tags:
+      - FollowUp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.ValuationFollowUpInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.ValuationFollowUpInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.ValuationFollowUpInputModel'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/followup/toaction:
+    get:
+      tags:
+      - FollowUp
+      parameters:
+      - name: userId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: nextFollowUpDateLimit
+        in: query
+        schema:
+          type: string
+      - name: userFullNameFilter
+        in: query
+        schema:
+          type: string
+      - name: addressFilter
+        in: query
+        schema:
+          type: string
+      - name: pageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: temperatureFilter
+        in: query
+        schema:
+          type: string
+      - name: packageNameFilter
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.PagedValuationFollowUpViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.PagedValuationFollowUpViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.PagedValuationFollowUpViewModel'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/followup/lpplist:
+    get:
+      tags:
+      - FollowUp
+      parameters:
+      - name: userId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: orderBy
+        in: query
+        schema:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Contract.Enums.LppSummaryOrderBy'
+      - name: pageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.PagedLppSummaryListViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.PagedLppSummaryListViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.PagedLppSummaryListViewModel'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/followup/alterdateforproperty:
+    post:
+      tags:
+      - FollowUp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.FollowUpDateForPropertyInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.FollowUpDateForPropertyInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.FollowUpDateForPropertyInputModel'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+components:
+  schemas:
+    Purplebricks.Valuations.Contract.InputModels.ValuationFollowUpInputModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        valuationId:
+          type: integer
+          format: int32
+        followUpOutcome:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome'
+        nextFollowUpDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        userId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        otherEADetails:
+          type:
+          - string
+          - 'null'
+        leadTemperature:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome:
+      enum:
+      - NotSet
+      - NotInterested
+      - InstructingWithinAMonth
+      - InstructingWithinThreeMonths
+      - InstructingWithinSixMonths
+      - InstructingAfterSixMonths
+      - Instructed
+      - NoAnswer
+      - Campaign_03_ValuationToInstruct_C
+      - Campaign_03_ValuationToInstruct_W8_C
+      - Campaign_03_ValuationToInstruct_W12_C
+      - OtherEA
+      type: string
+    Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUp:
+      type: object
+      properties:
+        valuationId:
+          type: integer
+          format: int32
+        valuationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        userId:
+          type: integer
+          format: int32
+        userFullName:
+          type:
+          - string
+          - 'null'
+        userEmail:
+          type:
+          - string
+          - 'null'
+        propertyId:
+          type: integer
+          format: int32
+        propertyAddress:
+          type:
+          - string
+          - 'null'
+        expertId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        expertName:
+          type:
+          - string
+          - 'null'
+        previousFollowUpDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        nextFollowUpDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastAgentHistoryNoteDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        leadTemperature:
+          type:
+          - string
+          - 'null'
+        lowestValuation:
+          type: integer
+          format: int32
+        packageName:
+          type:
+          - string
+          - 'null'
+        lastViewedByCustomer:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    Purplebricks.Valuations.Contract.ViewModels.PagedLppSummaryListViewModel:
+      type: object
+      properties:
+        totalRows:
+          type: integer
+          format: int32
+        totalPages:
+          type: integer
+          format: int32
+          readOnly: true
+        pageNumber:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        rowCountThisPage:
+          type: integer
+          format: int32
+          readOnly: true
+        lpps:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.LppFollowUpStatistics'
+      additionalProperties: false
+    Purplebricks.Valuations.Contract.ViewModels.LppFollowUpStatistics:
+      type: object
+      properties:
+        lppId:
+          type: integer
+          format: int32
+        forename:
+          type:
+          - string
+          - 'null'
+        surname:
+          type:
+          - string
+          - 'null'
+        regionNames:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        totalFollowUps:
+          type: integer
+          format: int32
+        totalFollowUpsOverdue:
+          type: integer
+          format: int32
+        totalWins:
+          type: integer
+          format: int32
+        totalWinsThisMonth:
+          type: integer
+          format: int32
+        totalLossesThisMonth:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel:
+      type: object
+      properties:
+        valuationId:
+          type: integer
+          format: int32
+        followUpOutcome:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome'
+        followUpOutcomeDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        followUpOutcomeUserId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        nextFollowUpDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        nextFollowUpUserId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    Purplebricks.Valuations.Contract.ViewModels.PagedValuationFollowUpViewModel:
+      type: object
+      properties:
+        totalRows:
+          type: integer
+          format: int32
+        totalPages:
+          type: integer
+          format: int32
+          readOnly: true
+        pageNumber:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        rowCountThisPage:
+          type: integer
+          format: int32
+          readOnly: true
+        numberOfOverdueFollowups:
+          type: integer
+          format: int32
+        followUpData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUp'
+      additionalProperties: false
+    Purplebricks.Valuations.Contract.Enums.LppSummaryOrderBy:
+      enum:
+      - Forename
+      - Surname
+      - UserId
+      type: string
+    Purplebricks.Valuations.Contract.InputModels.FollowUpDateForPropertyInputModel:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        nextFollowUpDate:
+          type: string
+          format: date-time
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

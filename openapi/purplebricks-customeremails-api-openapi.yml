@@ -1,0 +1,232 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks.Communications.Api 1.0 - Core Team Customer Emails API
+  description: '### Displays customer''s email history records
+
+    ### [Purplebricks.Communications.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/communications-api)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/communications-api
+security:
+- Bearer: []
+tags:
+- name: CustomerEmails
+paths:
+  /v1/customeremails/getemails/{userId}:
+    get:
+      tags:
+      - CustomerEmails
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Communications.Api.Models.EmailViewModel'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Communications.Api.Models.EmailViewModel'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Communications.Api.Models.EmailViewModel'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/customeremails/getemailbody/{emailId}:
+    get:
+      tags:
+      - CustomerEmails
+      parameters:
+      - name: emailId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Communications.Api.Models.EmailViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Communications.Api.Models.EmailViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Communications.Api.Models.EmailViewModel'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+components:
+  schemas:
+    Purplebricks.Communications.Api.Models.Emails.EmailLogLinkClickedDto:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        emailId:
+          type: string
+          format: uuid
+        linkReference:
+          type:
+          - string
+          - 'null'
+        userId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        dateClicked:
+          type: string
+          format: date-time
+      additionalProperties: false
+    Purplebricks.Communications.Api.Models.Emails.EmailLogOpenedDto:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        emailId:
+          type: string
+          format: uuid
+        dateViewed:
+          type: string
+          format: date-time
+      additionalProperties: false
+    Purplebricks.Communications.Api.Models.EmailViewModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        recipientUserId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        recipientAddress:
+          type:
+          - string
+          - 'null'
+        emailId:
+          type: string
+          format: uuid
+        subject:
+          type:
+          - string
+          - 'null'
+        errorMessage:
+          type:
+          - string
+          - 'null'
+        bodyUrl:
+          maxLength: 2048
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        dateSent:
+          type: string
+          format: date-time
+        opens:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Communications.Api.Models.Emails.EmailLogOpenedDto'
+        clicks:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Communications.Api.Models.Emails.EmailLogLinkClickedDto'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

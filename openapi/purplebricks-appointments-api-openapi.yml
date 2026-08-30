@@ -1,0 +1,463 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks.Viewings.Api 1.0 - Customer Experience Appointments API
+  description: '### Purplebricks Viewings API.
+
+    ### [Purplebricks.Viewings.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/viewings)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/viewings-api
+security:
+- Bearer: []
+tags:
+- name: Appointments
+paths:
+  /v1/appointments:
+    post:
+      tags:
+      - Appointments
+      summary: Books a viewing appointment.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.BookViewingInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.BookViewingInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.BookViewingInputModel'
+      responses:
+        '201':
+          description: The appointment was successfully created.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.BookViewingConfirmationViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.BookViewingConfirmationViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.BookViewingConfirmationViewModel'
+        '400':
+          description: The appointment request is invalid.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: The user is unauthorised.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: The appointment was not created because the property is sold or withdrawn.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '409':
+          description: The appointment was not created because the viewing slot is not available.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '429':
+          description: Too Many Requests
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/appointments/cancel:
+    post:
+      tags:
+      - Appointments
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.Business.Commands.CancelViewingCommand'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.Business.Commands.CancelViewingCommand'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.Business.Commands.CancelViewingCommand'
+      responses:
+        '200':
+          description: Success
+components:
+  schemas:
+    Purplebricks.Viewings.Business.Models.ViewingTenantAdditionalDataInputModel:
+      type: object
+      properties:
+        moveTimeframe:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        terms:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.Offer.TenantTerms'
+        lettingTerms:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.Property.LettingTerms'
+        employmentStatus:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.Offer.EmploymentStatus'
+        poorCreditHistory:
+          type: boolean
+        havePets:
+          type: boolean
+        isSmoker:
+          type: boolean
+        otherPets:
+          maxLength: 500
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Viewings.Business.Commands.CancelViewingCommand:
+      type: object
+      properties:
+        loggedInUserId:
+          type: integer
+          format: int32
+        impersonatorUserId:
+          type: integer
+          format: int32
+        viewingId:
+          type: integer
+          format: int32
+        cancellationReason:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.DatabaseModel.Enumerations.Property.LettingTerms:
+      enum:
+      - SixMonths
+      - OneYearOrMore
+      type: string
+    Purplebricks.DatabaseModel.Enumerations.ViewingAdditional.MortgageAgreementStatus:
+      enum:
+      - NotYetArranged
+      - AgreedInPrinciple
+      - PreQualified
+      - PreApproved
+      type: string
+    Purplebricks.Viewings.Business.Models.BookingRequestStatus:
+      enum:
+      - SlotNotAvailable
+      - Confirmed
+      - AwaitingConfirmation
+      - PropertySold
+      - PropertyWithdrawn
+      type: string
+    Purplebricks.Viewings.Business.Models.ViewingCustomerContactDetailsInputModel:
+      type: object
+      properties:
+        phoneHome:
+          maxLength: 20
+          type:
+          - string
+          - 'null'
+        phoneOther:
+          maxLength: 20
+          type:
+          - string
+          - 'null'
+        phoneMobile:
+          maxLength: 20
+          type:
+          - string
+          - 'null'
+        primaryContactNumber:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.ContactNumberType'
+      additionalProperties: false
+    Purplebricks.DatabaseModel.Enumerations.ViewingAdditional.ViewingPurpose:
+      enum:
+      - ToOccupy
+      - DevelopmentOpportunity
+      - BtlInvestment
+      type: string
+    Purplebricks.DatabaseModel.Enumerations.BookingProcess:
+      enum:
+      - SellerBookValuation
+      - BuyerBookViewing
+      - CallCentreBookValuation
+      - CallCentreBookViewing
+      - SellerRearrange
+      - BuyerRearrange
+      - LpeRearrange
+      - LpeBookViewing
+      - BuyingAgentBookViewing
+      - RemortgageInstantValuation
+      - AiVoiceAgent
+      - AiWhatsAppAgent
+      - AiSmsAgent
+      type: string
+    Purplebricks.DatabaseModel.Enumerations.Offer.SaleProgressOption:
+      enum:
+      - NotOnTheMarket
+      - OnTheMarket
+      - SSTC
+      - Pending
+      type: string
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Viewings.Business.ViewModels.BookViewingConfirmationViewModel:
+      type: object
+      properties:
+        eventId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        propertyId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        listingId:
+          type:
+          - string
+          - 'null'
+        status:
+          $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.BookingRequestStatus'
+        bookingProcess:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.BookingProcess'
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        propertyTimeZone:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.IanaTimeZone'
+        street:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+        isAccompaniedViewing:
+          type: boolean
+        hostName:
+          type:
+          - string
+          - 'null'
+        hostPhoneNumber:
+          type:
+          - string
+          - 'null'
+        expertPhoto:
+          type:
+          - string
+          - 'null'
+        trustPilotId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Viewings.Business.Models.BookViewingInputModel:
+      type: object
+      properties:
+        appointmentId:
+          type: string
+          format: uuid
+        propertyId:
+          type: integer
+          format: int32
+        eventStart:
+          type: string
+          format: date-time
+        contactDetails:
+          $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.ViewingCustomerContactDetailsInputModel'
+        tenantAdditionalData:
+          $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.ViewingTenantAdditionalDataInputModel'
+        buyerAdditionalData:
+          $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.ViewingBuyerAdditionalDataInputModel'
+        process:
+          type:
+          - string
+          - 'null'
+        viewingId:
+          type: string
+          format: uuid
+        enquiryId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.DatabaseModel.Enumerations.Offer.EmploymentStatus:
+      enum:
+      - Employed
+      - SelfEmployed
+      - Retired
+      - Student
+      - DSS
+      - Unemployed
+      type: string
+    Purplebricks.DatabaseModel.Enumerations.Offer.TenantTerms:
+      enum:
+      - SixMonths
+      - TwelveMonths
+      - EighteenMonths
+      - TwentyFourMonths
+      type: string
+    Purplebricks.DatabaseModel.Enumerations.IanaTimeZone:
+      enum:
+      - NotSet
+      - EuropeLondon
+      - AustraliaPerth
+      - AustraliaEucla
+      - AustraliaAdelaide
+      - AustraliaBrokenHill
+      - AustraliaDarwin
+      - AustraliaBrisbane
+      - AustraliaCurrie
+      - AustraliaHobart
+      - AustraliaLindeman
+      - AustraliaMelbourne
+      - AustraliaSydney
+      - AustraliaLordHowe
+      - AntarcticaMacquarie
+      - AmericaLosAngeles
+      - AmericaNewYork
+      - AmericaDetroit
+      - AmericaKentuckyLouisville
+      - AmericaKentuckyMonticello
+      - AmericaIndianaIndianapolis
+      - AmericaIndianaVincennes
+      - AmericaIndianaWinamac
+      - AmericaIndianaMarengo
+      - AmericaIndianaPetersburg
+      - AmericaIndianaVevay
+      - AmericaChicago
+      - AmericaIndianaTellCity
+      - AmericaIndianaKnox
+      - AmericaMenominee
+      - AmericaNorthDakotaCenter
+      - AmericaNorthDakotaNewSalem
+      - AmericaNorthDakotaBeulah
+      - AmericaBoise
+      - AmericaPhoenix
+      - AmericaAnchorage
+      - AmericaJuneau
+      - AmericaSitka
+      - AmericaYakutat
+      - AmericaNome
+      - AmericaAdak
+      - AmericaMetlakatla
+      - PacificHonolulu
+      - AmericaDenver
+      - PacificAuckland
+      type: string
+    Purplebricks.DatabaseModel.Enumerations.ContactNumberType:
+      enum:
+      - Home
+      - Mobile
+      - Other
+      type: string
+    Purplebricks.Viewings.Business.Models.ViewingBuyerAdditionalDataInputModel:
+      type: object
+      properties:
+        moveTimeframe:
+          type: string
+          format: date-time
+        viewingPurpose:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.ViewingAdditional.ViewingPurpose'
+        hasPortfolio:
+          type:
+          - boolean
+          - 'null'
+        propertyToSell:
+          type: boolean
+        saleProgression:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.Offer.SaleProgressOption'
+        timeOnMarket:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        mortgageRequired:
+          type: boolean
+        mortgageStatus:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.ViewingAdditional.MortgageAgreementStatus'
+        investmentConsented:
+          type:
+          - boolean
+          - 'null'
+        mabConsented:
+          type: boolean
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

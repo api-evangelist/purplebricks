@@ -1,0 +1,540 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Users API
+  version: '1.0'
+  description: 'Operations tagged Users across 3 of this provider''s published API definitions: purplebricks-property-v1-openapi.yml, purplebricks-valuations-v1-openapi.yml, purplebricks-viewings-v1-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.purplebricks.co.uk/property-api
+- url: https://api.purplebricks.co.uk/valuations-api
+- url: https://api.purplebricks.co.uk/viewings-api
+security:
+- Bearer: []
+tags:
+- name: Users
+paths:
+  /v1/creatio/users/{userId}/properties:
+    get:
+      tags:
+      - Users
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioUserPropertiesViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioUserPropertiesViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioUserPropertiesViewModel'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/creatio/users/{userId}/valuations:
+    get:
+      tags:
+      - Users
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Valuations.Domains.Models.CreatioValuationDetail'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Valuations.Domains.Models.CreatioValuationDetail'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Valuations.Domains.Models.CreatioValuationDetail'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+    servers:
+    - url: https://api.purplebricks.co.uk/valuations-api
+  /v1/creatio/users/{userId}/viewings:
+    get:
+      tags:
+      - Users
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.UserViewingDetail'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.UserViewingDetail'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.UserViewingDetail'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '500':
+          description: Server Error
+    servers:
+    - url: https://api.purplebricks.co.uk/viewings-api
+  /v1/creatio/users/{userId}/viewings/feedback:
+    get:
+      tags:
+      - Users
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.CreatioFeedbackDetail'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.CreatioFeedbackDetail'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.CreatioFeedbackDetail'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '500':
+          description: Server Error
+    servers:
+    - url: https://api.purplebricks.co.uk/viewings-api
+components:
+  schemas:
+    Purplebricks.Property.Business.ViewModels.Creatio.Address:
+      type: object
+      properties:
+        line1:
+          type:
+          - string
+          - 'null'
+        line2:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Property.Business.ViewModels.Creatio.CreatioProperty:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        address:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.Address'
+        status:
+          type:
+          - string
+          - 'null'
+        isSales:
+          type: boolean
+        isLettings:
+          type: boolean
+        lpp:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioExpert'
+        accountManager:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioExpert'
+        negotiationExpert:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioExpert'
+        salesProgressor:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioExpert'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.Creatio.CreatioExpert:
+      type: object
+      properties:
+        fullName:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.Creatio.CreatioUserPropertiesViewModel:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+        properties:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioProperty'
+      additionalProperties: false
+    Purplebricks.Valuations.Domains.Models.AddressViewModel:
+      type: object
+      properties:
+        line1:
+          type:
+          - string
+          - 'null'
+        line2:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Valuations.Domains.Models.CreatioValuationDetail:
+      type: object
+      properties:
+        address:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Domains.Models.AddressViewModel'
+        propertyId:
+          type: integer
+          format: int32
+        valuationDate:
+          type: string
+          format: date-time
+        status:
+          type:
+          - string
+          - 'null'
+        isSales:
+          type: boolean
+        recommendedListPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        lowListPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        highListPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        lpp:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Domains.Models.CreatioExpert'
+        accountManager:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Domains.Models.CreatioExpert'
+        valuationType:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Domains.Models.Enums.EventType'
+      additionalProperties: false
+    Purplebricks.Valuations.Domains.Models.CreatioExpert:
+      type: object
+      properties:
+        fullName:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Valuations.Domains.Models.Enums.EventType:
+      enum:
+      - Valuation
+      - Viewing
+      - OpenDay
+      - Busy
+      - VirtualValuation
+      type: string
+    Purplebricks.Viewings.Business.ViewModels.AddressViewModel:
+      type: object
+      properties:
+        line1:
+          type:
+          - string
+          - 'null'
+        line2:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Viewings.Business.Models.UserViewingDetail:
+      type: object
+      properties:
+        address:
+          $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.AddressViewModel'
+        viewingDate:
+          type: string
+          format: date-time
+        status:
+          type:
+          - string
+          - 'null'
+        isSales:
+          type: boolean
+        conductingAppointment:
+          type:
+          - string
+          - 'null'
+        viewingId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        viewer:
+          $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.EventUserDetailsViewModel'
+        host:
+          $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.EventUserDetailsViewModel'
+        seller:
+          $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.EventUserDetailsViewModel'
+        bookedByUser:
+          type: boolean
+        userRole:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Viewings.Business.ViewModels.EventUserDetailsViewModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        title:
+          type:
+          - string
+          - 'null'
+        forename:
+          type:
+          - string
+          - 'null'
+        surname:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        phone:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Viewings.Business.Models.CreatioFeedbackDetail:
+      type: object
+      properties:
+        viewingDate:
+          type: string
+          format: date-time
+        address:
+          $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.AddressViewModel'
+        isSales:
+          type: boolean
+        comments:
+          type:
+          - string
+          - 'null'
+        presentationScore:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        suitabilityScore:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        priceScore:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header
+x-refined-from:
+- purplebricks-property-v1-openapi.yml
+- purplebricks-valuations-v1-openapi.yml
+- purplebricks-viewings-v1-openapi.yml

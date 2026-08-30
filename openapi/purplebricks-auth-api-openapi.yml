@@ -1,0 +1,85 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Account API 1 - Platform Auth API
+  description: '### All Ex Uber Account related controllers are here.
+
+    ### [Purplebricks Account API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/account-api)'
+  version: '1'
+servers:
+- url: https://api.purplebricks.co.uk/account-api
+security:
+- Bearer: []
+tags:
+- name: Auth
+paths:
+  /v1/auth:
+    get:
+      tags:
+      - Auth
+      parameters:
+      - name: Url
+        in: query
+        schema:
+          type: string
+      responses:
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '200':
+          description: Success
+        '500':
+          description: Server Error
+        default:
+          description: Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+components:
+  schemas:
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

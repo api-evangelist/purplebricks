@@ -1,0 +1,268 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks.Lettings.Api 1 - Team Integrations Pre Instruct API
+  description: '### An Lettings Api project to validate the regional postcodes for Teclet
+
+    ### [Purplebricks.Lettings.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/lettings-api)'
+  version: '1'
+servers:
+- url: https://api.purplebricks.co.uk/lettings-api
+security:
+- Bearer: []
+tags:
+- name: PreInstruct
+paths:
+  /v1/preinstruct/thirdpartyproperty/{thirdPartyPropertyId}:
+    get:
+      tags:
+      - PreInstruct
+      parameters:
+      - name: thirdPartyPropertyId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Lettings.Model.Models.PreInstructPropertyAndUserInformation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Lettings.Model.Models.PreInstructPropertyAndUserInformation'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Lettings.Model.Models.PreInstructPropertyAndUserInformation'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Internal Server Error
+  /v1/preinstruct/thirdpartyproperty:
+    post:
+      tags:
+      - PreInstruct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Lettings.Model.Models.PreInstructPostModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Lettings.Model.Models.PreInstructPostModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Lettings.Model.Models.PreInstructPostModel'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Lettings.Model.Models.PreInstructPropertyAndUserInformation'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Lettings.Model.Models.PreInstructPropertyAndUserInformation'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Lettings.Model.Models.PreInstructPropertyAndUserInformation'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Internal Server Error
+components:
+  schemas:
+    Purplebricks.Lettings.Model.Models.PreInstructPropertyAndUserInformation:
+      type: object
+      properties:
+        propertyId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        thirdPartyPropertyId:
+          type:
+          - string
+          - 'null'
+        instructed:
+          type: boolean
+        user:
+          $ref: '#/components/schemas/Purplebricks.Lettings.Model.Models.PreInstructUser'
+        address:
+          $ref: '#/components/schemas/Purplebricks.Lettings.Model.Models.PreInstructAddress'
+      additionalProperties: false
+    Purplebricks.Lettings.Model.Models.PreInstructUser:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int32
+        email:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Lettings.Model.Models.PreInstructAddress:
+      type: object
+      properties:
+        line1:
+          type:
+          - string
+          - 'null'
+        line2:
+          type:
+          - string
+          - 'null'
+        district:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Lettings.Model.Models.PreInstructPostModel:
+      type: object
+      properties:
+        thirdPartyPropertyId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

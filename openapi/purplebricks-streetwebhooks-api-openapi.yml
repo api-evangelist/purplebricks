@@ -1,0 +1,87 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks.Lettings.Api 1 - Team Integrations Street Webhooks API
+  description: '### An Lettings Api project to validate the regional postcodes for Teclet
+
+    ### [Purplebricks.Lettings.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/lettings-api)'
+  version: '1'
+servers:
+- url: https://api.purplebricks.co.uk/lettings-api
+security:
+- Bearer: []
+tags:
+- name: StreetWebhooks
+paths:
+  /v1/streetwebhooks/listing:
+    post:
+      tags:
+      - StreetWebhooks
+      summary: Handles street.co.uk listing webhook
+      responses:
+        '204':
+          description: The street.co.uk listing was successfully created
+        '400':
+          description: One or more problems with the request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/streetwebhooks:
+    post:
+      tags:
+      - StreetWebhooks
+      summary: Handles street.co.uk listing webhook
+      responses:
+        '204':
+          description: The street.co.uk listing was successfully created
+        '400':
+          description: One or more problems with the request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+components:
+  schemas:
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

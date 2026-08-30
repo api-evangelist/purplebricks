@@ -1,0 +1,119 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks.Communications.Api 1.0 - Core Team Tps API
+  description: '### Displays customer''s email history records
+
+    ### [Purplebricks.Communications.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/communications-api)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/communications-api
+security:
+- Bearer: []
+tags:
+- name: Tps
+paths:
+  /v1/tps/tpsstatus:
+    get:
+      tags:
+      - Tps
+      parameters:
+      - name: publicUserId
+        in: query
+        schema:
+          type: string
+          format: uuid
+      - name: userId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Communications.Api.Models.ViewModels.CustomerTpsStatus'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Communications.Api.Models.ViewModels.CustomerTpsStatus'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Communications.Api.Models.ViewModels.CustomerTpsStatus'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+components:
+  schemas:
+    Purplebricks.Communications.Api.Models.ViewModels.CustomerTpsStatus:
+      type: object
+      properties:
+        registered:
+          type: boolean
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

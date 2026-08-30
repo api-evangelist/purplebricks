@@ -1,0 +1,181 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks.Branch.Api 1.0 - Squad Agents Experience Zoopla Branch API
+  description: '### Provides full branch information for a postcode or property
+
+    ### [Purplebricks.Branch.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/agents-mono)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/branch-api
+  description: Base URL declared by the provider in apis.yml (roadmap#122).
+security:
+- Bearer: []
+tags:
+- name: ZooplaBranch
+paths:
+  /v1/zooplabranch:
+    get:
+      tags:
+      - ZooplaBranch
+      responses:
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ZooplaBranchList'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /v1/zooplabranch/{branchId}:
+    get:
+      tags:
+      - ZooplaBranch
+      parameters:
+      - name: branchId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ZooplaBranch'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+  /v1/zooplabranch/search:
+    get:
+      tags:
+      - ZooplaBranch
+      parameters:
+      - name: propertyId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ZooplaBranch'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+components:
+  schemas:
+    ZooplaBranch:
+      type: object
+      properties:
+        branchId:
+          type: integer
+          format: int32
+        name:
+          type:
+          - string
+          - 'null'
+        service:
+          $ref: '#/components/schemas/BranchService'
+        livePropertyIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
+    BranchService:
+      enum:
+      - NotSpecified
+      - Sales
+      - Lettings
+      type: string
+    ZooplaBranchList:
+      type: object
+      properties:
+        count:
+          type: integer
+          format: int32
+        items:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ZooplaBranch'
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

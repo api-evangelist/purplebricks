@@ -1,0 +1,853 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Property API 1.0 - Platform Exposure Report API
+  description: '### All Ex Uber Property related controllers are here.
+
+    ### [Purplebricks Property API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/property-api)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/property-api
+security:
+- Bearer: []
+tags:
+- name: ExposureReport
+paths:
+  /v1/exposurereport/{propertyId}:
+    get:
+      tags:
+      - ExposureReport
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureReportResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureReportResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureReportResponse'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/exposurereport/{propertyId}/history:
+    get:
+      tags:
+      - ExposureReport
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureReportSummary'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureReportSummary'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureReportSummary'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/exposurereport/{propertyId}/{reportId}:
+    get:
+      tags:
+      - ExposureReport
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: reportId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureReportResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureReportResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureReportResponse'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/exposurereport/{propertyId}/week-{weekNumber}:
+    get:
+      tags:
+      - ExposureReport
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: weekNumber
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureReportResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureReportResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureReportResponse'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/exposurereport/{propertyId}/market:
+    get:
+      tags:
+      - ExposureReport
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.MarketData'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.MarketData'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.MarketData'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/exposurereport/{propertyId}/generate:
+    post:
+      tags:
+      - ExposureReport
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '202':
+          description: Success
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '409':
+          description: Conflict
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+components:
+  schemas:
+    Purplebricks.Property.Business.ViewModels.ExposureReportData:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        address:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+        propertyType:
+          type:
+          - string
+          - 'null'
+        isToLet:
+          type: boolean
+        listingPrice:
+          type: number
+          format: double
+        priceText:
+          type:
+          - string
+          - 'null'
+        imageUrl:
+          type:
+          - string
+          - 'null'
+        publishDate:
+          type: string
+          format: date-time
+        reportDate:
+          type: string
+          format: date-time
+        weekNumber:
+          type: integer
+          format: int32
+        daysOnMarket:
+          type: integer
+          format: int32
+        triggerType:
+          type:
+          - string
+          - 'null'
+        phase:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposurePhaseInfo'
+        portalStats:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposurePortalStats'
+        viewings:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureViewingData'
+        offers:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureOfferData'
+        advertTrend:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureAdvertDayData'
+        benchmarks:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureBenchmarkData'
+        previousWeekSummary:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposurePreviousWeekSummary'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ExposureViewingData:
+      type: object
+      properties:
+        attended:
+          type: integer
+          format: int32
+        upcoming:
+          type: integer
+          format: int32
+        cancelled:
+          type: integer
+          format: int32
+        awaitingFeedback:
+          type: integer
+          format: int32
+        totalFeedbackCount:
+          type: integer
+          format: int32
+        averageFeedbackPresentation:
+          type:
+          - number
+          - 'null'
+          format: double
+        averageFeedbackSuitability:
+          type:
+          - number
+          - 'null'
+          format: double
+        averageFeedbackPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        viewingList:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureViewingItem'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ExposureReportResponse:
+      type: object
+      properties:
+        reportId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        weekNumber:
+          type: integer
+          format: int32
+        generatedAt:
+          type: string
+          format: date-time
+        triggerType:
+          type:
+          - string
+          - 'null'
+        healthScore:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        reportData:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureReportData'
+        aiAnalysis:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureAiAnalysis'
+        previousReport:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureReportData'
+        primaryImageUrl:
+          type:
+          - string
+          - 'null'
+        primaryImageThumbnailUrl:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ExposurePhaseInfo:
+      type: object
+      properties:
+        title:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ExposureOfferData:
+      type: object
+      properties:
+        received:
+          type: integer
+          format: int32
+        negotiating:
+          type: integer
+          format: int32
+        declined:
+          type: integer
+          format: int32
+        activeOffersCount:
+          type: integer
+          format: int32
+        offerList:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureOfferItem'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.MarketNewsItem:
+      type: object
+      properties:
+        title:
+          type:
+          - string
+          - 'null'
+        link:
+          type:
+          - string
+          - 'null'
+        published:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        source:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ExposureAiInsight:
+      type: object
+      properties:
+        title:
+          type:
+          - string
+          - 'null'
+        tag:
+          type:
+          - string
+          - 'null'
+        detail:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ExposureAiSections:
+      type: object
+      properties:
+        advertViews:
+          type:
+          - string
+          - 'null'
+        buyerFunnel:
+          type:
+          - string
+          - 'null'
+        viewingsFeedback:
+          type:
+          - string
+          - 'null'
+        keyInsightsIntro:
+          type:
+          - string
+          - 'null'
+        actionPlanIntro:
+          type:
+          - string
+          - 'null'
+        highlightsIntro:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ExposureOfferItem:
+      type: object
+      properties:
+        amount:
+          type: number
+          format: double
+        date:
+          type: string
+          format: date-time
+        status:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Property.Business.ViewModels.ExposureBenchmarkData:
+      type: object
+      properties:
+        postcodeDistrict:
+          type:
+          - string
+          - 'null'
+        sampleSize:
+          type: integer
+          format: int32
+        avgDaysOnMarket:
+          type: number
+          format: double
+        avgWeekOneViews:
+          type: number
+          format: double
+        avgPropertySaves:
+          type: number
+          format: double
+        avgViewingsPerWeek:
+          type: number
+          format: double
+        avgOffersPerViewing:
+          type: number
+          format: double
+        avgSearchAppearances:
+          type: number
+          format: double
+        avgListingViews:
+          type: number
+          format: double
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.BaseRateInfo:
+      type: object
+      properties:
+        rate:
+          type: number
+          format: double
+        effectiveDate:
+          type: string
+          format: date-time
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ExposureAiAnalysis:
+      type: object
+      properties:
+        schemaVersion:
+          type: integer
+          format: int32
+        healthScore:
+          type: integer
+          format: int32
+        healthGrade:
+          type:
+          - string
+          - 'null'
+        headline:
+          type:
+          - string
+          - 'null'
+        narrative:
+          type:
+          - string
+          - 'null'
+        sections:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureAiSections'
+        insights:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureAiInsight'
+        actions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExposureAiAction'
+        highlights:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ExposurePreviousWeekSummary:
+      type: object
+      properties:
+        weekNumber:
+          type: integer
+          format: int32
+        pbViewsThisWeek:
+          type: integer
+          format: int32
+        rightmoveSearchHits:
+          type: integer
+          format: int32
+        rightmoveListingViews:
+          type: integer
+          format: int32
+        attended:
+          type: integer
+          format: int32
+        offers:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ExposureReportSummary:
+      type: object
+      properties:
+        reportId:
+          type: integer
+          format: int32
+        weekNumber:
+          type: integer
+          format: int32
+        generatedAt:
+          type: string
+          format: date-time
+        healthScore:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        pbViewsThisWeek:
+          type: integer
+          format: int32
+        attended:
+          type: integer
+          format: int32
+        offers:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.MarketData:
+      type: object
+      properties:
+        district:
+          type:
+          - string
+          - 'null'
+        baseRate:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.BaseRateInfo'
+        housePrice:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.HousePriceInfo'
+        news:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.MarketNewsItem'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ExposurePortalStats:
+      type: object
+      properties:
+        pbViewsAllTime:
+          type: integer
+          format: int32
+        pbViewsThisWeek:
+          type: integer
+          format: int32
+        rightmoveSearchHits:
+          type: integer
+          format: int32
+        rightmoveListingViews:
+          type: integer
+          format: int32
+        rightmoveEnquiries:
+          type: integer
+          format: int32
+        numberTracking:
+          type: integer
+          format: int32
+        notesOfInterest:
+          type: integer
+          format: int32
+        contractDownloads:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ExposureAdvertDayData:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date-time
+        searches:
+          type: integer
+          format: int32
+        views:
+          type: integer
+          format: int32
+        viewings:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ExposureAiAction:
+      type: object
+      properties:
+        title:
+          type:
+          - string
+          - 'null'
+        timing:
+          type:
+          - string
+          - 'null'
+        impact:
+          type:
+          - string
+          - 'null'
+        detail:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ExposureViewingItem:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date-time
+        isAttended:
+          type: boolean
+        isConfirmed:
+          type: boolean
+        isCancelled:
+          type: boolean
+        feedbackPresentation:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        feedbackSuitability:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        feedbackPrice:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        feedbackComments:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.HousePriceInfo:
+      type: object
+      properties:
+        localAuthority:
+          type:
+          - string
+          - 'null'
+        averagePrice:
+          type: number
+          format: double
+        yearOnYearChangePercent:
+          type: number
+          format: double
+        period:
+          type: string
+          format: date-time
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

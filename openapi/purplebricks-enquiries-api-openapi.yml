@@ -1,0 +1,258 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks.Lettings.Api 1 - Team Integrations Enquiries API
+  description: '### An Lettings Api project to validate the regional postcodes for Teclet
+
+    ### [Purplebricks.Lettings.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/lettings-api)'
+  version: '1'
+servers:
+- url: https://api.purplebricks.co.uk/lettings-api
+security:
+- Bearer: []
+tags:
+- name: Enquiries
+paths:
+  /v1/enquiries/valuation:
+    post:
+      tags:
+      - Enquiries
+      summary: Creates a valuation enquiry in street.co.uk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Lettings.Services.Models.StreetService.EnquiryModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Lettings.Services.Models.StreetService.EnquiryModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Lettings.Services.Models.StreetService.EnquiryModel'
+      responses:
+        '201':
+          description: The valuation enquiry was successfully created in street.co.uk
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '400':
+          description: One or more problems with the request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/enquiries/viewing:
+    post:
+      tags:
+      - Enquiries
+      summary: Creates a viewing enquiry in street.co.uk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Lettings.Services.Models.StreetService.EnquiryModelEnquiryModelWithPropertyId'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Lettings.Services.Models.StreetService.EnquiryModelEnquiryModelWithPropertyId'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Lettings.Services.Models.StreetService.EnquiryModelEnquiryModelWithPropertyId'
+      responses:
+        '201':
+          description: The viewing enquiry was successfully created in street.co.uk
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '400':
+          description: One or more problems with the request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/enquiries/offer:
+    post:
+      tags:
+      - Enquiries
+      summary: Creates an offer enquiry in street.co.uk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Lettings.Services.Models.StreetService.EnquiryModelEnquiryModelWithPropertyId'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Lettings.Services.Models.StreetService.EnquiryModelEnquiryModelWithPropertyId'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Lettings.Services.Models.StreetService.EnquiryModelEnquiryModelWithPropertyId'
+      responses:
+        '201':
+          description: The offer enquiry was successfully created in street.co.uk
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '400':
+          description: One or more problems with the request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+components:
+  schemas:
+    Purplebricks.Lettings.Services.Models.StreetService.EnquiryModelEnquiryModelWithPropertyId:
+      required:
+      - emailAddress
+      - firstName
+      - lastName
+      - message
+      - propertyUrl
+      - telephoneNumber
+      type: object
+      properties:
+        firstName:
+          maxLength: 255
+          minLength: 1
+          type: string
+        lastName:
+          maxLength: 255
+          minLength: 1
+          type: string
+        emailAddress:
+          maxLength: 255
+          minLength: 1
+          type: string
+          format: email
+        telephoneNumber:
+          maxLength: 255
+          minLength: 1
+          type: string
+        message:
+          maxLength: 10000
+          minLength: 1
+          type: string
+        propertyUrl:
+          minLength: 1
+          type: string
+          format: uri
+        propertyId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Lettings.Services.Models.StreetService.EnquiryModel:
+      required:
+      - emailAddress
+      - firstName
+      - lastName
+      - message
+      - telephoneNumber
+      type: object
+      properties:
+        firstName:
+          maxLength: 255
+          minLength: 1
+          type: string
+        lastName:
+          maxLength: 255
+          minLength: 1
+          type: string
+        emailAddress:
+          maxLength: 255
+          minLength: 1
+          type: string
+          format: email
+        telephoneNumber:
+          maxLength: 255
+          minLength: 1
+          type: string
+        message:
+          maxLength: 10000
+          minLength: 1
+          type: string
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

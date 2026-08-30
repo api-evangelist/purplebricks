@@ -1,0 +1,1054 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Property API 1.0 - Platform Internal Performance Report API
+  description: '### All Ex Uber Property related controllers are here.
+
+    ### [Purplebricks Property API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/property-api)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/property-api
+security:
+- Bearer: []
+tags:
+- name: InternalPerformanceReport
+paths:
+  /v1/performancereport/internal/{propertyId}:
+    get:
+      tags:
+      - InternalPerformanceReport
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.InternalPropertyReportViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.InternalPropertyReportViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.InternalPropertyReportViewModel'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/performancereport/internal/getadvertperformance/{propertyId}:
+    get:
+      tags:
+      - InternalPerformanceReport
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.InternalAdvertPerformanceViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.InternalAdvertPerformanceViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.InternalAdvertPerformanceViewModel'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/performancereport/internal/getadvertperformance:
+    get:
+      tags:
+      - InternalPerformanceReport
+      parameters:
+      - name: propertyId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PerformanceReportResult'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PerformanceReportResult'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PerformanceReportResult'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/performancereport/internal/properties:
+    get:
+      tags:
+      - InternalPerformanceReport
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ReportableProperty'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ReportableProperty'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ReportableProperty'
+  /v1/performancereport/internal/propertiesbyexpert:
+    get:
+      tags:
+      - InternalPerformanceReport
+      parameters:
+      - name: expertIds
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  type: integer
+                  format: int32
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: integer
+                  format: int32
+            text/json:
+              schema:
+                type: array
+                items:
+                  type: integer
+                  format: int32
+components:
+  schemas:
+    Purplebricks.Property.Business.ViewModels.InternalAdvertDayViewModel:
+      type: object
+      properties:
+        date:
+          $ref: '#/components/schemas/System.DateOnly'
+        searches:
+          type: integer
+          format: int32
+        views:
+          type: integer
+          format: int32
+        viewings:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.TenantData:
+      type: object
+      properties:
+        lettingTerms:
+          type:
+          - string
+          - 'null'
+        employmentStatus:
+          type:
+          - string
+          - 'null'
+        poorCreditHistory:
+          type:
+          - string
+          - 'null'
+        havePets:
+          type:
+          - string
+          - 'null'
+        otherPets:
+          type:
+          - string
+          - 'null'
+        isSmoker:
+          type:
+          - string
+          - 'null'
+        moveTimeframe:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.PerformanceReportResult:
+      type: object
+      properties:
+        propertyDetails:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Property'
+        daysOnMarket:
+          type: integer
+          format: int32
+        numberTracking:
+          type: integer
+          format: int32
+        numberOfNotesOfInterest:
+          type: integer
+          format: int32
+        upcomingViewingsCount:
+          type: integer
+          format: int32
+        attendedViewingsCount:
+          type: integer
+          format: int32
+        upcomingOrAttendedViewingsCount:
+          type: integer
+          format: int32
+        viewingsAwaitingConfirmationCount:
+          type: integer
+          format: int32
+        viewingsCancelledCount:
+          type: integer
+          format: int32
+        unattendedViewingsCount:
+          type: integer
+          format: int32
+        unconfirmedViewingsCancelledCount:
+          type: integer
+          format: int32
+        offersReceivedCount:
+          type: integer
+          format: int32
+        newOffersCount:
+          type: integer
+          format: int32
+        negotiatingOffersCount:
+          type: integer
+          format: int32
+        declinedOffersCount:
+          type: integer
+          format: int32
+        activeOffersCount:
+          type: integer
+          format: int32
+        timesViewed:
+          type: integer
+          format: int32
+        timesViewedLastSeven:
+          type: integer
+          format: int32
+        contractDownloadsCount:
+          type: integer
+          format: int32
+        awaitingFeedbackCount:
+          type: integer
+          format: int32
+        averageFeedback:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.AverageFeedbackStatistics'
+        offers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Offer'
+        viewings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Viewing'
+        blockedViewings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.BlockedViewing'
+        rightmovePerformance:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.RightmoveAdvertPerformance'
+        notesOfInterestDetails:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.NotesOfInterest'
+        upcomingOrAttendedViewings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Viewing'
+        viewingsAwaitingConfirmation:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Viewing'
+        viewingsCancelled:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Viewing'
+        unconfirmedViewingsCancelled:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Viewing'
+        unattendedViewings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Viewing'
+        propertyTimeZone:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.IanaTimeZone'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.IanaTimeZone:
+      enum:
+      - Not Set
+      - Europe/London
+      - Australia/Perth
+      - Australia/Eucla
+      - Australia/Adelaide
+      - Australia/Broken_Hill
+      - Australia/Darwin
+      - Australia/Brisbane
+      - Australia/Currie
+      - Australia/Hobart
+      - Australia/Lindeman
+      - Australia/Melbourne
+      - Australia/Sydney
+      - Australia/Lord_Howe
+      - Antarctica/Macquarie
+      - America/Los_Angeles
+      - America/New_York
+      - America/Detroit
+      - America/Kentucky/Louisville
+      - America/Kentucky/Monticello
+      - America/Indiana/Indianapolis
+      - America/Indiana/Vincennes
+      - America/Indiana/Winamac
+      - America/Indiana/Marengo
+      - America/Indiana/Petersburg
+      - America/Indiana/Vevay
+      - America/Chicago
+      - America/Indiana/Tell_City
+      - America/Indiana/Knox
+      - America/Menominee
+      - America/North_Dakota/Center
+      - America/North_Dakota/New_Salem
+      - America/North_Dakota/Beulah
+      - America/Boise
+      - America/Phoenix
+      - America/Anchorage
+      - America/Juneau
+      - America/Sitka
+      - America/Yakutat
+      - America/Nome
+      - America/Adak
+      - America/Metlakatla
+      - Pacific/Honolulu
+      - America/Denver
+      - Pacific/Auckland
+      type: string
+    Purplebricks.Property.Business.ViewModels.ReportableProperty:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        ownerUserId:
+          type: integer
+          format: int32
+        ownerEmail:
+          type:
+          - string
+          - 'null'
+        publishDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.Offer:
+      type: object
+      properties:
+        date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        name:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        userId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        price:
+          type: number
+          format: double
+        status:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.OfferStatus'
+      additionalProperties: false
+    System.DayOfWeek:
+      enum:
+      - Sunday
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+      type: string
+    Purplebricks.Property.Business.ViewModels.Property:
+      type: object
+      properties:
+        address:
+          type:
+          - string
+          - 'null'
+        isRegionScotland:
+          type: boolean
+        toLet:
+          type: boolean
+        publishDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        marketDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        imageUrl:
+          type:
+          - string
+          - 'null'
+        marketPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        minAdvertPrice:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        maxAdvertPrice:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        priceText:
+          type:
+          - string
+          - 'null'
+        lastActionCompleted:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WorkflowStepType'
+        rentFrequency:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.RentFrequency'
+        isAuction:
+          type: boolean
+        postcode:
+          type:
+          - string
+          - 'null'
+        propertyTypeName:
+          type:
+          - string
+          - 'null'
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.InternalOfferItemViewModel:
+      type: object
+      properties:
+        amount:
+          type: number
+          format: double
+        date:
+          type: string
+          format: date-time
+        status:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.InternalViewingsViewModel:
+      type: object
+      properties:
+        attended:
+          type: integer
+          format: int32
+        upcoming:
+          type: integer
+          format: int32
+        cancelled:
+          type: integer
+          format: int32
+        awaitingFeedback:
+          type: integer
+          format: int32
+        averageFeedbackPresentation:
+          type:
+          - number
+          - 'null'
+          format: double
+        averageFeedbackSuitability:
+          type:
+          - number
+          - 'null'
+          format: double
+        averageFeedbackPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        viewingList:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.InternalViewingItemViewModel'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.NotesOfInterest:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        userId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.InternalAdvertPerformanceViewModel:
+      type: object
+      properties:
+        rightmoveSearchHits:
+          type: integer
+          format: int32
+        rightmoveListingViews:
+          type: integer
+          format: int32
+        rightmoveEnquiries:
+          type: integer
+          format: int32
+        dailyTrend:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.InternalAdvertDayViewModel'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.OfferStatus:
+      enum:
+      - OfferMade
+      - Acceptable
+      - Declined
+      - CounterOfferMade
+      - WithdrawOffer
+      - Aborted
+      - OfferUpdated
+      - WithdrawAcceptance
+      - WithdrawCounterOffer
+      - Accepted
+      - ExpertNegotiating
+      - ExpertNotNegotiating
+      - RenegotiationOfferMade
+      - RenegotiationCounterOfferMade
+      - RenegotiationOfferWithdrawn
+      - RenegotiationCounterOfferWithdrawn
+      type: string
+    Purplebricks.Property.Business.ViewModels.InternalOffersViewModel:
+      type: object
+      properties:
+        received:
+          type: integer
+          format: int32
+        negotiating:
+          type: integer
+          format: int32
+        declined:
+          type: integer
+          format: int32
+        activeOffersCount:
+          type: integer
+          format: int32
+        offerList:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.InternalOfferItemViewModel'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Property.Business.ViewModels.InternalViewingItemViewModel:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date-time
+        isAttended:
+          type: boolean
+        isConfirmed:
+          type: boolean
+        isCancelled:
+          type: boolean
+        feedbackPresentation:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        feedbackSuitability:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        feedbackPrice:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        feedbackComments:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.RightmoveAdvertPerformance:
+      type: object
+      properties:
+        totalViews:
+          type: integer
+          format: int32
+        viewsInLast7Days:
+          type: integer
+          format: int32
+        totalSearchHits:
+          type: integer
+          format: int32
+        searchHitsInLast7Days:
+          type: integer
+          format: int32
+        totalEnquiries:
+          type: integer
+          format: int32
+        rightmoveEnquiries:
+          type: integer
+          format: int32
+        searchHitsAndViewsLastUpdatedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        enquiriesLastUpdatedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.BuyerData:
+      type: object
+      properties:
+        moveTimeframe:
+          type:
+          - string
+          - 'null'
+        timeOnMarket:
+          type:
+          - string
+          - 'null'
+        viewingPurpose:
+          type:
+          - string
+          - 'null'
+        hasPortfolio:
+          type:
+          - string
+          - 'null'
+        propertyToSell:
+          type:
+          - string
+          - 'null'
+        saleProgression:
+          type:
+          - string
+          - 'null'
+        mortgageRequired:
+          type:
+          - string
+          - 'null'
+        mortgageStatus:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.AverageFeedbackStatistics:
+      type: object
+      properties:
+        count:
+          type: integer
+          format: int32
+        presentation:
+          type: integer
+          format: int32
+        suitability:
+          type: integer
+          format: int32
+        price:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.Viewing:
+      type: object
+      properties:
+        appointmentReference:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        dateBooked:
+          type: string
+          format: date-time
+        dateViewed:
+          type: string
+          format: date-time
+        viewerName:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        viewerId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        primaryContactNumber:
+          type:
+          - string
+          - 'null'
+        isCancelled:
+          type: boolean
+        isRearranged:
+          type: boolean
+        isConfirmed:
+          type: boolean
+        isAttended:
+          type:
+          - boolean
+          - 'null'
+        buyerAdditionalData:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.BuyerData'
+        tenantAdditionalData:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.TenantData'
+        whoNeedsToConfirm:
+          type:
+          - string
+          - 'null'
+        bookingId:
+          type: integer
+          format: int32
+        rearrangedBookingId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        feedbackPresentation:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        feedbackSuitability:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        feedbackPrice:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.RentFrequency:
+      enum:
+      - Yearly
+      - Quarterly
+      - Monthly
+      - Weekly
+      - Daily
+      type: string
+    Purplebricks.Property.Business.ViewModels.BlockedViewing:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int32
+        name:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        attemptDate:
+          type: string
+          format: date-time
+        blockedForPets:
+          type: boolean
+        blockedForSmoker:
+          type: boolean
+        blockedForDhs:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.WorkflowStepType:
+      enum:
+      - Create
+      - BookValuation
+      - Valuation
+      - Instruct
+      - CreateAdvert
+      - RejectAdvert
+      - AmendAdvert
+      - ApproveAdvert
+      - SchedulePendingRegCert
+      - Schedule
+      - PublishPendingRegCert
+      - Publish
+      - Withdraw
+      - Suspend
+      - SuspendByUser
+      - SuspendAccount
+      - UnderOffer
+      - SoldSubjectToContract
+      - DiyAdvertStarted
+      - LetSubjectToContract
+      - DeclineOffer
+      - UpdateProperty
+      - AcceptableOffer
+      - ApplicationReceived
+      - AcceptableOfferNotMarketed
+      - WithdrawOffer
+      - UpdateAdvert
+      - DiyAdvertCreated
+      - DiyAdvertRejected
+      - ApprovePhoto
+      - ContractsExchanged
+      - Completion
+      - DiyAdvertAmended
+      - DiyAdvertRejectAmendments
+      - SchedulePendingContract
+      - PublishPendingContract
+      - UpdatePropertyDiary
+      - ContractsExchangedCoolingOffPeriod
+      - ForceSold
+      - ForceSoldSubjectToContract
+      - ForceContractsExchanged
+      - ForceCompletion
+      - SoldSubjectToEscrow
+      - PendingEscrow
+      - Closing
+      - ForceAcceptableOffer
+      - ForceAcceptableOfferNotMarketed
+      - ForceContractsExchangedCoolingOffPeriod
+      - InstantValuation
+      - FakeValuation
+      - Cancelled
+      type: string
+    Purplebricks.Property.Business.ViewModels.InternalPropertyReportViewModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        address:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+        propertyType:
+          type:
+          - string
+          - 'null'
+        isToLet:
+          type: boolean
+        listingPrice:
+          type: number
+          format: double
+        priceText:
+          type:
+          - string
+          - 'null'
+        imageUrl:
+          type:
+          - string
+          - 'null'
+        publishDate:
+          type: string
+          format: date-time
+        daysOnMarket:
+          type: integer
+          format: int32
+        pbViewsAllTime:
+          type: integer
+          format: int32
+        pbViewsThisWeek:
+          type: integer
+          format: int32
+        numberTracking:
+          type: integer
+          format: int32
+        notesOfInterest:
+          type: integer
+          format: int32
+        contractDownloads:
+          type: integer
+          format: int32
+        negotiatingOffersCount:
+          type: integer
+          format: int32
+        viewings:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.InternalViewingsViewModel'
+        offers:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.InternalOffersViewModel'
+      additionalProperties: false
+    System.DateOnly:
+      type: object
+      properties:
+        year:
+          type: integer
+          format: int32
+          readOnly: true
+        month:
+          type: integer
+          format: int32
+          readOnly: true
+        day:
+          type: integer
+          format: int32
+          readOnly: true
+        dayOfWeek:
+          $ref: '#/components/schemas/System.DayOfWeek'
+        dayOfYear:
+          type: integer
+          format: int32
+          readOnly: true
+        dayNumber:
+          type: integer
+          format: int32
+          readOnly: true
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

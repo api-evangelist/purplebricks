@@ -1,0 +1,253 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Account API 1 - Platform Marketing Preferences API
+  description: '### All Ex Uber Account related controllers are here.
+
+    ### [Purplebricks Account API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/account-api)'
+  version: '1'
+servers:
+- url: https://api.purplebricks.co.uk/account-api
+security:
+- Bearer: []
+tags:
+- name: MarketingPreferences
+paths:
+  /v1/marketingpreferences/{publicUserId}:
+    get:
+      tags:
+      - MarketingPreferences
+      parameters:
+      - name: publicUserId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Account.Business.Models.MarketingPreferencesResponseModel'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Account.Business.Models.MarketingPreferencesResponseModel'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Account.Business.Models.MarketingPreferencesResponseModel'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/marketingpreferences:
+    put:
+      tags:
+      - MarketingPreferences
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Common.Models.MarketingPreferencesUpdateInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Common.Models.MarketingPreferencesUpdateInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Common.Models.MarketingPreferencesUpdateInputModel'
+      responses:
+        default:
+          description: Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '204':
+          description: Success
+components:
+  schemas:
+    Purplebricks.Account.Business.Models.CustomerPreference:
+      type: object
+      properties:
+        records:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Account.Business.Models.CustomerPreferenceRecord'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Account.Business.Models.CustomerPreferenceRecord:
+      type: object
+      properties:
+        customerPreferenceId:
+          type:
+          - string
+          - 'null'
+        channel:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - string
+          - 'null'
+        code:
+          type:
+          - string
+          - 'null'
+        description:
+          type:
+          - string
+          - 'null'
+        label:
+          type:
+          - string
+          - 'null'
+        ordering:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    Purplebricks.Account.Common.Models.CustomerPreferenceRecordInputModel:
+      type: object
+      properties:
+        customerPreferenceId:
+          type:
+          - string
+          - 'null'
+        channel:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - string
+          - 'null'
+        code:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Account.Business.Models.MarketingPreferencesResponseModel:
+      type: object
+      properties:
+        customerPreference:
+          $ref: '#/components/schemas/Purplebricks.Account.Business.Models.CustomerPreference'
+      additionalProperties: false
+    Purplebricks.Account.Common.Models.MarketingPreferencesUpdateInputModel:
+      type: object
+      properties:
+        publicUserId:
+          type: string
+          format: uuid
+        updatedCustomerPreferenceRecords:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Account.Common.Models.CustomerPreferenceRecordInputModel'
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

@@ -1,0 +1,203 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks.Valuations.Api 1.0 - Core Valuation Report API
+  description: '### The new home for accessing the valuations service library
+
+    ### [Purplebricks.Valuations.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/valuations-api)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/valuations-api
+security:
+- Bearer: []
+tags:
+- name: ValuationReport
+paths:
+  /v1/valuationreport/{id}:
+    get:
+      tags:
+      - ValuationReport
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.ValuationReportViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.ValuationReportViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.ValuationReportViewModel'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+components:
+  schemas:
+    Purplebricks.Valuations.Api.Models.ValuationReportViewModel:
+      type: object
+      properties:
+        valuationId:
+          type: integer
+          format: int32
+        appointmentDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        appeal:
+          type:
+          - string
+          - 'null'
+        features:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        numberOfPropertiesWithinArea:
+          type: integer
+          format: int32
+        numberOfPropertiesOfSameType:
+          type: integer
+          format: int32
+        pricesFrom:
+          type: number
+          format: double
+        pricesTo:
+          type: number
+          format: double
+        listPrice:
+          type: number
+          format: double
+        achieveLowPrice:
+          type: number
+          format: double
+        achieveHighPrice:
+          type: number
+          format: double
+        propertyId:
+          type: integer
+          format: int32
+        locations:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        numberOfBuyersInArea:
+          type: integer
+          format: int32
+        comments:
+          type:
+          - string
+          - 'null'
+        showComments:
+          type: boolean
+          readOnly: true
+        comparableProperties:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.ComparablePropertyViewModel'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Valuations.Domains.Models.Enums.ComparablePropertyMarketState:
+      enum:
+      - Sold
+      - OnMarket
+      - Let
+      - ToLet
+      - SSTC
+      type: string
+    Purplebricks.Valuations.Api.Models.ComparablePropertyViewModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        address:
+          type:
+          - string
+          - 'null'
+        features:
+          type:
+          - string
+          - 'null'
+        price:
+          type: number
+          format: double
+        date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        bedrooms:
+          type: integer
+          format: int32
+        comparablePropertyType:
+          type:
+          - string
+          - 'null'
+        marketState:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Domains.Models.Enums.ComparablePropertyMarketState'
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

@@ -1,0 +1,602 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks.Viewings.Api 1.0 - Customer Experience Access Details API
+  description: '### Purplebricks Viewings API.
+
+    ### [Purplebricks.Viewings.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/viewings)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/viewings-api
+security:
+- Bearer: []
+tags:
+- name: AccessDetails
+paths:
+  /v1/accessdetails/{propertyId}:
+    get:
+      tags:
+      - AccessDetails
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: userId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsResponseModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsResponseModel'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    post:
+      tags:
+      - AccessDetails
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsBaseModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsBaseModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsBaseModel'
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FluentValidation.Results.ValidationFailure'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FluentValidation.Results.ValidationFailure'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FluentValidation.Results.ValidationFailure'
+  /v1/accessdetails/{propertyId}/summary:
+    get:
+      tags:
+      - AccessDetails
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsSummaryModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsSummaryModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsSummaryModel'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/accessdetails/{propertyId}/revealkeysafecode:
+    get:
+      tags:
+      - AccessDetails
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: userId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsResponseModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsResponseModel'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '500':
+          description: Server Error
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+components:
+  schemas:
+    Purplebricks.Viewings.DataModels.Models.AccessDetails.AccessDetailEntry:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        accessVia:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.AccessVia'
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+        actionDate:
+          type: string
+          format: date-time
+        version:
+          type: integer
+          format: int32
+      additionalProperties: false
+    FluentValidation.Severity:
+      enum:
+      - Error
+      - Warning
+      - Info
+      type: string
+    Purplebricks.Viewings.DataModels.Enums.AccessDetails.RelationshipToOwner:
+      enum:
+      - EstateOrLettingsAgency
+      - Photographer
+      - FriendOrFamilyMember
+      - Concierge
+      type: string
+    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsTenant:
+      type: object
+      properties:
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+        emailAddress:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsSummaryModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        hasAccessDetails:
+          type: boolean
+          readOnly: true
+        count:
+          type: integer
+          format: int32
+        accessDetails:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.AccessDetailEntry'
+      additionalProperties: false
+    FluentValidation.Results.ValidationFailure:
+      type: object
+      properties:
+        propertyName:
+          type:
+          - string
+          - 'null'
+        errorMessage:
+          type:
+          - string
+          - 'null'
+        attemptedValue: {}
+        customState: {}
+        severity:
+          $ref: '#/components/schemas/FluentValidation.Severity'
+        errorCode:
+          type:
+          - string
+          - 'null'
+        formattedMessagePlaceholderValues:
+          type:
+          - object
+          - 'null'
+          additionalProperties: {}
+      additionalProperties: false
+    Purplebricks.Viewings.DataModels.Enums.AccessDetails.KeySafeViewingCriteria:
+      enum:
+      - AsAndWhen
+      - ViaSeller
+      - ViaTenant
+      type: string
+    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsOther:
+      type: object
+      properties:
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+        emailAddress:
+          type:
+          - string
+          - 'null'
+        keyCollectionAddress:
+          type:
+          - string
+          - 'null'
+        relationshipToOwner:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.RelationshipToOwner'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsViewberDetails:
+      type: object
+      properties:
+        agentName:
+          type:
+          - string
+          - 'null'
+        keysHeld:
+          type:
+          - string
+          - 'null'
+        viewingCriteria:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.ViewberViewingCriteria'
+      additionalProperties: false
+    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsModel:
+      type: object
+      properties:
+        agentName:
+          type:
+          - string
+          - 'null'
+        accessVia:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.AccessVia'
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+        emailAddress:
+          type:
+          - string
+          - 'null'
+        keySafeOwnershipType:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.KeySafeOwnershipType'
+        keySafeViewingCriteria:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.KeySafeViewingCriteria'
+        keySafeLocation:
+          type:
+          - string
+          - 'null'
+        keySafeCode:
+          type:
+          - string
+          - 'null'
+        notes:
+          type:
+          - string
+          - 'null'
+        loggingHistory:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        sellerIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        tenants:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsTenant'
+        otherDetails:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsOther'
+        viewberDetails:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsViewberDetails'
+        id:
+          type:
+          - string
+          - 'null'
+        propertyId:
+          type: integer
+          format: int32
+        actionDate:
+          type: string
+          format: date-time
+        version:
+          type: integer
+          format: int32
+        canEdit:
+          type: boolean
+        canView:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Viewings.DataModels.Enums.AccessDetails.KeySafeOwnershipType:
+      enum:
+      - Ordered
+      - Own
+      - Viewber
+      type: string
+    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsResponseModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        canEdit:
+          type: boolean
+        canView:
+          type: boolean
+        propertyAccessDetails:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsModel'
+      additionalProperties: false
+    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsBaseModel:
+      type: object
+      properties:
+        agentName:
+          type:
+          - string
+          - 'null'
+        accessVia:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.AccessVia'
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+        emailAddress:
+          type:
+          - string
+          - 'null'
+        keySafeOwnershipType:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.KeySafeOwnershipType'
+        keySafeViewingCriteria:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.KeySafeViewingCriteria'
+        keySafeLocation:
+          type:
+          - string
+          - 'null'
+        keySafeCode:
+          type:
+          - string
+          - 'null'
+        notes:
+          type:
+          - string
+          - 'null'
+        loggingHistory:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        sellerIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        tenants:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsTenant'
+        otherDetails:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsOther'
+        viewberDetails:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsViewberDetails'
+      additionalProperties: false
+    Purplebricks.Viewings.DataModels.Enums.AccessDetails.ViewberViewingCriteria:
+      enum:
+      - AsAndWhen
+      - ViaSeller
+      - ViaTenant
+      type: string
+    Purplebricks.Viewings.DataModels.Enums.AccessDetails.AccessVia:
+      enum:
+      - Seller
+      - Tenant
+      - KeySafe
+      - Other
+      - Viewber
+      type: string
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

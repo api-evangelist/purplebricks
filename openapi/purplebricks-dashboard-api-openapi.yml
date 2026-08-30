@@ -1,0 +1,568 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Dashboard API
+  version: '1.0'
+  description: 'Operations tagged Dashboard across 2 of this provider''s published API definitions: purplebricks-property-v1-openapi.yml, purplebricks-property-v2-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.purplebricks.co.uk/property-api
+security:
+- Bearer: []
+tags:
+- name: Dashboard
+paths:
+  /v1/dashboard:
+    get:
+      tags:
+      - Dashboard
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Dashboard.MyPropertiesViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Dashboard.MyPropertiesViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Dashboard.MyPropertiesViewModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/dashboard/externallinks:
+    get:
+      tags:
+      - Dashboard
+      parameters:
+      - name: propertyId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyExternalLinksViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyExternalLinksViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyExternalLinksViewModel'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v2/dashboard:
+    get:
+      tags:
+      - Dashboard
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Dashboard.MyPropertiesViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Dashboard.MyPropertiesViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Dashboard.MyPropertiesViewModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v2/dashboard/externallinks:
+    get:
+      tags:
+      - Dashboard
+      parameters:
+      - name: propertyId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyExternalLinksViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyExternalLinksViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyExternalLinksViewModel'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+components:
+  schemas:
+    Purplebricks.Property.Business.ViewModels.Dashboard.DashboardPropertyViewModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        listingId:
+          type:
+          - string
+          - 'null'
+        address:
+          type:
+          - string
+          - 'null'
+        addressLine1:
+          type:
+          - string
+          - 'null'
+        addressLine2:
+          type:
+          - string
+          - 'null'
+        addressTown:
+          type:
+          - string
+          - 'null'
+        addressCounty:
+          type:
+          - string
+          - 'null'
+        addressCountry:
+          type:
+          - string
+          - 'null'
+        addressPostcode:
+          type:
+          - string
+          - 'null'
+        lastActionCompleted:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WorkflowStepType'
+        marketPrice:
+          type: number
+          format: double
+        bookAgentDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        bookAgentDatePropertyLocalised:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        scheduledPublishDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        contractsExchangedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        publishDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastActionDate:
+          type: string
+          format: date-time
+        epcIsValid:
+          type:
+          - boolean
+          - 'null'
+        appointmentId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        toLet:
+          type:
+          - boolean
+          - 'null'
+        regulatoryCertificateType:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.RegulatoryCertificateType'
+        primaryImageUrl:
+          type:
+          - string
+          - 'null'
+        primaryImageThumbnailUrl:
+          type:
+          - string
+          - 'null'
+        priceQualifier:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.PriceQualifier'
+        acceptedOfferAmount:
+          type:
+          - number
+          - 'null'
+          format: double
+        tenancyStatus:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.OfferTenancyStatus'
+        rentFrequency:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.RentFrequency'
+        regulatoryCertificateIsBeingValidated:
+          type: boolean
+        regionType:
+          type:
+          - string
+          - 'null'
+        hasMarketingReport:
+          type: boolean
+        hasPendingPurplebricksDeferredPaymentTransfer:
+          type: boolean
+        hasAuctionDate:
+          type: boolean
+        hasContract:
+          type: boolean
+        isCompliant:
+          type: boolean
+        marketPriceFormatted:
+          type:
+          - string
+          - 'null'
+        propertyTimeZone:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.IanaTimeZone'
+        isInstantInstruct:
+          type: boolean
+        minAdvertPrice:
+          type: integer
+          format: int32
+        maxAdvertPrice:
+          type: integer
+          format: int32
+        comingSoon:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.OfferTenancyStatus:
+      enum:
+      - ConfirmGas
+      - AgreeMoveInDate
+      - TenantAgreeMoveInDate
+      - LandlordAgreeMoveInDate
+      - InitialReferencing
+      - ReferencingOrdered
+      - ReferencingApplicationPrepared
+      - ReferencingInProgress
+      - ReferencingGreen
+      - ReferencingBlue
+      - ReferencingRedDeclined
+      - ReferencingRedDelayed
+      - InitialGuarantor
+      - GuarantorOrdered
+      - GuarantorApplicationPrepared
+      - GuarantorInProgress
+      - GuarantorGreen
+      - GuarantorRedDeclined
+      - GuarantorRedDelayed
+      - TenancyUpgrades
+      - WaitingOnTenantsContribution
+      - ConfirmTenancyAgreement
+      - FinaliseTenancyAgreement
+      - Complete
+      type: string
+    Purplebricks.Property.Business.ViewModels.Dashboard.MyPropertiesViewModel:
+      type: object
+      properties:
+        primiaryZone:
+          type:
+          - string
+          - 'null'
+        isUserValidated:
+          type: boolean
+        properties:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Dashboard.DashboardPropertyViewModel'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.RentFrequency:
+      enum:
+      - Yearly
+      - Quarterly
+      - Monthly
+      - Weekly
+      - Daily
+      type: string
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Property.Domain.Enums.PriceQualifier:
+      enum:
+      - Default
+      - Poa
+      - GuidePrice
+      - FixedPrice
+      - OffersInExcessOf
+      - Oiro
+      - SaleByTender
+      - From
+      - SharedOwnership
+      - OffersOver
+      - PartBuyPartRent
+      - SharedEquity
+      type: string
+    Purplebricks.Property.Business.ViewModels.PropertyExternalLinksViewModel:
+      type: object
+      properties:
+        rightMoveAdvertUrl:
+          type:
+          - string
+          - 'null'
+        zooplaAdvertUrl:
+          type:
+          - string
+          - 'null'
+        onTheMarketAdvertUrl:
+          type:
+          - string
+          - 'null'
+        purplebricksPropertyUrlPath:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.WorkflowStepType:
+      enum:
+      - Create
+      - BookValuation
+      - Valuation
+      - Instruct
+      - CreateAdvert
+      - RejectAdvert
+      - AmendAdvert
+      - ApproveAdvert
+      - SchedulePendingRegCert
+      - Schedule
+      - PublishPendingRegCert
+      - Publish
+      - Withdraw
+      - Suspend
+      - SuspendByUser
+      - SuspendAccount
+      - UnderOffer
+      - SoldSubjectToContract
+      - DiyAdvertStarted
+      - LetSubjectToContract
+      - DeclineOffer
+      - UpdateProperty
+      - AcceptableOffer
+      - ApplicationReceived
+      - AcceptableOfferNotMarketed
+      - WithdrawOffer
+      - UpdateAdvert
+      - DiyAdvertCreated
+      - DiyAdvertRejected
+      - ApprovePhoto
+      - ContractsExchanged
+      - Completion
+      - DiyAdvertAmended
+      - DiyAdvertRejectAmendments
+      - SchedulePendingContract
+      - PublishPendingContract
+      - UpdatePropertyDiary
+      - ContractsExchangedCoolingOffPeriod
+      - ForceSold
+      - ForceSoldSubjectToContract
+      - ForceContractsExchanged
+      - ForceCompletion
+      - SoldSubjectToEscrow
+      - PendingEscrow
+      - Closing
+      - ForceAcceptableOffer
+      - ForceAcceptableOfferNotMarketed
+      - ForceContractsExchangedCoolingOffPeriod
+      - InstantValuation
+      - FakeValuation
+      - Cancelled
+      type: string
+    Purplebricks.Property.Domain.Enums.RegulatoryCertificateType:
+      enum:
+      - Epc
+      - Hmo
+      - HomeReport
+      type: string
+    Purplebricks.Property.Domain.Enums.IanaTimeZone:
+      enum:
+      - Not Set
+      - Europe/London
+      - Australia/Perth
+      - Australia/Eucla
+      - Australia/Adelaide
+      - Australia/Broken_Hill
+      - Australia/Darwin
+      - Australia/Brisbane
+      - Australia/Currie
+      - Australia/Hobart
+      - Australia/Lindeman
+      - Australia/Melbourne
+      - Australia/Sydney
+      - Australia/Lord_Howe
+      - Antarctica/Macquarie
+      - America/Los_Angeles
+      - America/New_York
+      - America/Detroit
+      - America/Kentucky/Louisville
+      - America/Kentucky/Monticello
+      - America/Indiana/Indianapolis
+      - America/Indiana/Vincennes
+      - America/Indiana/Winamac
+      - America/Indiana/Marengo
+      - America/Indiana/Petersburg
+      - America/Indiana/Vevay
+      - America/Chicago
+      - America/Indiana/Tell_City
+      - America/Indiana/Knox
+      - America/Menominee
+      - America/North_Dakota/Center
+      - America/North_Dakota/New_Salem
+      - America/North_Dakota/Beulah
+      - America/Boise
+      - America/Phoenix
+      - America/Anchorage
+      - America/Juneau
+      - America/Sitka
+      - America/Yakutat
+      - America/Nome
+      - America/Adak
+      - America/Metlakatla
+      - Pacific/Honolulu
+      - America/Denver
+      - Pacific/Auckland
+      type: string
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header
+x-refined-from:
+- purplebricks-property-v1-openapi.yml
+- purplebricks-property-v2-openapi.yml

@@ -1,0 +1,193 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks.Viewings.Api 1.0 - Customer Experience Open Days API
+  description: '### Purplebricks Viewings API.
+
+    ### [Purplebricks.Viewings.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/viewings)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/viewings-api
+security:
+- Bearer: []
+tags:
+- name: OpenDays
+paths:
+  /v1/properties/{propertyId}/opendays/upcoming:
+    get:
+      tags:
+      - OpenDays
+      summary: Returns the details of any upcoming open days for a property. May return an empty result set.
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: The open day list was successfully retrieved.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.OpenDaysViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.OpenDaysViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.OpenDaysViewModel'
+        '404':
+          description: The property could not be found.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/properties/{propertyId}/opendays/past:
+    get:
+      tags:
+      - OpenDays
+      summary: Returns the details of any past open days for a property. May return an empty result set.
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: The open day list was successfully retrieved.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.OpenDaysViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.OpenDaysViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.OpenDaysViewModel'
+        '401':
+          description: The user is unauthorised.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: The property could not be found.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+components:
+  schemas:
+    Purplebricks.Viewings.Business.ViewModels.OpenDaysViewModel:
+      type: object
+      properties:
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        propertyTimeZone:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.IanaTimeZone'
+      additionalProperties: false
+    Purplebricks.DatabaseModel.Enumerations.IanaTimeZone:
+      enum:
+      - NotSet
+      - EuropeLondon
+      - AustraliaPerth
+      - AustraliaEucla
+      - AustraliaAdelaide
+      - AustraliaBrokenHill
+      - AustraliaDarwin
+      - AustraliaBrisbane
+      - AustraliaCurrie
+      - AustraliaHobart
+      - AustraliaLindeman
+      - AustraliaMelbourne
+      - AustraliaSydney
+      - AustraliaLordHowe
+      - AntarcticaMacquarie
+      - AmericaLosAngeles
+      - AmericaNewYork
+      - AmericaDetroit
+      - AmericaKentuckyLouisville
+      - AmericaKentuckyMonticello
+      - AmericaIndianaIndianapolis
+      - AmericaIndianaVincennes
+      - AmericaIndianaWinamac
+      - AmericaIndianaMarengo
+      - AmericaIndianaPetersburg
+      - AmericaIndianaVevay
+      - AmericaChicago
+      - AmericaIndianaTellCity
+      - AmericaIndianaKnox
+      - AmericaMenominee
+      - AmericaNorthDakotaCenter
+      - AmericaNorthDakotaNewSalem
+      - AmericaNorthDakotaBeulah
+      - AmericaBoise
+      - AmericaPhoenix
+      - AmericaAnchorage
+      - AmericaJuneau
+      - AmericaSitka
+      - AmericaYakutat
+      - AmericaNome
+      - AmericaAdak
+      - AmericaMetlakatla
+      - PacificHonolulu
+      - AmericaDenver
+      - PacificAuckland
+      type: string
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

@@ -1,0 +1,134 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks.Valuations.Api 1.0 - Core Lead Capture API
+  description: '### The new home for accessing the valuations service library
+
+    ### [Purplebricks.Valuations.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/valuations-api)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/valuations-api
+security:
+- Bearer: []
+tags:
+- name: LeadCapture
+paths:
+  /v1/leadcapture:
+    post:
+      tags:
+      - LeadCapture
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.LeadCaptureInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.LeadCaptureInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.LeadCaptureInputModel'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.LeadCaptureViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.LeadCaptureViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.LeadCaptureViewModel'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+components:
+  schemas:
+    Purplebricks.Valuations.Contract.InputModels.LeadCaptureInputModel:
+      type: object
+      properties:
+        firstName:
+          type:
+          - string
+          - 'null'
+        surname:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        telephone:
+          type:
+          - string
+          - 'null'
+        propertyNumberOrName:
+          type:
+          - string
+          - 'null'
+        street:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+        townOrCity:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Valuations.Api.Models.LeadCaptureViewModel:
+      type: object
+      properties:
+        leadId:
+          type: string
+          format: uuid
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

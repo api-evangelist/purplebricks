@@ -1,0 +1,194 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Active Property API
+  version: '1.0'
+  description: 'Operations tagged ActiveProperty across 2 of this provider''s published API definitions: purplebricks-property-v1-openapi.yml, purplebricks-property-v2-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.purplebricks.co.uk/property-api
+security:
+- Bearer: []
+tags:
+- name: ActiveProperty
+paths:
+  /v1/activeproperty/{id}:
+    get:
+      tags:
+      - ActiveProperty
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivePropertyViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivePropertyViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivePropertyViewModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v2/activeproperty/{id}:
+    get:
+      tags:
+      - ActiveProperty
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivePropertyViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivePropertyViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivePropertyViewModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+components:
+  schemas:
+    Purplebricks.Property.Domain.Enums.RentFrequency:
+      enum:
+      - Yearly
+      - Quarterly
+      - Monthly
+      - Weekly
+      - Daily
+      type: string
+    Purplebricks.Property.Business.ViewModels.ActivePropertyViewModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        listingId:
+          type:
+          - string
+          - 'null'
+        userId:
+          type: integer
+          format: int32
+        address:
+          type:
+          - string
+          - 'null'
+        published:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        price:
+          type:
+          - number
+          - 'null'
+          format: double
+        priceText:
+          type:
+          - string
+          - 'null'
+        minPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        maxPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        rentFrequency:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.RentFrequency'
+        images:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ImageViewModel'
+        toLet:
+          type: boolean
+        hasOtherProperties:
+          type: boolean
+        priceQualifier:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.PriceQualifier'
+        closingDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        valuationPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        hasMarketingReport:
+          type: boolean
+        hasBoardOrdered:
+          type: boolean
+        isScottishSaleProperty:
+          type: boolean
+        instructedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ImageViewModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        url:
+          type:
+          - string
+          - 'null'
+        thumbnailUrl:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.PriceQualifier:
+      enum:
+      - Default
+      - Poa
+      - GuidePrice
+      - FixedPrice
+      - OffersInExcessOf
+      - Oiro
+      - SaleByTender
+      - From
+      - SharedOwnership
+      - OffersOver
+      - PartBuyPartRent
+      - SharedEquity
+      type: string
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header
+x-refined-from:
+- purplebricks-property-v1-openapi.yml
+- purplebricks-property-v2-openapi.yml

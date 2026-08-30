@@ -1,0 +1,99 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Workflow API 1.0 - Platform Is Instruct Available API
+  description: '### The new home for accessing the workflow service library
+
+    ### [Purplebricks Workflow API Git Repository](https://purplebricks@dev.azure.com/purplebricks/Purplebricks/_git/workflow-api)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/workflow
+security:
+- Bearer: []
+tags:
+- name: IsInstructAvailable
+paths:
+  /v1/isinstructavailable:
+    get:
+      tags:
+      - IsInstructAvailable
+      parameters:
+      - name: propertyId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+components:
+  schemas:
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

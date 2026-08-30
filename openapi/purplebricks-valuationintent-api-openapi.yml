@@ -1,0 +1,337 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks.Valuations.Api 1.0 - Core Valuation Intent API
+  description: '### The new home for accessing the valuations service library
+
+    ### [Purplebricks.Valuations.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/valuations-api)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/valuations-api
+security:
+- Bearer: []
+tags:
+- name: ValuationIntent
+paths:
+  /v1/valuationintent/getredirecturl:
+    get:
+      tags:
+      - ValuationIntent
+      parameters:
+      - name: intent
+        in: query
+        schema:
+          type: string
+      - name: propertyId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/valuationintent/shoulduseinstantvaluationflow:
+    get:
+      tags:
+      - ValuationIntent
+      parameters:
+      - name: propertyId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.IsInstantValuationViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.IsInstantValuationViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.IsInstantValuationViewModel'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+  /v1/valuationintent/wasinstantvaluation:
+    get:
+      tags:
+      - ValuationIntent
+      parameters:
+      - name: propertyId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.WasInstantValuationViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.WasInstantValuationViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.WasInstantValuationViewModel'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+  /v1/valuationintent/getpostdataharvestingredirect:
+    get:
+      tags:
+      - ValuationIntent
+      parameters:
+      - name: propertyId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.GetPostDataHarvestingRedirectViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.GetPostDataHarvestingRedirectViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.GetPostDataHarvestingRedirectViewModel'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+  /v1/valuationintent/bookinguserdata:
+    post:
+      tags:
+      - ValuationIntent
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.BookingUserDataInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.BookingUserDataInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.BookingUserDataInputModel'
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+  /v1/valuationintent/requestvaluationavailability:
+    post:
+      tags:
+      - ValuationIntent
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.BookingUserDataInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.BookingUserDataInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Valuations.Contract.InputModels.BookingUserDataInputModel'
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+components:
+  schemas:
+    Purplebricks.Valuations.Api.Models.GetPostDataHarvestingRedirectViewModel:
+      type: object
+      properties:
+        redirectUrl:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Valuations.Api.Models.WasInstantValuationViewModel:
+      type: object
+      properties:
+        wasInstantValuation:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Valuations.Contract.InputModels.BookingUserDataInputModel:
+      type: object
+      properties:
+        title:
+          type:
+          - string
+          - 'null'
+        firstName:
+          type:
+          - string
+          - 'null'
+        surname:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        telephone:
+          type:
+          - string
+          - 'null'
+        propertyNumberOrName:
+          type:
+          - string
+          - 'null'
+        street:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+        townOrCity:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Valuations.Api.Models.IsInstantValuationViewModel:
+      type: object
+      properties:
+        isInstantValuation:
+          type: boolean
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

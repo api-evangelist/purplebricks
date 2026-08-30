@@ -1,0 +1,777 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Bland API
+  version: '1.0'
+  description: 'Operations tagged Bland across 2 of this provider''s published API definitions: purplebricks-property-v1-openapi.yml, purplebricks-viewings-v1-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.purplebricks.co.uk/property-api
+- url: https://api.purplebricks.co.uk/viewings-api
+security:
+- Bearer: []
+tags:
+- name: Bland
+paths:
+  /v1/bland/property/{propertyId}:
+    get:
+      tags:
+      - Bland
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Bland.BlandPropertyViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Bland.BlandPropertyViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Bland.BlandPropertyViewModel'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/bland/property:
+    post:
+      tags:
+      - Bland
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Api.Controllers.V1.BlandController_BlandPropertyRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Api.Controllers.V1.BlandController_BlandPropertyRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Api.Controllers.V1.BlandController_BlandPropertyRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Bland.BlandPropertyViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Bland.BlandPropertyViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Bland.BlandPropertyViewModel'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/bland/viewing:
+    post:
+      tags:
+      - Bland
+      summary: Books a viewing appointment via Bland AI integration.
+      requestBody:
+        description: The booking details from Bland AI.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.BlandBookViewingInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.BlandBookViewingInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.BlandBookViewingInputModel'
+      responses:
+        '201':
+          description: The appointment was successfully created.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.BookViewingConfirmationViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.BookViewingConfirmationViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.BookViewingConfirmationViewModel'
+        '400':
+          description: The appointment request is invalid.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: The user is unauthorised.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: The appointment was not created because the property is sold or withdrawn.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '409':
+          description: The appointment was not created because the viewing slot is not available.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '429':
+          description: Too Many Requests
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    servers:
+    - url: https://api.purplebricks.co.uk/viewings-api
+  /v1/bland/viewing/confirmrequestslot:
+    post:
+      tags:
+      - Bland
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.AiConfirmRequestSlotInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.AiConfirmRequestSlotInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.AiConfirmRequestSlotInputModel'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.AiSellerRequestSlotResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.AiSellerRequestSlotResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.AiSellerRequestSlotResponse'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    servers:
+    - url: https://api.purplebricks.co.uk/viewings-api
+  /v1/bland/viewing/reschedulerequestslot:
+    post:
+      tags:
+      - Bland
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.AiRescheduleRequestSlotInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.AiRescheduleRequestSlotInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.AiRescheduleRequestSlotInputModel'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.AiSellerRequestSlotResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.AiSellerRequestSlotResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.AiSellerRequestSlotResponse'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    servers:
+    - url: https://api.purplebricks.co.uk/viewings-api
+components:
+  schemas:
+    Purplebricks.Property.Business.ViewModels.Bland.BlandProperty:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        listingId:
+          type:
+          - string
+          - 'null'
+        price:
+          type: number
+          format: double
+        publishDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        propertyDescription:
+          type:
+          - string
+          - 'null'
+        propertyKeyFeatures:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        postcode:
+          type:
+          - string
+          - 'null'
+        line1:
+          type:
+          - string
+          - 'null'
+        line2:
+          type:
+          - string
+          - 'null'
+        unitNumber:
+          type:
+          - string
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+        address:
+          type:
+          - string
+          - 'null'
+        propertyType:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        propertyTypeName:
+          type:
+          - string
+          - 'null'
+        propertyStyle:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        propertyStyleName:
+          type:
+          - string
+          - 'null'
+        bedrooms:
+          type: integer
+          format: int32
+        bathrooms:
+          type: integer
+          format: int32
+        toilets:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        receptions:
+          type: integer
+          format: int32
+        tenure:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Tenure'
+        lease:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        councilTaxBand:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.TaxBand'
+        parking:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Parking'
+        garage:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Garage'
+        doubleGlazing:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Glazing'
+        garden:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Garden'
+        centralHeating:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Heating'
+        occupied:
+          type:
+          - boolean
+          - 'null'
+        toLet:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Api.Controllers.V1.BlandController_BlandPropertyRequest:
+      required:
+      - propertyId
+      type: object
+      properties:
+        propertyId:
+          maximum: 2147483647
+          minimum: 1
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.Parking:
+      enum:
+      - None
+      - Allocated
+      - Communal
+      - Covered
+      - Driveway
+      - Gated
+      - OffStreet
+      - OnStreet
+      type: string
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Property.Domain.Enums.Glazing:
+      enum:
+      - Full
+      - Part
+      - None
+      type: string
+    Purplebricks.Property.Domain.Enums.Garage:
+      enum:
+      - OneCar
+      - TwoOrMoreCars
+      - None
+      type: string
+    Purplebricks.Property.Domain.Enums.Tenure:
+      enum:
+      - Freehold
+      - Leasehold
+      - ShareOfFreehold
+      - SharedOwnership
+      - Commonhold
+      type: string
+    Purplebricks.Property.Domain.Enums.Garden:
+      enum:
+      - None
+      - Garden
+      - PrivateGarden
+      type: string
+    Purplebricks.Property.Domain.Enums.Heating:
+      enum:
+      - None
+      - AirConditioning
+      - Central
+      - Electric
+      - GasCentral
+      - Oil
+      - Solar
+      - UnderFloor
+      type: string
+    Purplebricks.Property.Business.ViewModels.Bland.BlandPropertyViewModel:
+      type: object
+      properties:
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Bland.BlandProperty'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.TaxBand:
+      enum:
+      - A
+      - B
+      - C
+      - D
+      - E
+      - F
+      - G
+      - H
+      - I
+      - TBC
+      - Exempt
+      type: string
+    Purplebricks.Viewings.Business.ViewModels.AiSellerRequestSlotResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type:
+          - string
+          - 'null'
+        confirmedOrNewSlotUtc:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    Purplebricks.Viewings.Business.Models.BookingRequestStatus:
+      enum:
+      - SlotNotAvailable
+      - Confirmed
+      - AwaitingConfirmation
+      - PropertySold
+      - PropertyWithdrawn
+      type: string
+    Purplebricks.Viewings.Business.Models.BlandBookViewingInputModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        userId:
+          type: integer
+          format: int32
+        eventStart:
+          type: string
+          format: date-time
+        phoneHome:
+          maxLength: 20
+          type:
+          - string
+          - 'null'
+        phoneMobile:
+          maxLength: 20
+          type:
+          - string
+          - 'null'
+        primaryContactNumber:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.ContactNumberType'
+        bookingProcess:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.BookingProcess'
+      additionalProperties: false
+    Purplebricks.DatabaseModel.Enumerations.BookingProcess:
+      enum:
+      - SellerBookValuation
+      - BuyerBookViewing
+      - CallCentreBookValuation
+      - CallCentreBookViewing
+      - SellerRearrange
+      - BuyerRearrange
+      - LpeRearrange
+      - LpeBookViewing
+      - BuyingAgentBookViewing
+      - RemortgageInstantValuation
+      - AiVoiceAgent
+      - AiWhatsAppAgent
+      - AiSmsAgent
+      type: string
+    Purplebricks.Viewings.Business.Models.AiRescheduleRequestSlotInputModel:
+      type: object
+      properties:
+        bookingId:
+          type: integer
+          format: int32
+        viewingId:
+          type: integer
+          format: int32
+        sellerUserId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        eventStart:
+          type: string
+          format: date-time
+      additionalProperties: false
+    Purplebricks.Viewings.Business.ViewModels.BookViewingConfirmationViewModel:
+      type: object
+      properties:
+        eventId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        propertyId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        listingId:
+          type:
+          - string
+          - 'null'
+        status:
+          $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.BookingRequestStatus'
+        bookingProcess:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.BookingProcess'
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        propertyTimeZone:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.IanaTimeZone'
+        street:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+        isAccompaniedViewing:
+          type: boolean
+        hostName:
+          type:
+          - string
+          - 'null'
+        hostPhoneNumber:
+          type:
+          - string
+          - 'null'
+        expertPhoto:
+          type:
+          - string
+          - 'null'
+        trustPilotId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.DatabaseModel.Enumerations.IanaTimeZone:
+      enum:
+      - NotSet
+      - EuropeLondon
+      - AustraliaPerth
+      - AustraliaEucla
+      - AustraliaAdelaide
+      - AustraliaBrokenHill
+      - AustraliaDarwin
+      - AustraliaBrisbane
+      - AustraliaCurrie
+      - AustraliaHobart
+      - AustraliaLindeman
+      - AustraliaMelbourne
+      - AustraliaSydney
+      - AustraliaLordHowe
+      - AntarcticaMacquarie
+      - AmericaLosAngeles
+      - AmericaNewYork
+      - AmericaDetroit
+      - AmericaKentuckyLouisville
+      - AmericaKentuckyMonticello
+      - AmericaIndianaIndianapolis
+      - AmericaIndianaVincennes
+      - AmericaIndianaWinamac
+      - AmericaIndianaMarengo
+      - AmericaIndianaPetersburg
+      - AmericaIndianaVevay
+      - AmericaChicago
+      - AmericaIndianaTellCity
+      - AmericaIndianaKnox
+      - AmericaMenominee
+      - AmericaNorthDakotaCenter
+      - AmericaNorthDakotaNewSalem
+      - AmericaNorthDakotaBeulah
+      - AmericaBoise
+      - AmericaPhoenix
+      - AmericaAnchorage
+      - AmericaJuneau
+      - AmericaSitka
+      - AmericaYakutat
+      - AmericaNome
+      - AmericaAdak
+      - AmericaMetlakatla
+      - PacificHonolulu
+      - AmericaDenver
+      - PacificAuckland
+      type: string
+    Purplebricks.Viewings.Business.Models.AiConfirmRequestSlotInputModel:
+      type: object
+      properties:
+        bookingId:
+          type: integer
+          format: int32
+        viewingId:
+          type: integer
+          format: int32
+        sellerUserId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.DatabaseModel.Enumerations.ContactNumberType:
+      enum:
+      - Home
+      - Mobile
+      - Other
+      type: string
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header
+x-refined-from:
+- purplebricks-property-v1-openapi.yml
+- purplebricks-viewings-v1-openapi.yml

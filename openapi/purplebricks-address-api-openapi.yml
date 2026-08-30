@@ -1,0 +1,115 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Address API
+  version: '1.0'
+  description: 'Operations tagged Address across 2 of this provider''s published API definitions: purplebricks-property-v1-openapi.yml, purplebricks-property-v2-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.purplebricks.co.uk/property-api
+security:
+- Bearer: []
+tags:
+- name: Address
+paths:
+  /v1/address/createaddress:
+    post:
+      tags:
+      - Address
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.AddressInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.AddressInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.AddressInputModel'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v2/address/createaddress:
+    post:
+      tags:
+      - Address
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.AddressInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.AddressInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.AddressInputModel'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+components:
+  schemas:
+    Purplebricks.Property.Business.InputModels.AddressInputModel:
+      required:
+      - line1
+      - postcode
+      - town
+      type: object
+      properties:
+        line1:
+          type: string
+        line2:
+          type:
+          - string
+          - 'null'
+        town:
+          type: string
+        county:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type: string
+        country:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header
+x-refined-from:
+- purplebricks-property-v1-openapi.yml
+- purplebricks-property-v2-openapi.yml

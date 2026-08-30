@@ -1,0 +1,5932 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Property API
+  version: '1.0'
+  description: 'Operations tagged Property across 2 of this provider''s published API definitions: purplebricks-branch-v1-openapi.yml, purplebricks-property-v1-openapi.yml. Each path carries the servers of the definition it was published in.'
+servers:
+- url: https://api.purplebricks.co.uk/branch-api
+  description: Base URL declared by the provider in apis.yml (roadmap#122).
+- url: https://api.purplebricks.co.uk/property-api
+security:
+- Bearer: []
+tags:
+- name: Property
+paths:
+  /v1/property/{propertyId}/rightmovebranch:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RightmoveBranch'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    servers:
+    - url: https://api.purplebricks.co.uk/branch-api
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
+  /v1/property/{propertyId}/zooplabranch:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RightmoveBranch'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    servers:
+    - url: https://api.purplebricks.co.uk/branch-api
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
+  /v1/property/{propertyId}/onthemarketbranch:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OnTheMarketBranch'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+    servers:
+    - url: https://api.purplebricks.co.uk/branch-api
+      description: Base URL declared by the provider in apis.yml (roadmap#122).
+  /v1/property/create:
+    post:
+      tags:
+      - Property
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Contract.PropertyDetails'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Contract.PropertyDetails'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Contract.PropertyDetails'
+      responses:
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '201':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '409':
+          description: Conflict
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/relistproperty:
+    post:
+      tags:
+      - Property
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Contract.RelistPropertyRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Contract.RelistPropertyRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Contract.RelistPropertyRequest'
+      responses:
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '409':
+          description: Conflict
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '201':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/getpropertylist:
+    get:
+      tags:
+      - Property
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyDetailsViewModel'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyDetailsViewModel'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyDetailsViewModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/getproperty:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyDetailsViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyDetailsViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyDetailsViewModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/getowners:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.OwnersViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.OwnersViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.OwnersViewModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/marketingprice:
+    post:
+      tags:
+      - Property
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.SellingPriceInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.SellingPriceInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.SellingPriceInputModel'
+      responses:
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '409':
+          description: Conflict
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/addpropertymediadata:
+    put:
+      tags:
+      - Property
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyMediaData'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyMediaData'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyMediaData'
+      responses:
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '409':
+          description: Conflict
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '201':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyMediaData'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyMediaData'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyMediaData'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/{propertyId}:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyDetailsViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyDetailsViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyDetailsViewModel'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyDetailsViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyDetailsViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyDetailsViewModel'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/{propertyId}/address:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyAddressRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyAddressRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyAddressRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '405':
+          description: Method Not Allowed
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/rentalprice:
+    post:
+      tags:
+      - Property
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.RentalPriceInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.RentalPriceInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.RentalPriceInputModel'
+      responses:
+        '200':
+          description: Success
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/getagentforproperty:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExpertContactViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExpertContactViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ExpertContactViewModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/getsalesaddonavailability:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: propertyId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LocationGroupSalesAddOnAvailabilityViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LocationGroupSalesAddOnAvailabilityViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LocationGroupSalesAddOnAvailabilityViewModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/hasboardordered:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: boolean
+            application/json:
+              schema:
+                type: boolean
+            text/json:
+              schema:
+                type: boolean
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/getpropertyhistory:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: propertyId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Model.HistoryEventModel'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Model.HistoryEventModel'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Model.HistoryEventModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/getuserproperties:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: userId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Model.UserPropertyModel'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Model.UserPropertyModel'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Model.UserPropertyModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/getportalenquiries:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: propertyId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Model.PropertyEnquiryModel'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Model.PropertyEnquiryModel'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Model.PropertyEnquiryModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/getpropertytracks:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: propertyId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Model.PropertyTrackModel'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Model.PropertyTrackModel'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Model.PropertyTrackModel'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/registertrackedrecord:
+    post:
+      tags:
+      - Property
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyTrackedInput'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyTrackedInput'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyTrackedInput'
+      responses:
+        '201':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/withdrawtrackedrecord:
+    delete:
+      tags:
+      - Property
+      parameters:
+      - name: propertyId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/registernoteofinterest:
+    post:
+      tags:
+      - Property
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyTrackedInput'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyTrackedInput'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyTrackedInput'
+      responses:
+        '201':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/withdrawnoteofinterest:
+    delete:
+      tags:
+      - Property
+      parameters:
+      - name: propertyId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/getpropertyactions:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: propertyId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyAction'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyAction'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyAction'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/createproperty:
+    post:
+      tags:
+      - Property
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.CreatePropertyInput'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.CreatePropertyInput'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.CreatePropertyInput'
+      responses:
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '201':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.CreatePropertyViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.CreatePropertyViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.CreatePropertyViewModel'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+        default:
+          description: Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/resetproperty/{propertyId}/{userId}:
+    post:
+      tags:
+      - Property
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '201':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+        default:
+          description: Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/property/sendinstantinstructcontactrequest:
+    post:
+      tags:
+      - Property
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.ContactRequestInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.ContactRequestInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.ContactRequestInputModel'
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/creatio/properties/{propertyId}:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioPropertyViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioPropertyViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioPropertyViewModel'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+  /v1/creatio/properties/{propertyId}/notes:
+    get:
+      tags:
+      - Property
+      parameters:
+      - name: propertyId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioPropertyNotesViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioPropertyNotesViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioPropertyNotesViewModel'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+    servers:
+    - url: https://api.purplebricks.co.uk/property-api
+components:
+  schemas:
+    BranchService:
+      enum:
+      - NotSpecified
+      - Sales
+      - Lettings
+      type: string
+    OnTheMarketBranch:
+      type: object
+      properties:
+        branchId:
+          type: integer
+          format: int32
+        name:
+          type:
+          - string
+          - 'null'
+        postcodeArea:
+          type:
+          - string
+          - 'null'
+        service:
+          $ref: '#/components/schemas/BranchService'
+        livePropertyIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
+    RightmoveBranch:
+      type: object
+      properties:
+        branchId:
+          type: integer
+          format: int32
+        name:
+          type:
+          - string
+          - 'null'
+        postcodeArea:
+          type:
+          - string
+          - 'null'
+        service:
+          $ref: '#/components/schemas/BranchService'
+        livePropertyIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Property.Domain.Entities.Valuation:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        valuationDate:
+          type: string
+          format: date-time
+        listPrice:
+          type: number
+          format: double
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.PaymentStatus:
+      enum:
+      - New
+      - ThreeDSecure
+      - Success
+      - Cancelled
+      type: string
+    Purplebricks.Property.Domain.Enums.HistoryEventType:
+      enum:
+      - AgentNote
+      - AgentNoteCallIn
+      - AgentNoteCallOut
+      - CheckoutComplete
+      - ClientCardAccess
+      - ExtraAdded
+      - ExtraExpired
+      - ExtraRemoved
+      - FailedLogIn
+      - FeedbackDeclined
+      - FeedbackRequested
+      - FeedbackSubmitted
+      - Instructed
+      - LivePhotoUpdate
+      - NewOfferSubmitted
+      - OfferUpdate
+      - PhotoDeleted
+      - PriceChanged
+      - StatusUpdate
+      - UserLoggedIn
+      - ValuationArranged
+      - ValuationCancelled
+      - ViewingArranged
+      - ViewingCancelled
+      - ViewingRequestCancelled
+      - ViewingRequest
+      - ExtraUpdated
+      - HomeserveFeedAdded
+      - HomeserveFeedDeleted
+      - EnabledAccount
+      - DisabledAccount
+      - ViewingRearranged
+      - ValuationRearranged
+      - LockLawyer
+      - UnlockLawyer
+      - ArchiveProperty
+      - UnarchiveProperty
+      - PropertyTransferred
+      - AccompaniedViewingExpertChanged
+      - UserRegisteredByCpe
+      - PropertyAuctionToPrivateTreaty
+      - LpeDetailsModified
+      - SalesDatesDetailsModified
+      type: string
+    Purplebricks.Property.Domain.Enums.ExpertType:
+      enum:
+      - Selling
+      - Letting
+      - Buying
+      type: string
+    Purplebricks.Property.Domain.Enums.BoardProviderType:
+      enum:
+      - Countrywide
+      - AgencyExpress
+      - BoardsOnline
+      type: string
+    Purplebricks.Property.Domain.Enums.Furnished:
+      enum:
+      - Furnished
+      - PartFurnished
+      - Unfurnished
+      type: string
+    Purplebricks.Property.Business.ViewModels.Creatio.CreatioExpert:
+      type: object
+      properties:
+        fullName:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.InputModels.RentalPriceInputModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        rent:
+          type: number
+          format: double
+        priceQualifier:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.PriceQualifier'
+        rentFrequency:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.RentFrequency'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.ViewingPurpose:
+      enum:
+      - ToOccupy
+      - DevelopmentOpportunity
+      - BtlInvestment
+      type: string
+    Purplebricks.Property.Domain.Enums.SellerOwnership:
+      enum:
+      - OwnerOccupier
+      - Landlord
+      - Inherited
+      - Investor
+      - HolidayHomeOwner
+      - Executor
+      - PowerOfAttorney
+      - NonUKResident
+      - Company
+      - Trust
+      - Partnership
+      - Other
+      - OverseasCompany
+      type: string
+    Purplebricks.Property.Domain.Enums.AmendmentStatus:
+      enum:
+      - Approved
+      - Rejected
+      - Pending
+      type: string
+    Purplebricks.Property.Business.ViewModels.Creatio.CreatioPropertyViewModel:
+      type: object
+      properties:
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioProperty'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.LandAreaUnit:
+      enum:
+      - Squares
+      - SquareMetres
+      - SquareFeet
+      - SquareYards
+      - SquareMiles
+      - SquareKm
+      - Acres
+      - Hectares
+      type: string
+    Purplebricks.Property.Domain.Enums.RegionType:
+      enum:
+      - England
+      - Scotland
+      - Wales
+      - NorthernIreland
+      - Queensland
+      - Victoria
+      - NewSouthWales
+      - WesternAustralia
+      - SouthAustralia
+      - California
+      - NewYork
+      - Connecticut
+      - NewJersey
+      - Pennsylvania
+      - Arizona
+      - Nevada
+      - NewZealand
+      - Florida
+      type: string
+    Purplebricks.Property.Domain.Enums.ComplianceStatus:
+      enum:
+      - Passed
+      - Failed
+      - Reset
+      - AwaitingCompliance
+      - NotApplicable
+      type: string
+    Purplebricks.Property.Domain.Enums.PropertyListingRemovalReason:
+      enum:
+      - WithdrawNoLongerSelling
+      - WithdrawNoLongerLetting
+      - WithdrawMarketingBreak
+      - WithdrawSoldSTC_OtherAgent
+      - WithdrawSoldSTC_PrivateSale
+      - WithdrawLetSTC_OtherAgent
+      - WithdrawLetSTC_PrivateSale
+      - SoldByUs
+      - LetByUs
+      type: string
+    Purplebricks.Property.Business.InputModels.PropertyMediaData:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        imageUrls:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        floorPlanUrl:
+          type:
+          - string
+          - 'null'
+        matterportUrl:
+          type:
+          - string
+          - 'null'
+        epcUrl:
+          type:
+          - string
+          - 'null'
+        elevatedImageUrls:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        showcaseUrls:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        droneImageUrls:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        portalVideoUrls:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        virtualTourUrl:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.TenantAdditionalData:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        userId:
+          type: integer
+          format: int32
+        customer:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Customer'
+        propertyId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        moveInDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        terms:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.TenantTerms'
+        lettingTerms:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.LettingTerms'
+        employmentStatus:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.EmploymentStatus'
+        poorCreditHistory:
+          type:
+          - boolean
+          - 'null'
+        havePets:
+          type:
+          - boolean
+          - 'null'
+        otherPets:
+          type:
+          - string
+          - 'null'
+        isSmoker:
+          type: boolean
+        isPbConnected:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.InstructionSourceType:
+      enum:
+      - Other
+      - Radio
+      - GoogleSearch
+      - BoardAtProperty
+      - FriendFamilyRecommendation
+      - PressAdvert
+      - Tv
+      - OnlineBannerAdverts
+      - UsedUsBefore
+      - Leaflets
+      type: string
+    Purplebricks.Property.Domain.Entities.PaymentTransaction:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        paymentMethod:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.PaymentMethod'
+        paymentStatus:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.PaymentStatus'
+        createdDate:
+          type: string
+          format: date-time
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.IdUploadType:
+      enum:
+      - Manual
+      - Online
+      type: string
+    Purplebricks.Property.Domain.Model.PropertyEnquiryModel:
+      type: object
+      properties:
+        propertyEnquiryId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        portalType:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.PortalType'
+        email:
+          type:
+          - string
+          - 'null'
+        enquiryDate:
+          type: string
+          format: date-time
+        name:
+          type:
+          - string
+          - 'null'
+        phone:
+          type:
+          - string
+          - 'null'
+        propertyToSell:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.Creatio.PropertyNote:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        noteType:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.HistoryEventType'
+        address:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.Address'
+        subject:
+          type:
+          - string
+          - 'null'
+        createdDate:
+          type: string
+          format: date-time
+        note:
+          type:
+          - string
+          - 'null'
+        isPinned:
+          type: boolean
+        creatorName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.EventType:
+      enum:
+      - Valuation
+      - Viewing
+      - OpenDay
+      - Busy
+      - VirtualValuation
+      type: string
+    Purplebricks.Property.Domain.Enums.VoucherType:
+      enum:
+      - Percent
+      - Amount
+      type: string
+    Purplebricks.Property.Domain.Entities.BookingDiary:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        start:
+          type: string
+          format: date-time
+        isToConfirm:
+          type: boolean
+        propertyId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        isByCancelled:
+          type: boolean
+        isToCancelled:
+          type: boolean
+        rearrangedById:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        eventType:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.EventType'
+        feedback:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Feedback'
+        attended:
+          type:
+          - boolean
+          - 'null'
+        comments:
+          type:
+          - string
+          - 'null'
+        appointmentReference:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        createdDate:
+          type: string
+          format: date-time
+        rearrangedBookingId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        userTo:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PurpleBricksUser'
+        userBy:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PurpleBricksUser'
+        userIdBy:
+          type: integer
+          format: int32
+        userIdTo:
+          type: integer
+          format: int32
+        bookingProcess:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.BookingProcess'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.StreetViewData:
+      required:
+      - heading
+      - hideStreetview
+      - latitude
+      - longitude
+      - mapLatitude
+      - mapLongitude
+      - pitch
+      - zoom
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+        heading:
+          type: number
+          format: double
+        pitch:
+          type: number
+          format: double
+        zoom:
+          type: number
+          format: double
+        mapLatitude:
+          type: number
+          format: double
+        mapLongitude:
+          type: number
+          format: double
+        hideStreetview:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.ImageStatus:
+      enum:
+      - AwaitingApprovalActive
+      - AwaitingApprovalInactive
+      - ApprovedActive
+      - ApprovedInactive
+      type: string
+    Purplebricks.Property.Domain.Enums.IdUploadFileType:
+      enum:
+      - AgentPdfCertificate
+      - AgentPhotoId
+      - AgentResidentialId
+      - ComplianceDocument
+      type: string
+    Purplebricks.Property.Domain.Enums.RentFrequency:
+      enum:
+      - Yearly
+      - Quarterly
+      - Monthly
+      - Weekly
+      - Daily
+      type: string
+    Purplebricks.Property.Domain.Enums.OwnershipReviewStatus:
+      enum:
+      - Unknown
+      - InReview
+      - Approved
+      - Rejected
+      type: string
+    Purplebricks.Property.Domain.Enums.BookingProcess:
+      enum:
+      - SellerBookValuation
+      - BuyerBookViewing
+      - CallCentreBookValuation
+      - CallCentreBookViewing
+      - SellerRearrange
+      - BuyerRearrange
+      - LpeRearrange
+      - LpeBookViewing
+      - BuyingAgentBookViewing
+      type: string
+    Purplebricks.Property.Domain.Enums.CashSource:
+      enum:
+      - Savings
+      - Sale
+      type: string
+    Purplebricks.Property.Domain.Enums.PriceQualifier:
+      enum:
+      - Default
+      - Poa
+      - GuidePrice
+      - FixedPrice
+      - OffersInExcessOf
+      - Oiro
+      - SaleByTender
+      - From
+      - SharedOwnership
+      - OffersOver
+      - PartBuyPartRent
+      - SharedEquity
+      type: string
+    Purplebricks.Property.Domain.Enums.OrderStatus:
+      enum:
+      - New
+      - PaymentComplete
+      - Cancelled
+      - Completed
+      type: string
+    Purplebricks.Property.Domain.Enums.WorkflowStepType:
+      enum:
+      - Create
+      - BookValuation
+      - Valuation
+      - Instruct
+      - CreateAdvert
+      - RejectAdvert
+      - AmendAdvert
+      - ApproveAdvert
+      - SchedulePendingRegCert
+      - Schedule
+      - PublishPendingRegCert
+      - Publish
+      - Withdraw
+      - Suspend
+      - SuspendByUser
+      - SuspendAccount
+      - UnderOffer
+      - SoldSubjectToContract
+      - DiyAdvertStarted
+      - LetSubjectToContract
+      - DeclineOffer
+      - UpdateProperty
+      - AcceptableOffer
+      - ApplicationReceived
+      - AcceptableOfferNotMarketed
+      - WithdrawOffer
+      - UpdateAdvert
+      - DiyAdvertCreated
+      - DiyAdvertRejected
+      - ApprovePhoto
+      - ContractsExchanged
+      - Completion
+      - DiyAdvertAmended
+      - DiyAdvertRejectAmendments
+      - SchedulePendingContract
+      - PublishPendingContract
+      - UpdatePropertyDiary
+      - ContractsExchangedCoolingOffPeriod
+      - ForceSold
+      - ForceSoldSubjectToContract
+      - ForceContractsExchanged
+      - ForceCompletion
+      - SoldSubjectToEscrow
+      - PendingEscrow
+      - Closing
+      - ForceAcceptableOffer
+      - ForceAcceptableOfferNotMarketed
+      - ForceContractsExchangedCoolingOffPeriod
+      - InstantValuation
+      - FakeValuation
+      - Cancelled
+      type: string
+    Purplebricks.Property.Business.ViewModels.OwnersViewModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        user:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.OwnerViewModel'
+        additionalOwners:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.OwnerViewModel'
+      additionalProperties: false
+    Purplebricks.Property.Contract.Enums.Tenure:
+      enum:
+      - Freehold
+      - Leasehold
+      - ShareOfFreehold
+      - SharedOwnership
+      type: string
+    Purplebricks.Property.Domain.Enums.HistoryEventAction:
+      enum:
+      - None
+      - Note
+      - CallIn
+      - CallOut
+      - CallOutMarketingReport
+      type: string
+    Purplebricks.Property.Domain.Enums.BoardProcessingStatus:
+      enum:
+      - Processing
+      - Processed
+      - Failed
+      - AwaitingHomeReport
+      - AwaitingPublish
+      type: string
+    Purplebricks.Property.Domain.Entities.Address:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        addressType:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.AddressType'
+        line1:
+          type:
+          - string
+          - 'null'
+        line2:
+          type:
+          - string
+          - 'null'
+        district:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+        user:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PurpleBricksUser'
+        userId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        addressText:
+          type:
+          - string
+          - 'null'
+        unitNumber:
+          maxLength: 15
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        state:
+          maxLength: 5
+          minLength: 0
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.PropertyTitleDeed:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        filename:
+          type:
+          - string
+          - 'null'
+        uploadedFilename:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.UserDiscriminator:
+      enum:
+      - Customer
+      - Lpe
+      - Cpe
+      - BuyerAgent
+      type: string
+    Purplebricks.Property.Domain.Entities.PropertyContract:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        fileName:
+          type:
+          - string
+          - 'null'
+        uploadedFileName:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.ImageDetail:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        ordinal:
+          type: integer
+          format: int32
+        dateUploaded:
+          type: string
+          format: date-time
+        category:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        fullSizeURL:
+          type:
+          - string
+          - 'null'
+        largeSizeURL:
+          type:
+          - string
+          - 'null'
+        mediumSizeURL:
+          type:
+          - string
+          - 'null'
+        smallSizeURL:
+          type:
+          - string
+          - 'null'
+        tinySizeURL:
+          type:
+          - string
+          - 'null'
+        sourceUrl:
+          type:
+          - string
+          - 'null'
+        backgroundColour:
+          maxLength: 6
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        status:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.ImageStatus'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.PropertyBoardAction:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        boardProviderType:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.BoardProviderType'
+        jobType:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.JobType'
+        processStatus:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.BoardProcessingStatus'
+        externalPropertyReference:
+          type:
+          - string
+          - 'null'
+        jobReference:
+          type:
+          - string
+          - 'null'
+        expectedJobDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        boardInstalled:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        boardRemoved:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        created:
+          type: string
+          format: date-time
+        lastModified:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        notes:
+          type:
+          - string
+          - 'null'
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.IanaTimeZone:
+      enum:
+      - Not Set
+      - Europe/London
+      - Australia/Perth
+      - Australia/Eucla
+      - Australia/Adelaide
+      - Australia/Broken_Hill
+      - Australia/Darwin
+      - Australia/Brisbane
+      - Australia/Currie
+      - Australia/Hobart
+      - Australia/Lindeman
+      - Australia/Melbourne
+      - Australia/Sydney
+      - Australia/Lord_Howe
+      - Antarctica/Macquarie
+      - America/Los_Angeles
+      - America/New_York
+      - America/Detroit
+      - America/Kentucky/Louisville
+      - America/Kentucky/Monticello
+      - America/Indiana/Indianapolis
+      - America/Indiana/Vincennes
+      - America/Indiana/Winamac
+      - America/Indiana/Marengo
+      - America/Indiana/Petersburg
+      - America/Indiana/Vevay
+      - America/Chicago
+      - America/Indiana/Tell_City
+      - America/Indiana/Knox
+      - America/Menominee
+      - America/North_Dakota/Center
+      - America/North_Dakota/New_Salem
+      - America/North_Dakota/Beulah
+      - America/Boise
+      - America/Phoenix
+      - America/Anchorage
+      - America/Juneau
+      - America/Sitka
+      - America/Yakutat
+      - America/Nome
+      - America/Adak
+      - America/Metlakatla
+      - Pacific/Honolulu
+      - America/Denver
+      - Pacific/Auckland
+      type: string
+    Purplebricks.Property.Contract.PropertyDetails:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        userId:
+          type: integer
+          format: int32
+        expertId:
+          type: integer
+          format: int32
+        line1:
+          maxLength: 200
+          type:
+          - string
+          - 'null'
+        line2:
+          maxLength: 200
+          type:
+          - string
+          - 'null'
+        unitNumber:
+          maxLength: 50
+          type:
+          - string
+          - 'null'
+        town:
+          maxLength: 200
+          type:
+          - string
+          - 'null'
+        county:
+          maxLength: 200
+          type:
+          - string
+          - 'null'
+        state:
+          maxLength: 50
+          type:
+          - string
+          - 'null'
+        postcode:
+          maxLength: 10
+          type:
+          - string
+          - 'null'
+        country:
+          maxLength: 200
+          type:
+          - string
+          - 'null'
+        bedrooms:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        receptions:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        bathrooms:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        garage:
+          $ref: '#/components/schemas/Purplebricks.Property.Contract.Enums.Garage'
+        parking:
+          $ref: '#/components/schemas/Purplebricks.Property.Contract.Enums.Parking'
+        garden:
+          $ref: '#/components/schemas/Purplebricks.Property.Contract.Enums.Garden'
+        doubleGlazing:
+          $ref: '#/components/schemas/Purplebricks.Property.Contract.Enums.Glazing'
+        centralHeating:
+          $ref: '#/components/schemas/Purplebricks.Property.Contract.Enums.Heating'
+        tenure:
+          $ref: '#/components/schemas/Purplebricks.Property.Contract.Enums.Tenure'
+        lease:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        propertyToLet:
+          type: boolean
+        isPbEmployee:
+          type: boolean
+        isDiy:
+          type: boolean
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        locationGroupId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.VoucherAddOnType:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        voucherId:
+          type: integer
+          format: int32
+        addOnId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.OwnerViewModel:
+      required:
+      - forename
+      - surname
+      type: object
+      properties:
+        id:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        title:
+          maxLength: 50
+          type:
+          - string
+          - 'null'
+        forename:
+          maxLength: 50
+          type: string
+        middlename:
+          maxLength: 50
+          type:
+          - string
+          - 'null'
+        surname:
+          maxLength: 50
+          type: string
+        number:
+          maxLength: 200
+          type:
+          - string
+          - 'null'
+        street:
+          maxLength: 200
+          type:
+          - string
+          - 'null'
+        town:
+          maxLength: 200
+          type:
+          - string
+          - 'null'
+        county:
+          maxLength: 200
+          type:
+          - string
+          - 'null'
+        postcode:
+          maxLength: 10
+          type:
+          - string
+          - 'null'
+        dob:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        email:
+          maxLength: 254
+          type:
+          - string
+          - 'null'
+          format: email
+        contactNumber:
+          maxLength: 20
+          type:
+          - string
+          - 'null'
+        isPbEmployee:
+          type: boolean
+        idChecks:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.OwnerIdCheckViewModel'
+        sellerOwnership:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.SellerOwnership'
+        sellerOwnershipText:
+          type:
+          - string
+          - 'null'
+        metInPerson:
+          type:
+          - boolean
+          - 'null'
+        isLandlord:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.IdCheck:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        type:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.IdUploadType'
+        state:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.IdStatus'
+        active:
+          type: boolean
+        uploadFileType:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.IdUploadFileType'
+        fileName:
+          type:
+          - string
+          - 'null'
+        fileUrl:
+          type:
+          - string
+          - 'null'
+        createdDate:
+          type: string
+          format: date-time
+        propertyId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        additionalOwnerId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        additionalOwner:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.AdditionalOwner'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.Garden:
+      enum:
+      - None
+      - Garden
+      - PrivateGarden
+      type: string
+    Purplebricks.Property.Domain.Entities.PropertyListingHistory:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        datePublished:
+          type: string
+          format: date-time
+        dateRemoved:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        reasonRemoved:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.PropertyListingRemovalReason'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.Feedback:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        booking:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.BookingDiary'
+        userId:
+          type: integer
+          format: int32
+        user:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PurpleBricksUser'
+        presentation:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        suitability:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        price:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        comments:
+          type:
+          - string
+          - 'null'
+        declinedToLeaveFeedback:
+          type: boolean
+        isRead:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.TaxBand:
+      enum:
+      - A
+      - B
+      - C
+      - D
+      - E
+      - F
+      - G
+      - H
+      - I
+      - TBC
+      - Exempt
+      type: string
+    Purplebricks.Property.Domain.Model.PropertyTrackModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        fullName:
+          type:
+          - string
+          - 'null'
+        trackingUserId:
+          type: integer
+          format: int32
+        dateTracked:
+          type: string
+          format: date-time
+        notificationOfInterest:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.ShoppingCartItem:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        quantity:
+          type: integer
+          format: int32
+        value:
+          type: number
+          format: double
+        netValue:
+          type: number
+          format: double
+        shoppingCartId:
+          type: integer
+          format: int32
+        shoppingCart:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.ShoppingCart'
+        addOnId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        addOn:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.AddOn'
+        title:
+          type:
+          - string
+          - 'null'
+        isVatExcluded:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.CustomerAdditionalData:
+      type: object
+      properties:
+        customerId:
+          type: integer
+          format: int32
+        customer:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Customer'
+        propertyToSell:
+          type:
+          - boolean
+          - 'null'
+        propertyToLet:
+          type:
+          - boolean
+          - 'null'
+        sellStatusUpdatedByUserId:
+          type: integer
+          format: int32
+        sellStatusUpdatedOn:
+          type: string
+          format: date-time
+        letStatusUpdatedByUserId:
+          type: integer
+          format: int32
+        letStatusUpdatedOn:
+          type: string
+          format: date-time
+        metInPerson:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.PurplebricksPlus:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        createdDate:
+          type: string
+          format: date-time
+        dateClaimed:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        claimedByUserId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        isActive:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.ShoppingCart:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        total:
+          type: number
+          format: double
+        vatRate:
+          type: number
+          format: double
+        vatTotal:
+          type: number
+          format: double
+        voucherDiscount:
+          type: number
+          format: double
+        propertyId:
+          type: integer
+          format: int32
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        shoppingCartItems:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.ShoppingCartItem'
+        shoppingCartVoucher:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.ShoppingCartVoucher'
+        userId:
+          type: integer
+          format: int32
+        customer:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Customer'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.AddOnType:
+      enum:
+      - PropertyListing
+      - InitialForSaleBoard
+      - AccompaniedViewings
+      - Epc
+      - InitialForRentBoard
+      - PremiumListing
+      - NegotiationService
+      - ProfessionalPhotos
+      - VirtualTours
+      - PropertyPresentation
+      - PremiumSalesParticulars
+      - DiyListing
+      - AdditionalForSaleBoard
+      - AdditionalForRentBoard
+      - StandardReference
+      - DetailedReference
+      - Guarantor
+      - TenancyAgreement
+      - Inventory1To3Rooms
+      - InventoryCheckIn
+      - InventoryCheckInCheckOut
+      - Inventory4PlusRooms
+      - AdditionalStandardReference
+      - StudentReference
+      - HomeReport
+      - PurplebricksPlusListing
+      - Auction
+      - AuctionPropertyListing
+      - AccompaniedViewingsFree
+      - DomainAuPriorityListing
+      - RealEstateAuFeatureListing
+      - RealEstateAuHighlightListing
+      - DomainAuPremiumListing
+      - DomainAuPremiumListing6Week
+      - DomainAuPremiumListing3Week
+      - DomainAuPriorityListing6Week
+      - AuctionUpgrade
+      - UnlockFixedLawyer
+      - RightMoveFeaturedProperty
+      - RightMoveFeaturedPremiumBundle
+      - DomainAuPlatinumListing6Week
+      - DomainAuPlatinumListing10Week
+      - DomainAuPlatinumListing14Week
+      - DomainAuPlatinumListing90Day
+      - DomainAuPremiumListing90Day
+      - DomainAuPremiumListing45Day
+      - REAAuHighlightListing45
+      - REAAuPremiereListing45
+      - REAAuPremiereDiscountListing45
+      - ProfessionalFloorplan
+      - PurplebricksPremierListing
+      - PurplebricksFeaturedProperty
+      - HoldingDeposit
+      - HomeReportRefresh
+      - AdvancedConveyancingServices
+      - InitialMarketingFee
+      - Interactive3DTour
+      - MoneyBackGuarantee
+      type: string
+    Purplebricks.Property.Business.ViewModels.OwnerIdCheckViewModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        type:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.IdUploadType'
+        state:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.IdStatus'
+        active:
+          type:
+          - boolean
+          - 'null'
+        fileType:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.IdUploadFileType'
+        fileName:
+          maxLength: 100
+          type:
+          - string
+          - 'null'
+        downloadFileName:
+          maxLength: 256
+          type:
+          - string
+          - 'null'
+        createdDate:
+          type: string
+          format: date-time
+        complianceDocumentType:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.RegulatoryCertificateType:
+      enum:
+      - Epc
+      - Hmo
+      - HomeReport
+      type: string
+    Purplebricks.Property.Contract.Enums.Parking:
+      enum:
+      - None
+      - Allocated
+      - Communal
+      - Covered
+      - Driveway
+      - Gated
+      - OffStreet
+      - OnStreet
+      type: string
+    Purplebricks.Property.Domain.Entities.PropertyMaster:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        address:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Address'
+        propertyListings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.Order:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        type:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.OrderType'
+        orderLines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.OrderLine'
+        addressId:
+          type: integer
+          format: int32
+        address:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Address'
+        userId:
+          type: integer
+          format: int32
+        status:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.OrderStatus'
+        createdDate:
+          type: string
+          format: date-time
+        paymentAmount:
+          type: number
+          format: double
+        payAtSettlementTotal:
+          type: number
+          format: double
+        propertyId:
+          type: integer
+          format: int32
+        paymentTransactions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PaymentTransaction'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.AssociationFeeFrequency:
+      enum:
+      - Weekly
+      - Monthly
+      - Quarterly
+      - Annually
+      - Biannually
+      type: string
+    Purplebricks.Property.Domain.Enums.WithdrawPropertyReason:
+      enum:
+      - NoLongerSelling
+      - NoLongerLetting
+      - MarketingBreak
+      - SoldSTC_OtherAgent
+      - SoldSTC_PrivateSale
+      - LetSTC_OtherAgent
+      - LetSTC_PrivateSale
+      - SoldWithPurplebricks
+      - LetWithPurplebricks
+      type: string
+    Purplebricks.Property.Domain.Entities.PropertyAttributeDescriptionAmendment:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        descriptionAmendment:
+          maxLength: 4000
+          type:
+          - string
+          - 'null'
+        status:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.AmendmentStatus'
+        propertyAttributeId:
+          type: integer
+          format: int32
+        propertyAttribute:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyAttribute'
+        createdDate:
+          type: string
+          format: date-time
+        createdBy:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.User:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int32
+        surname:
+          type:
+          - string
+          - 'null'
+        forename:
+          type:
+          - string
+          - 'null'
+        publicUserId:
+          type: string
+          format: uuid
+        title:
+          maxLength: 10
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        fullName:
+          type:
+          - string
+          - 'null'
+        active:
+          type: boolean
+        password:
+          type:
+          - string
+          - 'null'
+        registrationComplete:
+          type: boolean
+        emailConfirmationToken:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.EmailConfirmationToken'
+        userDiscriminator:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.UserDiscriminator'
+        dateOfBirth:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        eventsForMe:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.HistoryEvent'
+        createdEvents:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.HistoryEvent'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.OfferTenancyStatus:
+      enum:
+      - ConfirmGas
+      - AgreeMoveInDate
+      - TenantAgreeMoveInDate
+      - LandlordAgreeMoveInDate
+      - InitialReferencing
+      - ReferencingOrdered
+      - ReferencingApplicationPrepared
+      - ReferencingInProgress
+      - ReferencingGreen
+      - ReferencingBlue
+      - ReferencingRedDeclined
+      - ReferencingRedDelayed
+      - InitialGuarantor
+      - GuarantorOrdered
+      - GuarantorApplicationPrepared
+      - GuarantorInProgress
+      - GuarantorGreen
+      - GuarantorRedDeclined
+      - GuarantorRedDelayed
+      - TenancyUpgrades
+      - WaitingOnTenantsContribution
+      - ConfirmTenancyAgreement
+      - FinaliseTenancyAgreement
+      - Complete
+      type: string
+    Purplebricks.Property.Domain.Entities.MarketingPriceStatus:
+      enum:
+      - Unknown
+      - InReview
+      - Approved
+      - Rejected
+      type: string
+    Purplebricks.Property.Domain.Enums.RegulatoryCertificateStatus:
+      enum:
+      - NotSet
+      - Set
+      - UrlOrRrnProvided
+      - Ordered
+      - Uploaded
+      - Validated
+      - Processed
+      type: string
+    Purplebricks.Property.Domain.Entities.Property:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        expertId:
+          type: integer
+          format: int32
+        expert:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.LocalPropertyExpert'
+        userId:
+          type: integer
+          format: int32
+        customer:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Customer'
+        toLet:
+          type: boolean
+        propertyAttributes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyAttribute'
+        negotiationExpertId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        accountManagerExpertId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        salesProgressorExpertId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        closingDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        listingId:
+          maxLength: 20
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        contractsExchangedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        withdrawPropertyReason:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WithdrawPropertyReason'
+        addressId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        address:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Address'
+        locationGroupId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        locationGroup:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.LocationGroup'
+        locationOwnerExpertId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        lastActionCompleted:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WorkflowStepType'
+        floorPlan:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.FloorPlan'
+        regulatoryCertificate:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.RegulatoryCertificate'
+        titleDeed:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyTitleDeed'
+        propertyTenancy:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyTenancy'
+        propertyMasterId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        propertyMaster:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyMaster'
+        imageDetails:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.ImageDetail'
+        propertyActions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyAction'
+        idChecks:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.IdCheck'
+        additionalOwners:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.AdditionalOwner'
+        hasAccompaniedViewing:
+          type: boolean
+        orders:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Order'
+        accompaniedViewingExpertId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        accompaniedViewingExpert:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.LocalPropertyExpert'
+        approveListingCurrentStep:
+          type: integer
+          format: int32
+        bedrooms:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        receptions:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        bathrooms:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        carSpaces:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        tenure:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Tenure'
+        garden:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Garden'
+        parking:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Parking'
+        garage:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Garage'
+        doubleGlazing:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Glazing'
+        centralHeating:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Heating'
+        priceQualifier:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.PriceQualifier'
+        instructionSource:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.InstructionSourceType'
+        isPbEmployee:
+          type: boolean
+        isDIY:
+          type: boolean
+        isInstantInstruct:
+          type: boolean
+        marketPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        createListingCurrentStep:
+          type: integer
+          format: int32
+        currentValuation:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Valuation'
+        minSearchPrice:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        maxSearchPrice:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        minAdvertPrice:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        maxAdvertPrice:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        occupied:
+          type:
+          - boolean
+          - 'null'
+        showSoldPriceOnListing:
+          type: boolean
+        createdDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        priceText:
+          type:
+          - string
+          - 'null'
+        type:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        style:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        isOpenDayAvailable:
+          type: boolean
+        hasDeferredPayment:
+          type: boolean
+        ownershipStatus:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.SellerOwnership'
+        scheduledMarketingDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        publishDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        auctionDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        timeZone:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.IanaTimeZone'
+        methodOfSale:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.MethodOfSale'
+        comingSoon:
+          type: boolean
+        shoppingCarts:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.ShoppingCart'
+        propertyBoardProvider:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyBoardProvider'
+        bookings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.BookingDiary'
+        offers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Offer'
+        propertyContract:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyContract'
+        isCompliant:
+          type: boolean
+        propertyVieweds:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyViewed'
+        rightmoveAdvertPerformances:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.RightmoveAdvertPerformance'
+        portalEnquiries:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PortalEnquiry'
+        propertySpecifics:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertySpecifics'
+        lease:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        reviewAdvertStep:
+          type: integer
+          format: int32
+        newHome:
+          type:
+          - boolean
+          - 'null'
+        purplebricksPlus:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PurplebricksPlus'
+        addressDisplay:
+          type:
+          - boolean
+          - 'null'
+        streetViewData:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.StreetViewData'
+        domesticId:
+          type:
+          - string
+          - 'null'
+        strikePropertyReference:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        propertyBoardAction:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyBoardAction'
+        propertyCompliance:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyCompliance'
+        listingHistory:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyListingHistory'
+        isRelistRequestEnabled:
+          type: boolean
+          default: true
+        isArchived:
+          type: boolean
+        pbProtectApplicable:
+          type:
+          - boolean
+          - 'null'
+        marketPriceDetail:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.MarketPriceDetail'
+        tenureDetails:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyTenureDetails'
+        isWithdrawRequested:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.LocalPropertyExpert:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int32
+        surname:
+          type:
+          - string
+          - 'null'
+        forename:
+          type:
+          - string
+          - 'null'
+        publicUserId:
+          type: string
+          format: uuid
+        title:
+          maxLength: 10
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        fullName:
+          type:
+          - string
+          - 'null'
+        active:
+          type: boolean
+        password:
+          type:
+          - string
+          - 'null'
+        registrationComplete:
+          type: boolean
+        emailConfirmationToken:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.EmailConfirmationToken'
+        userDiscriminator:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.UserDiscriminator'
+        dateOfBirth:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        eventsForMe:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.HistoryEvent'
+        createdEvents:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.HistoryEvent'
+        phone:
+          type:
+          - string
+          - 'null'
+        appointmentsMadeBy:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.BookingDiary'
+        appointmentsMadeWith:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.BookingDiary'
+        addresses:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Address'
+        agentPhotoFilename:
+          type:
+          - string
+          - 'null'
+        agentPhotoStandardRes:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Model.HistoryEventModel:
+      type: object
+      properties:
+        propertyId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        eventId:
+          type: integer
+          format: int32
+        eventType:
+          type:
+          - string
+          - 'null'
+        actionedUser:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        actionedUserName:
+          type:
+          - string
+          - 'null'
+        eventDate:
+          type: string
+          format: date-time
+        body:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.OfferTenancy:
+      type: object
+      properties:
+        offerId:
+          type: integer
+          format: int32
+        moveInDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        status:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.OfferTenancyStatus'
+        offer:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Offer'
+        deposit:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        term:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        breakClause:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.PaymentMethod:
+      enum:
+      - Card
+      - Pay4Later
+      - RateSetter
+      - CommBankCard
+      - RealexCard
+      - PurplebricksDeferredPayment
+      - Duologi
+      - GlobalPayDeferredPayment
+      - BraintreeCard
+      - PayPal
+      - PayPalCredit
+      type: string
+    Purplebricks.Property.Domain.Entities.BuyerAdditionalData:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        buyerId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        moveTimeframe:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        timeOnMarket:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        propertyToSell:
+          type:
+          - boolean
+          - 'null'
+        saleProgression:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.SaleProgressOption'
+        mortgageRequired:
+          type:
+          - boolean
+          - 'null'
+        mortgageStatus:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.MortgageAgreementStatus'
+        viewingPurpose:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.ViewingPurpose'
+        hasPropertyPortfolio:
+          type:
+          - boolean
+          - 'null'
+        buyer:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Customer'
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        isInChain:
+          type:
+          - boolean
+          - 'null'
+        chainTimeFrameAgreed:
+          type:
+          - boolean
+          - 'null'
+        cashSource:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.CashSource'
+        isPbConnected:
+          type:
+          - boolean
+          - 'null'
+        investmentConsented:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.Creatio.CreatioPropertyNotesViewModel:
+      type: object
+      properties:
+        propertyNotes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.PropertyNote'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.OrderLine:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        addonId:
+          type: integer
+          format: int32
+        description:
+          type:
+          - string
+          - 'null'
+        unitPrice:
+          type: number
+          format: double
+        quantity:
+          type: integer
+          format: int32
+        active:
+          type: boolean
+        addOnReferenceId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+      additionalProperties: false
+    Purplebricks.Property.Business.InputModels.ContactRequestInputModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        fullName:
+          type:
+          - string
+          - 'null'
+        phone:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.OrderType:
+      enum:
+      - Instruct
+      - RegulatoryCertificate
+      - OrderBoard
+      - Referencing
+      - Guarantor
+      type: string
+    Purplebricks.Property.Domain.Entities.PropertyAttribute:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        title:
+          type:
+          - string
+          - 'null'
+        isStarPoint:
+          type: boolean
+        description:
+          type:
+          - string
+          - 'null'
+        expertProvidedDescription:
+          type:
+          - string
+          - 'null'
+        ordinalPosition:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        approved:
+          type:
+          - boolean
+          - 'null'
+        feedback:
+          type:
+          - string
+          - 'null'
+        finalFeedback:
+          type:
+          - string
+          - 'null'
+        isSuggested:
+          type: boolean
+        isComplete:
+          type: boolean
+        amendments:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyAttributeDescriptionAmendment'
+        isRemovable:
+          type: boolean
+          default: true
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.LocationGroupAddOnPrice:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        locationGroupId:
+          type: integer
+          format: int32
+        locationGroup:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.LocationGroup'
+        addOnPrice:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.AddOnPrice'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Model.UserPropertyModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        address:
+          type:
+          - string
+          - 'null'
+        lastActionCompleted:
+          type:
+          - string
+          - 'null'
+        propertyActions:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyAction'
+        lpe:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Model.ExpertModel'
+        avLpe:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Model.ExpertModel'
+        marketPrice:
+          type:
+          - number
+          - 'null'
+          format: double
+        listedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        saleOrLet:
+          type:
+          - string
+          - 'null'
+        valuationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        scheduledMarketingDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.HomeOwnerAssociationViewModel:
+      type: object
+      properties:
+        associationName:
+          type:
+          - string
+          - 'null'
+        associationFee:
+          type:
+          - number
+          - 'null'
+          format: double
+        associationFeeFrequency:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.AssociationFeeFrequency'
+        homeOwnerAssociation:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.LocationGroupSalesAddOnAvailabilityViewModel:
+      type: object
+      properties:
+        canSelectPurplebricksPlus:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.Creatio.Address:
+      type: object
+      properties:
+        line1:
+          type:
+          - string
+          - 'null'
+        line2:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.LettingTerms:
+      enum:
+      - SixMonths
+      - OneYearOrMore
+      type: string
+    Purplebricks.Property.Domain.Enums.IdStatus:
+      enum:
+      - Pass
+      - Fail
+      - Refer
+      type: string
+    Purplebricks.Property.Domain.Entities.OfferBuyer:
+      required:
+      - fullName
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        offerId:
+          type: integer
+          format: int32
+        offer:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Offer'
+        userId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        customer:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Customer'
+        fullName:
+          maxLength: 100
+          minLength: 0
+          type: string
+        email:
+          maxLength: 100
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        phone:
+          maxLength: 20
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        addressId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        address:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Address'
+        isMainBuyer:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.PropertyViewed:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        userId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        dateViewed:
+          type: string
+          format: date-time
+        customer:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Customer'
+      additionalProperties: false
+    Purplebricks.Property.Contract.Enums.Heating:
+      enum:
+      - None
+      - AirConditioning
+      - Central
+      - Electric
+      - GasCentral
+      - Oil
+      - Solar
+      - UnderFloor
+      type: string
+    Purplebricks.Property.Contract.Enums.Garage:
+      enum:
+      - OneCar
+      - TwoOrMoreCars
+      - None
+      type: string
+    Purplebricks.Property.Domain.Entities.PropertyBoardProvider:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        boardProvider:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.BoardProviderType'
+        currentJobType:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        processStatus:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.BoardProcessingStatus'
+        externalPropertyReference:
+          type:
+          - string
+          - 'null'
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.PortalEnquiry:
+      required:
+      - name
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        enquiryDate:
+          type: string
+          format: date-time
+        portal:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.PortalType'
+        name:
+          maxLength: 200
+          minLength: 0
+          type: string
+        phone:
+          maxLength: 200
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        hasPropertyText:
+          maxLength: 200
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        wouldLikeValuationText:
+          maxLength: 200
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        email:
+          maxLength: 200
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        address:
+          type:
+          - string
+          - 'null'
+        comments:
+          type:
+          - string
+          - 'null'
+        propertyToSell:
+          type:
+          - boolean
+          - 'null'
+        saleProgression:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.SaleProgressOption'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.AddOn:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        description:
+          type:
+          - string
+          - 'null'
+        type:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.AddOnType'
+        zone:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.UserType'
+        active:
+          type: boolean
+        addOnPrices:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.AddOnPrice'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.PropertyCompliance:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        status:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.ComplianceStatus'
+        updatedByUserId:
+          type: integer
+          format: int32
+        updatedDateTime:
+          type: string
+          format: date-time
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.RightmoveAdvertPerformance:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        dateViewed:
+          type: string
+          format: date-time
+        summaryViews:
+          type: integer
+          format: int32
+        detailedViews:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.LocationGroup:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        regionType:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.RegionType'
+        addOnPrices:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.LocationGroupAddOnPrice'
+        groupType:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.ExpertType'
+        name:
+          type:
+          - string
+          - 'null'
+        expertId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.EmploymentStatus:
+      enum:
+      - Employed
+      - SelfEmployed
+      - Retired
+      - Student
+      - DSS
+      - Unemployed
+      type: string
+    Purplebricks.Property.Domain.Entities.PropertyTenancy:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        terms:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.LettingTerms'
+        availableFrom:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        deposit:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Deposit'
+        additionalDeposit:
+          type: integer
+          format: int32
+        furnished:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Furnished'
+        taxBand:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.TaxBand'
+        dhsPermitted:
+          type: boolean
+        petsPermitted:
+          type: boolean
+        otherPets:
+          type:
+          - string
+          - 'null'
+        smokersPermitted:
+          type: boolean
+        dhsBlocked:
+          type:
+          - boolean
+          - 'null'
+        petsBlocked:
+          type:
+          - boolean
+          - 'null'
+        smokersBlocked:
+          type:
+          - boolean
+          - 'null'
+        rentFrequency:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.RentFrequency'
+        gasCertificateRequired:
+          type: boolean
+        gasCertificateExpiry:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        rentReviewDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        tenancyStartDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        rentDueDay:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        studentLet:
+          type: boolean
+        shared:
+          type: boolean
+        lettingServiceLevel:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.LettingServiceLevel'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.Parking:
+      enum:
+      - None
+      - Allocated
+      - Communal
+      - Covered
+      - Driveway
+      - Gated
+      - OffStreet
+      - OnStreet
+      type: string
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Property.Domain.Enums.Deposit:
+      enum:
+      - OneMonth
+      - OneAndHalfMonths
+      - TwoMonths
+      type: string
+    Purplebricks.Property.Contract.RelistPropertyRequest:
+      required:
+      - propertyId
+      - userId
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        userId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.HistoryEvent:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        eventType:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.HistoryEventType'
+        createUserId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        createPublicUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        userId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        publicUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        propertyId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        listingId:
+          maxLength: 10
+          type:
+          - string
+          - 'null'
+        when:
+          type: string
+          format: date-time
+        action:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.HistoryEventAction'
+        subject:
+          type:
+          - string
+          - 'null'
+        body:
+          type:
+          - string
+          - 'null'
+        linkLabel:
+          type:
+          - string
+          - 'null'
+        linkLabel2:
+          type:
+          - string
+          - 'null'
+        link:
+          type:
+          - string
+          - 'null'
+        link2:
+          type:
+          - string
+          - 'null'
+        isPinned:
+          type: boolean
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        createdByUser:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.User'
+        forUser:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.User'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.TenantTerms:
+      enum:
+      - SixMonths
+      - TwelveMonths
+      - EighteenMonths
+      - TwentyFourMonths
+      type: string
+    Purplebricks.Property.Domain.Enums.LettingServiceLevel:
+      enum:
+      - TenantFind
+      - RentCollect
+      - FullyManaged
+      type: string
+    Purplebricks.Property.Business.InputModels.PropertyAddressRequest:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.EmailConfirmationToken:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        value:
+          type:
+          - string
+          - 'null'
+        user:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.User'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.PurpleBricksUser:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int32
+        surname:
+          type:
+          - string
+          - 'null'
+        forename:
+          type:
+          - string
+          - 'null'
+        publicUserId:
+          type: string
+          format: uuid
+        title:
+          maxLength: 10
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        fullName:
+          type:
+          - string
+          - 'null'
+        active:
+          type: boolean
+        password:
+          type:
+          - string
+          - 'null'
+        registrationComplete:
+          type: boolean
+        emailConfirmationToken:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.EmailConfirmationToken'
+        userDiscriminator:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.UserDiscriminator'
+        dateOfBirth:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        eventsForMe:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.HistoryEvent'
+        createdEvents:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.HistoryEvent'
+        phone:
+          type:
+          - string
+          - 'null'
+        appointmentsMadeBy:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.BookingDiary'
+        appointmentsMadeWith:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.BookingDiary'
+        addresses:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Address'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.Glazing:
+      enum:
+      - Full
+      - Part
+      - None
+      type: string
+    Purplebricks.Property.Domain.Enums.MortgageAgreementStatus:
+      enum:
+      - NotYetArranged
+      - AgreedInPrinciple
+      - PreQualified
+      - PreApproved
+      type: string
+    Purplebricks.Property.Contract.Enums.Garden:
+      enum:
+      - None
+      - Garden
+      - PrivateGarden
+      type: string
+    Purplebricks.Property.Business.ViewModels.ExpertContactViewModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type:
+          - string
+          - 'null'
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.RegulatoryCertificate:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        filename:
+          type:
+          - string
+          - 'null'
+        status:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.RegulatoryCertificateStatus'
+        uploadedFilename:
+          type:
+          - string
+          - 'null'
+        type:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.RegulatoryCertificateType'
+        energyEfficiencyCurrentScore:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        energyEfficiencyPotentialScore:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        environmentalImpactCurrentScore:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        environmentalImpactPotentialScore:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        certificateDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        rrn:
+          type:
+          - string
+          - 'null'
+        copyUrl:
+          type:
+          - string
+          - 'null'
+        automaticEPCHandling:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.Creatio.CreatioProperty:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        address:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.Address'
+        status:
+          type:
+          - string
+          - 'null'
+        isSales:
+          type: boolean
+        isLettings:
+          type: boolean
+        lpp:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioExpert'
+        accountManager:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioExpert'
+        negotiationExpert:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioExpert'
+        salesProgressor:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioExpert'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.UserType:
+      enum:
+      - Seller
+      - Landlord
+      - Buyer
+      - Tenant
+      - Admin
+      - Service
+      - CallCentre
+      - BuyerAgent
+      type: string
+    Purplebricks.Property.Domain.Entities.PropertyTenureDetails:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        taxBand:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.TaxBand'
+        councilTaxRateAnnualAmount:
+          type:
+          - number
+          - 'null'
+          format: double
+        serviceChargeAnnualAmount:
+          type:
+          - number
+          - 'null'
+          format: double
+        serviceChargeReviewPeriodYears:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        groundRentAnnualAmount:
+          type:
+          - number
+          - 'null'
+          format: double
+        groundRentReviewPeriodYears:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        leaseEndDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        sharedOwnershipPercentage:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        sharedOwnershipMonthlyPayment:
+          type:
+          - number
+          - 'null'
+          format: double
+        taxExemptReason:
+          type:
+          - string
+          - 'null'
+        ownershipReviewStatus:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.OwnershipReviewStatus'
+        ownershipReviewFeedback:
+          type:
+          - string
+          - 'null'
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.ShoppingCartVoucher:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        voucherId:
+          type: integer
+          format: int32
+        amount:
+          type: number
+          format: double
+        code:
+          type:
+          - string
+          - 'null'
+        voucherType:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.VoucherType'
+        voucher:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Voucher'
+        shoppingCartId:
+          type: integer
+          format: int32
+        shoppingCart:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.ShoppingCart'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.AdditionalOwner:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        title:
+          type:
+          - string
+          - 'null'
+        forename:
+          type:
+          - string
+          - 'null'
+        middlename:
+          type:
+          - string
+          - 'null'
+        surname:
+          type:
+          - string
+          - 'null'
+        addressId:
+          type: integer
+          format: int32
+        address:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Address'
+        dateOfBirth:
+          type: string
+          format: date-time
+        email:
+          type:
+          - string
+          - 'null'
+        phone:
+          type:
+          - string
+          - 'null'
+        idChecks:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.IdCheck'
+        metInPerson:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.PortalType:
+      enum:
+      - Rightmove
+      - Zoopla
+      - Globrix
+      - PrimeLocation
+      - PropertyPal
+      - PropertyNews
+      - S1Homes
+      - Domain
+      - RealEstate
+      - TradeMe
+      type: string
+    Purplebricks.Property.Business.ViewModels.PropertyDetailsViewModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        listingId:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+        line1:
+          type:
+          - string
+          - 'null'
+        line2:
+          type:
+          - string
+          - 'null'
+        unitNumber:
+          type:
+          - string
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+        propertyType:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        propertyTypeName:
+          type:
+          - string
+          - 'null'
+        propertyStyle:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        propertyStyleName:
+          type:
+          - string
+          - 'null'
+        bedrooms:
+          type: integer
+          format: int32
+        bathrooms:
+          type: integer
+          format: int32
+        receptions:
+          type: integer
+          format: int32
+        toilets:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        ensuites:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        parking:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Parking'
+        garage:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Garage'
+        doubleGlazing:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Glazing'
+        garden:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Garden'
+        centralHeating:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Heating'
+        tenure:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.Tenure'
+        rentFrequency:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.RentFrequency'
+        occupied:
+          type:
+          - boolean
+          - 'null'
+        lease:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        marketPrice:
+          type: number
+          format: double
+        valuation:
+          type:
+          - number
+          - 'null'
+          format: double
+        agentId:
+          type: integer
+          format: int32
+        toLet:
+          type: boolean
+        address:
+          type:
+          - string
+          - 'null'
+        updatedDate:
+          type:
+          - string
+          - 'null'
+        isPbEmployee:
+          type: boolean
+        reviewAdvertStep:
+          type: integer
+          format: int32
+        activeOffersCount:
+          type: integer
+          format: int32
+        lastActionCompleted:
+          type:
+          - string
+          - 'null'
+        lastActionCompletedId:
+          type: integer
+          format: int32
+        cbCreditReferenceId:
+          type:
+          - string
+          - 'null'
+        cbStatus:
+          type:
+          - string
+          - 'null'
+        cbStatusDate:
+          type:
+          - string
+          - 'null'
+        priceQualifier:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.PriceQualifier'
+        orderAmount:
+          type: number
+          format: double
+        instructionSource:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.InstructionSourceType'
+        buildingAreaSquareMetres:
+          type:
+          - number
+          - 'null'
+          format: double
+        landAreaValue:
+          type:
+          - number
+          - 'null'
+          format: double
+        landAreaUnit:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.LandAreaUnit'
+        ruralCategory:
+          type:
+          - string
+          - 'null'
+        latitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        longitude:
+          type:
+          - number
+          - 'null'
+          format: double
+        hasAccompaniedViewings:
+          type: boolean
+        isLive:
+          type: boolean
+        propertyTimeZone:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.IanaTimeZone'
+        publishDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        instructedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        newHome:
+          type:
+          - boolean
+          - 'null'
+        newConstruction:
+          type: boolean
+        waterFrontProperty:
+          type: boolean
+        yearbuilt:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        homeOwnerAssociation:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.HomeOwnerAssociationViewModel'
+        virtualTourURL:
+          type:
+          - string
+          - 'null'
+        ownerId:
+          type: integer
+          format: int32
+        accompaniedViewingExpertId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        addressId:
+          type: integer
+          format: int32
+        expertId:
+          type: integer
+          format: int32
+        accompaniedViewing:
+          type: boolean
+        isInstantInstruct:
+          type: boolean
+        primaryImageUrl:
+          type:
+          - string
+          - 'null'
+        comingSoon:
+          type: boolean
+        daysOnMarket:
+          type: integer
+          format: int32
+          readOnly: true
+        assistantId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        regionType:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.RegionType'
+        strikePropertyReference:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        lppName:
+          type:
+          - string
+          - 'null'
+        lppEmail:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        accountManagerName:
+          type:
+          - string
+          - 'null'
+        accountManagerEmail:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        negotiationExpertName:
+          type:
+          - string
+          - 'null'
+        negotiationExpertEmail:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        salesProgressorName:
+          type:
+          - string
+          - 'null'
+        salesProgressorEmail:
+          type:
+          - string
+          - 'null'
+          readOnly: true
+        ppsReferenceId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.PropertyTrack:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        userId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        dateTracked:
+          type: string
+          format: date-time
+        customer:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Customer'
+        notificationOfInterest:
+          type: boolean
+        dateOfInterest:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        emailAlertFrequency:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.EmailAlertFrequency'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.MethodOfSale:
+      enum:
+      - Auction
+      - PrivateTreaty
+      type: string
+    Purplebricks.Property.Domain.Entities.BlockedViewing:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        userId:
+          type: integer
+          format: int32
+        attemptMade:
+          type: string
+          format: date-time
+        blockedForSmoker:
+          type: boolean
+        blockedForPets:
+          type: boolean
+        blockedForDhs:
+          type: boolean
+        propertyTenancy:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyTenancy'
+        customer:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Customer'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.Voucher:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        forAddOns:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.VoucherAddOnType'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.Offer:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        customerId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        status:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.OfferStatus'
+        date:
+          type: string
+          format: date-time
+        amount:
+          type: number
+          format: double
+        updatedDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        offererLawyerId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        offereeLawyerId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        customer:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Customer'
+        offererLawyerReference:
+          type:
+          - string
+          - 'null'
+        offereeLawyerReference:
+          type:
+          - string
+          - 'null'
+        offerTenancy:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.OfferTenancy'
+        hasUnlockedEzieLawyer:
+          type: boolean
+        finalTerms:
+          maxLength: 3000
+          type:
+          - string
+          - 'null'
+        canBuyerEnterLawyerDetails:
+          type:
+          - boolean
+          - 'null'
+        expertNegotiating:
+          type: boolean
+        buyerAgentId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        buyerAgentPublicId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        offerMadeById:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        sendBaNotificationsToLpe:
+          type:
+          - boolean
+          - 'null'
+        offerBuyers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.OfferBuyer'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.Garage:
+      enum:
+      - OneCar
+      - TwoOrMoreCars
+      - None
+      type: string
+    Purplebricks.Property.Business.InputModels.SellingPriceInputModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        price:
+          type:
+          - number
+          - 'null'
+          format: double
+        priceQualifier:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.PriceQualifier'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.AddressType:
+      enum:
+      - Home
+      - Business
+      - Company
+      - Property
+      - Order
+      - Lead
+      - BookValuationAttempt
+      - Billing
+      type: string
+    Purplebricks.Property.Contract.Enums.Glazing:
+      enum:
+      - Full
+      - Part
+      - None
+      type: string
+    Purplebricks.Property.Domain.Enums.Heating:
+      enum:
+      - None
+      - AirConditioning
+      - Central
+      - Electric
+      - GasCentral
+      - Oil
+      - Solar
+      - UnderFloor
+      type: string
+    Purplebricks.Property.Business.InputModels.PropertyTrackedInput:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.MarketPriceDetail:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        userMarketPrice:
+          type: number
+          format: double
+        status:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.MarketingPriceStatus'
+        createdDateTimeUtc:
+          type: string
+          format: date-time
+        modifiedDateTimeUtc:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.OfferStatus:
+      enum:
+      - OfferMade
+      - Acceptable
+      - Declined
+      - CounterOfferMade
+      - WithdrawOffer
+      - Aborted
+      - OfferUpdated
+      - WithdrawAcceptance
+      - WithdrawCounterOffer
+      - Accepted
+      - ExpertNegotiating
+      - ExpertNotNegotiating
+      - RenegotiationOfferMade
+      - RenegotiationCounterOfferMade
+      - RenegotiationOfferWithdrawn
+      - RenegotiationCounterOfferWithdrawn
+      type: string
+    Purplebricks.Property.Business.InputModels.CreatePropertyInput:
+      type: object
+      properties:
+        addressId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.EmailAlertFrequency:
+      enum:
+      - None
+      - Instant
+      - Daily
+      - Weekly
+      type: string
+    Purplebricks.Property.Domain.Enums.Tenure:
+      enum:
+      - Freehold
+      - Leasehold
+      - ShareOfFreehold
+      - SharedOwnership
+      - Commonhold
+      type: string
+    Purplebricks.Property.Domain.Entities.Customer:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int32
+        surname:
+          type:
+          - string
+          - 'null'
+        forename:
+          type:
+          - string
+          - 'null'
+        publicUserId:
+          type: string
+          format: uuid
+        title:
+          maxLength: 10
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        fullName:
+          type:
+          - string
+          - 'null'
+        active:
+          type: boolean
+        password:
+          type:
+          - string
+          - 'null'
+        registrationComplete:
+          type: boolean
+        emailConfirmationToken:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.EmailConfirmationToken'
+        userDiscriminator:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.UserDiscriminator'
+        dateOfBirth:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        eventsForMe:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.HistoryEvent'
+        createdEvents:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.HistoryEvent'
+        phone:
+          type:
+          - string
+          - 'null'
+        appointmentsMadeBy:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.BookingDiary'
+        appointmentsMadeWith:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.BookingDiary'
+        addresses:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Address'
+        middlename:
+          maxLength: 50
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        properties:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        primaryZone:
+          type:
+          - string
+          - 'null'
+        buyerAdditionalData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.BuyerAdditionalData'
+        tenantAdditionalData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.TenantAdditionalData'
+        blockedViewings:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.BlockedViewing'
+        propertiesTracked:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.PropertyTrack'
+        additionalData:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.CustomerAdditionalData'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.PropertyAction:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        action:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WorkflowStepType'
+        actionDate:
+          type: string
+          format: date-time
+        userId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        impersonatorUserId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Model.ExpertModel:
+      type: object
+      properties:
+        expertId:
+          type: integer
+          format: int32
+        name:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        phone:
+          type:
+          - string
+          - 'null'
+        agentPhotoUrl:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.AddOnPrice:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        addOnId:
+          type: integer
+          format: int32
+        addOn:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.AddOn'
+        serviceCharge:
+          type: number
+          format: double
+        zeroValueText:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.CreatePropertyViewModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Entities.PropertySpecifics:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        buildingAreaSquareMetres:
+          type:
+          - number
+          - 'null'
+          format: double
+        landAreaValue:
+          type:
+          - number
+          - 'null'
+          format: double
+        landAreaUnit:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.LandAreaUnit'
+        ruralCategory:
+          maxLength: 50
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        toilets:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        ensuite:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        headline:
+          maxLength: 250
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        homeOwnerAssociation:
+          type: boolean
+        associationName:
+          maxLength: 100
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        associationFee:
+          type:
+          - number
+          - 'null'
+          format: double
+        associationFeeFrequency:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.AssociationFeeFrequency'
+        yearBuilt:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        newConstruction:
+          type: boolean
+        waterFrontProperty:
+          type: boolean
+        virtualTourURL:
+          maxLength: 200
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        virtualTourCaption:
+          maxLength: 20
+          minLength: 0
+          type:
+          - string
+          - 'null'
+        quarterBaths:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        threeQuarterBaths:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        halfBaths:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        garages:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        carPorts:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.SaleProgressOption:
+      enum:
+      - NotOnTheMarket
+      - OnTheMarket
+      - SSTC
+      - Pending
+      type: string
+    Purplebricks.Property.Domain.Entities.FloorPlan:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        title:
+          type:
+          - string
+          - 'null'
+        url:
+          type:
+          - string
+          - 'null'
+        approved:
+          type:
+          - boolean
+          - 'null'
+        feedback:
+          type:
+          - string
+          - 'null'
+        lastUpdated:
+          type: string
+          format: date-time
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Entities.Property'
+        createdDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.JobType:
+      enum:
+      - ErectForSale
+      - ErectSSTC
+      - ErectToLet
+      - ChangeToSSTC
+      - ChangeToSaleAgreed
+      - ChangeBackToForSale
+      - ChangeToLetBy
+      - ChangeBackToLet
+      - CollectBoard
+      - Delete
+      - ChangeToSold
+      - InstallKeySafe
+      - MiscellaneousTask
+      - ErectForSaleBoardAndKeySafe
+      - DeliverForSaleWindowBoard
+      type: string
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header
+x-refined-from:
+- purplebricks-branch-v1-openapi.yml
+- purplebricks-property-v1-openapi.yml

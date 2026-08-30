@@ -1,0 +1,143 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Property API 1.0 - Platform Property Questionnaire Form API
+  description: '### All Ex Uber Property related controllers are here.
+
+    ### [Purplebricks Property API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/property-api)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/property-api
+security:
+- Bearer: []
+tags:
+- name: PropertyQuestionnaireForm
+paths:
+  /v1/propertyquestionnaireform/{id}:
+    get:
+      tags:
+      - PropertyQuestionnaireForm
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.PropertyQuestionnaireFormModel'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.PropertyQuestionnaireFormModel'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.PropertyQuestionnaireFormModel'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+components:
+  schemas:
+    Purplebricks.Property.Domain.Models.PropertyQuestionnaireFormModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        fileUrl:
+          type:
+          - string
+          - 'null'
+        propertyId:
+          type: integer
+          format: int32
+        uploadedBy:
+          type:
+          - string
+          - 'null'
+        uploadedById:
+          type: integer
+          format: int32
+        uploaded:
+          type: string
+          format: date-time
+        deletedBy:
+          type:
+          - string
+          - 'null'
+        deletedById:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        deleted:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        filename:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

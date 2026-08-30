@@ -1,0 +1,415 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Account API 1 - Platform User API
+  description: '### All Ex Uber Account related controllers are here.
+
+    ### [Purplebricks Account API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/account-api)'
+  version: '1'
+servers:
+- url: https://api.purplebricks.co.uk/account-api
+security:
+- Bearer: []
+tags:
+- name: User
+paths:
+  /v1/user/isusernametaken:
+    get:
+      tags:
+      - User
+      parameters:
+      - name: Email
+        in: query
+        schema:
+          type: string
+          format: email
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: boolean
+            application/json:
+              schema:
+                type: boolean
+            text/json:
+              schema:
+                type: boolean
+  /v1/user/sendpasswordreset:
+    post:
+      tags:
+      - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Api.Models.EmailInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Api.Models.EmailInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Api.Models.EmailInputModel'
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/user/resendemailconfirmation:
+    post:
+      tags:
+      - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Api.Models.EmailInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Api.Models.EmailInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Api.Models.EmailInputModel'
+      responses:
+        '200':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '409':
+          description: Conflict
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/user/requestaccountdeletion:
+    post:
+      tags:
+      - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Api.Models.RequestDeletionInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Api.Models.RequestDeletionInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Api.Models.RequestDeletionInputModel'
+      responses:
+        '204':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/user/changeemail:
+    post:
+      tags:
+      - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Business.Models.InputModels.ChangeEmailInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Business.Models.InputModels.ChangeEmailInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Business.Models.InputModels.ChangeEmailInputModel'
+      responses:
+        '204':
+          description: Success
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v1/user:
+    post:
+      tags:
+      - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Common.Models.CreateUserInputModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Common.Models.CreateUserInputModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/Purplebricks.Account.Common.Models.CreateUserInputModel'
+      responses:
+        default:
+          description: Error
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Account.Common.Models.ViewModels.CreateCustomerViewModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Account.Common.Models.ViewModels.CreateCustomerViewModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Account.Common.Models.ViewModels.CreateCustomerViewModel'
+        '500':
+          description: Server Error
+components:
+  schemas:
+    Purplebricks.Account.Api.Models.RequestDeletionInputModel:
+      type: object
+      properties:
+        reasonNumber:
+          type: integer
+          format: int32
+        reasonText:
+          maxLength: 1000
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Account.Api.Models.EmailInputModel:
+      type: object
+      properties:
+        email:
+          type:
+          - string
+          - 'null'
+          format: email
+      additionalProperties: false
+    Purplebricks.Account.Common.Enums.AddressType:
+      enum:
+      - Home
+      - Business
+      - Company
+      - Property
+      - Order
+      - Lead
+      - BookValuationAttempt
+      - Billing
+      type: string
+    Purplebricks.Account.Common.Models.ViewModels.CreateCustomerViewModel:
+      type: object
+      properties:
+        newCustomerId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Account.Business.Models.InputModels.ChangeEmailInputModel:
+      required:
+      - newEmail
+      - oldEmail
+      type: object
+      properties:
+        newEmail:
+          maxLength: 254
+          type: string
+          format: email
+        oldEmail:
+          maxLength: 254
+          type: string
+          format: email
+        confirmPassword:
+          maxLength: 50
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Account.Common.Models.CreateUserInputModel:
+      type: object
+      properties:
+        title:
+          type:
+          - string
+          - 'null'
+        forename:
+          type:
+          - string
+          - 'null'
+        surname:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        source:
+          type:
+          - string
+          - 'null'
+        phone:
+          type:
+          - string
+          - 'null'
+        dateOfBirth:
+          type:
+          - string
+          - 'null'
+        address:
+          $ref: '#/components/schemas/Purplebricks.Account.Common.Models.CreateUserAddressInputModel'
+      additionalProperties: false
+    Purplebricks.Account.Common.Models.CreateUserAddressInputModel:
+      type: object
+      properties:
+        line1:
+          type:
+          - string
+          - 'null'
+        line2:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+        addressType:
+          $ref: '#/components/schemas/Purplebricks.Account.Common.Enums.AddressType'
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header

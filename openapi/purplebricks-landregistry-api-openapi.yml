@@ -1,0 +1,264 @@
+openapi: 3.2.0
+info:
+  title: Purplebricks Property API 1.0 - Platform Land Registry API
+  description: '### All Ex Uber Property related controllers are here.
+
+    ### [Purplebricks Property API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/property-api)'
+  version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/property-api
+security:
+- Bearer: []
+tags:
+- name: LandRegistry
+paths:
+  /v1/landregistry/transactions:
+    get:
+      tags:
+      - LandRegistry
+      summary: 'Gets property transaction records from the UK Land Registry.
+
+        This endpoint is publicly accessible without authentication.'
+      parameters:
+      - name: town
+        in: query
+        description: Town name to filter by (required, e.g., "WOKING", "WARRINGTON")
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        description: Number of records per page (optional, defaults to 25)
+        schema:
+          type: integer
+          format: int32
+          default: 25
+      - name: sort
+        in: query
+        description: Sort field and direction (optional, defaults to "-transactionDate")
+        schema:
+          type: string
+          default: -transactionDate
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LandRegistryResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LandRegistryResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LandRegistryResponse'
+        '400':
+          description: Bad Request
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '500':
+          description: Server Error
+components:
+  schemas:
+    Purplebricks.Property.Business.ViewModels.PropertyType:
+      type: object
+      properties:
+        _about:
+          type:
+          - string
+          - 'null'
+        prefLabel:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LabelValue'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.TransactionItem:
+      type: object
+      properties:
+        _about:
+          type:
+          - string
+          - 'null'
+        transactionId:
+          type:
+          - string
+          - 'null'
+        pricePaid:
+          type: number
+          format: double
+        transactionDate:
+          type:
+          - string
+          - 'null'
+        propertyAddress:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyAddress'
+        propertyType:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyType'
+        estateType:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.EstateType'
+        newBuild:
+          type: boolean
+        transactionCategory:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.TransactionCategory'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.LandRegistryResponse:
+      type: object
+      properties:
+        format:
+          type:
+          - string
+          - 'null'
+        version:
+          type:
+          - string
+          - 'null'
+        result:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LandRegistryResult'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.TransactionCategory:
+      type: object
+      properties:
+        _about:
+          type:
+          - string
+          - 'null'
+        prefLabel:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LabelValue'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.EstateType:
+      type: object
+      properties:
+        _about:
+          type:
+          - string
+          - 'null'
+        prefLabel:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LabelValue'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Property.Business.ViewModels.LabelValue:
+      type: object
+      properties:
+        _value:
+          type:
+          - string
+          - 'null'
+        _lang:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.PropertyAddress:
+      type: object
+      properties:
+        _about:
+          type:
+          - string
+          - 'null'
+        paon:
+          type:
+          - string
+          - 'null'
+        saon:
+          type:
+          - string
+          - 'null'
+        street:
+          type:
+          - string
+          - 'null'
+        locality:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        district:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.LandRegistryResult:
+      type: object
+      properties:
+        _about:
+          type:
+          - string
+          - 'null'
+        items:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.TransactionItem'
+        itemsPerPage:
+          type: integer
+          format: int32
+        page:
+          type: integer
+          format: int32
+        next:
+          type:
+          - string
+          - 'null'
+        startIndex:
+          type: integer
+          format: int32
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Authorization header using Bearer scheme
+      name: Authorization
+      in: header
