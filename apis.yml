@@ -482,6 +482,8 @@ apis:
   humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/property-api
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
@@ -1230,6 +1232,8 @@ apis:
   humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/property-api
   tags:
+  - Follow Up
+  tags_raw:
   - FollowUp
   properties:
   - type: OpenAPI
@@ -1298,6 +1302,8 @@ apis:
   humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/property-api
   tags:
+  - Go-To-Market
+  tags_raw:
   - GoToMarket
   properties:
   - type: OpenAPI
@@ -1639,6 +1645,8 @@ apis:
   humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/property-api
   tags:
+  - Land Registry
+  tags_raw:
   - LandRegistry
   properties:
   - type: OpenAPI
@@ -1707,6 +1715,8 @@ apis:
   humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/property-api
   tags:
+  - Lead Capture
+  tags_raw:
   - LeadCapture
   properties:
   - type: OpenAPI
@@ -1912,6 +1922,8 @@ apis:
   humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/property-api
   tags:
+  - Message
+  tags_raw:
   - Messages
   properties:
   - type: OpenAPI
@@ -2252,6 +2264,8 @@ apis:
   humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/property-api
   tags:
+  - Phone Verification
+  tags_raw:
   - PhoneVerification
   properties:
   - type: OpenAPI
@@ -2320,6 +2334,8 @@ apis:
   humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/property-api
   tags:
+  - Postcode
+  tags_raw:
   - PostCode
   properties:
   - type: OpenAPI
@@ -3614,6 +3630,8 @@ apis:
   humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/property-api
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
