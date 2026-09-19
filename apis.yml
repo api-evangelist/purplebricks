@@ -837,6 +837,8 @@ apis:
   humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/property-api
   tags:
+  - Dashboards
+  tags_raw:
   - Dashboard
   properties:
   - type: OpenAPI
@@ -3983,6 +3985,8 @@ apis:
   humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/property-api
   tags:
+  - Postcode
+  tags_raw:
   - Post Code
   properties:
   - type: OpenAPI
