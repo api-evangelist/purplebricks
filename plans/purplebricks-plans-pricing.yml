@@ -1,0 +1,67 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://www.purplebricks.co.uk/services/our-packages
+sources:
+- https://www.purplebricks.co.uk/services/our-packages
+provenance:
+  tool: planning/api-economics/harvest_pricing.py
+  run: 20260920T120546
+  grounding: every price_text was found verbatim in the fetched page text
+audience: consumer
+pricing_basis: tiered-subscription
+published: true
+note: 'Consumer estate agency fee page; fixed fee bands by property price (£200k or less / £201k–£300k
+  / Over £300k) with Pay Now and Pay Later options — only the £200k-or-less band''s figures are shown
+  in the text. Comparison calculator cites high street agent at 1.3% vs Purplebricks fixed fee 0.5%. T&Cs:
+  must use allocated conveyancer for ''Pay Later''.'
+plan_count: 7
+currency: GBP
+plans:
+- name: Pay Now (properties £200k or less)
+  price_text: £833 (+VAT)
+  price: 833
+  currency: GBP
+  period: one-time
+  unit: per property sale
+  included_quota: Viewings booked 24/7, professional photos & floor plan, offers made 24/7, 'For Sale'
+    board, dedicated sales progression, listing on Rightmove, Zoopla, OnTheMarket and Purplebricks, professional
+    valuation
+- name: Pay Later (properties up to and including £200,000)
+  price_text: £999
+  price: 999
+  currency: GBP
+  period: one-time
+  unit: total package cost, nothing to pay upfront, pay in 10 months
+  included_quota: Everything you need to SELL your home
+- name: 'Add-on: Assisted viewing'
+  price_text: Assisted viewing £499
+  price: 499
+  currency: GBP
+  period: one-time
+  unit: add-on
+- name: 'Add-on: EPC'
+  price_text: EPC £199
+  price: 199
+  currency: GBP
+  period: one-time
+  unit: add-on
+- name: 'Add-on: Home Report'
+  price_text: Home Report £varies
+  currency: GBP
+  period: one-time
+  unit: add-on
+- name: Featured Listing
+  price_text: Featured Listing £199
+  price: 199
+  currency: GBP
+  period: one-time
+  unit: listing upgrade (shown as Included)
+  included_quota: Appear at top of listing page & get 2x views
+- name: Premium Listing
+  price_text: Premium Listing £100
+  price: 100
+  currency: GBP
+  period: one-time
+  unit: listing upgrade (shown as Included)
+  included_quota: Better showcased for more views
