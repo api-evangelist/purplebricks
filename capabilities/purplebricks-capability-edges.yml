@@ -1,0 +1,68 @@
+slug: purplebricks
+provider: Purplebricks
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Real Estate
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 5
+edges:
+- tag: OpenDays
+  spec_file: purplebricks-opendays-api-openapi.yml
+  capability_id: BC-4960.50
+  capability_id_l1: BC-4960
+  capability_name: Showing & Open House Operations
+  confidence: 0.88
+  evidence: '"Returns the details of any upcoming open days for a property" / "any past open days for
+    a property"'
+  reason: Operations expose open-house (open day) events per property within a Viewings API — squarely
+    showing and open house operations for an estate agency.
+- tag: Appointments
+  spec_file: purplebricks-appointments-api-openapi.yml
+  capability_id: BC-4960.50
+  capability_id_l1: BC-4960
+  capability_name: Showing & Open House Operations
+  confidence: 0.85
+  evidence: POST /v1/appointments  Books a viewing appointment.; Purplebricks.Viewings.Business.Commands.CancelViewingCommand
+  reason: Operations book and cancel property viewing appointments for an estate agency, which is precisely
+    brokerage showing/appointment operations (BC-4960.50). Slight residual ambiguity with leasing prospect
+    handling for the lettings side, hence 0.85.
+- tag: Property
+  spec_file: purplebricks-property-api-openapi.yml
+  capability_id: BC-4960.30
+  capability_id_l1: BC-4960
+  capability_name: Listing Data & MLS Management
+  confidence: 0.75
+  evidence: POST /v1/property/create, POST /v1/property/relistproperty, PUT /v1/property/addpropertymediadata,
+    GET /v1/property/{propertyId}/rightmovebranch, /zooplabranch, /onthemarketbranch; enum PropertyListingRemovalReason
+  reason: Creates and relists properties, attaches marketing media and maps them to Rightmove/Zoopla/OnTheMarket
+    portal branches — listing data capture, media and portal syndication for an estate agency. Some operations
+    (marketingprice, owners) span other areas, hence not top confidence.
+- tag: AccessDetails
+  spec_file: purplebricks-accessdetails-api-openapi.yml
+  capability_id: BC-4960.50
+  capability_id_l1: BC-4960
+  capability_name: Showing & Open House Operations
+  confidence: 0.72
+  evidence: GET /v1/accessdetails/{propertyId}/revealkeysafecode; title 'Purplebricks.Viewings.Api'; schema
+    KeySafeViewingCriteria
+  reason: Estate agency viewings API managing how a property is accessed for viewings, including keysafe
+    code reveal and viewing criteria — physical access arrangements for showings by an agency/cooperating
+    viewer.
+- tag: Properties
+  spec_file: purplebricks-properties-api-openapi.yml
+  capability_id: BC-4960.50
+  capability_id_l1: BC-4960
+  capability_name: Showing & Open House Operations
+  confidence: 0.72
+  evidence: '"Returns the basic details of a property for which a viewing appointment can be booked against";
+    GET /v1/creatio/properties/{propertyId}/viewings; schemas ViewingDetail, BookViewingConfirmationViewModel'
+  reason: Within the Viewings API this tag serves property context for booking viewing appointments and
+    lists viewings — showing/appointment operations for the agency. Slight ambiguity as some schemas concern
+    property and tenancy data.
