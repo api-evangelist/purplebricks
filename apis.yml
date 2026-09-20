@@ -4050,6 +4050,8 @@ apis:
   - type: SwaggerUI
     url: https://api.purplebricks.co.uk/outlook-api/swagger/index.html
 common:
+- type: Plans
+  url: plans/purplebricks-plans-pricing.yml
 - type: CapabilityMap
   url: capabilities/purplebricks-capability-edges.yml
   name: Purplebricks Business Capability Map
