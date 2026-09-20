@@ -11,7 +11,7 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 5
+edge_count: 8
 edges:
 - tag: OpenDays
   spec_file: purplebricks-opendays-api-openapi.yml
@@ -33,6 +33,17 @@ edges:
   reason: Operations book and cancel property viewing appointments for an estate agency, which is precisely
     brokerage showing/appointment operations (BC-4960.50). Slight residual ambiguity with leasing prospect
     handling for the lettings side, hence 0.85.
+- tag: LeadCapture
+  spec_file: purplebricks-leadcapture-api-openapi.yml
+  capability_id: BC-410.30
+  capability_id_l1: BC-410
+  capability_name: Opportunity & Pipeline Management
+  confidence: 0.75
+  evidence: POST /v1/leadcapture with 'Purplebricks.Valuations.Contract.InputModels.LeadCaptureInputModel'
+  reason: Captures inbound prospect leads (from valuation requests) into the sales funnel, which is lead
+    lifecycle handling under Opportunity & Pipeline Management. Slight ambiguity with Demand Generation
+    keeps confidence below 0.8.
+  recovered_from: sweep-20260829T005356Z-edges.json
 - tag: Property
   spec_file: purplebricks-property-api-openapi.yml
   capability_id: BC-4960.30
@@ -66,3 +77,28 @@ edges:
   reason: Within the Viewings API this tag serves property context for booking viewing appointments and
     lists viewings — showing/appointment operations for the agency. Slight ambiguity as some schemas concern
     property and tenancy data.
+- tag: FollowUp
+  spec_file: purplebricks-followup-api-openapi.yml
+  capability_id: BC-410.30
+  capability_id_l1: BC-410
+  capability_name: Opportunity & Pipeline Management
+  confidence: 0.7
+  evidence: POST /v1/followup/updateleadtemp ... POST /v1/followup/reschedule ... GET /v1/followup/toaction
+    ... ValuationFollowUpOutcome
+  reason: 'Operations manage post-valuation follow-up activity: recording follow-up outcomes, rescheduling,
+    updating lead temperature and listing follow-ups to action. This is lead/opportunity progression in
+    the sales pipeline, matching Opportunity & Pipeline Management; ''lead temp'' and ''follow-up outcome''
+    are direct evidence.'
+  recovered_from: sweep-20260829T005356Z-edges.json
+- tag: User
+  spec_file: purplebricks-user-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: GET /v1/user/isusernametaken, POST /v1/user/sendpasswordreset, POST /v1/user/resendemailconfirmation,
+    POST /v1/user/requestaccountdeletion, POST /v1/user/changeemail
+  reason: Account creation, credential reset, email verification/change and account-deletion requests
+    are user identity and account lifecycle operations, i.e. Identity & Access Management. Some chance
+    the intent is customer master data (CreateCustomerViewModel), which keeps confidence moderate.
+  recovered_from: sweep-20260829T005356Z-edges.json
