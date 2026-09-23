@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Purplebricks.Lettings.Api 1 - Team Integrations Enquiries API
+  title: Purplebricks.Lettings.Api 1 - Team Integrations Enquiries…
   description: '### An Lettings Api project to validate the regional postcodes for Teclet
 
-    ### [Purplebricks.Lettings.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/lettings-api)'
+    ### Purplebricks.Lettings.Api Git Repository'
   version: '1'
 servers:
 - url: https://api.purplebricks.co.uk/lettings-api
@@ -59,6 +59,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: postV1EnquiriesValuation
+      x-operation-id-source: derived
   /v1/enquiries/viewing:
     post:
       tags:
@@ -106,6 +108,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: postV1EnquiriesViewing
+      x-operation-id-source: derived
   /v1/enquiries/offer:
     post:
       tags:
@@ -153,47 +157,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: postV1EnquiriesOffer
+      x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Lettings.Services.Models.StreetService.EnquiryModelEnquiryModelWithPropertyId:
-      required:
-      - emailAddress
-      - firstName
-      - lastName
-      - message
-      - propertyUrl
-      - telephoneNumber
-      type: object
-      properties:
-        firstName:
-          maxLength: 255
-          minLength: 1
-          type: string
-        lastName:
-          maxLength: 255
-          minLength: 1
-          type: string
-        emailAddress:
-          maxLength: 255
-          minLength: 1
-          type: string
-          format: email
-        telephoneNumber:
-          maxLength: 255
-          minLength: 1
-          type: string
-        message:
-          maxLength: 10000
-          minLength: 1
-          type: string
-        propertyUrl:
-          minLength: 1
-          type: string
-          format: uri
-        propertyId:
-          type: integer
-          format: int32
-      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -249,6 +216,45 @@ components:
           maxLength: 10000
           minLength: 1
           type: string
+      additionalProperties: false
+    Purplebricks.Lettings.Services.Models.StreetService.EnquiryModelEnquiryModelWithPropertyId:
+      required:
+      - emailAddress
+      - firstName
+      - lastName
+      - message
+      - propertyUrl
+      - telephoneNumber
+      type: object
+      properties:
+        firstName:
+          maxLength: 255
+          minLength: 1
+          type: string
+        lastName:
+          maxLength: 255
+          minLength: 1
+          type: string
+        emailAddress:
+          maxLength: 255
+          minLength: 1
+          type: string
+          format: email
+        telephoneNumber:
+          maxLength: 255
+          minLength: 1
+          type: string
+        message:
+          maxLength: 10000
+          minLength: 1
+          type: string
+        propertyUrl:
+          minLength: 1
+          type: string
+          format: uri
+        propertyId:
+          type: integer
+          format: int32
       additionalProperties: false
   securitySchemes:
     Bearer:

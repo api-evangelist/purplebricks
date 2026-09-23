@@ -3,7 +3,7 @@ info:
   title: Purplebricks Account API 1 - Platform Phone Verification API
   description: '### All Ex Uber Account related controllers are here.
 
-    ### [Purplebricks Account API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/account-api)'
+    ### Purplebricks Account API Git Repository'
   version: '1'
 servers:
 - url: https://api.purplebricks.co.uk/account-api
@@ -41,6 +41,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get phoneverification status
+      x-summary-source: derived
+      operationId: getV1PhoneverificationStatus
+      x-operation-id-source: derived
   /v1/phoneverification/send:
     post:
       tags:
@@ -109,6 +113,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create phoneverification send
+      x-summary-source: derived
+      operationId: postV1PhoneverificationSend
+      x-operation-id-source: derived
   /v1/phoneverification/manual-verify/{userId}:
     post:
       tags:
@@ -135,6 +143,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create phoneverification manual verify by user id
+      x-summary-source: derived
+      operationId: postV1PhoneverificationManualVerifyByUserId
+      x-operation-id-source: derived
   /v1/phoneverification/verify:
     post:
       tags:
@@ -177,24 +189,12 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create phoneverification verify
+      x-summary-source: derived
+      operationId: postV1PhoneverificationVerify
+      x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Account.Api.V1.Controllers.SendOtpRequest:
-      type: object
-      properties:
-        channel:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Account.Api.V1.Controllers.VerifyOtpRequest:
-      type: object
-      properties:
-        code:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -220,6 +220,22 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    Purplebricks.Account.Api.V1.Controllers.SendOtpRequest:
+      type: object
+      properties:
+        channel:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Account.Api.V1.Controllers.VerifyOtpRequest:
+      type: object
+      properties:
+        code:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     Purplebricks.Account.Api.V1.Controllers.PhoneVerificationStatusResponse:
       type: object
       properties:

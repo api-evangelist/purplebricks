@@ -3,7 +3,7 @@ info:
   title: Purplebricks Workflow API 1.0 - Platform Step API
   description: '### The new home for accessing the workflow service library
 
-    ### [Purplebricks Workflow API Git Repository](https://purplebricks@dev.azure.com/purplebricks/Purplebricks/_git/workflow-api)'
+    ### Purplebricks Workflow API Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/workflow
@@ -56,6 +56,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      summary: Get step canmove
+      x-summary-source: derived
+      operationId: getV1StepCanmove
+      x-operation-id-source: derived
   /v1/step/move:
     post:
       tags:
@@ -123,37 +127,12 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/WorkflowStepType'
+      summary: Create step move
+      x-summary-source: derived
+      operationId: postV1StepMove
+      x-operation-id-source: derived
 components:
   schemas:
-    MoveToStepRequest:
-      required:
-      - propertyId
-      - type
-      - userId
-      type: object
-      properties:
-        propertyId:
-          type: integer
-          format: int32
-        type:
-          $ref: '#/components/schemas/WorkflowStepType'
-        userId:
-          type: integer
-          format: int32
-        impersonationUserId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-      additionalProperties: false
-    MoveToStepResult:
-      type: object
-      properties:
-        success:
-          type: boolean
-        stepTypeMovedTo:
-          $ref: '#/components/schemas/WorkflowStepType'
-      additionalProperties: false
     WorkflowStepType:
       enum:
       - Create
@@ -203,6 +182,14 @@ components:
       - FakeValuation
       - Cancelled
       type: string
+    MoveToStepResult:
+      type: object
+      properties:
+        success:
+          type: boolean
+        stepTypeMovedTo:
+          $ref: '#/components/schemas/WorkflowStepType'
+      additionalProperties: false
     ProblemDetails:
       type: object
       properties:
@@ -228,6 +215,27 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    MoveToStepRequest:
+      required:
+      - propertyId
+      - type
+      - userId
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        type:
+          $ref: '#/components/schemas/WorkflowStepType'
+        userId:
+          type: integer
+          format: int32
+        impersonationUserId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

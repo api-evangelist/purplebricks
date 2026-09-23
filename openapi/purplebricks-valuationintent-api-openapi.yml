@@ -3,7 +3,7 @@ info:
   title: Purplebricks.Valuations.Api 1.0 - Core Valuation Intent API
   description: '### The new home for accessing the valuations service library
 
-    ### [Purplebricks.Valuations.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/valuations-api)'
+    ### Purplebricks.Valuations.Api Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/valuations-api
@@ -63,6 +63,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get valuationintent getredirecturl
+      x-summary-source: derived
+      operationId: getV1ValuationintentGetredirecturl
+      x-operation-id-source: derived
   /v1/valuationintent/shoulduseinstantvaluationflow:
     get:
       tags:
@@ -100,6 +104,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get valuationintent shoulduseinstantvaluationflow
+      x-summary-source: derived
+      operationId: getV1ValuationintentShoulduseinstantvaluationflow
+      x-operation-id-source: derived
   /v1/valuationintent/wasinstantvaluation:
     get:
       tags:
@@ -137,6 +145,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get valuationintent wasinstantvaluation
+      x-summary-source: derived
+      operationId: getV1ValuationintentWasinstantvaluation
+      x-operation-id-source: derived
   /v1/valuationintent/getpostdataharvestingredirect:
     get:
       tags:
@@ -174,6 +186,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get valuationintent getpostdataharvestingredirect
+      x-summary-source: derived
+      operationId: getV1ValuationintentGetpostdataharvestingredirect
+      x-operation-id-source: derived
   /v1/valuationintent/bookinguserdata:
     post:
       tags:
@@ -206,6 +222,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Create valuationintent bookinguserdata
+      x-summary-source: derived
+      operationId: postV1ValuationintentBookinguserdata
+      x-operation-id-source: derived
   /v1/valuationintent/requestvaluationavailability:
     post:
       tags:
@@ -238,47 +258,12 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Create valuationintent requestvaluationavailability
+      x-summary-source: derived
+      operationId: postV1ValuationintentRequestvaluationavailability
+      x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Valuations.Api.Models.GetPostDataHarvestingRedirectViewModel:
-      type: object
-      properties:
-        redirectUrl:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    Purplebricks.Valuations.Api.Models.WasInstantValuationViewModel:
-      type: object
-      properties:
-        wasInstantValuation:
-          type: boolean
-      additionalProperties: false
     Purplebricks.Valuations.Contract.InputModels.BookingUserDataInputModel:
       type: object
       properties:
@@ -323,10 +308,49 @@ components:
           - string
           - 'null'
       additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Valuations.Api.Models.GetPostDataHarvestingRedirectViewModel:
+      type: object
+      properties:
+        redirectUrl:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     Purplebricks.Valuations.Api.Models.IsInstantValuationViewModel:
       type: object
       properties:
         isInstantValuation:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Valuations.Api.Models.WasInstantValuationViewModel:
+      type: object
+      properties:
+        wasInstantValuation:
           type: boolean
       additionalProperties: false
   securitySchemes:

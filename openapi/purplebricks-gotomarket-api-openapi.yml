@@ -84,6 +84,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get gotomarket by property id progress
+      x-summary-source: derived
+      operationId: getV1GotomarketByPropertyIdProgress
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/gotomarket/{propertyId}/boardandkeysafepreference:
@@ -149,6 +153,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Create gotomarket by property id boardandkeysafepreference
+      x-summary-source: derived
+      operationId: postV1GotomarketByPropertyIdBoardandkeysafepreference
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/gotomarket/{propertyId}/propertytaxband:
@@ -214,6 +222,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Create gotomarket by property id propertytaxband
+      x-summary-source: derived
+      operationId: postV1GotomarketByPropertyIdPropertytaxband
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/gotomarket/{propertyId}/getimageuploaddetails:
@@ -296,6 +308,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get gotomarket by property id getimageuploaddetails
+      x-summary-source: derived
+      operationId: getV1GotomarketByPropertyIdGetimageuploaddetails
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/gotomarket/{propertyId}/saveimagedetails:
@@ -373,6 +389,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Create gotomarket by property id saveimagedetails
+      x-summary-source: derived
+      operationId: postV1GotomarketByPropertyIdSaveimagedetails
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/gotomarket/{propertyId}/marketprice:
@@ -427,6 +447,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get gotomarket by property id marketprice
+      x-summary-source: derived
+      operationId: getV1GotomarketByPropertyIdMarketprice
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/gotomarket/{propertyId}/marketprice/reject:
@@ -492,6 +516,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Create gotomarket by property id marketprice reject
+      x-summary-source: derived
+      operationId: postV1GotomarketByPropertyIdMarketpriceReject
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/gotomarket/{propertyId}/marketprice/accept:
@@ -546,6 +574,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Create gotomarket by property id marketprice accept
+      x-summary-source: derived
+      operationId: postV1GotomarketByPropertyIdMarketpriceAccept
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/gotomarket/{propertyId}/ownershipreview:
@@ -600,6 +632,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get gotomarket by property id ownershipreview
+      x-summary-source: derived
+      operationId: getV1GotomarketByPropertyIdOwnershipreview
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/gotomarket/{propertyId}/ownershipreview/accept:
@@ -654,6 +690,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Create gotomarket by property id ownershipreview accept
+      x-summary-source: derived
+      operationId: postV1GotomarketByPropertyIdOwnershipreviewAccept
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/gotomarket/{propertyId}/ownershipreview/reject:
@@ -719,6 +759,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Create gotomarket by property id ownershipreview reject
+      x-summary-source: derived
+      operationId: postV1GotomarketByPropertyIdOwnershipreviewReject
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/gotomarket/{propertyId}/floorplan:
@@ -773,6 +817,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get gotomarket by property id floorplan
+      x-summary-source: derived
+      operationId: getV1GotomarketByPropertyIdFloorplan
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/gotomarket/{propertyId}/propertydescription:
@@ -827,6 +875,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get gotomarket by property id propertydescription
+      x-summary-source: derived
+      operationId: getV1GotomarketByPropertyIdPropertydescription
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/gotomarket/{propertyId}/propertykeyfeatures:
@@ -881,6 +933,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get gotomarket by property id propertykeyfeatures
+      x-summary-source: derived
+      operationId: getV1GotomarketByPropertyIdPropertykeyfeatures
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/gotomarket/{propertyId}/approveall:
@@ -935,6 +991,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Create gotomarket by property id approveall
+      x-summary-source: derived
+      operationId: postV1GotomarketByPropertyIdApproveall
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/gotomarket/{propertyId}/advertsummary:
@@ -989,6 +1049,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get gotomarket by property id advertsummary
+      x-summary-source: derived
+      operationId: getV1GotomarketByPropertyIdAdvertsummary
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v2/gotomarket/{propertyId}/boardandkeysafepreference:
@@ -1054,10 +1118,30 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Create gotomarket by property id boardandkeysafepreference
+      x-summary-source: derived
+      operationId: postV2GotomarketByPropertyIdBoardandkeysafepreference
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
 components:
   schemas:
+    Purplebricks.Property.Business.ViewModels.RequirementStatus:
+      enum:
+      - Required
+      - Optional
+      - NotApplicable
+      type: string
+    Purplebricks.Property.Business.InputModels.SaveImageDetailsRequest:
+      type: object
+      properties:
+        images:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.ImageDetails'
+      additionalProperties: false
     Purplebricks.Property.Business.ViewModels.ImageUploadViewModel:
       type: object
       properties:
@@ -1067,33 +1151,6 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ImageUploadItem'
-      additionalProperties: false
-    Purplebricks.Property.Business.InputModels.TaxBandCreationRequest:
-      type: object
-      properties:
-        taxBand:
-          type:
-          - string
-          - 'null'
-        exemptReason:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Property.Business.InputModels.MarketPriceRejectionRequest:
-      type: object
-      properties:
-        userMarketPrice:
-          type: number
-          format: double
-      additionalProperties: false
-    Purplebricks.Property.Business.InputModels.OwnershipReviewRejectRequest:
-      type: object
-      properties:
-        feedback:
-          type:
-          - string
-          - 'null'
       additionalProperties: false
     Purplebricks.Property.Business.InputModels.BoardAndKeySafePreferenceRequest:
       type: object
@@ -1108,6 +1165,25 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.InputModels.ImageDetails:
+      type: object
+      properties:
+        url:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.InputModels.MarketPriceRejectionRequest:
+      type: object
+      properties:
+        userMarketPrice:
+          type: number
+          format: double
       additionalProperties: false
     Purplebricks.Property.Business.ViewModels.ImageUploadItem:
       type: object
@@ -1127,6 +1203,36 @@ components:
         requirement:
           $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.RequirementStatus'
         isCompleted:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Business.InputModels.TaxBandCreationRequest:
+      type: object
+      properties:
+        taxBand:
+          type:
+          - string
+          - 'null'
+        exemptReason:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.InputModels.OwnershipReviewRejectRequest:
+      type: object
+      properties:
+        feedback:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ProgressAdvertViewModel:
+      type: object
+      properties:
+        requirement:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.RequirementStatus'
+        isCompleted:
+          type: boolean
+        canReview:
           type: boolean
       additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
@@ -1154,12 +1260,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    Purplebricks.Property.Business.ViewModels.RequirementStatus:
-      enum:
-      - Required
-      - Optional
-      - NotApplicable
-      type: string
     Purplebricks.Property.Business.ViewModels.GoToMarketViewModel:
       type: object
       properties:
@@ -1183,38 +1283,6 @@ components:
           $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressAdvertViewModel'
         accessDetailsProgress:
           $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressViewModel'
-      additionalProperties: false
-    Purplebricks.Property.Business.InputModels.SaveImageDetailsRequest:
-      type: object
-      properties:
-        images:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.ImageDetails'
-      additionalProperties: false
-    Purplebricks.Property.Business.InputModels.ImageDetails:
-      type: object
-      properties:
-        url:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.ProgressAdvertViewModel:
-      type: object
-      properties:
-        requirement:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.RequirementStatus'
-        isCompleted:
-          type: boolean
-        canReview:
-          type: boolean
       additionalProperties: false
     Purplebricks.Property.Business.InputModels.BoardAndKeySafePreferenceRequestV2:
       type: object

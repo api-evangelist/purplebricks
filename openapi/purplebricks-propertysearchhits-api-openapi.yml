@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Purplebricks Property API 1.0 - Platform Property Search Hits API
+  title: Purplebricks Property API 1.0 - Platform Property Search…
   description: '### All Ex Uber Property related controllers are here.
 
-    ### [Purplebricks Property API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/property-api)'
+    ### Purplebricks Property API Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/property-api
@@ -60,24 +60,12 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get propertysearchhits by id
+      x-summary-source: derived
+      operationId: getV1PropertysearchhitsById
+      x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Property.Domain.Models.PropertySearchHits:
-      type: object
-      properties:
-        total:
-          type: integer
-          format: int32
-        lastSevenDays:
-          type: integer
-          format: int32
-        totalIncludingOtherPortals:
-          type: integer
-          format: int32
-        lastSevenDaysIncludingOtherPortals:
-          type: integer
-          format: int32
-      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -103,6 +91,22 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    Purplebricks.Property.Domain.Models.PropertySearchHits:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+        lastSevenDays:
+          type: integer
+          format: int32
+        totalIncludingOtherPortals:
+          type: integer
+          format: int32
+        lastSevenDaysIncludingOtherPortals:
+          type: integer
+          format: int32
+      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

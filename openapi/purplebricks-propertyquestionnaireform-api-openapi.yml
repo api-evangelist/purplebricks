@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Purplebricks Property API 1.0 - Platform Property Questionnaire Form API
+  title: Purplebricks Property API 1.0 - Platform Property…
   description: '### All Ex Uber Property related controllers are here.
 
-    ### [Purplebricks Property API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/property-api)'
+    ### Purplebricks Property API Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/property-api
@@ -66,8 +66,37 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get propertyquestionnaireform by id
+      x-summary-source: derived
+      operationId: getV1PropertyquestionnaireformById
+      x-operation-id-source: derived
 components:
   schemas:
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     Purplebricks.Property.Domain.Models.PropertyQuestionnaireFormModel:
       type: object
       properties:
@@ -110,31 +139,6 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
   securitySchemes:
     Bearer:
       type: apiKey

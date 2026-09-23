@@ -3,7 +3,7 @@ info:
   title: Purplebricks Property API 1.0 - Platform Withdraw API
   description: '### All Ex Uber Property related controllers are here.
 
-    ### [Purplebricks Property API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/property-api)'
+    ### Purplebricks Property API Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/property-api
@@ -90,6 +90,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Create withdraw
+      x-summary-source: derived
+      operationId: postV1Withdraw
+      x-operation-id-source: derived
   /v1/request:
     post:
       tags:
@@ -168,6 +172,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Create request
+      x-summary-source: derived
+      operationId: postV1Request
+      x-operation-id-source: derived
   /v1/cancelrequest:
     post:
       tags:
@@ -236,6 +244,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Create cancelrequest
+      x-summary-source: derived
+      operationId: postV1Cancelrequest
+      x-operation-id-source: derived
   /v1/creatio/withdraw:
     post:
       tags:
@@ -314,6 +326,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Create creatio withdraw
+      x-summary-source: derived
+      operationId: postV1CreatioWithdraw
+      x-operation-id-source: derived
 components:
   schemas:
     Purplebricks.Property.Domain.Enums.WithdrawPropertyReason:
@@ -343,6 +359,25 @@ components:
           format: int32
         withdrawPropertyReason:
           $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WithdrawPropertyReason'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Models.WithdrawPropertyRequestModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        withdrawalReason:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WithdrawPropertyReason'
+        user:
+          $ref: '#/components/schemas/Purplebricks.Security.Auth.AuthUser'
+        collectBoard:
+          type: boolean
+        ipAddress:
+          type:
+          - string
+          - 'null'
+        forceAdvertWithdrawal:
+          type: boolean
       additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
@@ -405,25 +440,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    Purplebricks.Property.Domain.Models.WithdrawPropertyRequestModel:
-      type: object
-      properties:
-        propertyId:
-          type: integer
-          format: int32
-        withdrawalReason:
-          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WithdrawPropertyReason'
-        user:
-          $ref: '#/components/schemas/Purplebricks.Security.Auth.AuthUser'
-        collectBoard:
-          type: boolean
-        ipAddress:
-          type:
-          - string
-          - 'null'
-        forceAdvertWithdrawal:
-          type: boolean
       additionalProperties: false
   securitySchemes:
     Bearer:

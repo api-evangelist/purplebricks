@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Purplebricks.Lettings.Api 1 - Team Integrations Street Webhooks API
+  title: Purplebricks.Lettings.Api 1 - Team Integrations Street…
   description: '### An Lettings Api project to validate the regional postcodes for Teclet
 
-    ### [Purplebricks.Lettings.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/lettings-api)'
+    ### Purplebricks.Lettings.Api Git Repository'
   version: '1'
 servers:
 - url: https://api.purplebricks.co.uk/lettings-api
@@ -32,6 +32,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: postV1StreetwebhooksListing
+      x-operation-id-source: derived
   /v1/streetwebhooks:
     post:
       tags:
@@ -52,6 +54,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: postV1Streetwebhooks
+      x-operation-id-source: derived
 components:
   schemas:
     Microsoft.AspNetCore.Mvc.ProblemDetails:

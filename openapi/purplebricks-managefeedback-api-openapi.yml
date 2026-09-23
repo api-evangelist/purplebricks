@@ -3,7 +3,7 @@ info:
   title: Purplebricks Feedback API 1 - Core Squad Manage Feedback API
   description: '### Vertical slice for the Uber property-centric feedback endpoints
 
-    ### [Purplebricks Feedback API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/feedback-api)'
+    ### Purplebricks Feedback API Git Repository'
   version: '1'
 servers:
 - url: https://api.purplebricks.co.uk/feedback-api
@@ -78,6 +78,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get managefeedback allpropertyfeedback by property id
+      x-summary-source: derived
+      operationId: getV1ManagefeedbackAllpropertyfeedbackByPropertyId
+      x-operation-id-source: derived
 components:
   schemas:
     Purplebricks.Feedback.Business.Models.FeedbackSummaryViewModel:

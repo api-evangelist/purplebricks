@@ -3,7 +3,7 @@ info:
   title: Purplebricks Account API 1 - Platform Email Confirmation API
   description: '### All Ex Uber Account related controllers are here.
 
-    ### [Purplebricks Account API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/account-api)'
+    ### Purplebricks Account API Git Repository'
   version: '1'
 servers:
 - url: https://api.purplebricks.co.uk/account-api
@@ -39,6 +39,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get emailconfirmation getemailconfirmationdata by token
+      x-summary-source: derived
+      operationId: getV1EmailconfirmationGetemailconfirmationdataByToken
+      x-operation-id-source: derived
 components:
   schemas:
     Microsoft.AspNetCore.Mvc.ProblemDetails:

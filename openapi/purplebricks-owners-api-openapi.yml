@@ -3,7 +3,7 @@ info:
   title: Purplebricks Property API 1.0 - Platform Owners API
   description: '### All Ex Uber Property related controllers are here.
 
-    ### [Purplebricks Property API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/property-api)'
+    ### Purplebricks Property API Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/property-api
@@ -65,6 +65,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get owners additional sellers
+      x-summary-source: derived
+      operationId: getV1OwnersAdditionalSellers
+      x-operation-id-source: derived
   /v1/owners/additional-buyers:
     get:
       tags:
@@ -118,42 +122,12 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get owners additional buyers
+      x-summary-source: derived
+      operationId: getV1OwnersAdditionalBuyers
+      x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Property.Business.ViewModels.AdditionalUserDetailsViewModel:
-      type: object
-      properties:
-        userId:
-          type: integer
-          format: int32
-        email:
-          type:
-          - string
-          - 'null'
-        forename:
-          type:
-          - string
-          - 'null'
-        surname:
-          type:
-          - string
-          - 'null'
-        dateOfBirth:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        title:
-          type:
-          - string
-          - 'null'
-        phone:
-          type:
-          - string
-          - 'null'
-        address:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.AdditionalUserAddressViewModel'
-      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -198,6 +172,40 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.AdditionalUserDetailsViewModel:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int32
+        email:
+          type:
+          - string
+          - 'null'
+        forename:
+          type:
+          - string
+          - 'null'
+        surname:
+          type:
+          - string
+          - 'null'
+        dateOfBirth:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        title:
+          type:
+          - string
+          - 'null'
+        phone:
+          type:
+          - string
+          - 'null'
+        address:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.AdditionalUserAddressViewModel'
       additionalProperties: false
   securitySchemes:
     Bearer:

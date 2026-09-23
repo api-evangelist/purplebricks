@@ -74,6 +74,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get creatio users by user id properties
+      x-summary-source: derived
+      operationId: getV1CreatioUsersByUserIdProperties
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/creatio/users/{userId}/valuations:
@@ -120,6 +124,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get creatio users by user id valuations
+      x-summary-source: derived
+      operationId: getV1CreatioUsersByUserIdValuations
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/valuations-api
   /v1/creatio/users/{userId}/viewings:
@@ -166,6 +174,10 @@ paths:
                 type: string
         '500':
           description: Server Error
+      summary: Get creatio users by user id viewings
+      x-summary-source: derived
+      operationId: getV1CreatioUsersByUserIdViewings
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/viewings-api
   /v1/creatio/users/{userId}/viewings/feedback:
@@ -212,63 +224,14 @@ paths:
                 type: string
         '500':
           description: Server Error
+      summary: Get creatio users by user id viewings feedback
+      x-summary-source: derived
+      operationId: getV1CreatioUsersByUserIdViewingsFeedback
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/viewings-api
 components:
   schemas:
-    Purplebricks.Property.Business.ViewModels.Creatio.Address:
-      type: object
-      properties:
-        line1:
-          type:
-          - string
-          - 'null'
-        line2:
-          type:
-          - string
-          - 'null'
-        town:
-          type:
-          - string
-          - 'null'
-        county:
-          type:
-          - string
-          - 'null'
-        postcode:
-          type:
-          - string
-          - 'null'
-        country:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
     Purplebricks.Property.Business.ViewModels.Creatio.CreatioProperty:
       type: object
       properties:
@@ -306,6 +269,31 @@ components:
           - string
           - 'null'
       additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     Purplebricks.Property.Business.ViewModels.Creatio.CreatioUserPropertiesViewModel:
       type: object
       properties:
@@ -319,7 +307,7 @@ components:
           items:
             $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Creatio.CreatioProperty'
       additionalProperties: false
-    Purplebricks.Valuations.Domains.Models.AddressViewModel:
+    Purplebricks.Property.Business.ViewModels.Creatio.Address:
       type: object
       properties:
         line1:
@@ -338,11 +326,11 @@ components:
           type:
           - string
           - 'null'
-        country:
+        postcode:
           type:
           - string
           - 'null'
-        postcode:
+        country:
           type:
           - string
           - 'null'
@@ -386,14 +374,30 @@ components:
         valuationType:
           $ref: '#/components/schemas/Purplebricks.Valuations.Domains.Models.Enums.EventType'
       additionalProperties: false
-    Purplebricks.Valuations.Domains.Models.CreatioExpert:
+    Purplebricks.Valuations.Domains.Models.AddressViewModel:
       type: object
       properties:
-        fullName:
+        line1:
           type:
           - string
           - 'null'
-        email:
+        line2:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+        postcode:
           type:
           - string
           - 'null'
@@ -406,6 +410,45 @@ components:
       - Busy
       - VirtualValuation
       type: string
+    Purplebricks.Valuations.Domains.Models.CreatioExpert:
+      type: object
+      properties:
+        fullName:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Viewings.Business.ViewModels.EventUserDetailsViewModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        title:
+          type:
+          - string
+          - 'null'
+        forename:
+          type:
+          - string
+          - 'null'
+        surname:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        phone:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     Purplebricks.Viewings.Business.ViewModels.AddressViewModel:
       type: object
       properties:
@@ -467,33 +510,6 @@ components:
         bookedByUser:
           type: boolean
         userRole:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Viewings.Business.ViewModels.EventUserDetailsViewModel:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        title:
-          type:
-          - string
-          - 'null'
-        forename:
-          type:
-          - string
-          - 'null'
-        surname:
-          type:
-          - string
-          - 'null'
-        email:
-          type:
-          - string
-          - 'null'
-        phone:
           type:
           - string
           - 'null'

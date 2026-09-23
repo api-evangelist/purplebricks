@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Purplebricks.Microservice.Outlook.Api 1.0 - Squad Agents and Intel Agent Outlook Sync API
+  title: Purplebricks.Microservice.Outlook.Api 1.0 - Squad Agents…
   description: '### API for managing syncing appointments to their Outlook calendar
 
-    ### [Purplebricks.Microservice.Outlook.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/purplebricks-outlook)'
+    ### Purplebricks.Microservice.Outlook.Api Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/outlook-api
@@ -42,6 +42,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      summary: Get agent outlook sync
+      x-summary-source: derived
+      operationId: getV1AgentOutlookSync
+      x-operation-id-source: derived
     put:
       tags:
       - AgentOutlookSync
@@ -79,23 +83,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      summary: Replace agent outlook sync
+      x-summary-source: derived
+      operationId: putV1AgentOutlookSync
+      x-operation-id-source: derived
 components:
   schemas:
-    Model:
-      type: object
-      properties:
-        agentPublicUserId:
-          type: string
-          format: uuid
-        enabled:
-          type: boolean
-      additionalProperties: false
-    PutRequest:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-      additionalProperties: false
     ProblemDetails:
       type: object
       properties:
@@ -121,6 +114,21 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    PutRequest:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+      additionalProperties: false
+    Model:
+      type: object
+      properties:
+        agentPublicUserId:
+          type: string
+          format: uuid
+        enabled:
+          type: boolean
+      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

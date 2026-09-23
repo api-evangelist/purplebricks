@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Purplebricks.Viewings.Api 1.0 - Customer Experience Properties API
+  title: Purplebricks.Viewings.Api 1.0 - Customer Experience…
   description: '### Purplebricks Viewings API.
 
-    ### [Purplebricks.Viewings.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/viewings)'
+    ### Purplebricks.Viewings.Api Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/viewings-api
@@ -16,7 +16,7 @@ paths:
     get:
       tags:
       - Properties
-      summary: Returns the basic details of a property for which a viewing appointment can be booked against.
+      summary: Returns the basic details of a property for which a viewing appointment can be…
       parameters:
       - name: propertyId
         in: path
@@ -49,6 +49,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: getV1PropertiesByPropertyId
+      x-operation-id-source: derived
   /v1/creatio/properties/{propertyId}/viewings:
     get:
       tags:
@@ -93,8 +95,202 @@ paths:
                 type: string
         '500':
           description: Server Error
+      summary: Get creatio properties by property id viewings
+      x-summary-source: derived
+      operationId: getV1CreatioPropertiesByPropertyIdViewings
+      x-operation-id-source: derived
 components:
   schemas:
+    Purplebricks.DatabaseModel.Enumerations.BookingProcess:
+      enum:
+      - SellerBookValuation
+      - BuyerBookViewing
+      - CallCentreBookValuation
+      - CallCentreBookViewing
+      - SellerRearrange
+      - BuyerRearrange
+      - LpeRearrange
+      - LpeBookViewing
+      - BuyingAgentBookViewing
+      - RemortgageInstantValuation
+      - AiVoiceAgent
+      - AiWhatsAppAgent
+      - AiSmsAgent
+      type: string
+    Purplebricks.Viewings.Business.ViewModels.BookViewingConfirmationViewModel:
+      type: object
+      properties:
+        eventId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        propertyId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        listingId:
+          type:
+          - string
+          - 'null'
+        status:
+          $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.BookingRequestStatus'
+        bookingProcess:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.BookingProcess'
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        propertyTimeZone:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.IanaTimeZone'
+        street:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+        isAccompaniedViewing:
+          type: boolean
+        hostName:
+          type:
+          - string
+          - 'null'
+        hostPhoneNumber:
+          type:
+          - string
+          - 'null'
+        expertPhoto:
+          type:
+          - string
+          - 'null'
+        trustPilotId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.DatabaseModel.Enumerations.Offer.SaleProgressOption:
+      enum:
+      - NotOnTheMarket
+      - OnTheMarket
+      - SSTC
+      - Pending
+      type: string
+    Purplebricks.Viewings.Business.ViewModels.EventUserDetailsViewModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        title:
+          type:
+          - string
+          - 'null'
+        forename:
+          type:
+          - string
+          - 'null'
+        surname:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        phone:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Viewings.Business.ViewModels.TenancyChecksViewModel:
+      type: object
+      properties:
+        dhsPermitted:
+          type: boolean
+        petsPermitted:
+          type: boolean
+        smokersPermitted:
+          type: boolean
+        dhsBlocked:
+          type: boolean
+        petsBlocked:
+          type: boolean
+        smokersBlocked:
+          type: boolean
+        studentLet:
+          type: boolean
+        shared:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Viewings.Business.Models.BookingRequestStatus:
+      enum:
+      - SlotNotAvailable
+      - Confirmed
+      - AwaitingConfirmation
+      - PropertySold
+      - PropertyWithdrawn
+      type: string
+    Purplebricks.DatabaseModel.Enumerations.IanaTimeZone:
+      enum:
+      - NotSet
+      - EuropeLondon
+      - AustraliaPerth
+      - AustraliaEucla
+      - AustraliaAdelaide
+      - AustraliaBrokenHill
+      - AustraliaDarwin
+      - AustraliaBrisbane
+      - AustraliaCurrie
+      - AustraliaHobart
+      - AustraliaLindeman
+      - AustraliaMelbourne
+      - AustraliaSydney
+      - AustraliaLordHowe
+      - AntarcticaMacquarie
+      - AmericaLosAngeles
+      - AmericaNewYork
+      - AmericaDetroit
+      - AmericaKentuckyLouisville
+      - AmericaKentuckyMonticello
+      - AmericaIndianaIndianapolis
+      - AmericaIndianaVincennes
+      - AmericaIndianaWinamac
+      - AmericaIndianaMarengo
+      - AmericaIndianaPetersburg
+      - AmericaIndianaVevay
+      - AmericaChicago
+      - AmericaIndianaTellCity
+      - AmericaIndianaKnox
+      - AmericaMenominee
+      - AmericaNorthDakotaCenter
+      - AmericaNorthDakotaNewSalem
+      - AmericaNorthDakotaBeulah
+      - AmericaBoise
+      - AmericaPhoenix
+      - AmericaAnchorage
+      - AmericaJuneau
+      - AmericaSitka
+      - AmericaYakutat
+      - AmericaNome
+      - AmericaAdak
+      - AmericaMetlakatla
+      - PacificHonolulu
+      - AmericaDenver
+      - PacificAuckland
+      type: string
     Purplebricks.Viewings.Business.Models.ViewingDetail:
       type: object
       properties:
@@ -125,6 +321,72 @@ components:
           $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.EventUserDetailsViewModel'
         seller:
           $ref: '#/components/schemas/Purplebricks.Viewings.Business.ViewModels.EventUserDetailsViewModel'
+      additionalProperties: false
+    Purplebricks.DatabaseModel.Enumerations.PortalType:
+      enum:
+      - Rightmove
+      - Zoopla
+      - Globrix
+      - PrimeLocation
+      - PropertyPal
+      - PropertyNews
+      - S1Homes
+      - Domain
+      - RealEstate
+      - TradeMe
+      type: string
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Viewings.Business.ViewModels.AddressViewModel:
+      type: object
+      properties:
+        line1:
+          type:
+          - string
+          - 'null'
+        line2:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     Purplebricks.DatabaseModel.Enumerations.WorkflowStepType:
       enum:
@@ -179,14 +441,6 @@ components:
       - InstantValuation
       - FakeValuation
       - Cancelled
-      type: string
-    Purplebricks.Viewings.Business.Models.BookingRequestStatus:
-      enum:
-      - SlotNotAvailable
-      - Confirmed
-      - AwaitingConfirmation
-      - PropertySold
-      - PropertyWithdrawn
       type: string
     Purplebricks.Viewings.Business.ViewModels.PropertyViewModel:
       type: object
@@ -268,254 +522,6 @@ components:
         expertId:
           type: integer
           format: int32
-      additionalProperties: false
-    Purplebricks.Viewings.Business.ViewModels.EventUserDetailsViewModel:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        title:
-          type:
-          - string
-          - 'null'
-        forename:
-          type:
-          - string
-          - 'null'
-        surname:
-          type:
-          - string
-          - 'null'
-        email:
-          type:
-          - string
-          - 'null'
-        phone:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Viewings.Business.ViewModels.AddressViewModel:
-      type: object
-      properties:
-        line1:
-          type:
-          - string
-          - 'null'
-        line2:
-          type:
-          - string
-          - 'null'
-        town:
-          type:
-          - string
-          - 'null'
-        county:
-          type:
-          - string
-          - 'null'
-        country:
-          type:
-          - string
-          - 'null'
-        postcode:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    Purplebricks.Viewings.Business.ViewModels.BookViewingConfirmationViewModel:
-      type: object
-      properties:
-        eventId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        propertyId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        listingId:
-          type:
-          - string
-          - 'null'
-        status:
-          $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.BookingRequestStatus'
-        bookingProcess:
-          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.BookingProcess'
-        start:
-          type: string
-          format: date-time
-        end:
-          type: string
-          format: date-time
-        propertyTimeZone:
-          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.IanaTimeZone'
-        street:
-          type:
-          - string
-          - 'null'
-        town:
-          type:
-          - string
-          - 'null'
-        county:
-          type:
-          - string
-          - 'null'
-        postcode:
-          type:
-          - string
-          - 'null'
-        isAccompaniedViewing:
-          type: boolean
-        hostName:
-          type:
-          - string
-          - 'null'
-        hostPhoneNumber:
-          type:
-          - string
-          - 'null'
-        expertPhoto:
-          type:
-          - string
-          - 'null'
-        trustPilotId:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.DatabaseModel.Enumerations.BookingProcess:
-      enum:
-      - SellerBookValuation
-      - BuyerBookViewing
-      - CallCentreBookValuation
-      - CallCentreBookViewing
-      - SellerRearrange
-      - BuyerRearrange
-      - LpeRearrange
-      - LpeBookViewing
-      - BuyingAgentBookViewing
-      - RemortgageInstantValuation
-      - AiVoiceAgent
-      - AiWhatsAppAgent
-      - AiSmsAgent
-      type: string
-    Purplebricks.DatabaseModel.Enumerations.PortalType:
-      enum:
-      - Rightmove
-      - Zoopla
-      - Globrix
-      - PrimeLocation
-      - PropertyPal
-      - PropertyNews
-      - S1Homes
-      - Domain
-      - RealEstate
-      - TradeMe
-      type: string
-    Purplebricks.DatabaseModel.Enumerations.IanaTimeZone:
-      enum:
-      - NotSet
-      - EuropeLondon
-      - AustraliaPerth
-      - AustraliaEucla
-      - AustraliaAdelaide
-      - AustraliaBrokenHill
-      - AustraliaDarwin
-      - AustraliaBrisbane
-      - AustraliaCurrie
-      - AustraliaHobart
-      - AustraliaLindeman
-      - AustraliaMelbourne
-      - AustraliaSydney
-      - AustraliaLordHowe
-      - AntarcticaMacquarie
-      - AmericaLosAngeles
-      - AmericaNewYork
-      - AmericaDetroit
-      - AmericaKentuckyLouisville
-      - AmericaKentuckyMonticello
-      - AmericaIndianaIndianapolis
-      - AmericaIndianaVincennes
-      - AmericaIndianaWinamac
-      - AmericaIndianaMarengo
-      - AmericaIndianaPetersburg
-      - AmericaIndianaVevay
-      - AmericaChicago
-      - AmericaIndianaTellCity
-      - AmericaIndianaKnox
-      - AmericaMenominee
-      - AmericaNorthDakotaCenter
-      - AmericaNorthDakotaNewSalem
-      - AmericaNorthDakotaBeulah
-      - AmericaBoise
-      - AmericaPhoenix
-      - AmericaAnchorage
-      - AmericaJuneau
-      - AmericaSitka
-      - AmericaYakutat
-      - AmericaNome
-      - AmericaAdak
-      - AmericaMetlakatla
-      - PacificHonolulu
-      - AmericaDenver
-      - PacificAuckland
-      type: string
-    Purplebricks.DatabaseModel.Enumerations.Offer.SaleProgressOption:
-      enum:
-      - NotOnTheMarket
-      - OnTheMarket
-      - SSTC
-      - Pending
-      type: string
-    Purplebricks.Viewings.Business.ViewModels.TenancyChecksViewModel:
-      type: object
-      properties:
-        dhsPermitted:
-          type: boolean
-        petsPermitted:
-          type: boolean
-        smokersPermitted:
-          type: boolean
-        dhsBlocked:
-          type: boolean
-        petsBlocked:
-          type: boolean
-        smokersBlocked:
-          type: boolean
-        studentLet:
-          type: boolean
-        shared:
-          type: boolean
       additionalProperties: false
   securitySchemes:
     Bearer:

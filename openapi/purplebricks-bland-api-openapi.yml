@@ -73,6 +73,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get bland property by property id
+      x-summary-source: derived
+      operationId: getV1BlandPropertyByPropertyId
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/bland/property:
@@ -141,13 +145,17 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Create bland property
+      x-summary-source: derived
+      operationId: postV1BlandProperty
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v1/bland/viewing:
     post:
       tags:
       - Bland
-      summary: Books a viewing appointment via Bland AI integration.
+      summary: Books a viewing appointment via Bland AI integration
       requestBody:
         description: The booking details from Bland AI.
         content:
@@ -233,6 +241,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: postV1BlandViewing
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/viewings-api
   /v1/bland/viewing/confirmrequestslot:
@@ -275,6 +285,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create bland viewing confirmrequestslot
+      x-summary-source: derived
+      operationId: postV1BlandViewingConfirmrequestslot
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/viewings-api
   /v1/bland/viewing/reschedulerequestslot:
@@ -317,10 +331,20 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create bland viewing reschedulerequestslot
+      x-summary-source: derived
+      operationId: postV1BlandViewingReschedulerequestslot
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/viewings-api
 components:
   schemas:
+    Purplebricks.Property.Domain.Enums.Garage:
+      enum:
+      - OneCar
+      - TwoOrMoreCars
+      - None
+      type: string
     Purplebricks.Property.Business.ViewModels.Bland.BlandProperty:
       type: object
       properties:
@@ -443,6 +467,14 @@ components:
         toLet:
           type: boolean
       additionalProperties: false
+    Purplebricks.Property.Domain.Enums.Tenure:
+      enum:
+      - Freehold
+      - Leasehold
+      - ShareOfFreehold
+      - SharedOwnership
+      - Commonhold
+      type: string
     Purplebricks.Property.Api.Controllers.V1.BlandController_BlandPropertyRequest:
       required:
       - propertyId
@@ -453,6 +485,12 @@ components:
           minimum: 1
           type: integer
           format: int32
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.Bland.BlandPropertyViewModel:
+      type: object
+      properties:
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Bland.BlandProperty'
       additionalProperties: false
     Purplebricks.Property.Domain.Enums.Parking:
       enum:
@@ -490,32 +528,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    Purplebricks.Property.Domain.Enums.Glazing:
-      enum:
-      - Full
-      - Part
-      - None
-      type: string
-    Purplebricks.Property.Domain.Enums.Garage:
-      enum:
-      - OneCar
-      - TwoOrMoreCars
-      - None
-      type: string
-    Purplebricks.Property.Domain.Enums.Tenure:
-      enum:
-      - Freehold
-      - Leasehold
-      - ShareOfFreehold
-      - SharedOwnership
-      - Commonhold
-      type: string
-    Purplebricks.Property.Domain.Enums.Garden:
-      enum:
-      - None
-      - Garden
-      - PrivateGarden
-      type: string
     Purplebricks.Property.Domain.Enums.Heating:
       enum:
       - None
@@ -527,12 +539,6 @@ components:
       - Solar
       - UnderFloor
       type: string
-    Purplebricks.Property.Business.ViewModels.Bland.BlandPropertyViewModel:
-      type: object
-      properties:
-        property:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Bland.BlandProperty'
-      additionalProperties: false
     Purplebricks.Property.Domain.Enums.TaxBand:
       enum:
       - A
@@ -547,56 +553,18 @@ components:
       - TBC
       - Exempt
       type: string
-    Purplebricks.Viewings.Business.ViewModels.AiSellerRequestSlotResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-        message:
-          type:
-          - string
-          - 'null'
-        confirmedOrNewSlotUtc:
-          type:
-          - string
-          - 'null'
-          format: date-time
-      additionalProperties: false
-    Purplebricks.Viewings.Business.Models.BookingRequestStatus:
+    Purplebricks.Property.Domain.Enums.Glazing:
       enum:
-      - SlotNotAvailable
-      - Confirmed
-      - AwaitingConfirmation
-      - PropertySold
-      - PropertyWithdrawn
+      - Full
+      - Part
+      - None
       type: string
-    Purplebricks.Viewings.Business.Models.BlandBookViewingInputModel:
-      type: object
-      properties:
-        propertyId:
-          type: integer
-          format: int32
-        userId:
-          type: integer
-          format: int32
-        eventStart:
-          type: string
-          format: date-time
-        phoneHome:
-          maxLength: 20
-          type:
-          - string
-          - 'null'
-        phoneMobile:
-          maxLength: 20
-          type:
-          - string
-          - 'null'
-        primaryContactNumber:
-          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.ContactNumberType'
-        bookingProcess:
-          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.BookingProcess'
-      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.Garden:
+      enum:
+      - None
+      - Garden
+      - PrivateGarden
+      type: string
     Purplebricks.DatabaseModel.Enumerations.BookingProcess:
       enum:
       - SellerBookValuation
@@ -613,25 +581,6 @@ components:
       - AiWhatsAppAgent
       - AiSmsAgent
       type: string
-    Purplebricks.Viewings.Business.Models.AiRescheduleRequestSlotInputModel:
-      type: object
-      properties:
-        bookingId:
-          type: integer
-          format: int32
-        viewingId:
-          type: integer
-          format: int32
-        sellerUserId:
-          type: integer
-          format: int32
-        propertyId:
-          type: integer
-          format: int32
-        eventStart:
-          type: string
-          format: date-time
-      additionalProperties: false
     Purplebricks.Viewings.Business.ViewModels.BookViewingConfirmationViewModel:
       type: object
       properties:
@@ -696,6 +645,37 @@ components:
           - string
           - 'null'
       additionalProperties: false
+    Purplebricks.Viewings.Business.Models.AiConfirmRequestSlotInputModel:
+      type: object
+      properties:
+        bookingId:
+          type: integer
+          format: int32
+        viewingId:
+          type: integer
+          format: int32
+        sellerUserId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Viewings.Business.ViewModels.AiSellerRequestSlotResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type:
+          - string
+          - 'null'
+        confirmedOrNewSlotUtc:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
     Purplebricks.DatabaseModel.Enumerations.IanaTimeZone:
       enum:
       - NotSet
@@ -744,7 +724,15 @@ components:
       - AmericaDenver
       - PacificAuckland
       type: string
-    Purplebricks.Viewings.Business.Models.AiConfirmRequestSlotInputModel:
+    Purplebricks.Viewings.Business.Models.BookingRequestStatus:
+      enum:
+      - SlotNotAvailable
+      - Confirmed
+      - AwaitingConfirmation
+      - PropertySold
+      - PropertyWithdrawn
+      type: string
+    Purplebricks.Viewings.Business.Models.AiRescheduleRequestSlotInputModel:
       type: object
       properties:
         bookingId:
@@ -759,6 +747,9 @@ components:
         propertyId:
           type: integer
           format: int32
+        eventStart:
+          type: string
+          format: date-time
       additionalProperties: false
     Purplebricks.DatabaseModel.Enumerations.ContactNumberType:
       enum:
@@ -766,6 +757,33 @@ components:
       - Mobile
       - Other
       type: string
+    Purplebricks.Viewings.Business.Models.BlandBookViewingInputModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        userId:
+          type: integer
+          format: int32
+        eventStart:
+          type: string
+          format: date-time
+        phoneHome:
+          maxLength: 20
+          type:
+          - string
+          - 'null'
+        phoneMobile:
+          maxLength: 20
+          type:
+          - string
+          - 'null'
+        primaryContactNumber:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.ContactNumberType'
+        bookingProcess:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.BookingProcess'
+      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

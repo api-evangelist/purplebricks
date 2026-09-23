@@ -3,19 +3,19 @@ info:
   title: Purplebricks.Valuations.Api 1.0 - Core Post Code API
   description: '### The new home for accessing the valuations service library
 
-    ### [Purplebricks.Valuations.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/valuations-api)'
+    ### Purplebricks.Valuations.Api Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/valuations-api
 security:
 - Bearer: []
 tags:
-- name: PostCode
+- name: Post Code
 paths:
   /v1/postcode/isintrialregion:
     get:
       tags:
-      - PostCode
+      - Post Code
       parameters:
       - name: postCode
         in: query
@@ -46,10 +46,14 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get postcode isintrialregion
+      x-summary-source: derived
+      operationId: getV1PostcodeIsintrialregion
+      x-operation-id-source: derived
   /v1/postcode/isintrialregionbyeventid:
     get:
       tags:
-      - PostCode
+      - Post Code
       parameters:
       - name: eventId
         in: query
@@ -81,6 +85,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get postcode isintrialregionbyeventid
+      x-summary-source: derived
+      operationId: getV1PostcodeIsintrialregionbyeventid
+      x-operation-id-source: derived
 components:
   schemas:
     Microsoft.AspNetCore.Mvc.ProblemDetails:

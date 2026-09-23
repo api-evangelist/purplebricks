@@ -3,7 +3,7 @@ info:
   title: Purplebricks Account API 1 - Platform Auth API
   description: '### All Ex Uber Account related controllers are here.
 
-    ### [Purplebricks Account API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/account-api)'
+    ### Purplebricks Account API Git Repository'
   version: '1'
 servers:
 - url: https://api.purplebricks.co.uk/account-api
@@ -50,6 +50,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get auth
+      x-summary-source: derived
+      operationId: getV1Auth
+      x-operation-id-source: derived
 components:
   schemas:
     Microsoft.AspNetCore.Mvc.ProblemDetails:

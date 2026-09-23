@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Purplebricks.Viewings.Api 1.0 - Customer Experience Open Days API
+  title: Purplebricks.Viewings.Api 1.0 - Customer Experience Open…
   description: '### Purplebricks Viewings API.
 
-    ### [Purplebricks.Viewings.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/viewings)'
+    ### Purplebricks.Viewings.Api Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/viewings-api
@@ -16,7 +16,7 @@ paths:
     get:
       tags:
       - OpenDays
-      summary: Returns the details of any upcoming open days for a property. May return an empty result set.
+      summary: Returns the details of any upcoming open days for a property.
       parameters:
       - name: propertyId
         in: path
@@ -49,11 +49,13 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: getV1PropertiesByPropertyIdOpendaysUpcoming
+      x-operation-id-source: derived
   /v1/properties/{propertyId}/opendays/past:
     get:
       tags:
       - OpenDays
-      summary: Returns the details of any past open days for a property. May return an empty result set.
+      summary: Returns the details of any past open days for a property.
       parameters:
       - name: propertyId
         in: path
@@ -98,20 +100,35 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: getV1PropertiesByPropertyIdOpendaysPast
+      x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Viewings.Business.ViewModels.OpenDaysViewModel:
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
-        start:
-          type: string
-          format: date-time
-        end:
-          type: string
-          format: date-time
-        propertyTimeZone:
-          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.IanaTimeZone'
-      additionalProperties: false
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     Purplebricks.DatabaseModel.Enumerations.IanaTimeZone:
       enum:
       - NotSet
@@ -160,31 +177,18 @@ components:
       - AmericaDenver
       - PacificAuckland
       type: string
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
+    Purplebricks.Viewings.Business.ViewModels.OpenDaysViewModel:
       type: object
       properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        propertyTimeZone:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.IanaTimeZone'
+      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

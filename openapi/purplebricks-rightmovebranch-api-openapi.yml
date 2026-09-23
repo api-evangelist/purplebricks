@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Purplebricks.Branch.Api 1.0 - Squad Agents Experience Rightmove Branch API
+  title: Purplebricks.Branch.Api 1.0 - Squad Agents Experience…
   description: '### Provides full branch information for a postcode or property
 
-    ### [Purplebricks.Branch.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/agents-mono)'
+    ### Purplebricks.Branch.Api Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/branch-api
@@ -36,6 +36,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      summary: Get rightmovebranch
+      x-summary-source: derived
+      operationId: getV1Rightmovebranch
+      x-operation-id-source: derived
   /v1/rightmovebranch/{branchId}:
     get:
       tags:
@@ -72,6 +76,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      summary: Get rightmovebranch by branch id
+      x-summary-source: derived
+      operationId: getV1RightmovebranchByBranchId
+      x-operation-id-source: derived
   /v1/rightmovebranch/search:
     get:
       tags:
@@ -107,8 +115,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      summary: Get rightmovebranch search
+      x-summary-source: derived
+      operationId: getV1RightmovebranchSearch
+      x-operation-id-source: derived
 components:
   schemas:
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     BranchService:
       enum:
       - NotSpecified
@@ -152,31 +189,6 @@ components:
             type: integer
             format: int32
       additionalProperties: false
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
   securitySchemes:
     Bearer:
       type: apiKey

@@ -3,7 +3,7 @@ info:
   title: Purplebricks Account API 1 - Platform User API
   description: '### All Ex Uber Account related controllers are here.
 
-    ### [Purplebricks Account API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/account-api)'
+    ### Purplebricks Account API Git Repository'
   version: '1'
 servers:
 - url: https://api.purplebricks.co.uk/account-api
@@ -35,6 +35,10 @@ paths:
             text/json:
               schema:
                 type: boolean
+      summary: Get user isusernametaken
+      x-summary-source: derived
+      operationId: getV1UserIsusernametaken
+      x-operation-id-source: derived
   /v1/user/sendpasswordreset:
     post:
       tags:
@@ -65,6 +69,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create user sendpasswordreset
+      x-summary-source: derived
+      operationId: postV1UserSendpasswordreset
+      x-operation-id-source: derived
   /v1/user/resendemailconfirmation:
     post:
       tags:
@@ -119,6 +127,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create user resendemailconfirmation
+      x-summary-source: derived
+      operationId: postV1UserResendemailconfirmation
+      x-operation-id-source: derived
   /v1/user/requestaccountdeletion:
     post:
       tags:
@@ -161,6 +173,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create user requestaccountdeletion
+      x-summary-source: derived
+      operationId: postV1UserRequestaccountdeletion
+      x-operation-id-source: derived
   /v1/user/changeemail:
     post:
       tags:
@@ -215,6 +231,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create user changeemail
+      x-summary-source: derived
+      operationId: postV1UserChangeemail
+      x-operation-id-source: derived
   /v1/user:
     post:
       tags:
@@ -257,92 +277,12 @@ paths:
                 $ref: '#/components/schemas/Purplebricks.Account.Common.Models.ViewModels.CreateCustomerViewModel'
         '500':
           description: Server Error
+      summary: Create user
+      x-summary-source: derived
+      operationId: postV1User
+      x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Account.Api.Models.RequestDeletionInputModel:
-      type: object
-      properties:
-        reasonNumber:
-          type: integer
-          format: int32
-        reasonText:
-          maxLength: 1000
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Account.Api.Models.EmailInputModel:
-      type: object
-      properties:
-        email:
-          type:
-          - string
-          - 'null'
-          format: email
-      additionalProperties: false
-    Purplebricks.Account.Common.Enums.AddressType:
-      enum:
-      - Home
-      - Business
-      - Company
-      - Property
-      - Order
-      - Lead
-      - BookValuationAttempt
-      - Billing
-      type: string
-    Purplebricks.Account.Common.Models.ViewModels.CreateCustomerViewModel:
-      type: object
-      properties:
-        newCustomerId:
-          type: integer
-          format: int32
-      additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    Purplebricks.Account.Business.Models.InputModels.ChangeEmailInputModel:
-      required:
-      - newEmail
-      - oldEmail
-      type: object
-      properties:
-        newEmail:
-          maxLength: 254
-          type: string
-          format: email
-        oldEmail:
-          maxLength: 254
-          type: string
-          format: email
-        confirmPassword:
-          maxLength: 50
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     Purplebricks.Account.Common.Models.CreateUserInputModel:
       type: object
       properties:
@@ -377,6 +317,83 @@ components:
         address:
           $ref: '#/components/schemas/Purplebricks.Account.Common.Models.CreateUserAddressInputModel'
       additionalProperties: false
+    Purplebricks.Account.Business.Models.InputModels.ChangeEmailInputModel:
+      required:
+      - newEmail
+      - oldEmail
+      type: object
+      properties:
+        newEmail:
+          maxLength: 254
+          type: string
+          format: email
+        oldEmail:
+          maxLength: 254
+          type: string
+          format: email
+        confirmPassword:
+          maxLength: 50
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Account.Api.Models.EmailInputModel:
+      type: object
+      properties:
+        email:
+          type:
+          - string
+          - 'null'
+          format: email
+      additionalProperties: false
+    Purplebricks.Account.Api.Models.RequestDeletionInputModel:
+      type: object
+      properties:
+        reasonNumber:
+          type: integer
+          format: int32
+        reasonText:
+          maxLength: 1000
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Account.Common.Enums.AddressType:
+      enum:
+      - Home
+      - Business
+      - Company
+      - Property
+      - Order
+      - Lead
+      - BookValuationAttempt
+      - Billing
+      type: string
     Purplebricks.Account.Common.Models.CreateUserAddressInputModel:
       type: object
       properties:
@@ -406,6 +423,13 @@ components:
           - 'null'
         addressType:
           $ref: '#/components/schemas/Purplebricks.Account.Common.Enums.AddressType'
+      additionalProperties: false
+    Purplebricks.Account.Common.Models.ViewModels.CreateCustomerViewModel:
+      type: object
+      properties:
+        newCustomerId:
+          type: integer
+          format: int32
       additionalProperties: false
   securitySchemes:
     Bearer:

@@ -5,6 +5,9 @@ info:
 
     ### [Purplebricks.Microservice.Outlook.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/purplebricks-outlook)'
   version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/outlook-api
+  description: Base URL declared by the provider in apis.yml (roadmap#122).
 paths:
   /v1/agent/outlook-sync:
     get:

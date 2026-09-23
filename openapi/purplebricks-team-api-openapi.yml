@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Purplebricks.Agent.Api 1.0 - Squad Agents Experience Team API
+  title: Purplebricks.Agent.Api 1.0 - Squad Agents Experience Team…
   description: '### API agregating all agents specific functionality and endpoints
 
-    ### [Purplebricks.Agent.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/agents-mono)'
+    ### Purplebricks.Agent.Api Git Repository'
   version: '1.0'
 servers:
 - url: https:///agent
@@ -58,6 +58,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      summary: Get team
+      x-summary-source: derived
+      operationId: getV1Team
+      x-operation-id-source: derived
   /v1/team/getagentmanager:
     get:
       tags:
@@ -104,8 +108,37 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetails'
+      summary: Get team getagentmanager
+      x-summary-source: derived
+      operationId: getV1TeamGetagentmanager
+      x-operation-id-source: derived
 components:
   schemas:
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     AgentTeam:
       type: object
       properties:
@@ -149,31 +182,6 @@ components:
           type: boolean
           readOnly: true
       additionalProperties: false
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
   securitySchemes:
     Bearer:
       type: apiKey

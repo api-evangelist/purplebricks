@@ -5,6 +5,9 @@ info:
 
     ### [Purplebricks.Branch.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/agents-mono)'
   version: '1.0'
+servers:
+- url: https://api.purplebricks.co.uk/branch-api
+  description: Base URL declared by the provider in apis.yml (roadmap#122).
 paths:
   /v1/onthemarketbranch:
     get:

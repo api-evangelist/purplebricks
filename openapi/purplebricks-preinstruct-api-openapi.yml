@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Purplebricks.Lettings.Api 1 - Team Integrations Pre Instruct API
+  title: Purplebricks.Lettings.Api 1 - Team Integrations Pre…
   description: '### An Lettings Api project to validate the regional postcodes for Teclet
 
-    ### [Purplebricks.Lettings.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/lettings-api)'
+    ### Purplebricks.Lettings.Api Git Repository'
   version: '1'
 servers:
 - url: https://api.purplebricks.co.uk/lettings-api
@@ -85,6 +85,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Internal Server Error
+      summary: Get preinstruct thirdpartyproperty by third party property id
+      x-summary-source: derived
+      operationId: getV1PreinstructThirdpartypropertyByThirdPartyPropertyId
+      x-operation-id-source: derived
   /v1/preinstruct/thirdpartyproperty:
     post:
       tags:
@@ -163,38 +167,12 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Internal Server Error
+      summary: Create preinstruct thirdpartyproperty
+      x-summary-source: derived
+      operationId: postV1PreinstructThirdpartyproperty
+      x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Lettings.Model.Models.PreInstructPropertyAndUserInformation:
-      type: object
-      properties:
-        propertyId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        thirdPartyPropertyId:
-          type:
-          - string
-          - 'null'
-        instructed:
-          type: boolean
-        user:
-          $ref: '#/components/schemas/Purplebricks.Lettings.Model.Models.PreInstructUser'
-        address:
-          $ref: '#/components/schemas/Purplebricks.Lettings.Model.Models.PreInstructAddress'
-      additionalProperties: false
-    Purplebricks.Lettings.Model.Models.PreInstructUser:
-      type: object
-      properties:
-        userId:
-          type: integer
-          format: int32
-        email:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -220,6 +198,33 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    Purplebricks.Lettings.Model.Models.PreInstructPostModel:
+      type: object
+      properties:
+        thirdPartyPropertyId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Lettings.Model.Models.PreInstructPropertyAndUserInformation:
+      type: object
+      properties:
+        propertyId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        thirdPartyPropertyId:
+          type:
+          - string
+          - 'null'
+        instructed:
+          type: boolean
+        user:
+          $ref: '#/components/schemas/Purplebricks.Lettings.Model.Models.PreInstructUser'
+        address:
+          $ref: '#/components/schemas/Purplebricks.Lettings.Model.Models.PreInstructAddress'
+      additionalProperties: false
     Purplebricks.Lettings.Model.Models.PreInstructAddress:
       type: object
       properties:
@@ -252,10 +257,13 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Purplebricks.Lettings.Model.Models.PreInstructPostModel:
+    Purplebricks.Lettings.Model.Models.PreInstructUser:
       type: object
       properties:
-        thirdPartyPropertyId:
+        userId:
+          type: integer
+          format: int32
+        email:
           type:
           - string
           - 'null'

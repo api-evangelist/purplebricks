@@ -3,19 +3,19 @@ info:
   title: Purplebricks.Communications.Api 1.0 - Core Team Tps API
   description: '### Displays customer''s email history records
 
-    ### [Purplebricks.Communications.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/communications-api)'
+    ### Purplebricks.Communications.Api Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/communications-api
 security:
 - Bearer: []
 tags:
-- name: Tps
+- name: TPS
 paths:
   /v1/tps/tpsstatus:
     get:
       tags:
-      - Tps
+      - TPS
       parameters:
       - name: publicUserId
         in: query
@@ -78,14 +78,12 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get tps tpsstatus
+      x-summary-source: derived
+      operationId: getV1TpsTpsstatus
+      x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Communications.Api.Models.ViewModels.CustomerTpsStatus:
-      type: object
-      properties:
-        registered:
-          type: boolean
-      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -111,6 +109,12 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    Purplebricks.Communications.Api.Models.ViewModels.CustomerTpsStatus:
+      type: object
+      properties:
+        registered:
+          type: boolean
+      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

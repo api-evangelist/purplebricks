@@ -34,6 +34,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivePropertyViewModel'
+      summary: Get activeproperty by id
+      x-summary-source: derived
+      operationId: getV1ActivepropertyById
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
   /v2/activeproperty/{id}:
@@ -60,6 +64,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ActivePropertyViewModel'
+      summary: Get activeproperty by id
+      x-summary-source: derived
+      operationId: getV2ActivepropertyById
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/property-api
 components:
@@ -149,6 +157,21 @@ components:
           - 'null'
           format: date-time
       additionalProperties: false
+    Purplebricks.Property.Domain.Enums.PriceQualifier:
+      enum:
+      - Default
+      - Poa
+      - GuidePrice
+      - FixedPrice
+      - OffersInExcessOf
+      - Oiro
+      - SaleByTender
+      - From
+      - SharedOwnership
+      - OffersOver
+      - PartBuyPartRent
+      - SharedEquity
+      type: string
     Purplebricks.Property.Business.ViewModels.ImageViewModel:
       type: object
       properties:
@@ -168,21 +191,6 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Purplebricks.Property.Domain.Enums.PriceQualifier:
-      enum:
-      - Default
-      - Poa
-      - GuidePrice
-      - FixedPrice
-      - OffersInExcessOf
-      - Oiro
-      - SaleByTender
-      - From
-      - SharedOwnership
-      - OffersOver
-      - PartBuyPartRent
-      - SharedEquity
-      type: string
   securitySchemes:
     Bearer:
       type: apiKey

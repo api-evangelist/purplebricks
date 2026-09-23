@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Purplebricks Workflow API 1.0 - Platform Is Instruct Available API
+  title: Purplebricks Workflow API 1.0 - Platform Is Instruct…
   description: '### The new home for accessing the workflow service library
 
-    ### [Purplebricks Workflow API Git Repository](https://purplebricks@dev.azure.com/purplebricks/Purplebricks/_git/workflow-api)'
+    ### Purplebricks Workflow API Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/workflow
@@ -64,6 +64,10 @@ paths:
               schema:
                 type: integer
                 format: int32
+      summary: Get isinstructavailable
+      x-summary-source: derived
+      operationId: getV1Isinstructavailable
+      x-operation-id-source: derived
 components:
   schemas:
     ProblemDetails:

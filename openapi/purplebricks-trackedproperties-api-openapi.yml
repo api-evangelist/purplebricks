@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Purplebricks Property API 1.0 - Platform Tracked Properties API
+  title: Purplebricks Property API 1.0 - Platform Tracked Properties…
   description: '### All Ex Uber Property related controllers are here.
 
-    ### [Purplebricks Property API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/property-api)'
+    ### Purplebricks Property API Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/property-api
@@ -60,6 +60,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get trackedproperties
+      x-summary-source: derived
+      operationId: getV1Trackedproperties
+      x-operation-id-source: derived
   /v1/trackedproperties/{propertyId}:
     post:
       tags:
@@ -110,6 +114,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create trackedproperties by property id
+      x-summary-source: derived
+      operationId: postV1TrackedpropertiesByPropertyId
+      x-operation-id-source: derived
     delete:
       tags:
       - TrackedProperties
@@ -147,6 +155,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Delete trackedproperties by property id
+      x-summary-source: derived
+      operationId: deleteV1TrackedpropertiesByPropertyId
+      x-operation-id-source: derived
   /v1/trackedproperties/{propertyId}/tracked:
     get:
       tags:
@@ -183,6 +195,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get trackedproperties by property id tracked
+      x-summary-source: derived
+      operationId: getV1TrackedpropertiesByPropertyIdTracked
+      x-operation-id-source: derived
   /v1/trackedproperties/{propertyId}/note-of-interest:
     post:
       tags:
@@ -233,6 +249,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create trackedproperties by property id note of interest
+      x-summary-source: derived
+      operationId: postV1TrackedpropertiesByPropertyIdNoteOfInterest
+      x-operation-id-source: derived
     delete:
       tags:
       - TrackedProperties
@@ -270,6 +290,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Delete trackedproperties by property id note of interest
+      x-summary-source: derived
+      operationId: deleteV1TrackedpropertiesByPropertyIdNoteOfInterest
+      x-operation-id-source: derived
     get:
       tags:
       - TrackedProperties
@@ -305,8 +329,29 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get trackedproperties by property id note of interest
+      x-summary-source: derived
+      operationId: getV1TrackedpropertiesByPropertyIdNoteOfInterest
+      x-operation-id-source: derived
 components:
   schemas:
+    Purplebricks.Property.Domain.Enums.PropertyTrackType:
+      enum:
+      - Tracked
+      - NoteOfInterest
+      type: string
+    Purplebricks.Property.Domain.Models.TrackedPropertiesListModel:
+      type: object
+      properties:
+        trackedProperties:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.PropertyTrackedModel'
+        pageInfo:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.PageInfoResponseModel'
+      additionalProperties: false
     Purplebricks.Property.Domain.Models.PropertyTrackedModel:
       type: object
       properties:
@@ -338,18 +383,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    Purplebricks.Property.Domain.Models.TrackedPropertiesListModel:
-      type: object
-      properties:
-        trackedProperties:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.PropertyTrackedModel'
-        pageInfo:
-          $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.PageInfoResponseModel'
       additionalProperties: false
     Purplebricks.Property.Domain.Models.PageInfoResponseModel:
       type: object
@@ -394,11 +427,6 @@ components:
       enum:
       - Previous
       - Next
-      type: string
-    Purplebricks.Property.Domain.Enums.PropertyTrackType:
-      enum:
-      - Tracked
-      - NoteOfInterest
       type: string
   securitySchemes:
     Bearer:

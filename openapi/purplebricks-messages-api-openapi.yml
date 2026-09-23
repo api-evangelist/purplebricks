@@ -3,7 +3,7 @@ info:
   title: Purplebricks.Messaging.Api 1.0 - Backend Messages API
   description: '### Purplebricks Messaging API
 
-    ### [Purplebricks.Messaging.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/messaging-api)'
+    ### Purplebricks.Messaging.Api Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/messaging-api
@@ -96,6 +96,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get messages
+      x-summary-source: derived
+      operationId: getV1Messages
+      x-operation-id-source: derived
     post:
       tags:
       - Messages
@@ -161,6 +165,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create messages
+      x-summary-source: derived
+      operationId: postV1Messages
+      x-operation-id-source: derived
   /v1/messages/{messageId}:
     get:
       tags:
@@ -211,6 +219,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get messages by message id
+      x-summary-source: derived
+      operationId: getV1MessagesByMessageId
+      x-operation-id-source: derived
     put:
       tags:
       - Messages
@@ -283,6 +295,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Replace messages by message id
+      x-summary-source: derived
+      operationId: putV1MessagesByMessageId
+      x-operation-id-source: derived
   /v1/messages/{messageId}/notes:
     get:
       tags:
@@ -338,6 +354,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get messages by message id notes
+      x-summary-source: derived
+      operationId: getV1MessagesByMessageIdNotes
+      x-operation-id-source: derived
     post:
       tags:
       - Messages
@@ -398,6 +418,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create messages by message id notes
+      x-summary-source: derived
+      operationId: postV1MessagesByMessageIdNotes
+      x-operation-id-source: derived
   /v1/messages/count:
     get:
       tags:
@@ -427,20 +451,12 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get messages count
+      x-summary-source: derived
+      operationId: getV1MessagesCount
+      x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Messaging.Business.Messages.Models.MessagesListResponseModel:
-      type: object
-      properties:
-        messages:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.MessageResponseModel'
-        pageInfo:
-          $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel'
-      additionalProperties: false
     Purplebricks.Messaging.Business.Messages.Models.NoteRequestModel:
       type: object
       properties:
@@ -457,6 +473,40 @@ components:
         body:
           type:
           - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.Models.MessagesListResponseModel:
+      type: object
+      properties:
+        messages:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.MessageResponseModel'
+        pageInfo:
+          $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel'
+      additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.MessageStatusType:
+      enum:
+      - All
+      - Read
+      - Unread
+      type: string
+    Purplebricks.Messaging.Business.Messages.Models.MessageUpdateRequestModel:
+      type: object
+      properties:
+        subject:
+          type:
+          - string
+          - 'null'
+        body:
+          type:
+          - string
+          - 'null'
+        read:
+          type:
+          - boolean
           - 'null'
       additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
@@ -484,79 +534,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    Purplebricks.Messaging.Business.Messages.Models.CursorPaginationType:
-      enum:
-      - Previous
-      - Next
-      type: string
-    Purplebricks.Messaging.Business.Messages.Models.MessageUpdateRequestModel:
-      type: object
-      properties:
-        subject:
-          type:
-          - string
-          - 'null'
-        body:
-          type:
-          - string
-          - 'null'
-        read:
-          type:
-          - boolean
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Messaging.Business.Messages.Models.MessageRequestModel:
-      type: object
-      properties:
-        threadId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-        senderId:
-          type: integer
-          format: int32
-        recipientId:
-          type: integer
-          format: int32
-        propertyId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        subject:
-          type:
-          - string
-          - 'null'
-        body:
-          type:
-          - string
-          - 'null'
-        address:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel:
-      type: object
-      properties:
-        requestedPageSize:
-          type: integer
-          format: int32
-        totalItemCount:
-          type: integer
-          format: int32
-        hasNextPage:
-          type: boolean
-        hasPreviousPage:
-          type: boolean
-      additionalProperties: false
-    Purplebricks.Messaging.Business.Messages.MessageStatusType:
-      enum:
-      - All
-      - Read
-      - Unread
-      type: string
     Purplebricks.Messaging.Business.Messages.Models.MessageResponseModel:
       type: object
       properties:
@@ -600,6 +577,57 @@ components:
           type: boolean
           readOnly: true
       additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel:
+      type: object
+      properties:
+        requestedPageSize:
+          type: integer
+          format: int32
+        totalItemCount:
+          type: integer
+          format: int32
+        hasNextPage:
+          type: boolean
+        hasPreviousPage:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.Models.MessageRequestModel:
+      type: object
+      properties:
+        threadId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        senderId:
+          type: integer
+          format: int32
+        recipientId:
+          type: integer
+          format: int32
+        propertyId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        subject:
+          type:
+          - string
+          - 'null'
+        body:
+          type:
+          - string
+          - 'null'
+        address:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.Models.CursorPaginationType:
+      enum:
+      - Previous
+      - Next
+      type: string
   securitySchemes:
     Bearer:
       type: apiKey

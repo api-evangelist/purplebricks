@@ -98,6 +98,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get threads
+      x-summary-source: derived
+      operationId: getV1Threads
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/messaging-api
   /v1/threads/{threadId}:
@@ -148,6 +152,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get threads by thread id
+      x-summary-source: derived
+      operationId: getV1ThreadsByThreadId
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/messaging-api
   /v1/threads/{threadId}/messages:
@@ -235,6 +243,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get threads by thread id messages
+      x-summary-source: derived
+      operationId: getV1ThreadsByThreadIdMessages
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/messaging-api
   /v1/threads/{threadId}/messages/count:
@@ -303,6 +315,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get threads by thread id messages count
+      x-summary-source: derived
+      operationId: getV1ThreadsByThreadIdMessagesCount
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/messaging-api
   /v1/threads/{threadId}/read:
@@ -343,6 +359,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Update threads by thread id read
+      x-summary-source: derived
+      operationId: patchV1ThreadsByThreadIdRead
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/messaging-api
   /v2/threads:
@@ -433,6 +453,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get threads
+      x-summary-source: derived
+      operationId: getV2Threads
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/messaging-api
   /v2/threads/{threadId}:
@@ -488,121 +512,14 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get threads by thread id
+      x-summary-source: derived
+      operationId: getV2ThreadsByThreadId
+      x-operation-id-source: derived
     servers:
     - url: https://api.purplebricks.co.uk/messaging-api
 components:
   schemas:
-    Purplebricks.Messaging.Business.Messages.Models.MessagesListResponseModel:
-      type: object
-      properties:
-        messages:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.MessageResponseModel'
-        pageInfo:
-          $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel'
-      additionalProperties: false
-    Purplebricks.Messaging.Business.Messages.Models.ThreadListResponseModel:
-      type: object
-      properties:
-        threads:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.ThreadResponseModel'
-        pageInfo:
-          $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel'
-      additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    Purplebricks.Messaging.Business.Messages.Models.AddressDetail:
-      type: object
-      properties:
-        line1:
-          type:
-          - string
-          - 'null'
-        line2:
-          type:
-          - string
-          - 'null'
-        town:
-          type:
-          - string
-          - 'null'
-        county:
-          type:
-          - string
-          - 'null'
-        postcode:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Messaging.Business.Messages.Models.CursorPaginationType:
-      enum:
-      - Previous
-      - Next
-      type: string
-    Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel:
-      type: object
-      properties:
-        requestedPageSize:
-          type: integer
-          format: int32
-        totalItemCount:
-          type: integer
-          format: int32
-        hasNextPage:
-          type: boolean
-        hasPreviousPage:
-          type: boolean
-      additionalProperties: false
-    Purplebricks.Messaging.Business.Messages.Models.ParticipantDetail:
-      type: object
-      properties:
-        userId:
-          type: integer
-          format: int32
-        title:
-          type:
-          - string
-          - 'null'
-        forename:
-          type:
-          - string
-          - 'null'
-        surname:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     Purplebricks.Messaging.Business.Messages.Models.ThreadResponseModel:
       type: object
       properties:
@@ -639,6 +556,74 @@ components:
           - string
           - 'null'
       additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.Models.ThreadListResponseModel:
+      type: object
+      properties:
+        threads:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.ThreadResponseModel'
+        pageInfo:
+          $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel'
+      additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.Models.MessagesListResponseModel:
+      type: object
+      properties:
+        messages:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.MessageResponseModel'
+        pageInfo:
+          $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel'
+      additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.Models.ParticipantDetail:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int32
+        title:
+          type:
+          - string
+          - 'null'
+        forename:
+          type:
+          - string
+          - 'null'
+        surname:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     Purplebricks.Messaging.Business.Messages.Models.MessageResponseModel:
       type: object
       properties:
@@ -682,6 +667,49 @@ components:
           type: boolean
           readOnly: true
       additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel:
+      type: object
+      properties:
+        requestedPageSize:
+          type: integer
+          format: int32
+        totalItemCount:
+          type: integer
+          format: int32
+        hasNextPage:
+          type: boolean
+        hasPreviousPage:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.Models.AddressDetail:
+      type: object
+      properties:
+        line1:
+          type:
+          - string
+          - 'null'
+        line2:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.Models.CursorPaginationType:
+      enum:
+      - Previous
+      - Next
+      type: string
   securitySchemes:
     Bearer:
       type: apiKey

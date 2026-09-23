@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Purplebricks Account API 1 - Platform Marketing Preferences API
+  title: Purplebricks Account API 1 - Platform Marketing Preferences…
   description: '### All Ex Uber Account related controllers are here.
 
-    ### [Purplebricks Account API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/account-api)'
+    ### Purplebricks Account API Git Repository'
   version: '1'
 servers:
 - url: https://api.purplebricks.co.uk/account-api
@@ -66,6 +66,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get marketingpreferences by public user id
+      x-summary-source: derived
+      operationId: getV1MarketingpreferencesByPublicUserId
+      x-operation-id-source: derived
   /v1/marketingpreferences:
     put:
       tags:
@@ -132,43 +136,12 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '204':
           description: Success
+      summary: Replace marketingpreferences
+      x-summary-source: derived
+      operationId: putV1Marketingpreferences
+      x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Account.Business.Models.CustomerPreference:
-      type: object
-      properties:
-        records:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Account.Business.Models.CustomerPreferenceRecord'
-      additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
     Purplebricks.Account.Business.Models.CustomerPreferenceRecord:
       type: object
       properties:
@@ -232,6 +205,41 @@ components:
         customerPreference:
           $ref: '#/components/schemas/Purplebricks.Account.Business.Models.CustomerPreference'
       additionalProperties: false
+    Purplebricks.Account.Business.Models.CustomerPreference:
+      type: object
+      properties:
+        records:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Account.Business.Models.CustomerPreferenceRecord'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     Purplebricks.Account.Common.Models.MarketingPreferencesUpdateInputModel:
       type: object
       properties:

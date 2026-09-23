@@ -3,7 +3,7 @@ info:
   title: Purplebricks.Valuations.Api 1.0 - Core Follow Up API
   description: '### The new home for accessing the valuations service library
 
-    ### [Purplebricks.Valuations.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/valuations-api)'
+    ### Purplebricks.Valuations.Api Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/valuations-api
@@ -76,6 +76,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create followup
+      x-summary-source: derived
+      operationId: postV1Followup
+      x-operation-id-source: derived
   /v1/followup/reschedule:
     post:
       tags:
@@ -152,6 +156,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create followup reschedule
+      x-summary-source: derived
+      operationId: postV1FollowupReschedule
+      x-operation-id-source: derived
   /v1/followup/updateleadtemp:
     post:
       tags:
@@ -216,6 +224,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create followup updateleadtemp
+      x-summary-source: derived
+      operationId: postV1FollowupUpdateleadtemp
+      x-operation-id-source: derived
   /v1/followup/toaction:
     get:
       tags:
@@ -305,6 +317,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get followup toaction
+      x-summary-source: derived
+      operationId: getV1FollowupToaction
+      x-operation-id-source: derived
   /v1/followup/lpplist:
     get:
       tags:
@@ -378,6 +394,10 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Get followup lpplist
+      x-summary-source: derived
+      operationId: getV1FollowupLpplist
+      x-operation-id-source: derived
   /v1/followup/alterdateforproperty:
     post:
       tags:
@@ -442,8 +462,41 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      summary: Create followup alterdateforproperty
+      x-summary-source: derived
+      operationId: postV1FollowupAlterdateforproperty
+      x-operation-id-source: derived
 components:
   schemas:
+    Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel:
+      type: object
+      properties:
+        valuationId:
+          type: integer
+          format: int32
+        followUpOutcome:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome'
+        followUpOutcomeDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        followUpOutcomeUserId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        nextFollowUpDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        nextFollowUpUserId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      additionalProperties: false
     Purplebricks.Valuations.Contract.InputModels.ValuationFollowUpInputModel:
       type: object
       properties:
@@ -474,31 +527,19 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
+    Purplebricks.Valuations.Contract.InputModels.FollowUpDateForPropertyInputModel:
       type: object
       properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
+        userId:
+          type: integer
           format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
+        propertyId:
+          type: integer
+          format: int32
+        nextFollowUpDate:
+          type: string
+          format: date-time
+      additionalProperties: false
     Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome:
       enum:
       - NotSet
@@ -514,6 +555,36 @@ components:
       - Campaign_03_ValuationToInstruct_W12_C
       - OtherEA
       type: string
+    Purplebricks.Valuations.Contract.ViewModels.PagedValuationFollowUpViewModel:
+      type: object
+      properties:
+        totalRows:
+          type: integer
+          format: int32
+        totalPages:
+          type: integer
+          format: int32
+          readOnly: true
+        pageNumber:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        rowCountThisPage:
+          type: integer
+          format: int32
+          readOnly: true
+        numberOfOverdueFollowups:
+          type: integer
+          format: int32
+        followUpData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUp'
+      additionalProperties: false
     Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUp:
       type: object
       properties:
@@ -584,33 +655,6 @@ components:
           - 'null'
           format: date-time
       additionalProperties: false
-    Purplebricks.Valuations.Contract.ViewModels.PagedLppSummaryListViewModel:
-      type: object
-      properties:
-        totalRows:
-          type: integer
-          format: int32
-        totalPages:
-          type: integer
-          format: int32
-          readOnly: true
-        pageNumber:
-          type: integer
-          format: int32
-        pageSize:
-          type: integer
-          format: int32
-        rowCountThisPage:
-          type: integer
-          format: int32
-          readOnly: true
-        lpps:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.LppFollowUpStatistics'
-      additionalProperties: false
     Purplebricks.Valuations.Contract.ViewModels.LppFollowUpStatistics:
       type: object
       properties:
@@ -647,36 +691,7 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel:
-      type: object
-      properties:
-        valuationId:
-          type: integer
-          format: int32
-        followUpOutcome:
-          $ref: '#/components/schemas/Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome'
-        followUpOutcomeDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        followUpOutcomeUserId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        nextFollowUpDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        nextFollowUpUserId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-      additionalProperties: false
-    Purplebricks.Valuations.Contract.ViewModels.PagedValuationFollowUpViewModel:
+    Purplebricks.Valuations.Contract.ViewModels.PagedLppSummaryListViewModel:
       type: object
       properties:
         totalRows:
@@ -696,35 +711,44 @@ components:
           type: integer
           format: int32
           readOnly: true
-        numberOfOverdueFollowups:
-          type: integer
-          format: int32
-        followUpData:
+        lpps:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUp'
+            $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.LppFollowUpStatistics'
       additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     Purplebricks.Valuations.Contract.Enums.LppSummaryOrderBy:
       enum:
       - Forename
       - Surname
       - UserId
       type: string
-    Purplebricks.Valuations.Contract.InputModels.FollowUpDateForPropertyInputModel:
-      type: object
-      properties:
-        userId:
-          type: integer
-          format: int32
-        propertyId:
-          type: integer
-          format: int32
-        nextFollowUpDate:
-          type: string
-          format: date-time
-      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

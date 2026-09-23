@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  title: Purplebricks.Valuations.Api 1.0 - Core Salesforce Diary Pilot API
+  title: Purplebricks.Valuations.Api 1.0 - Core Salesforce Diary…
   description: '### The new home for accessing the valuations service library
 
-    ### [Purplebricks.Valuations.Api Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/valuations-api)'
+    ### Purplebricks.Valuations.Api Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/valuations-api
@@ -35,6 +35,10 @@ paths:
             text/json:
               schema:
                 type: boolean
+      summary: Get salesforcediarypilot isindiarymanagementtrial by postcode
+      x-summary-source: derived
+      operationId: getV1SalesforcediarypilotIsindiarymanagementtrialByPostcode
+      x-operation-id-source: derived
 components:
   securitySchemes:
     Bearer:

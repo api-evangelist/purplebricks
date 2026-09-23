@@ -3,7 +3,7 @@ info:
   title: Purplebricks Property API 1.0 - Platform Property Box API
   description: '### All Ex Uber Property related controllers are here.
 
-    ### [Purplebricks Property API Git Repository](https://dev.azure.com/purplebricks/BackEnd/_git/property-api)'
+    ### Purplebricks Property API Git Repository'
   version: '1.0'
 servers:
 - url: https://api.purplebricks.co.uk/property-api
@@ -74,6 +74,10 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get propertybox by property id propertyboxorderstatus
+      x-summary-source: derived
+      operationId: getV1PropertyboxByPropertyIdPropertyboxorderstatus
+      x-operation-id-source: derived
   /v1/propertybox/{propertyId}/propertyboxdeeplink:
     get:
       tags:
@@ -136,21 +140,12 @@ paths:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
         '500':
           description: Server Error
+      summary: Get propertybox by property id propertyboxdeeplink
+      x-summary-source: derived
+      operationId: getV1PropertyboxByPropertyIdPropertyboxdeeplink
+      x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Property.Business.ViewModels.PropertyBoxOrderStatusViewModel:
-      type: object
-      properties:
-        status:
-          type:
-          - string
-          - 'null'
-        changeDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -176,6 +171,19 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    Purplebricks.Property.Business.ViewModels.PropertyBoxOrderStatusViewModel:
+      type: object
+      properties:
+        status:
+          type:
+          - string
+          - 'null'
+        changeDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
     Purplebricks.Property.Business.ViewModels.PropertyBoxDeepLinkViewModel:
       type: object
       properties:
