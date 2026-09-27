@@ -152,19 +152,6 @@ components:
       - Sales
       - Lettings
       type: string
-    OnTheMarketBranchList:
-      type: object
-      properties:
-        count:
-          type: integer
-          format: int32
-        items:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/OnTheMarketBranch'
-      additionalProperties: false
     OnTheMarketBranch:
       type: object
       properties:
@@ -188,6 +175,19 @@ components:
           items:
             type: integer
             format: int32
+      additionalProperties: false
+    OnTheMarketBranchList:
+      type: object
+      properties:
+        count:
+          type: integer
+          format: int32
+        items:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/OnTheMarketBranch'
       additionalProperties: false
   securitySchemes:
     Bearer:

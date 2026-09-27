@@ -153,26 +153,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    Purplebricks.Property.Business.ViewModels.AdditionalUserAddressViewModel:
-      type: object
-      properties:
-        line1:
-          type:
-          - string
-          - 'null'
-        line2:
-          type:
-          - string
-          - 'null'
-        town:
-          type:
-          - string
-          - 'null'
-        postcode:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     Purplebricks.Property.Business.ViewModels.AdditionalUserDetailsViewModel:
       type: object
       properties:
@@ -206,6 +186,26 @@ components:
           - 'null'
         address:
           $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.AdditionalUserAddressViewModel'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.AdditionalUserAddressViewModel:
+      type: object
+      properties:
+        line1:
+          type:
+          - string
+          - 'null'
+        line2:
+          type:
+          - string
+          - 'null'
+        town:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
   securitySchemes:
     Bearer:

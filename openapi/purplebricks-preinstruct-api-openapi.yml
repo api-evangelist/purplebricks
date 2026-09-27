@@ -198,14 +198,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    Purplebricks.Lettings.Model.Models.PreInstructPostModel:
-      type: object
-      properties:
-        thirdPartyPropertyId:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     Purplebricks.Lettings.Model.Models.PreInstructPropertyAndUserInformation:
       type: object
       properties:
@@ -264,6 +256,14 @@ components:
           type: integer
           format: int32
         email:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Lettings.Model.Models.PreInstructPostModel:
+      type: object
+      properties:
+        thirdPartyPropertyId:
           type:
           - string
           - 'null'

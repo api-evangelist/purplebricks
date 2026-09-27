@@ -102,6 +102,16 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    Purplebricks.Property.Business.ViewModels.Countrywide.JobResultResponse:
+      type: object
+      properties:
+        CWS_job_number:
+          type:
+          - string
+          - 'null'
+        Success:
+          type: boolean
+      additionalProperties: false
     Purplebricks.Property.Business.InputModels.Countrywide.JobResultRequest:
       type: object
       properties:
@@ -133,16 +143,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.Countrywide.JobResultResponse:
-      type: object
-      properties:
-        CWS_job_number:
-          type:
-          - string
-          - 'null'
-        Success:
-          type: boolean
       additionalProperties: false
   securitySchemes:
     Bearer:

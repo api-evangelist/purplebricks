@@ -216,6 +216,85 @@ paths:
     - url: https://api.purplebricks.co.uk/property-api
 components:
   schemas:
+    Purplebricks.Property.Domain.Enums.WorkflowStepType:
+      enum:
+      - Create
+      - BookValuation
+      - Valuation
+      - Instruct
+      - CreateAdvert
+      - RejectAdvert
+      - AmendAdvert
+      - ApproveAdvert
+      - SchedulePendingRegCert
+      - Schedule
+      - PublishPendingRegCert
+      - Publish
+      - Withdraw
+      - Suspend
+      - SuspendByUser
+      - SuspendAccount
+      - UnderOffer
+      - SoldSubjectToContract
+      - DiyAdvertStarted
+      - LetSubjectToContract
+      - DeclineOffer
+      - UpdateProperty
+      - AcceptableOffer
+      - ApplicationReceived
+      - AcceptableOfferNotMarketed
+      - WithdrawOffer
+      - UpdateAdvert
+      - DiyAdvertCreated
+      - DiyAdvertRejected
+      - ApprovePhoto
+      - ContractsExchanged
+      - Completion
+      - DiyAdvertAmended
+      - DiyAdvertRejectAmendments
+      - SchedulePendingContract
+      - PublishPendingContract
+      - UpdatePropertyDiary
+      - ContractsExchangedCoolingOffPeriod
+      - ForceSold
+      - ForceSoldSubjectToContract
+      - ForceContractsExchanged
+      - ForceCompletion
+      - SoldSubjectToEscrow
+      - PendingEscrow
+      - Closing
+      - ForceAcceptableOffer
+      - ForceAcceptableOfferNotMarketed
+      - ForceContractsExchangedCoolingOffPeriod
+      - InstantValuation
+      - FakeValuation
+      - Cancelled
+      type: string
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     Purplebricks.Property.Business.ViewModels.Dashboard.MyPropertiesViewModel:
       type: object
       properties:
@@ -232,6 +311,89 @@ components:
           items:
             $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Dashboard.DashboardPropertyViewModel'
       additionalProperties: false
+    Purplebricks.Property.Domain.Enums.RentFrequency:
+      enum:
+      - Yearly
+      - Quarterly
+      - Monthly
+      - Weekly
+      - Daily
+      type: string
+    Purplebricks.Property.Domain.Enums.IanaTimeZone:
+      enum:
+      - Not Set
+      - Europe/London
+      - Australia/Perth
+      - Australia/Eucla
+      - Australia/Adelaide
+      - Australia/Broken_Hill
+      - Australia/Darwin
+      - Australia/Brisbane
+      - Australia/Currie
+      - Australia/Hobart
+      - Australia/Lindeman
+      - Australia/Melbourne
+      - Australia/Sydney
+      - Australia/Lord_Howe
+      - Antarctica/Macquarie
+      - America/Los_Angeles
+      - America/New_York
+      - America/Detroit
+      - America/Kentucky/Louisville
+      - America/Kentucky/Monticello
+      - America/Indiana/Indianapolis
+      - America/Indiana/Vincennes
+      - America/Indiana/Winamac
+      - America/Indiana/Marengo
+      - America/Indiana/Petersburg
+      - America/Indiana/Vevay
+      - America/Chicago
+      - America/Indiana/Tell_City
+      - America/Indiana/Knox
+      - America/Menominee
+      - America/North_Dakota/Center
+      - America/North_Dakota/New_Salem
+      - America/North_Dakota/Beulah
+      - America/Boise
+      - America/Phoenix
+      - America/Anchorage
+      - America/Juneau
+      - America/Sitka
+      - America/Yakutat
+      - America/Nome
+      - America/Adak
+      - America/Metlakatla
+      - Pacific/Honolulu
+      - America/Denver
+      - Pacific/Auckland
+      type: string
+    Purplebricks.Property.Domain.Enums.OfferTenancyStatus:
+      enum:
+      - ConfirmGas
+      - AgreeMoveInDate
+      - TenantAgreeMoveInDate
+      - LandlordAgreeMoveInDate
+      - InitialReferencing
+      - ReferencingOrdered
+      - ReferencingApplicationPrepared
+      - ReferencingInProgress
+      - ReferencingGreen
+      - ReferencingBlue
+      - ReferencingRedDeclined
+      - ReferencingRedDelayed
+      - InitialGuarantor
+      - GuarantorOrdered
+      - GuarantorApplicationPrepared
+      - GuarantorInProgress
+      - GuarantorGreen
+      - GuarantorRedDeclined
+      - GuarantorRedDelayed
+      - TenancyUpgrades
+      - WaitingOnTenantsContribution
+      - ConfirmTenancyAgreement
+      - FinaliseTenancyAgreement
+      - Complete
+      type: string
     Purplebricks.Property.Domain.Enums.PriceQualifier:
       enum:
       - Default
@@ -247,6 +409,26 @@ components:
       - PartBuyPartRent
       - SharedEquity
       type: string
+    Purplebricks.Property.Business.ViewModels.PropertyExternalLinksViewModel:
+      type: object
+      properties:
+        rightMoveAdvertUrl:
+          type:
+          - string
+          - 'null'
+        zooplaAdvertUrl:
+          type:
+          - string
+          - 'null'
+        onTheMarketAdvertUrl:
+          type:
+          - string
+          - 'null'
+        purplebricksPropertyUrlPath:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     Purplebricks.Property.Business.ViewModels.Dashboard.DashboardPropertyViewModel:
       type: object
       properties:
@@ -385,193 +567,11 @@ components:
         comingSoon:
           type: boolean
       additionalProperties: false
-    Purplebricks.Property.Domain.Enums.WorkflowStepType:
-      enum:
-      - Create
-      - BookValuation
-      - Valuation
-      - Instruct
-      - CreateAdvert
-      - RejectAdvert
-      - AmendAdvert
-      - ApproveAdvert
-      - SchedulePendingRegCert
-      - Schedule
-      - PublishPendingRegCert
-      - Publish
-      - Withdraw
-      - Suspend
-      - SuspendByUser
-      - SuspendAccount
-      - UnderOffer
-      - SoldSubjectToContract
-      - DiyAdvertStarted
-      - LetSubjectToContract
-      - DeclineOffer
-      - UpdateProperty
-      - AcceptableOffer
-      - ApplicationReceived
-      - AcceptableOfferNotMarketed
-      - WithdrawOffer
-      - UpdateAdvert
-      - DiyAdvertCreated
-      - DiyAdvertRejected
-      - ApprovePhoto
-      - ContractsExchanged
-      - Completion
-      - DiyAdvertAmended
-      - DiyAdvertRejectAmendments
-      - SchedulePendingContract
-      - PublishPendingContract
-      - UpdatePropertyDiary
-      - ContractsExchangedCoolingOffPeriod
-      - ForceSold
-      - ForceSoldSubjectToContract
-      - ForceContractsExchanged
-      - ForceCompletion
-      - SoldSubjectToEscrow
-      - PendingEscrow
-      - Closing
-      - ForceAcceptableOffer
-      - ForceAcceptableOfferNotMarketed
-      - ForceContractsExchangedCoolingOffPeriod
-      - InstantValuation
-      - FakeValuation
-      - Cancelled
-      type: string
     Purplebricks.Property.Domain.Enums.RegulatoryCertificateType:
       enum:
       - Epc
       - Hmo
       - HomeReport
-      type: string
-    Purplebricks.Property.Domain.Enums.RentFrequency:
-      enum:
-      - Yearly
-      - Quarterly
-      - Monthly
-      - Weekly
-      - Daily
-      type: string
-    Purplebricks.Property.Business.ViewModels.PropertyExternalLinksViewModel:
-      type: object
-      properties:
-        rightMoveAdvertUrl:
-          type:
-          - string
-          - 'null'
-        zooplaAdvertUrl:
-          type:
-          - string
-          - 'null'
-        onTheMarketAdvertUrl:
-          type:
-          - string
-          - 'null'
-        purplebricksPropertyUrlPath:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Property.Domain.Enums.IanaTimeZone:
-      enum:
-      - Not Set
-      - Europe/London
-      - Australia/Perth
-      - Australia/Eucla
-      - Australia/Adelaide
-      - Australia/Broken_Hill
-      - Australia/Darwin
-      - Australia/Brisbane
-      - Australia/Currie
-      - Australia/Hobart
-      - Australia/Lindeman
-      - Australia/Melbourne
-      - Australia/Sydney
-      - Australia/Lord_Howe
-      - Antarctica/Macquarie
-      - America/Los_Angeles
-      - America/New_York
-      - America/Detroit
-      - America/Kentucky/Louisville
-      - America/Kentucky/Monticello
-      - America/Indiana/Indianapolis
-      - America/Indiana/Vincennes
-      - America/Indiana/Winamac
-      - America/Indiana/Marengo
-      - America/Indiana/Petersburg
-      - America/Indiana/Vevay
-      - America/Chicago
-      - America/Indiana/Tell_City
-      - America/Indiana/Knox
-      - America/Menominee
-      - America/North_Dakota/Center
-      - America/North_Dakota/New_Salem
-      - America/North_Dakota/Beulah
-      - America/Boise
-      - America/Phoenix
-      - America/Anchorage
-      - America/Juneau
-      - America/Sitka
-      - America/Yakutat
-      - America/Nome
-      - America/Adak
-      - America/Metlakatla
-      - Pacific/Honolulu
-      - America/Denver
-      - Pacific/Auckland
-      type: string
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    Purplebricks.Property.Domain.Enums.OfferTenancyStatus:
-      enum:
-      - ConfirmGas
-      - AgreeMoveInDate
-      - TenantAgreeMoveInDate
-      - LandlordAgreeMoveInDate
-      - InitialReferencing
-      - ReferencingOrdered
-      - ReferencingApplicationPrepared
-      - ReferencingInProgress
-      - ReferencingGreen
-      - ReferencingBlue
-      - ReferencingRedDeclined
-      - ReferencingRedDelayed
-      - InitialGuarantor
-      - GuarantorOrdered
-      - GuarantorApplicationPrepared
-      - GuarantorInProgress
-      - GuarantorGreen
-      - GuarantorRedDeclined
-      - GuarantorRedDelayed
-      - TenancyUpgrades
-      - WaitingOnTenantsContribution
-      - ConfirmTenancyAgreement
-      - FinaliseTenancyAgreement
-      - Complete
       type: string
   securitySchemes:
     Bearer:

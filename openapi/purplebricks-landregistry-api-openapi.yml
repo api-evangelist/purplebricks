@@ -67,7 +67,87 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Purplebricks.Property.Business.ViewModels.LabelValue:
+      type: object
+      properties:
+        _value:
+          type:
+          - string
+          - 'null'
+        _lang:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.TransactionItem:
+      type: object
+      properties:
+        _about:
+          type:
+          - string
+          - 'null'
+        transactionId:
+          type:
+          - string
+          - 'null'
+        pricePaid:
+          type: number
+          format: double
+        transactionDate:
+          type:
+          - string
+          - 'null'
+        propertyAddress:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyAddress'
+        propertyType:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyType'
+        estateType:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.EstateType'
+        newBuild:
+          type: boolean
+        transactionCategory:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.TransactionCategory'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     Purplebricks.Property.Business.ViewModels.PropertyType:
+      type: object
+      properties:
+        _about:
+          type:
+          - string
+          - 'null'
+        prefLabel:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LabelValue'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.EstateType:
       type: object
       properties:
         _about:
@@ -108,46 +188,21 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.TransactionCategory:
+    Purplebricks.Property.Business.ViewModels.LandRegistryResponse:
       type: object
       properties:
-        _about:
+        format:
           type:
           - string
           - 'null'
-        prefLabel:
+        version:
           type:
-          - array
+          - string
           - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LabelValue'
+        result:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LandRegistryResult'
       additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    Purplebricks.Property.Business.ViewModels.EstateType:
+    Purplebricks.Property.Business.ViewModels.TransactionCategory:
       type: object
       properties:
         _about:
@@ -197,61 +252,6 @@ components:
           - string
           - 'null'
         postcode:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.TransactionItem:
-      type: object
-      properties:
-        _about:
-          type:
-          - string
-          - 'null'
-        transactionId:
-          type:
-          - string
-          - 'null'
-        pricePaid:
-          type: number
-          format: double
-        transactionDate:
-          type:
-          - string
-          - 'null'
-        propertyAddress:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyAddress'
-        propertyType:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyType'
-        estateType:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.EstateType'
-        newBuild:
-          type: boolean
-        transactionCategory:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.TransactionCategory'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.LandRegistryResponse:
-      type: object
-      properties:
-        format:
-          type:
-          - string
-          - 'null'
-        version:
-          type:
-          - string
-          - 'null'
-        result:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LandRegistryResult'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.LabelValue:
-      type: object
-      properties:
-        _value:
-          type:
-          - string
-          - 'null'
-        _lang:
           type:
           - string
           - 'null'

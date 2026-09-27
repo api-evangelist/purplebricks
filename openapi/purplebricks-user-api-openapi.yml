@@ -283,6 +283,40 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Account.Api.Models.EmailInputModel:
+      type: object
+      properties:
+        email:
+          type:
+          - string
+          - 'null'
+          format: email
+      additionalProperties: false
     Purplebricks.Account.Common.Models.CreateUserInputModel:
       type: object
       properties:
@@ -337,63 +371,6 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Purplebricks.Account.Api.Models.EmailInputModel:
-      type: object
-      properties:
-        email:
-          type:
-          - string
-          - 'null'
-          format: email
-      additionalProperties: false
-    Purplebricks.Account.Api.Models.RequestDeletionInputModel:
-      type: object
-      properties:
-        reasonNumber:
-          type: integer
-          format: int32
-        reasonText:
-          maxLength: 1000
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    Purplebricks.Account.Common.Enums.AddressType:
-      enum:
-      - Home
-      - Business
-      - Company
-      - Property
-      - Order
-      - Lead
-      - BookValuationAttempt
-      - Billing
-      type: string
     Purplebricks.Account.Common.Models.CreateUserAddressInputModel:
       type: object
       properties:
@@ -431,6 +408,29 @@ components:
           type: integer
           format: int32
       additionalProperties: false
+    Purplebricks.Account.Api.Models.RequestDeletionInputModel:
+      type: object
+      properties:
+        reasonNumber:
+          type: integer
+          format: int32
+        reasonText:
+          maxLength: 1000
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Account.Common.Enums.AddressType:
+      enum:
+      - Home
+      - Business
+      - Company
+      - Property
+      - Order
+      - Lead
+      - BookValuationAttempt
+      - Billing
+      type: string
   securitySchemes:
     Bearer:
       type: apiKey

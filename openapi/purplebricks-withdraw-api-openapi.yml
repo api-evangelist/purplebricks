@@ -344,12 +344,29 @@ components:
       - SoldWithPurplebricks
       - LetWithPurplebricks
       type: string
-    Purplebricks.Property.Domain.Models.CancelRequestWithdrawProperty:
+    Purplebricks.Security.Auth.AuthUser:
       type: object
       properties:
-        propertyId:
+        userId:
           type: integer
           format: int32
+          readOnly: true
+        publicUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+          readOnly: true
+        impersonatorUserId:
+          type: integer
+          format: int32
+          readOnly: true
+        impersonatorPublicUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+          readOnly: true
       additionalProperties: false
     Purplebricks.Property.Domain.Models.RequestWithdrawProperty:
       type: object
@@ -360,24 +377,12 @@ components:
         withdrawPropertyReason:
           $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WithdrawPropertyReason'
       additionalProperties: false
-    Purplebricks.Property.Domain.Models.WithdrawPropertyRequestModel:
+    Purplebricks.Property.Domain.Models.CancelRequestWithdrawProperty:
       type: object
       properties:
         propertyId:
           type: integer
           format: int32
-        withdrawalReason:
-          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WithdrawPropertyReason'
-        user:
-          $ref: '#/components/schemas/Purplebricks.Security.Auth.AuthUser'
-        collectBoard:
-          type: boolean
-        ipAddress:
-          type:
-          - string
-          - 'null'
-        forceAdvertWithdrawal:
-          type: boolean
       additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
@@ -404,29 +409,24 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    Purplebricks.Security.Auth.AuthUser:
+    Purplebricks.Property.Domain.Models.WithdrawPropertyRequestModel:
       type: object
       properties:
-        userId:
+        propertyId:
           type: integer
           format: int32
-          readOnly: true
-        publicUserId:
+        withdrawalReason:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WithdrawPropertyReason'
+        user:
+          $ref: '#/components/schemas/Purplebricks.Security.Auth.AuthUser'
+        collectBoard:
+          type: boolean
+        ipAddress:
           type:
           - string
           - 'null'
-          format: uuid
-          readOnly: true
-        impersonatorUserId:
-          type: integer
-          format: int32
-          readOnly: true
-        impersonatorPublicUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-          readOnly: true
+        forceAdvertWithdrawal:
+          type: boolean
       additionalProperties: false
     Purplebricks.Property.Domain.Models.WithdrawPropertyResponseModel:
       type: object

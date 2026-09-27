@@ -66,14 +66,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Valuations.Domains.Models.Enums.ComparablePropertyMarketState:
-      enum:
-      - Sold
-      - OnMarket
-      - Let
-      - ToLet
-      - SSTC
-      type: string
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -167,6 +159,14 @@ components:
           items:
             $ref: '#/components/schemas/Purplebricks.Valuations.Api.Models.ComparablePropertyViewModel'
       additionalProperties: false
+    Purplebricks.Valuations.Domains.Models.Enums.ComparablePropertyMarketState:
+      enum:
+      - Sold
+      - OnMarket
+      - Let
+      - ToLet
+      - SSTC
+      type: string
     Purplebricks.Valuations.Api.Models.ComparablePropertyViewModel:
       type: object
       properties:

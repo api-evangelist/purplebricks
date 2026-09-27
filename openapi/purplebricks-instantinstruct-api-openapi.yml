@@ -46,11 +46,26 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Property.Domain.Enums.Garage:
+    Purplebricks.Property.Domain.Enums.Glazing:
       enum:
-      - OneCar
-      - TwoOrMoreCars
+      - Full
+      - Part
       - None
+      type: string
+    Purplebricks.Property.Business.ViewModels.InstantInstructPropertyViewModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        hideNavigation:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.Deposit:
+      enum:
+      - OneMonth
+      - OneAndHalfMonths
+      - TwoMonths
       type: string
     Purplebricks.Property.Domain.Enums.Tenure:
       enum:
@@ -66,54 +81,12 @@ components:
       - PartFurnished
       - Unfurnished
       type: string
-    Purplebricks.Property.Domain.Enums.Deposit:
+    Purplebricks.Property.Domain.Enums.Garage:
       enum:
-      - OneMonth
-      - OneAndHalfMonths
-      - TwoMonths
-      type: string
-    Purplebricks.Property.Domain.Enums.LettingServiceLevel:
-      enum:
-      - TenantFind
-      - RentCollect
-      - FullyManaged
-      type: string
-    Purplebricks.Property.Business.ViewModels.InstantInstructPropertyViewModel:
-      type: object
-      properties:
-        propertyId:
-          type: integer
-          format: int32
-        hideNavigation:
-          type: boolean
-      additionalProperties: false
-    Purplebricks.Property.Domain.Enums.RentFrequency:
-      enum:
-      - Yearly
-      - Quarterly
-      - Monthly
-      - Weekly
-      - Daily
-      type: string
-    Purplebricks.Property.Domain.Enums.Parking:
-      enum:
+      - OneCar
+      - TwoOrMoreCars
       - None
-      - Allocated
-      - Communal
-      - Covered
-      - Driveway
-      - Gated
-      - OffStreet
-      - OnStreet
       type: string
-    Purplebricks.Property.Business.InputModels.PropertyDetailsWithTenancyInfoInputModel:
-      type: object
-      properties:
-        propertyDetails:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyDetails'
-        tenancyData:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.TenancyDataInputModel'
-      additionalProperties: false
     Purplebricks.Property.Domain.Enums.TaxBand:
       enum:
       - A
@@ -128,6 +101,20 @@ components:
       - TBC
       - Exempt
       type: string
+    Purplebricks.Property.Domain.Enums.LettingServiceLevel:
+      enum:
+      - TenantFind
+      - RentCollect
+      - FullyManaged
+      type: string
+    Purplebricks.Property.Domain.Enums.RentFrequency:
+      enum:
+      - Yearly
+      - Quarterly
+      - Monthly
+      - Weekly
+      - Daily
+      type: string
     Purplebricks.Property.Domain.Enums.Heating:
       enum:
       - None
@@ -138,6 +125,17 @@ components:
       - Oil
       - Solar
       - UnderFloor
+      type: string
+    Purplebricks.Property.Domain.Enums.Parking:
+      enum:
+      - None
+      - Allocated
+      - Communal
+      - Covered
+      - Driveway
+      - Gated
+      - OffStreet
+      - OnStreet
       type: string
     Purplebricks.Property.Business.InputModels.TenancyDataInputModel:
       type: object
@@ -181,11 +179,11 @@ components:
         serviceLevel:
           $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.LettingServiceLevel'
       additionalProperties: false
-    Purplebricks.Property.Domain.Enums.Glazing:
+    Purplebricks.Property.Domain.Enums.Garden:
       enum:
-      - Full
-      - Part
       - None
+      - Garden
+      - PrivateGarden
       type: string
     Purplebricks.Property.Business.InputModels.PropertyDetails:
       type: object
@@ -291,16 +289,18 @@ components:
           type: integer
           format: int32
       additionalProperties: false
+    Purplebricks.Property.Business.InputModels.PropertyDetailsWithTenancyInfoInputModel:
+      type: object
+      properties:
+        propertyDetails:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.PropertyDetails'
+        tenancyData:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.TenancyDataInputModel'
+      additionalProperties: false
     Purplebricks.Property.Domain.Enums.LettingTerms:
       enum:
       - SixMonths
       - OneYearOrMore
-      type: string
-    Purplebricks.Property.Domain.Enums.Garden:
-      enum:
-      - None
-      - Garden
-      - PrivateGarden
       type: string
   securitySchemes:
     Bearer:

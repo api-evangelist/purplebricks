@@ -1126,31 +1126,27 @@ paths:
     - url: https://api.purplebricks.co.uk/property-api
 components:
   schemas:
-    Purplebricks.Property.Business.ViewModels.RequirementStatus:
-      enum:
-      - Required
-      - Optional
-      - NotApplicable
-      type: string
-    Purplebricks.Property.Business.InputModels.SaveImageDetailsRequest:
+    Purplebricks.Property.Business.ViewModels.ProgressAdvertViewModel:
       type: object
       properties:
-        images:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.ImageDetails'
+        requirement:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.RequirementStatus'
+        isCompleted:
+          type: boolean
+        canReview:
+          type: boolean
       additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.ImageUploadViewModel:
+    Purplebricks.Property.Business.InputModels.ImageDetails:
       type: object
       properties:
-        images:
+        url:
           type:
-          - array
+          - string
           - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ImageUploadItem'
+        title:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     Purplebricks.Property.Business.InputModels.BoardAndKeySafePreferenceRequest:
       type: object
@@ -1166,57 +1162,6 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Purplebricks.Property.Business.InputModels.ImageDetails:
-      type: object
-      properties:
-        url:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Property.Business.InputModels.MarketPriceRejectionRequest:
-      type: object
-      properties:
-        userMarketPrice:
-          type: number
-          format: double
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.ImageUploadItem:
-      type: object
-      properties:
-        fileName:
-          type:
-          - string
-          - 'null'
-        uploadUrl:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.ProgressViewModel:
-      type: object
-      properties:
-        requirement:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.RequirementStatus'
-        isCompleted:
-          type: boolean
-      additionalProperties: false
-    Purplebricks.Property.Business.InputModels.TaxBandCreationRequest:
-      type: object
-      properties:
-        taxBand:
-          type:
-          - string
-          - 'null'
-        exemptReason:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     Purplebricks.Property.Business.InputModels.OwnershipReviewRejectRequest:
       type: object
       properties:
@@ -1224,16 +1169,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.ProgressAdvertViewModel:
-      type: object
-      properties:
-        requirement:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.RequirementStatus'
-        isCompleted:
-          type: boolean
-        canReview:
-          type: boolean
       additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
@@ -1260,6 +1195,25 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    Purplebricks.Property.Business.InputModels.MarketPriceRejectionRequest:
+      type: object
+      properties:
+        userMarketPrice:
+          type: number
+          format: double
+      additionalProperties: false
+    Purplebricks.Property.Business.InputModels.TaxBandCreationRequest:
+      type: object
+      properties:
+        taxBand:
+          type:
+          - string
+          - 'null'
+        exemptReason:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     Purplebricks.Property.Business.ViewModels.GoToMarketViewModel:
       type: object
       properties:
@@ -1284,6 +1238,52 @@ components:
         accessDetailsProgress:
           $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressViewModel'
       additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ImageUploadItem:
+      type: object
+      properties:
+        fileName:
+          type:
+          - string
+          - 'null'
+        uploadUrl:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ProgressViewModel:
+      type: object
+      properties:
+        requirement:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.RequirementStatus'
+        isCompleted:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Business.InputModels.SaveImageDetailsRequest:
+      type: object
+      properties:
+        images:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.ImageDetails'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ImageUploadViewModel:
+      type: object
+      properties:
+        images:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ImageUploadItem'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.RequirementStatus:
+      enum:
+      - Required
+      - Optional
+      - NotApplicable
+      type: string
     Purplebricks.Property.Business.InputModels.BoardAndKeySafePreferenceRequestV2:
       type: object
       properties:

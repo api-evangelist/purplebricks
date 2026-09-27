@@ -72,6 +72,158 @@ paths:
     - url: https://api.purplebricks.co.uk/property-api
 components:
   schemas:
+    Purplebricks.Property.Domain.Enums.PaymentMethod:
+      enum:
+      - Card
+      - Pay4Later
+      - RateSetter
+      - CommBankCard
+      - RealexCard
+      - PurplebricksDeferredPayment
+      - Duologi
+      - GlobalPayDeferredPayment
+      - BraintreeCard
+      - PayPal
+      - PayPalCredit
+      type: string
+    Purplebricks.Property.Domain.Enums.AddOnType:
+      enum:
+      - PropertyListing
+      - InitialForSaleBoard
+      - AccompaniedViewings
+      - Epc
+      - InitialForRentBoard
+      - PremiumListing
+      - NegotiationService
+      - ProfessionalPhotos
+      - VirtualTours
+      - PropertyPresentation
+      - PremiumSalesParticulars
+      - DiyListing
+      - AdditionalForSaleBoard
+      - AdditionalForRentBoard
+      - StandardReference
+      - DetailedReference
+      - Guarantor
+      - TenancyAgreement
+      - Inventory1To3Rooms
+      - InventoryCheckIn
+      - InventoryCheckInCheckOut
+      - Inventory4PlusRooms
+      - AdditionalStandardReference
+      - StudentReference
+      - HomeReport
+      - PurplebricksPlusListing
+      - Auction
+      - AuctionPropertyListing
+      - AccompaniedViewingsFree
+      - DomainAuPriorityListing
+      - RealEstateAuFeatureListing
+      - RealEstateAuHighlightListing
+      - DomainAuPremiumListing
+      - DomainAuPremiumListing6Week
+      - DomainAuPremiumListing3Week
+      - DomainAuPriorityListing6Week
+      - AuctionUpgrade
+      - UnlockFixedLawyer
+      - RightMoveFeaturedProperty
+      - RightMoveFeaturedPremiumBundle
+      - DomainAuPlatinumListing6Week
+      - DomainAuPlatinumListing10Week
+      - DomainAuPlatinumListing14Week
+      - DomainAuPlatinumListing90Day
+      - DomainAuPremiumListing90Day
+      - DomainAuPremiumListing45Day
+      - REAAuHighlightListing45
+      - REAAuPremiereListing45
+      - REAAuPremiereDiscountListing45
+      - ProfessionalFloorplan
+      - PurplebricksPremierListing
+      - PurplebricksFeaturedProperty
+      - HoldingDeposit
+      - HomeReportRefresh
+      - AdvancedConveyancingServices
+      - InitialMarketingFee
+      - Interactive3DTour
+      - MoneyBackGuarantee
+      type: string
+    Purplebricks.Property.Domain.Enums.WorkflowStepType:
+      enum:
+      - Create
+      - BookValuation
+      - Valuation
+      - Instruct
+      - CreateAdvert
+      - RejectAdvert
+      - AmendAdvert
+      - ApproveAdvert
+      - SchedulePendingRegCert
+      - Schedule
+      - PublishPendingRegCert
+      - Publish
+      - Withdraw
+      - Suspend
+      - SuspendByUser
+      - SuspendAccount
+      - UnderOffer
+      - SoldSubjectToContract
+      - DiyAdvertStarted
+      - LetSubjectToContract
+      - DeclineOffer
+      - UpdateProperty
+      - AcceptableOffer
+      - ApplicationReceived
+      - AcceptableOfferNotMarketed
+      - WithdrawOffer
+      - UpdateAdvert
+      - DiyAdvertCreated
+      - DiyAdvertRejected
+      - ApprovePhoto
+      - ContractsExchanged
+      - Completion
+      - DiyAdvertAmended
+      - DiyAdvertRejectAmendments
+      - SchedulePendingContract
+      - PublishPendingContract
+      - UpdatePropertyDiary
+      - ContractsExchangedCoolingOffPeriod
+      - ForceSold
+      - ForceSoldSubjectToContract
+      - ForceContractsExchanged
+      - ForceCompletion
+      - SoldSubjectToEscrow
+      - PendingEscrow
+      - Closing
+      - ForceAcceptableOffer
+      - ForceAcceptableOfferNotMarketed
+      - ForceContractsExchangedCoolingOffPeriod
+      - InstantValuation
+      - FakeValuation
+      - Cancelled
+      type: string
+    Purplebricks.Property.Business.ViewModels.ExpertSidebarDetailsViewModel:
+      type: object
+      properties:
+        forename:
+          type:
+          - string
+          - 'null'
+        surname:
+          type:
+          - string
+          - 'null'
+        imageUrl:
+          type:
+          - string
+          - 'null'
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+        agentId:
+          type: integer
+          format: int32
+      additionalProperties: false
     Purplebricks.Property.Business.ViewModels.PreactiveViewModel:
       type: object
       properties:
@@ -195,150 +347,48 @@ components:
         customerCanUploadPhotos:
           type: boolean
       additionalProperties: false
-    Purplebricks.Property.Domain.Enums.RegulatoryCertificateType:
-      enum:
-      - Epc
-      - Hmo
-      - HomeReport
-      type: string
-    Purplebricks.Property.Domain.Enums.WorkflowStepType:
-      enum:
-      - Create
-      - BookValuation
-      - Valuation
-      - Instruct
-      - CreateAdvert
-      - RejectAdvert
-      - AmendAdvert
-      - ApproveAdvert
-      - SchedulePendingRegCert
-      - Schedule
-      - PublishPendingRegCert
-      - Publish
-      - Withdraw
-      - Suspend
-      - SuspendByUser
-      - SuspendAccount
-      - UnderOffer
-      - SoldSubjectToContract
-      - DiyAdvertStarted
-      - LetSubjectToContract
-      - DeclineOffer
-      - UpdateProperty
-      - AcceptableOffer
-      - ApplicationReceived
-      - AcceptableOfferNotMarketed
-      - WithdrawOffer
-      - UpdateAdvert
-      - DiyAdvertCreated
-      - DiyAdvertRejected
-      - ApprovePhoto
-      - ContractsExchanged
-      - Completion
-      - DiyAdvertAmended
-      - DiyAdvertRejectAmendments
-      - SchedulePendingContract
-      - PublishPendingContract
-      - UpdatePropertyDiary
-      - ContractsExchangedCoolingOffPeriod
-      - ForceSold
-      - ForceSoldSubjectToContract
-      - ForceContractsExchanged
-      - ForceCompletion
-      - SoldSubjectToEscrow
-      - PendingEscrow
-      - Closing
-      - ForceAcceptableOffer
-      - ForceAcceptableOfferNotMarketed
-      - ForceContractsExchangedCoolingOffPeriod
-      - InstantValuation
-      - FakeValuation
-      - Cancelled
-      type: string
-    Purplebricks.Property.Domain.Enums.PaymentMethod:
-      enum:
-      - Card
-      - Pay4Later
-      - RateSetter
-      - CommBankCard
-      - RealexCard
-      - PurplebricksDeferredPayment
-      - Duologi
-      - GlobalPayDeferredPayment
-      - BraintreeCard
-      - PayPal
-      - PayPalCredit
-      type: string
-    Purplebricks.Property.Business.ViewModels.PreactiveDiyViewModel:
+    Purplebricks.Property.Business.ViewModels.ShoppingCartViewModel:
       type: object
       properties:
-        titleDeedValidated:
-          type: boolean
-        idValidated:
-          type: boolean
-        advertPhotosValidated:
+        id:
+          type: integer
+          format: int32
+        vatRate:
+          type: number
+          format: double
+        vatTotal:
+          type: number
+          format: double
+        total:
+          type: number
+          format: double
+        voucherDiscount:
+          type: number
+          format: double
+        itemCount:
+          type: integer
+          format: int32
+        items:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ShoppingCartItemViewModel'
+        voucher:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ShoppingCartVoucherViewModel'
+        payAtSettlementTotal:
+          type: number
+          format: double
+        payNowTotal:
+          type: number
+          format: double
+        isInstruction:
           type: boolean
       additionalProperties: false
-    Purplebricks.Property.Domain.Enums.AddOnType:
+    Purplebricks.Property.Domain.Enums.VoucherType:
       enum:
-      - PropertyListing
-      - InitialForSaleBoard
-      - AccompaniedViewings
-      - Epc
-      - InitialForRentBoard
-      - PremiumListing
-      - NegotiationService
-      - ProfessionalPhotos
-      - VirtualTours
-      - PropertyPresentation
-      - PremiumSalesParticulars
-      - DiyListing
-      - AdditionalForSaleBoard
-      - AdditionalForRentBoard
-      - StandardReference
-      - DetailedReference
-      - Guarantor
-      - TenancyAgreement
-      - Inventory1To3Rooms
-      - InventoryCheckIn
-      - InventoryCheckInCheckOut
-      - Inventory4PlusRooms
-      - AdditionalStandardReference
-      - StudentReference
-      - HomeReport
-      - PurplebricksPlusListing
-      - Auction
-      - AuctionPropertyListing
-      - AccompaniedViewingsFree
-      - DomainAuPriorityListing
-      - RealEstateAuFeatureListing
-      - RealEstateAuHighlightListing
-      - DomainAuPremiumListing
-      - DomainAuPremiumListing6Week
-      - DomainAuPremiumListing3Week
-      - DomainAuPriorityListing6Week
-      - AuctionUpgrade
-      - UnlockFixedLawyer
-      - RightMoveFeaturedProperty
-      - RightMoveFeaturedPremiumBundle
-      - DomainAuPlatinumListing6Week
-      - DomainAuPlatinumListing10Week
-      - DomainAuPlatinumListing14Week
-      - DomainAuPlatinumListing90Day
-      - DomainAuPremiumListing90Day
-      - DomainAuPremiumListing45Day
-      - REAAuHighlightListing45
-      - REAAuPremiereListing45
-      - REAAuPremiereDiscountListing45
-      - ProfessionalFloorplan
-      - PurplebricksPremierListing
-      - PurplebricksFeaturedProperty
-      - HoldingDeposit
-      - HomeReportRefresh
-      - AdvancedConveyancingServices
-      - InitialMarketingFee
-      - Interactive3DTour
-      - MoneyBackGuarantee
+      - Percent
+      - Amount
       type: string
     Purplebricks.Property.Domain.Enums.EventType:
       enum:
@@ -396,43 +446,44 @@ components:
       - America/Denver
       - Pacific/Auckland
       type: string
-    Purplebricks.Property.Business.ViewModels.ShoppingCartViewModel:
+    Purplebricks.Property.Business.ViewModels.PreactiveDiyViewModel:
+      type: object
+      properties:
+        titleDeedValidated:
+          type: boolean
+        idValidated:
+          type: boolean
+        advertPhotosValidated:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ShoppingCartVoucherViewModel:
       type: object
       properties:
         id:
           type: integer
           format: int32
-        vatRate:
-          type: number
-          format: double
-        vatTotal:
-          type: number
-          format: double
-        total:
-          type: number
-          format: double
-        voucherDiscount:
-          type: number
-          format: double
-        itemCount:
+        shoppingCartId:
           type: integer
           format: int32
-        items:
+        voucherId:
+          type: integer
+          format: int32
+        amount:
+          type: number
+          format: double
+        code:
+          type:
+          - string
+          - 'null'
+        voucherType:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.VoucherType'
+        addOnIds:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ShoppingCartItemViewModel'
-        voucher:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ShoppingCartVoucherViewModel'
-        payAtSettlementTotal:
-          type: number
-          format: double
-        payNowTotal:
-          type: number
-          format: double
-        isInstruction:
-          type: boolean
+            type: integer
+            format: int32
       additionalProperties: false
     Purplebricks.Property.Business.ViewModels.ShoppingCartItemViewModel:
       type: object
@@ -467,63 +518,12 @@ components:
         isVatExcluded:
           type: boolean
       additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.ExpertSidebarDetailsViewModel:
-      type: object
-      properties:
-        forename:
-          type:
-          - string
-          - 'null'
-        surname:
-          type:
-          - string
-          - 'null'
-        imageUrl:
-          type:
-          - string
-          - 'null'
-        phoneNumber:
-          type:
-          - string
-          - 'null'
-        agentId:
-          type: integer
-          format: int32
-      additionalProperties: false
-    Purplebricks.Property.Domain.Enums.VoucherType:
+    Purplebricks.Property.Domain.Enums.RegulatoryCertificateType:
       enum:
-      - Percent
-      - Amount
+      - Epc
+      - Hmo
+      - HomeReport
       type: string
-    Purplebricks.Property.Business.ViewModels.ShoppingCartVoucherViewModel:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        shoppingCartId:
-          type: integer
-          format: int32
-        voucherId:
-          type: integer
-          format: int32
-        amount:
-          type: number
-          format: double
-        code:
-          type:
-          - string
-          - 'null'
-        voucherType:
-          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.VoucherType'
-        addOnIds:
-          type:
-          - array
-          - 'null'
-          items:
-            type: integer
-            format: int32
-      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

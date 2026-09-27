@@ -186,37 +186,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    Purplebricks.Lettings.Services.Models.StreetService.EnquiryModel:
-      required:
-      - emailAddress
-      - firstName
-      - lastName
-      - message
-      - telephoneNumber
-      type: object
-      properties:
-        firstName:
-          maxLength: 255
-          minLength: 1
-          type: string
-        lastName:
-          maxLength: 255
-          minLength: 1
-          type: string
-        emailAddress:
-          maxLength: 255
-          minLength: 1
-          type: string
-          format: email
-        telephoneNumber:
-          maxLength: 255
-          minLength: 1
-          type: string
-        message:
-          maxLength: 10000
-          minLength: 1
-          type: string
-      additionalProperties: false
     Purplebricks.Lettings.Services.Models.StreetService.EnquiryModelEnquiryModelWithPropertyId:
       required:
       - emailAddress
@@ -255,6 +224,37 @@ components:
         propertyId:
           type: integer
           format: int32
+      additionalProperties: false
+    Purplebricks.Lettings.Services.Models.StreetService.EnquiryModel:
+      required:
+      - emailAddress
+      - firstName
+      - lastName
+      - message
+      - telephoneNumber
+      type: object
+      properties:
+        firstName:
+          maxLength: 255
+          minLength: 1
+          type: string
+        lastName:
+          maxLength: 255
+          minLength: 1
+          type: string
+        emailAddress:
+          maxLength: 255
+          minLength: 1
+          type: string
+          format: email
+        telephoneNumber:
+          maxLength: 255
+          minLength: 1
+          type: string
+        message:
+          maxLength: 10000
+          minLength: 1
+          type: string
       additionalProperties: false
   securitySchemes:
     Bearer:

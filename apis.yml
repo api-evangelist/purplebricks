@@ -48,7 +48,7 @@ accessModel:
   method: derived
 image: https://images.ctfassets.net/xhygqgfuea6b/3iPW7f24NM6u7Klc7YopsZ/43f36d4f236766caaa30f29fc85cafa1/purplebricks-logo.png
 tags:
-- Real-Estate
+- Real Estate
 - United Kingdom
 - Property Listings
 - Online Estate Agency
@@ -77,6 +77,7 @@ tags_raw:
 - Microservices
 - Swagger
 - Azure
+- Real-Estate
 created: '2026-07-26'
 modified: '2026-07-26'
 specificationVersion: '0.23'
@@ -3985,8 +3986,6 @@ apis:
   humanURL: https://api.purplebricks.co.uk/property-api/swagger/index.html
   baseURL: https://api.purplebricks.co.uk/property-api
   tags:
-  - Postcode
-  tags_raw:
   - Post Code
   properties:
   - type: OpenAPI

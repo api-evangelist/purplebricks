@@ -335,10 +335,54 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     Purplebricks.Property.Domain.Enums.PropertyTrackType:
       enum:
       - Tracked
       - NoteOfInterest
+      type: string
+    Purplebricks.Property.Domain.Models.PageInfoResponseModel:
+      type: object
+      properties:
+        requestedPageSize:
+          type: integer
+          format: int32
+        totalItemCount:
+          type: integer
+          format: int32
+        hasNextPage:
+          type: boolean
+        hasPreviousPage:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.CursorPaginationType:
+      enum:
+      - Previous
+      - Next
       type: string
     Purplebricks.Property.Domain.Models.TrackedPropertiesListModel:
       type: object
@@ -384,50 +428,6 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Purplebricks.Property.Domain.Models.PageInfoResponseModel:
-      type: object
-      properties:
-        requestedPageSize:
-          type: integer
-          format: int32
-        totalItemCount:
-          type: integer
-          format: int32
-        hasNextPage:
-          type: boolean
-        hasPreviousPage:
-          type: boolean
-      additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    Purplebricks.Property.Domain.Enums.CursorPaginationType:
-      enum:
-      - Previous
-      - Next
-      type: string
   securitySchemes:
     Bearer:
       type: apiKey
