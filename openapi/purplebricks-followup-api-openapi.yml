@@ -468,90 +468,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Valuations.Contract.ViewModels.PagedValuationFollowUpViewModel:
-      type: object
-      properties:
-        totalRows:
-          type: integer
-          format: int32
-        totalPages:
-          type: integer
-          format: int32
-          readOnly: true
-        pageNumber:
-          type: integer
-          format: int32
-        pageSize:
-          type: integer
-          format: int32
-        rowCountThisPage:
-          type: integer
-          format: int32
-          readOnly: true
-        numberOfOverdueFollowups:
-          type: integer
-          format: int32
-        followUpData:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUp'
-      additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel:
-      type: object
-      properties:
-        valuationId:
-          type: integer
-          format: int32
-        followUpOutcome:
-          $ref: '#/components/schemas/Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome'
-        followUpOutcomeDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        followUpOutcomeUserId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        nextFollowUpDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        nextFollowUpUserId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-      additionalProperties: false
     Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUp:
       type: object
       properties:
@@ -622,27 +538,6 @@ components:
           - 'null'
           format: date-time
       additionalProperties: false
-    Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome:
-      enum:
-      - NotSet
-      - NotInterested
-      - InstructingWithinAMonth
-      - InstructingWithinThreeMonths
-      - InstructingWithinSixMonths
-      - InstructingAfterSixMonths
-      - Instructed
-      - NoAnswer
-      - Campaign_03_ValuationToInstruct_C
-      - Campaign_03_ValuationToInstruct_W8_C
-      - Campaign_03_ValuationToInstruct_W12_C
-      - OtherEA
-      type: string
-    Purplebricks.Valuations.Contract.Enums.LppSummaryOrderBy:
-      enum:
-      - Forename
-      - Surname
-      - UserId
-      type: string
     Purplebricks.Valuations.Contract.ViewModels.PagedLppSummaryListViewModel:
       type: object
       properties:
@@ -670,35 +565,68 @@ components:
           items:
             $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.LppFollowUpStatistics'
       additionalProperties: false
-    Purplebricks.Valuations.Contract.InputModels.ValuationFollowUpInputModel:
+    Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome:
+      enum:
+      - NotSet
+      - NotInterested
+      - InstructingWithinAMonth
+      - InstructingWithinThreeMonths
+      - InstructingWithinSixMonths
+      - InstructingAfterSixMonths
+      - Instructed
+      - NoAnswer
+      - Campaign_03_ValuationToInstruct_C
+      - Campaign_03_ValuationToInstruct_W8_C
+      - Campaign_03_ValuationToInstruct_W12_C
+      - OtherEA
+      type: string
+    Purplebricks.Valuations.Contract.InputModels.FollowUpDateForPropertyInputModel:
       type: object
       properties:
+        userId:
+          type: integer
+          format: int32
         propertyId:
           type: integer
           format: int32
+        nextFollowUpDate:
+          type: string
+          format: date-time
+      additionalProperties: false
+    Purplebricks.Valuations.Contract.Enums.LppSummaryOrderBy:
+      enum:
+      - Forename
+      - Surname
+      - UserId
+      type: string
+    Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUpOutcomeResultViewModel:
+      type: object
+      properties:
         valuationId:
           type: integer
           format: int32
         followUpOutcome:
           $ref: '#/components/schemas/Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome'
+        followUpOutcomeDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        followUpOutcomeUserId:
+          type:
+          - integer
+          - 'null'
+          format: int32
         nextFollowUpDate:
           type:
           - string
           - 'null'
           format: date-time
-        userId:
+        nextFollowUpUserId:
           type:
           - integer
           - 'null'
           format: int32
-        otherEADetails:
-          type:
-          - string
-          - 'null'
-        leadTemperature:
-          type:
-          - string
-          - 'null'
       additionalProperties: false
     Purplebricks.Valuations.Contract.ViewModels.LppFollowUpStatistics:
       type: object
@@ -736,18 +664,90 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    Purplebricks.Valuations.Contract.InputModels.FollowUpDateForPropertyInputModel:
+    Purplebricks.Valuations.Contract.InputModels.ValuationFollowUpInputModel:
       type: object
       properties:
-        userId:
-          type: integer
-          format: int32
         propertyId:
           type: integer
           format: int32
+        valuationId:
+          type: integer
+          format: int32
+        followUpOutcome:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome'
         nextFollowUpDate:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
+        userId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        otherEADetails:
+          type:
+          - string
+          - 'null'
+        leadTemperature:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Valuations.Contract.ViewModels.PagedValuationFollowUpViewModel:
+      type: object
+      properties:
+        totalRows:
+          type: integer
+          format: int32
+        totalPages:
+          type: integer
+          format: int32
+          readOnly: true
+        pageNumber:
+          type: integer
+          format: int32
+        pageSize:
+          type: integer
+          format: int32
+        rowCountThisPage:
+          type: integer
+          format: int32
+          readOnly: true
+        numberOfOverdueFollowups:
+          type: integer
+          format: int32
+        followUpData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Valuations.Contract.ViewModels.ValuationFollowUp'
       additionalProperties: false
   securitySchemes:
     Bearer:

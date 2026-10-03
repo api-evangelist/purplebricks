@@ -149,6 +149,21 @@ components:
           - 'null'
           format: date-time
       additionalProperties: false
+    Purplebricks.Property.Domain.Enums.PriceQualifier:
+      enum:
+      - Default
+      - Poa
+      - GuidePrice
+      - FixedPrice
+      - OffersInExcessOf
+      - Oiro
+      - SaleByTender
+      - From
+      - SharedOwnership
+      - OffersOver
+      - PartBuyPartRent
+      - SharedEquity
+      type: string
     Purplebricks.Property.Business.ViewModels.ImageViewModel:
       type: object
       properties:
@@ -175,21 +190,6 @@ components:
       - Monthly
       - Weekly
       - Daily
-      type: string
-    Purplebricks.Property.Domain.Enums.PriceQualifier:
-      enum:
-      - Default
-      - Poa
-      - GuidePrice
-      - FixedPrice
-      - OffersInExcessOf
-      - Oiro
-      - SaleByTender
-      - From
-      - SharedOwnership
-      - OffersOver
-      - PartBuyPartRent
-      - SharedEquity
       type: string
   securitySchemes:
     Bearer:

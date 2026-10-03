@@ -232,6 +232,108 @@ paths:
     - url: https://api.purplebricks.co.uk/property-api
 components:
   schemas:
+    Purplebricks.Property.Business.ViewModels.PerformanceReportAdvertResult:
+      type: object
+      properties:
+        earlierDataAvailable:
+          type: boolean
+        laterDataAvailable:
+          type: boolean
+        dates:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PerformanceReportAdvertModel'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.RentFrequency:
+      enum:
+      - Yearly
+      - Quarterly
+      - Monthly
+      - Weekly
+      - Daily
+      type: string
+    Purplebricks.Property.Business.ViewModels.TenantData:
+      type: object
+      properties:
+        lettingTerms:
+          type:
+          - string
+          - 'null'
+        employmentStatus:
+          type:
+          - string
+          - 'null'
+        poorCreditHistory:
+          type:
+          - string
+          - 'null'
+        havePets:
+          type:
+          - string
+          - 'null'
+        otherPets:
+          type:
+          - string
+          - 'null'
+        isSmoker:
+          type:
+          - string
+          - 'null'
+        moveTimeframe:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.IanaTimeZone:
+      enum:
+      - Not Set
+      - Europe/London
+      - Australia/Perth
+      - Australia/Eucla
+      - Australia/Adelaide
+      - Australia/Broken_Hill
+      - Australia/Darwin
+      - Australia/Brisbane
+      - Australia/Currie
+      - Australia/Hobart
+      - Australia/Lindeman
+      - Australia/Melbourne
+      - Australia/Sydney
+      - Australia/Lord_Howe
+      - Antarctica/Macquarie
+      - America/Los_Angeles
+      - America/New_York
+      - America/Detroit
+      - America/Kentucky/Louisville
+      - America/Kentucky/Monticello
+      - America/Indiana/Indianapolis
+      - America/Indiana/Vincennes
+      - America/Indiana/Winamac
+      - America/Indiana/Marengo
+      - America/Indiana/Petersburg
+      - America/Indiana/Vevay
+      - America/Chicago
+      - America/Indiana/Tell_City
+      - America/Indiana/Knox
+      - America/Menominee
+      - America/North_Dakota/Center
+      - America/North_Dakota/New_Salem
+      - America/North_Dakota/Beulah
+      - America/Boise
+      - America/Phoenix
+      - America/Anchorage
+      - America/Juneau
+      - America/Sitka
+      - America/Yakutat
+      - America/Nome
+      - America/Adak
+      - America/Metlakatla
+      - Pacific/Honolulu
+      - America/Denver
+      - Pacific/Auckland
+      type: string
     Purplebricks.Property.Business.ViewModels.BuyerData:
       type: object
       properties:
@@ -268,85 +370,22 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Purplebricks.Property.Domain.Enums.WorkflowStepType:
-      enum:
-      - Create
-      - BookValuation
-      - Valuation
-      - Instruct
-      - CreateAdvert
-      - RejectAdvert
-      - AmendAdvert
-      - ApproveAdvert
-      - SchedulePendingRegCert
-      - Schedule
-      - PublishPendingRegCert
-      - Publish
-      - Withdraw
-      - Suspend
-      - SuspendByUser
-      - SuspendAccount
-      - UnderOffer
-      - SoldSubjectToContract
-      - DiyAdvertStarted
-      - LetSubjectToContract
-      - DeclineOffer
-      - UpdateProperty
-      - AcceptableOffer
-      - ApplicationReceived
-      - AcceptableOfferNotMarketed
-      - WithdrawOffer
-      - UpdateAdvert
-      - DiyAdvertCreated
-      - DiyAdvertRejected
-      - ApprovePhoto
-      - ContractsExchanged
-      - Completion
-      - DiyAdvertAmended
-      - DiyAdvertRejectAmendments
-      - SchedulePendingContract
-      - PublishPendingContract
-      - UpdatePropertyDiary
-      - ContractsExchangedCoolingOffPeriod
-      - ForceSold
-      - ForceSoldSubjectToContract
-      - ForceContractsExchanged
-      - ForceCompletion
-      - SoldSubjectToEscrow
-      - PendingEscrow
-      - Closing
-      - ForceAcceptableOffer
-      - ForceAcceptableOfferNotMarketed
-      - ForceContractsExchangedCoolingOffPeriod
-      - InstantValuation
-      - FakeValuation
-      - Cancelled
-      type: string
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
+    Purplebricks.Property.Business.ViewModels.PerformanceReportAdvertModel:
       type: object
       properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
+        date:
+          type: string
+          format: date-time
+        searches:
+          type: integer
           format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
+        views:
+          type: integer
+          format: int32
+        viewings:
+          type: integer
+          format: int32
+      additionalProperties: false
     Purplebricks.Property.Business.ViewModels.NotesOfInterest:
       type: object
       properties:
@@ -364,6 +403,79 @@ components:
           - 'null'
         userId:
           type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.Viewing:
+      type: object
+      properties:
+        appointmentReference:
+          type:
+          - string
+          - 'null'
+          format: uuid
+        dateBooked:
+          type: string
+          format: date-time
+        dateViewed:
+          type: string
+          format: date-time
+        viewerName:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        viewerId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        primaryContactNumber:
+          type:
+          - string
+          - 'null'
+        isCancelled:
+          type: boolean
+        isRearranged:
+          type: boolean
+        isConfirmed:
+          type: boolean
+        isAttended:
+          type:
+          - boolean
+          - 'null'
+        buyerAdditionalData:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.BuyerData'
+        tenantAdditionalData:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.TenantData'
+        whoNeedsToConfirm:
+          type:
+          - string
+          - 'null'
+        bookingId:
+          type: integer
+          format: int32
+        rearrangedBookingId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        feedbackPresentation:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        feedbackSuitability:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        feedbackPrice:
+          type:
+          - integer
+          - 'null'
           format: int32
       additionalProperties: false
     Purplebricks.Property.Business.ViewModels.RightmoveAdvertPerformance:
@@ -398,41 +510,25 @@ components:
           - 'null'
           format: date-time
       additionalProperties: false
-    Purplebricks.Property.Domain.Enums.RentFrequency:
+    Purplebricks.Property.Domain.Enums.OfferStatus:
       enum:
-      - Yearly
-      - Quarterly
-      - Monthly
-      - Weekly
-      - Daily
+      - OfferMade
+      - Acceptable
+      - Declined
+      - CounterOfferMade
+      - WithdrawOffer
+      - Aborted
+      - OfferUpdated
+      - WithdrawAcceptance
+      - WithdrawCounterOffer
+      - Accepted
+      - ExpertNegotiating
+      - ExpertNotNegotiating
+      - RenegotiationOfferMade
+      - RenegotiationCounterOfferMade
+      - RenegotiationOfferWithdrawn
+      - RenegotiationCounterOfferWithdrawn
       type: string
-    Purplebricks.Property.Business.ViewModels.Offer:
-      type: object
-      properties:
-        date:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        name:
-          type:
-          - string
-          - 'null'
-        email:
-          type:
-          - string
-          - 'null'
-        userId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        price:
-          type: number
-          format: double
-        status:
-          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.OfferStatus'
-      additionalProperties: false
     Purplebricks.Property.Business.ViewModels.Property:
       type: object
       properties:
@@ -501,86 +597,6 @@ components:
           - number
           - 'null'
           format: double
-      additionalProperties: false
-    Purplebricks.Property.Domain.Enums.IanaTimeZone:
-      enum:
-      - Not Set
-      - Europe/London
-      - Australia/Perth
-      - Australia/Eucla
-      - Australia/Adelaide
-      - Australia/Broken_Hill
-      - Australia/Darwin
-      - Australia/Brisbane
-      - Australia/Currie
-      - Australia/Hobart
-      - Australia/Lindeman
-      - Australia/Melbourne
-      - Australia/Sydney
-      - Australia/Lord_Howe
-      - Antarctica/Macquarie
-      - America/Los_Angeles
-      - America/New_York
-      - America/Detroit
-      - America/Kentucky/Louisville
-      - America/Kentucky/Monticello
-      - America/Indiana/Indianapolis
-      - America/Indiana/Vincennes
-      - America/Indiana/Winamac
-      - America/Indiana/Marengo
-      - America/Indiana/Petersburg
-      - America/Indiana/Vevay
-      - America/Chicago
-      - America/Indiana/Tell_City
-      - America/Indiana/Knox
-      - America/Menominee
-      - America/North_Dakota/Center
-      - America/North_Dakota/New_Salem
-      - America/North_Dakota/Beulah
-      - America/Boise
-      - America/Phoenix
-      - America/Anchorage
-      - America/Juneau
-      - America/Sitka
-      - America/Yakutat
-      - America/Nome
-      - America/Adak
-      - America/Metlakatla
-      - Pacific/Honolulu
-      - America/Denver
-      - Pacific/Auckland
-      type: string
-    Purplebricks.Property.Business.ViewModels.TenantData:
-      type: object
-      properties:
-        lettingTerms:
-          type:
-          - string
-          - 'null'
-        employmentStatus:
-          type:
-          - string
-          - 'null'
-        poorCreditHistory:
-          type:
-          - string
-          - 'null'
-        havePets:
-          type:
-          - string
-          - 'null'
-        otherPets:
-          type:
-          - string
-          - 'null'
-        isSmoker:
-          type:
-          - string
-          - 'null'
-        moveTimeframe:
-          type:
-          - string
-          - 'null'
       additionalProperties: false
     Purplebricks.Property.Business.ViewModels.PerformanceReportResult:
       type: object
@@ -705,56 +721,31 @@ components:
         propertyTimeZone:
           $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.IanaTimeZone'
       additionalProperties: false
-    Purplebricks.Property.Domain.Enums.OfferStatus:
-      enum:
-      - OfferMade
-      - Acceptable
-      - Declined
-      - CounterOfferMade
-      - WithdrawOffer
-      - Aborted
-      - OfferUpdated
-      - WithdrawAcceptance
-      - WithdrawCounterOffer
-      - Accepted
-      - ExpertNegotiating
-      - ExpertNotNegotiating
-      - RenegotiationOfferMade
-      - RenegotiationCounterOfferMade
-      - RenegotiationOfferWithdrawn
-      - RenegotiationCounterOfferWithdrawn
-      type: string
-    Purplebricks.Property.Business.ViewModels.PerformanceReportAdvertModel:
+    Purplebricks.Property.Business.ViewModels.AverageFeedbackStatistics:
       type: object
       properties:
-        date:
-          type: string
-          format: date-time
-        searches:
+        count:
           type: integer
           format: int32
-        views:
+        presentation:
           type: integer
           format: int32
-        viewings:
+        suitability:
+          type: integer
+          format: int32
+        price:
           type: integer
           format: int32
       additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.Viewing:
+    Purplebricks.Property.Business.ViewModels.Offer:
       type: object
       properties:
-        appointmentReference:
+        date:
           type:
           - string
           - 'null'
-          format: uuid
-        dateBooked:
-          type: string
           format: date-time
-        dateViewed:
-          type: string
-          format: date-time
-        viewerName:
+        name:
           type:
           - string
           - 'null'
@@ -762,57 +753,71 @@ components:
           type:
           - string
           - 'null'
-        viewerId:
+        userId:
           type:
           - integer
           - 'null'
           format: int32
-        primaryContactNumber:
-          type:
-          - string
-          - 'null'
-        isCancelled:
-          type: boolean
-        isRearranged:
-          type: boolean
-        isConfirmed:
-          type: boolean
-        isAttended:
-          type:
-          - boolean
-          - 'null'
-        buyerAdditionalData:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.BuyerData'
-        tenantAdditionalData:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.TenantData'
-        whoNeedsToConfirm:
-          type:
-          - string
-          - 'null'
-        bookingId:
-          type: integer
-          format: int32
-        rearrangedBookingId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        feedbackPresentation:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        feedbackSuitability:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        feedbackPrice:
-          type:
-          - integer
-          - 'null'
-          format: int32
+        price:
+          type: number
+          format: double
+        status:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.OfferStatus'
       additionalProperties: false
+    Purplebricks.Property.Domain.Enums.WorkflowStepType:
+      enum:
+      - Create
+      - BookValuation
+      - Valuation
+      - Instruct
+      - CreateAdvert
+      - RejectAdvert
+      - AmendAdvert
+      - ApproveAdvert
+      - SchedulePendingRegCert
+      - Schedule
+      - PublishPendingRegCert
+      - Publish
+      - Withdraw
+      - Suspend
+      - SuspendByUser
+      - SuspendAccount
+      - UnderOffer
+      - SoldSubjectToContract
+      - DiyAdvertStarted
+      - LetSubjectToContract
+      - DeclineOffer
+      - UpdateProperty
+      - AcceptableOffer
+      - ApplicationReceived
+      - AcceptableOfferNotMarketed
+      - WithdrawOffer
+      - UpdateAdvert
+      - DiyAdvertCreated
+      - DiyAdvertRejected
+      - ApprovePhoto
+      - ContractsExchanged
+      - Completion
+      - DiyAdvertAmended
+      - DiyAdvertRejectAmendments
+      - SchedulePendingContract
+      - PublishPendingContract
+      - UpdatePropertyDiary
+      - ContractsExchangedCoolingOffPeriod
+      - ForceSold
+      - ForceSoldSubjectToContract
+      - ForceContractsExchanged
+      - ForceCompletion
+      - SoldSubjectToEscrow
+      - PendingEscrow
+      - Closing
+      - ForceAcceptableOffer
+      - ForceAcceptableOfferNotMarketed
+      - ForceContractsExchangedCoolingOffPeriod
+      - InstantValuation
+      - FakeValuation
+      - Cancelled
+      type: string
     Purplebricks.Property.Business.ViewModels.BlockedViewing:
       type: object
       properties:
@@ -837,36 +842,31 @@ components:
         blockedForDhs:
           type: boolean
       additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.PerformanceReportAdvertResult:
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
-        earlierDataAvailable:
-          type: boolean
-        laterDataAvailable:
-          type: boolean
-        dates:
+        type:
           type:
-          - array
+          - string
           - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PerformanceReportAdvertModel'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.AverageFeedbackStatistics:
-      type: object
-      properties:
-        count:
-          type: integer
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
           format: int32
-        presentation:
-          type: integer
-          format: int32
-        suitability:
-          type: integer
-          format: int32
-        price:
-          type: integer
-          format: int32
-      additionalProperties: false
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
   securitySchemes:
     Bearer:
       type: apiKey

@@ -283,74 +283,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    Purplebricks.Account.Api.Models.EmailInputModel:
-      type: object
-      properties:
-        email:
-          type:
-          - string
-          - 'null'
-          format: email
-      additionalProperties: false
-    Purplebricks.Account.Common.Models.CreateUserInputModel:
-      type: object
-      properties:
-        title:
-          type:
-          - string
-          - 'null'
-        forename:
-          type:
-          - string
-          - 'null'
-        surname:
-          type:
-          - string
-          - 'null'
-        email:
-          type:
-          - string
-          - 'null'
-        source:
-          type:
-          - string
-          - 'null'
-        phone:
-          type:
-          - string
-          - 'null'
-        dateOfBirth:
-          type:
-          - string
-          - 'null'
-        address:
-          $ref: '#/components/schemas/Purplebricks.Account.Common.Models.CreateUserAddressInputModel'
-      additionalProperties: false
     Purplebricks.Account.Business.Models.InputModels.ChangeEmailInputModel:
       required:
       - newEmail
@@ -367,6 +299,27 @@ components:
           format: email
         confirmPassword:
           maxLength: 50
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Account.Api.Models.EmailInputModel:
+      type: object
+      properties:
+        email:
+          type:
+          - string
+          - 'null'
+          format: email
+      additionalProperties: false
+    Purplebricks.Account.Api.Models.RequestDeletionInputModel:
+      type: object
+      properties:
+        reasonNumber:
+          type: integer
+          format: int32
+        reasonText:
+          maxLength: 1000
           type:
           - string
           - 'null'
@@ -401,25 +354,6 @@ components:
         addressType:
           $ref: '#/components/schemas/Purplebricks.Account.Common.Enums.AddressType'
       additionalProperties: false
-    Purplebricks.Account.Common.Models.ViewModels.CreateCustomerViewModel:
-      type: object
-      properties:
-        newCustomerId:
-          type: integer
-          format: int32
-      additionalProperties: false
-    Purplebricks.Account.Api.Models.RequestDeletionInputModel:
-      type: object
-      properties:
-        reasonNumber:
-          type: integer
-          format: int32
-        reasonText:
-          maxLength: 1000
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     Purplebricks.Account.Common.Enums.AddressType:
       enum:
       - Home
@@ -431,6 +365,72 @@ components:
       - BookValuationAttempt
       - Billing
       type: string
+    Purplebricks.Account.Common.Models.CreateUserInputModel:
+      type: object
+      properties:
+        title:
+          type:
+          - string
+          - 'null'
+        forename:
+          type:
+          - string
+          - 'null'
+        surname:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        source:
+          type:
+          - string
+          - 'null'
+        phone:
+          type:
+          - string
+          - 'null'
+        dateOfBirth:
+          type:
+          - string
+          - 'null'
+        address:
+          $ref: '#/components/schemas/Purplebricks.Account.Common.Models.CreateUserAddressInputModel'
+      additionalProperties: false
+    Purplebricks.Account.Common.Models.ViewModels.CreateCustomerViewModel:
+      type: object
+      properties:
+        newCustomerId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
   securitySchemes:
     Bearer:
       type: apiKey

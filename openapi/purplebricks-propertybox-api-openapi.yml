@@ -146,6 +146,27 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Purplebricks.Property.Business.ViewModels.PropertyBoxDeepLinkViewModel:
+      type: object
+      properties:
+        propertyBoxDeepLink:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.PropertyBoxOrderStatusViewModel:
+      type: object
+      properties:
+        status:
+          type:
+          - string
+          - 'null'
+        changeDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -171,27 +192,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    Purplebricks.Property.Business.ViewModels.PropertyBoxOrderStatusViewModel:
-      type: object
-      properties:
-        status:
-          type:
-          - string
-          - 'null'
-        changeDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.PropertyBoxDeepLinkViewModel:
-      type: object
-      properties:
-        propertyBoxDeepLink:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

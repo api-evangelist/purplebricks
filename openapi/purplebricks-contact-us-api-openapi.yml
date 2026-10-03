@@ -50,6 +50,44 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Purplebricks.Communications.Api.Models.InputModels.ContactUsInputModel:
+      type: object
+      properties:
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        subject:
+          type:
+          - string
+          - 'null'
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+        emailAddress:
+          type:
+          - string
+          - 'null'
+        reason:
+          type:
+          - string
+          - 'null'
+        comments:
+          type:
+          - string
+          - 'null'
+        address:
+          $ref: '#/components/schemas/Purplebricks.Communications.Api.Models.InputModels.ContactUsAddress'
+        salesOrLettings:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -91,44 +129,6 @@ components:
           - string
           - 'null'
         postcode:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Communications.Api.Models.InputModels.ContactUsInputModel:
-      type: object
-      properties:
-        firstName:
-          type:
-          - string
-          - 'null'
-        lastName:
-          type:
-          - string
-          - 'null'
-        subject:
-          type:
-          - string
-          - 'null'
-        phoneNumber:
-          type:
-          - string
-          - 'null'
-        emailAddress:
-          type:
-          - string
-          - 'null'
-        reason:
-          type:
-          - string
-          - 'null'
-        comments:
-          type:
-          - string
-          - 'null'
-        address:
-          $ref: '#/components/schemas/Purplebricks.Communications.Api.Models.InputModels.ContactUsAddress'
-        salesOrLettings:
           type:
           - string
           - 'null'

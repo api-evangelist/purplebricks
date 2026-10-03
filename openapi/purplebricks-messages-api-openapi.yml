@@ -457,6 +457,54 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Purplebricks.Messaging.Business.Messages.Models.MessagesListResponseModel:
+      type: object
+      properties:
+        messages:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.MessageResponseModel'
+        pageInfo:
+          $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel'
+      additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel:
+      type: object
+      properties:
+        requestedPageSize:
+          type: integer
+          format: int32
+        totalItemCount:
+          type: integer
+          format: int32
+        hasNextPage:
+          type: boolean
+        hasPreviousPage:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.MessageStatusType:
+      enum:
+      - All
+      - Read
+      - Unread
+      type: string
+    Purplebricks.Messaging.Business.Messages.Models.MessageUpdateRequestModel:
+      type: object
+      properties:
+        subject:
+          type:
+          - string
+          - 'null'
+        body:
+          type:
+          - string
+          - 'null'
+        read:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
     Purplebricks.Messaging.Business.Messages.Models.MessageRequestModel:
       type: object
       properties:
@@ -488,20 +536,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel:
-      type: object
-      properties:
-        requestedPageSize:
-          type: integer
-          format: int32
-        totalItemCount:
-          type: integer
-          format: int32
-        hasNextPage:
-          type: boolean
-        hasPreviousPage:
-          type: boolean
       additionalProperties: false
     Purplebricks.Messaging.Business.Messages.Models.MessageResponseModel:
       type: object
@@ -546,6 +580,29 @@ components:
           type: boolean
           readOnly: true
       additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.Models.NoteRequestModel:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        subject:
+          type:
+          - string
+          - 'null'
+        body:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.Models.CursorPaginationType:
+      enum:
+      - Previous
+      - Next
+      type: string
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -571,63 +628,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    Purplebricks.Messaging.Business.Messages.Models.NoteRequestModel:
-      type: object
-      properties:
-        userId:
-          type: integer
-          format: int32
-        propertyId:
-          type: integer
-          format: int32
-        subject:
-          type:
-          - string
-          - 'null'
-        body:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Messaging.Business.Messages.MessageStatusType:
-      enum:
-      - All
-      - Read
-      - Unread
-      type: string
-    Purplebricks.Messaging.Business.Messages.Models.CursorPaginationType:
-      enum:
-      - Previous
-      - Next
-      type: string
-    Purplebricks.Messaging.Business.Messages.Models.MessageUpdateRequestModel:
-      type: object
-      properties:
-        subject:
-          type:
-          - string
-          - 'null'
-        body:
-          type:
-          - string
-          - 'null'
-        read:
-          type:
-          - boolean
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Messaging.Business.Messages.Models.MessagesListResponseModel:
-      type: object
-      properties:
-        messages:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.MessageResponseModel'
-        pageInfo:
-          $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel'
-      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

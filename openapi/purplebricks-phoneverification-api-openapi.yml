@@ -195,6 +195,22 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Purplebricks.Account.Api.V1.Controllers.VerifyOtpRequest:
+      type: object
+      properties:
+        code:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Account.Api.V1.Controllers.SendOtpRequest:
+      type: object
+      properties:
+        channel:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -220,22 +236,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    Purplebricks.Account.Api.V1.Controllers.SendOtpRequest:
-      type: object
-      properties:
-        channel:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Account.Api.V1.Controllers.VerifyOtpRequest:
-      type: object
-      properties:
-        code:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     Purplebricks.Account.Api.V1.Controllers.PhoneVerificationStatusResponse:
       type: object
       properties:

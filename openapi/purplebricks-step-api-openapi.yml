@@ -133,31 +133,14 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    ProblemDetails:
+    MoveToStepResult:
       type: object
       properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
+        success:
+          type: boolean
+        stepTypeMovedTo:
+          $ref: '#/components/schemas/WorkflowStepType'
+      additionalProperties: false
     MoveToStepRequest:
       required:
       - propertyId
@@ -178,14 +161,6 @@ components:
           - integer
           - 'null'
           format: int32
-      additionalProperties: false
-    MoveToStepResult:
-      type: object
-      properties:
-        success:
-          type: boolean
-        stepTypeMovedTo:
-          $ref: '#/components/schemas/WorkflowStepType'
       additionalProperties: false
     WorkflowStepType:
       enum:
@@ -236,6 +211,31 @@ components:
       - FakeValuation
       - Cancelled
       type: string
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
   securitySchemes:
     Bearer:
       type: apiKey

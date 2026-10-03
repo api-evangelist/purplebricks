@@ -1136,6 +1136,58 @@ components:
         canReview:
           type: boolean
       additionalProperties: false
+    Purplebricks.Property.Business.InputModels.SaveImageDetailsRequest:
+      type: object
+      properties:
+        images:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.ImageDetails'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ImageUploadViewModel:
+      type: object
+      properties:
+        images:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ImageUploadItem'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.GoToMarketViewModel:
+      type: object
+      properties:
+        hasCompletedComplianceQuestions:
+          type: boolean
+        hasSelectedBoard:
+          type: boolean
+        hasSelectedTaxBand:
+          type: boolean
+        complianceQuestionsProgress:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressViewModel'
+        saleBoardProgress:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressViewModel'
+        taxBandProgress:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressViewModel'
+        photoUploadProgress:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressViewModel'
+        epcProgress:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressViewModel'
+        advertProgress:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressAdvertViewModel'
+        accessDetailsProgress:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressViewModel'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ProgressViewModel:
+      type: object
+      properties:
+        requirement:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.RequirementStatus'
+        isCompleted:
+          type: boolean
+      additionalProperties: false
     Purplebricks.Property.Business.InputModels.ImageDetails:
       type: object
       properties:
@@ -1144,6 +1196,39 @@ components:
           - string
           - 'null'
         title:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.RequirementStatus:
+      enum:
+      - Required
+      - Optional
+      - NotApplicable
+      type: string
+    Purplebricks.Property.Business.InputModels.OwnershipReviewRejectRequest:
+      type: object
+      properties:
+        feedback:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Business.InputModels.MarketPriceRejectionRequest:
+      type: object
+      properties:
+        userMarketPrice:
+          type: number
+          format: double
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ImageUploadItem:
+      type: object
+      properties:
+        fileName:
+          type:
+          - string
+          - 'null'
+        uploadUrl:
           type:
           - string
           - 'null'
@@ -1162,10 +1247,14 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Purplebricks.Property.Business.InputModels.OwnershipReviewRejectRequest:
+    Purplebricks.Property.Business.InputModels.TaxBandCreationRequest:
       type: object
       properties:
-        feedback:
+        taxBand:
+          type:
+          - string
+          - 'null'
+        exemptReason:
           type:
           - string
           - 'null'
@@ -1195,95 +1284,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    Purplebricks.Property.Business.InputModels.MarketPriceRejectionRequest:
-      type: object
-      properties:
-        userMarketPrice:
-          type: number
-          format: double
-      additionalProperties: false
-    Purplebricks.Property.Business.InputModels.TaxBandCreationRequest:
-      type: object
-      properties:
-        taxBand:
-          type:
-          - string
-          - 'null'
-        exemptReason:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.GoToMarketViewModel:
-      type: object
-      properties:
-        hasCompletedComplianceQuestions:
-          type: boolean
-        hasSelectedBoard:
-          type: boolean
-        hasSelectedTaxBand:
-          type: boolean
-        complianceQuestionsProgress:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressViewModel'
-        saleBoardProgress:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressViewModel'
-        taxBandProgress:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressViewModel'
-        photoUploadProgress:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressViewModel'
-        epcProgress:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressViewModel'
-        advertProgress:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressAdvertViewModel'
-        accessDetailsProgress:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ProgressViewModel'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.ImageUploadItem:
-      type: object
-      properties:
-        fileName:
-          type:
-          - string
-          - 'null'
-        uploadUrl:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.ProgressViewModel:
-      type: object
-      properties:
-        requirement:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.RequirementStatus'
-        isCompleted:
-          type: boolean
-      additionalProperties: false
-    Purplebricks.Property.Business.InputModels.SaveImageDetailsRequest:
-      type: object
-      properties:
-        images:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Property.Business.InputModels.ImageDetails'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.ImageUploadViewModel:
-      type: object
-      properties:
-        images:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.ImageUploadItem'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.RequirementStatus:
-      enum:
-      - Required
-      - Optional
-      - NotApplicable
-      type: string
     Purplebricks.Property.Business.InputModels.BoardAndKeySafePreferenceRequestV2:
       type: object
       properties:

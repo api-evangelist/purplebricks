@@ -520,41 +520,17 @@ paths:
     - url: https://api.purplebricks.co.uk/messaging-api
 components:
   schemas:
-    Purplebricks.Messaging.Business.Messages.Models.ThreadResponseModel:
+    Purplebricks.Messaging.Business.Messages.Models.MessagesListResponseModel:
       type: object
       properties:
-        id:
-          type: string
-          format: uuid
-        propertyId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        address:
-          $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.AddressDetail'
-        participants:
+        messages:
           type:
           - array
           - 'null'
           items:
-            type: integer
-            format: int32
-        participantsDetails:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.ParticipantDetail'
-        date:
-          type: string
-          format: date-time
-        lastMessage:
-          $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.MessageResponseModel'
-        cursor:
-          type:
-          - string
-          - 'null'
+            $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.MessageResponseModel'
+        pageInfo:
+          $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel'
       additionalProperties: false
     Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel:
       type: object
@@ -570,6 +546,62 @@ components:
         hasPreviousPage:
           type: boolean
       additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.Models.ParticipantDetail:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int32
+        title:
+          type:
+          - string
+          - 'null'
+        forename:
+          type:
+          - string
+          - 'null'
+        surname:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Messaging.Business.Messages.Models.ThreadListResponseModel:
+      type: object
+      properties:
+        threads:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.ThreadResponseModel'
+        pageInfo:
+          $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     Purplebricks.Messaging.Business.Messages.Models.MessageResponseModel:
       type: object
       properties:
@@ -613,31 +645,6 @@ components:
           type: boolean
           readOnly: true
       additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
     Purplebricks.Messaging.Business.Messages.Models.AddressDetail:
       type: object
       properties:
@@ -667,45 +674,38 @@ components:
       - Previous
       - Next
       type: string
-    Purplebricks.Messaging.Business.Messages.Models.MessagesListResponseModel:
+    Purplebricks.Messaging.Business.Messages.Models.ThreadResponseModel:
       type: object
       properties:
-        messages:
+        id:
+          type: string
+          format: uuid
+        propertyId:
           type:
-          - array
+          - integer
           - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.MessageResponseModel'
-        pageInfo:
-          $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel'
-      additionalProperties: false
-    Purplebricks.Messaging.Business.Messages.Models.ThreadListResponseModel:
-      type: object
-      properties:
-        threads:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.ThreadResponseModel'
-        pageInfo:
-          $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.PageInfoResponseModel'
-      additionalProperties: false
-    Purplebricks.Messaging.Business.Messages.Models.ParticipantDetail:
-      type: object
-      properties:
-        userId:
-          type: integer
           format: int32
-        title:
+        address:
+          $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.AddressDetail'
+        participants:
           type:
-          - string
+          - array
           - 'null'
-        forename:
+          items:
+            type: integer
+            format: int32
+        participantsDetails:
           type:
-          - string
+          - array
           - 'null'
-        surname:
+          items:
+            $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.ParticipantDetail'
+        date:
+          type: string
+          format: date-time
+        lastMessage:
+          $ref: '#/components/schemas/Purplebricks.Messaging.Business.Messages.Models.MessageResponseModel'
+        cursor:
           type:
           - string
           - 'null'

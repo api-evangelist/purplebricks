@@ -406,93 +406,113 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Valuations.Repository.Entities.Address:
+    Purplebricks.Valuations.Api.Models.RecordValuationReportViewRequest:
+      type: object
+      properties:
+        valuationId:
+          type: integer
+          format: int32
+        userId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Entities.Property:
       type: object
       properties:
         id:
           type: integer
           format: int32
-        line1:
+        addressId:
           type:
-          - string
+          - integer
           - 'null'
-        line2:
+          format: int32
+        address:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.Address'
+        bookings:
           type:
-          - string
+          - array
           - 'null'
-        town:
-          type:
-          - string
-          - 'null'
-        county:
-          type:
-          - string
-          - 'null'
-        postcode:
-          type:
-          - string
-          - 'null'
-        addressText:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Valuations.Repository.Dtos.ValuationStatusAndSentDateDto:
-      type: object
-      properties:
-        sentDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSavedDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-      additionalProperties: false
-    Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome:
-      enum:
-      - NotSet
-      - NotInterested
-      - InstructingWithinAMonth
-      - InstructingWithinThreeMonths
-      - InstructingWithinSixMonths
-      - InstructingAfterSixMonths
-      - Instructed
-      - NoAnswer
-      - Campaign_03_ValuationToInstruct_C
-      - Campaign_03_ValuationToInstruct_W8_C
-      - Campaign_03_ValuationToInstruct_W12_C
-      - OtherEA
-      type: string
-    Purplebricks.Valuations.Repository.Entities.User:
-      type: object
-      properties:
+          items:
+            $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.BookingDiary'
         userId:
           type: integer
           format: int32
-        forename:
+        toLet:
+          type: boolean
+        expertId:
+          type: integer
+          format: int32
+        expert:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.User'
+        accompaniedViewingExpertId:
           type:
-          - string
+          - integer
           - 'null'
-        surname:
+          format: int32
+        accompaniedViewingExpert:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.User'
+        locationOwnerExpertId:
           type:
-          - string
+          - integer
           - 'null'
-        fullName:
+          format: int32
+        locationOwnerExpert:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.User'
+        accountManagerExpertId:
           type:
-          - string
+          - integer
           - 'null'
-        email:
+          format: int32
+        accountManagerExpert:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.User'
+        negotiationExpertId:
           type:
-          - string
+          - integer
           - 'null'
-        publicUserId:
-          type: string
-          format: uuid
+          format: int32
+        negotiationExpert:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.User'
       additionalProperties: false
-    Purplebricks.Valuations.Repository.Dtos.LettingComparable:
+    Purplebricks.Valuations.Repository.Entities.ValuationFollowupHistory:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        valuationId:
+          type: integer
+          format: int32
+        valuation:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation'
+        followUpOutcome:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome'
+        followUpOutcomeUserId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        followUpOutcomeDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        nextFollowUpDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        nextFollowUpUserId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        otherEADetails:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Dtos.SalesComparable:
       type: object
       properties:
         id:
@@ -515,45 +535,45 @@ components:
         distance:
           type: number
           format: double
-        orzPostcode:
+        postcode:
           type:
           - string
           - 'null'
-        orzAddress:
+        address:
           type:
           - string
           - 'null'
-        orzPartialAddress:
+        partialAddress:
           type:
           - string
           - 'null'
-        orzPrice:
+        price:
           type: integer
           format: int32
-        orzType:
+        type:
           type:
           - string
           - 'null'
-        orzBeds:
+        beds:
           type: integer
           format: int32
-        orzAgent:
+        agent:
           type:
           - string
           - 'null'
-        orzFloorplanFilenames:
+        floorplanFilenames:
           type:
           - array
           - 'null'
           items:
             type: string
-        orzListingImages:
+        listingImages:
           type:
           - array
           - 'null'
           items:
             type: string
-        orzListingStatus:
+        listingStatus:
           type:
           - string
           - 'null'
@@ -561,7 +581,7 @@ components:
           type:
           - string
           - 'null'
-        orzListingDate:
+        listingDate:
           type:
           - string
           - 'null'
@@ -572,123 +592,91 @@ components:
           type: number
           format: double
       additionalProperties: false
-    Purplebricks.Valuations.Api.Models.RecordValuationReportViewRequest:
+    Purplebricks.Valuations.Repository.Dtos.ValuationDataDto:
       type: object
       properties:
-        valuationId:
+        collectedAtUtc:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        uprn:
           type: integer
-          format: int32
-        userId:
-          type: integer
-          format: int32
-      additionalProperties: false
-    Purplebricks.Valuations.Repository.Enums.ValuationStatus:
-      enum:
-      - Draft
-      - Sent
-      type: string
-    Purplebricks.Valuations.Repository.Dtos.SavedValuationComparableDto:
-      type: object
-      properties:
-        id:
-          type:
-          - string
-          - 'null'
-        isSprift:
-          type: boolean
-        address:
-          type:
-          - string
-          - 'null'
-        propertyType:
-          type:
-          - string
-          - 'null'
-        bedrooms:
-          type: integer
-          format: int32
-        price:
-          type: integer
-          format: int32
-        status:
-          type:
-          - string
-          - 'null'
-        dateOfSale:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Valuations.Repository.Dtos.SavedValuationDto:
-      required:
-      - propertyId
-      type: object
-      properties:
-        propertyId:
-          type: integer
-          format: int32
-        valuationDate:
-          type:
-          - string
-          - 'null'
-        comparables:
+          format: int64
+        salesComparables:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.SavedValuationComparableDto'
-        location:
+            $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.SalesComparable'
+        lettingComparables:
           type:
           - array
           - 'null'
           items:
-            type: string
-        typeOfBuyer:
+            $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.LettingComparable'
+        estimatedPrice:
+          type: integer
+          format: int32
+        upperConfidence:
+          type: integer
+          format: int32
+        lowerConfidence:
+          type: integer
+          format: int32
+        estimatedRentPrice:
+          type: integer
+          format: int32
+        rentUpperConfidence:
+          type: integer
+          format: int32
+        rentLowerConfidence:
+          type: integer
+          format: int32
+        grossRentalYieldPercentage:
+          type: number
+          format: double
+        confidenceBand:
           type:
-          - array
+          - string
           - 'null'
-          items:
-            type: string
-        noSuitableComparables:
-          type: boolean
-        pricingFrom:
+        rentConfidenceBand:
+          type:
+          - string
+          - 'null'
+        floorAreaM2:
+          type: integer
+          format: int32
+        floorAreaSqft:
           type: number
           format: double
-        pricingTo:
+        plotSizeAcres:
           type: number
           format: double
-        recommendedMarketingPrice:
-          type: number
-          format: double
-        similarPropertiesRecentlySold:
+        lastSoldPrice:
           type:
           - integer
           - 'null'
           format: int32
-        similarPropertiesForSale:
+        lastSoldDate:
+          type:
+          - string
+          - 'null'
+        salePriceChange:
           type:
           - integer
           - 'null'
           format: int32
-        excludeMarketData:
-          type: boolean
-        addPersonalisedMessage:
-          type: boolean
-        personalisedMessage:
+        lastRentedPrice:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        lastRentedDate:
           type:
           - string
           - 'null'
-        comments:
-          type:
-          - string
-          - 'null'
-        rightmoveBestPriceGuideUrl:
-          type:
-          - string
-          - 'null'
-        excludeBestPriceGuide:
-          type: boolean
-        newVersion:
+        rentalPriceChange:
           type:
           - integer
           - 'null'
@@ -866,21 +854,6 @@ components:
         booking:
           $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.BookingDiary'
       additionalProperties: false
-    Purplebricks.Valuations.Repository.Entities.ValuationHistory:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int32
-        valuationId:
-          type: integer
-          format: int32
-        valuation:
-          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation'
-        achieveLowPrice:
-          type: number
-          format: double
-      additionalProperties: false
     Purplebricks.Valuations.Domains.Models.Enums.EventType:
       enum:
       - Valuation
@@ -889,45 +862,161 @@ components:
       - Busy
       - VirtualValuation
       type: string
-    Purplebricks.Valuations.Repository.Enums.ValuationFormVersion:
+    Purplebricks.Valuations.Domains.Models.Enums.ValuationBuyerType:
       enum:
-      - Legacy
-      - New
+      - FirstTime
+      - Landlords
+      - Investors
+      - ProfessionalCouples
+      - Families
+      - Sharers
+      - DssTenants
+      - SingleLets
+      - Retirement
       type: string
-    Purplebricks.Valuations.Repository.Entities.ValuationFollowupHistory:
+    Purplebricks.Valuations.Domains.Models.Enums.ValuationLocation:
+      enum:
+      - RuralLocation
+      - InnerCity
+      - PrestigiousLocation
+      - QuietLocation
+      - SoughtAfter
+      - LocalAmenities
+      - TransportLinks
+      - SchoolCatchmentArea
+      type: string
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Valuations.Repository.Dtos.LettingComparable:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        comparablesRef:
+          type:
+          - string
+          - 'null'
+        uprn:
+          type: integer
+          format: int64
+        floorAreaM2:
+          type: integer
+          format: int32
+        floorAreaSqft:
+          type: number
+          format: double
+        distance:
+          type: number
+          format: double
+        orzPostcode:
+          type:
+          - string
+          - 'null'
+        orzAddress:
+          type:
+          - string
+          - 'null'
+        orzPartialAddress:
+          type:
+          - string
+          - 'null'
+        orzPrice:
+          type: integer
+          format: int32
+        orzType:
+          type:
+          - string
+          - 'null'
+        orzBeds:
+          type: integer
+          format: int32
+        orzAgent:
+          type:
+          - string
+          - 'null'
+        orzFloorplanFilenames:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        orzListingImages:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        orzListingStatus:
+          type:
+          - string
+          - 'null'
+        lastStatusDate:
+          type:
+          - string
+          - 'null'
+        orzListingDate:
+          type:
+          - string
+          - 'null'
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Entities.Address:
       type: object
       properties:
         id:
           type: integer
           format: int32
-        valuationId:
-          type: integer
-          format: int32
-        valuation:
-          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation'
-        followUpOutcome:
-          $ref: '#/components/schemas/Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome'
-        followUpOutcomeUserId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        followUpOutcomeDate:
+        line1:
           type:
           - string
           - 'null'
-          format: date-time
-        nextFollowUpDate:
+        line2:
           type:
           - string
           - 'null'
-          format: date-time
-        nextFollowUpUserId:
+        town:
           type:
-          - integer
+          - string
           - 'null'
-          format: int32
-        otherEADetails:
+        county:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+        addressText:
           type:
           - string
           - 'null'
@@ -965,100 +1054,113 @@ components:
       - DoubleGarage
       - TripleGarage
       type: string
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    Purplebricks.Valuations.Repository.Entities.Property:
+    Purplebricks.Valuations.Repository.Dtos.SavedValuationComparableDto:
       type: object
       properties:
         id:
+          type:
+          - string
+          - 'null'
+        isSprift:
+          type: boolean
+        address:
+          type:
+          - string
+          - 'null'
+        propertyType:
+          type:
+          - string
+          - 'null'
+        bedrooms:
           type: integer
           format: int32
-        addressId:
-          type:
-          - integer
-          - 'null'
+        price:
+          type: integer
           format: int32
-        address:
-          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.Address'
-        bookings:
+        status:
+          type:
+          - string
+          - 'null'
+        dateOfSale:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Dtos.SavedValuationDto:
+      required:
+      - propertyId
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        valuationDate:
+          type:
+          - string
+          - 'null'
+        comparables:
           type:
           - array
           - 'null'
           items:
-            $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.BookingDiary'
-        userId:
-          type: integer
-          format: int32
-        toLet:
+            $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.SavedValuationComparableDto'
+        location:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        typeOfBuyer:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        noSuitableComparables:
           type: boolean
-        expertId:
-          type: integer
-          format: int32
-        expert:
-          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.User'
-        accompaniedViewingExpertId:
+        pricingFrom:
+          type: number
+          format: double
+        pricingTo:
+          type: number
+          format: double
+        recommendedMarketingPrice:
+          type: number
+          format: double
+        similarPropertiesRecentlySold:
           type:
           - integer
           - 'null'
           format: int32
-        accompaniedViewingExpert:
-          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.User'
-        locationOwnerExpertId:
+        similarPropertiesForSale:
           type:
           - integer
           - 'null'
           format: int32
-        locationOwnerExpert:
-          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.User'
-        accountManagerExpertId:
+        excludeMarketData:
+          type: boolean
+        addPersonalisedMessage:
+          type: boolean
+        personalisedMessage:
+          type:
+          - string
+          - 'null'
+        comments:
+          type:
+          - string
+          - 'null'
+        rightmoveBestPriceGuideUrl:
+          type:
+          - string
+          - 'null'
+        excludeBestPriceGuide:
+          type: boolean
+        newVersion:
           type:
           - integer
           - 'null'
           format: int32
-        accountManagerExpert:
-          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.User'
-        negotiationExpertId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        negotiationExpert:
-          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.User'
       additionalProperties: false
-    Purplebricks.Valuations.Domains.Models.Enums.ValuationLocation:
-      enum:
-      - RuralLocation
-      - InnerCity
-      - PrestigiousLocation
-      - QuietLocation
-      - SoughtAfter
-      - LocalAmenities
-      - TransportLinks
-      - SchoolCatchmentArea
-      type: string
     Purplebricks.Valuations.Repository.Entities.BookingDiary:
       type: object
       properties:
@@ -1082,187 +1184,85 @@ components:
         isToConfirm:
           type: boolean
       additionalProperties: false
-    Purplebricks.Valuations.Domains.Models.Enums.ValuationBuyerType:
+    Purplebricks.Valuations.Repository.Enums.ValuationFormVersion:
       enum:
-      - FirstTime
-      - Landlords
-      - Investors
-      - ProfessionalCouples
-      - Families
-      - Sharers
-      - DssTenants
-      - SingleLets
-      - Retirement
+      - Legacy
+      - New
       type: string
-    Purplebricks.Valuations.Repository.Dtos.ValuationDataDto:
+    Purplebricks.Valuations.Repository.Entities.User:
       type: object
       properties:
-        collectedAtUtc:
+        userId:
+          type: integer
+          format: int32
+        forename:
+          type:
+          - string
+          - 'null'
+        surname:
+          type:
+          - string
+          - 'null'
+        fullName:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        publicUserId:
+          type: string
+          format: uuid
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Enums.ValuationStatus:
+      enum:
+      - Draft
+      - Sent
+      type: string
+    Purplebricks.Valuations.Contract.Enums.ValuationFollowUpOutcome:
+      enum:
+      - NotSet
+      - NotInterested
+      - InstructingWithinAMonth
+      - InstructingWithinThreeMonths
+      - InstructingWithinSixMonths
+      - InstructingAfterSixMonths
+      - Instructed
+      - NoAnswer
+      - Campaign_03_ValuationToInstruct_C
+      - Campaign_03_ValuationToInstruct_W8_C
+      - Campaign_03_ValuationToInstruct_W12_C
+      - OtherEA
+      type: string
+    Purplebricks.Valuations.Repository.Entities.ValuationHistory:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        valuationId:
+          type: integer
+          format: int32
+        valuation:
+          $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Entities.Valuation'
+        achieveLowPrice:
+          type: number
+          format: double
+      additionalProperties: false
+    Purplebricks.Valuations.Repository.Dtos.ValuationStatusAndSentDateDto:
+      type: object
+      properties:
+        sentDate:
           type:
           - string
           - 'null'
           format: date-time
-        uprn:
-          type: integer
-          format: int64
-        salesComparables:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.SalesComparable'
-        lettingComparables:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Valuations.Repository.Dtos.LettingComparable'
-        estimatedPrice:
-          type: integer
-          format: int32
-        upperConfidence:
-          type: integer
-          format: int32
-        lowerConfidence:
-          type: integer
-          format: int32
-        estimatedRentPrice:
-          type: integer
-          format: int32
-        rentUpperConfidence:
-          type: integer
-          format: int32
-        rentLowerConfidence:
-          type: integer
-          format: int32
-        grossRentalYieldPercentage:
-          type: number
-          format: double
-        confidenceBand:
+        lastSavedDate:
           type:
           - string
           - 'null'
-        rentConfidenceBand:
-          type:
-          - string
-          - 'null'
-        floorAreaM2:
-          type: integer
-          format: int32
-        floorAreaSqft:
-          type: number
-          format: double
-        plotSizeAcres:
-          type: number
-          format: double
-        lastSoldPrice:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        lastSoldDate:
-          type:
-          - string
-          - 'null'
-        salePriceChange:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        lastRentedPrice:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        lastRentedDate:
-          type:
-          - string
-          - 'null'
-        rentalPriceChange:
-          type:
-          - integer
-          - 'null'
-          format: int32
-      additionalProperties: false
-    Purplebricks.Valuations.Repository.Dtos.SalesComparable:
-      type: object
-      properties:
-        id:
-          type:
-          - string
-          - 'null'
-        comparablesRef:
-          type:
-          - string
-          - 'null'
-        uprn:
-          type: integer
-          format: int64
-        floorAreaM2:
-          type: integer
-          format: int32
-        floorAreaSqft:
-          type: number
-          format: double
-        distance:
-          type: number
-          format: double
-        postcode:
-          type:
-          - string
-          - 'null'
-        address:
-          type:
-          - string
-          - 'null'
-        partialAddress:
-          type:
-          - string
-          - 'null'
-        price:
-          type: integer
-          format: int32
-        type:
-          type:
-          - string
-          - 'null'
-        beds:
-          type: integer
-          format: int32
-        agent:
-          type:
-          - string
-          - 'null'
-        floorplanFilenames:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        listingImages:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        listingStatus:
-          type:
-          - string
-          - 'null'
-        lastStatusDate:
-          type:
-          - string
-          - 'null'
-        listingDate:
-          type:
-          - string
-          - 'null'
-        latitude:
-          type: number
-          format: double
-        longitude:
-          type: number
-          format: double
+          format: date-time
       additionalProperties: false
   securitySchemes:
     Bearer:

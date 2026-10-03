@@ -114,43 +114,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
-    AgentTeam:
-      type: object
-      properties:
-        me:
-          $ref: '#/components/schemas/AgentTeamMember'
-        teamMembers:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/AgentTeamMember'
-      additionalProperties: false
     AgentTeamMember:
       type: object
       properties:
@@ -182,6 +145,43 @@ components:
           type: boolean
           readOnly: true
       additionalProperties: false
+    AgentTeam:
+      type: object
+      properties:
+        me:
+          $ref: '#/components/schemas/AgentTeamMember'
+        teamMembers:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/AgentTeamMember'
+      additionalProperties: false
+    ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
   securitySchemes:
     Bearer:
       type: apiKey

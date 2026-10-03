@@ -66,6 +66,22 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Purplebricks.Property.Domain.Models.PropertySearchHits:
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+        lastSevenDays:
+          type: integer
+          format: int32
+        totalIncludingOtherPortals:
+          type: integer
+          format: int32
+        lastSevenDaysIncludingOtherPortals:
+          type: integer
+          format: int32
+      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -91,22 +107,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    Purplebricks.Property.Domain.Models.PropertySearchHits:
-      type: object
-      properties:
-        total:
-          type: integer
-          format: int32
-        lastSevenDays:
-          type: integer
-          format: int32
-        totalIncludingOtherPortals:
-          type: integer
-          format: int32
-        lastSevenDaysIncludingOtherPortals:
-          type: integer
-          format: int32
-      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

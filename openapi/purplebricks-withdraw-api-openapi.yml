@@ -332,42 +332,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Property.Domain.Enums.WithdrawPropertyReason:
-      enum:
-      - NoLongerSelling
-      - NoLongerLetting
-      - MarketingBreak
-      - SoldSTC_OtherAgent
-      - SoldSTC_PrivateSale
-      - LetSTC_OtherAgent
-      - LetSTC_PrivateSale
-      - SoldWithPurplebricks
-      - LetWithPurplebricks
-      type: string
-    Purplebricks.Security.Auth.AuthUser:
-      type: object
-      properties:
-        userId:
-          type: integer
-          format: int32
-          readOnly: true
-        publicUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-          readOnly: true
-        impersonatorUserId:
-          type: integer
-          format: int32
-          readOnly: true
-        impersonatorPublicUserId:
-          type:
-          - string
-          - 'null'
-          format: uuid
-          readOnly: true
-      additionalProperties: false
     Purplebricks.Property.Domain.Models.RequestWithdrawProperty:
       type: object
       properties:
@@ -376,13 +340,6 @@ components:
           format: int32
         withdrawPropertyReason:
           $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WithdrawPropertyReason'
-      additionalProperties: false
-    Purplebricks.Property.Domain.Models.CancelRequestWithdrawProperty:
-      type: object
-      properties:
-        propertyId:
-          type: integer
-          format: int32
       additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
@@ -428,6 +385,18 @@ components:
         forceAdvertWithdrawal:
           type: boolean
       additionalProperties: false
+    Purplebricks.Property.Domain.Enums.WithdrawPropertyReason:
+      enum:
+      - NoLongerSelling
+      - NoLongerLetting
+      - MarketingBreak
+      - SoldSTC_OtherAgent
+      - SoldSTC_PrivateSale
+      - LetSTC_OtherAgent
+      - LetSTC_PrivateSale
+      - SoldWithPurplebricks
+      - LetWithPurplebricks
+      type: string
     Purplebricks.Property.Domain.Models.WithdrawPropertyResponseModel:
       type: object
       properties:
@@ -440,6 +409,37 @@ components:
           type:
           - string
           - 'null'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Models.CancelRequestWithdrawProperty:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Security.Auth.AuthUser:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int32
+          readOnly: true
+        publicUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+          readOnly: true
+        impersonatorUserId:
+          type: integer
+          format: int32
+          readOnly: true
+        impersonatorPublicUserId:
+          type:
+          - string
+          - 'null'
+          format: uuid
+          readOnly: true
       additionalProperties: false
   securitySchemes:
     Bearer:
