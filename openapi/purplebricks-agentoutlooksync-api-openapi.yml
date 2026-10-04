@@ -89,21 +89,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Model:
-      type: object
-      properties:
-        agentPublicUserId:
-          type: string
-          format: uuid
-        enabled:
-          type: boolean
-      additionalProperties: false
-    PutRequest:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-      additionalProperties: false
     ProblemDetails:
       type: object
       properties:
@@ -129,6 +114,21 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    Model:
+      type: object
+      properties:
+        agentPublicUserId:
+          type: string
+          format: uuid
+        enabled:
+          type: boolean
+      additionalProperties: false
+    PutRequest:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

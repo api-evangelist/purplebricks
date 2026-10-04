@@ -335,6 +335,23 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Purplebricks.Property.Domain.Enums.PropertyTrackType:
+      enum:
+      - Tracked
+      - NoteOfInterest
+      type: string
+    Purplebricks.Property.Domain.Models.TrackedPropertiesListModel:
+      type: object
+      properties:
+        trackedProperties:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.PropertyTrackedModel'
+        pageInfo:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.PageInfoResponseModel'
+      additionalProperties: false
     Purplebricks.Property.Domain.Models.PageInfoResponseModel:
       type: object
       properties:
@@ -349,23 +366,6 @@ components:
         hasPreviousPage:
           type: boolean
       additionalProperties: false
-    Purplebricks.Property.Domain.Models.TrackedPropertiesListModel:
-      type: object
-      properties:
-        trackedProperties:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.PropertyTrackedModel'
-        pageInfo:
-          $ref: '#/components/schemas/Purplebricks.Property.Domain.Models.PageInfoResponseModel'
-      additionalProperties: false
-    Purplebricks.Property.Domain.Enums.CursorPaginationType:
-      enum:
-      - Previous
-      - Next
-      type: string
     Purplebricks.Property.Domain.Models.PropertyTrackedModel:
       type: object
       properties:
@@ -398,10 +398,10 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Purplebricks.Property.Domain.Enums.PropertyTrackType:
+    Purplebricks.Property.Domain.Enums.CursorPaginationType:
       enum:
-      - Tracked
-      - NoteOfInterest
+      - Previous
+      - Next
       type: string
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object

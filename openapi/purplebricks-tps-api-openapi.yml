@@ -84,6 +84,12 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Purplebricks.Communications.Api.Models.ViewModels.CustomerTpsStatus:
+      type: object
+      properties:
+        registered:
+          type: boolean
+      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -109,12 +115,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    Purplebricks.Communications.Api.Models.ViewModels.CustomerTpsStatus:
-      type: object
-      properties:
-        registered:
-          type: boolean
-      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

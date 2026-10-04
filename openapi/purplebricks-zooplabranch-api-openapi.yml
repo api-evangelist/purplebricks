@@ -141,25 +141,6 @@ components:
             type: integer
             format: int32
       additionalProperties: false
-    ZooplaBranchList:
-      type: object
-      properties:
-        count:
-          type: integer
-          format: int32
-        items:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ZooplaBranch'
-      additionalProperties: false
-    BranchService:
-      enum:
-      - NotSpecified
-      - Sales
-      - Lettings
-      type: string
     ProblemDetails:
       type: object
       properties:
@@ -185,6 +166,25 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    ZooplaBranchList:
+      type: object
+      properties:
+        count:
+          type: integer
+          format: int32
+        items:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ZooplaBranch'
+      additionalProperties: false
+    BranchService:
+      enum:
+      - NotSpecified
+      - Sales
+      - Lettings
+      type: string
   securitySchemes:
     Bearer:
       type: apiKey

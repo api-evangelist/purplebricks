@@ -270,6 +270,45 @@ components:
         wasInstantValuation:
           type: boolean
       additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Valuations.Api.Models.IsInstantValuationViewModel:
+      type: object
+      properties:
+        isInstantValuation:
+          type: boolean
+      additionalProperties: false
+    Purplebricks.Valuations.Api.Models.GetPostDataHarvestingRedirectViewModel:
+      type: object
+      properties:
+        redirectUrl:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     Purplebricks.Valuations.Contract.InputModels.BookingUserDataInputModel:
       type: object
       properties:
@@ -314,45 +353,6 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Purplebricks.Valuations.Api.Models.GetPostDataHarvestingRedirectViewModel:
-      type: object
-      properties:
-        redirectUrl:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Valuations.Api.Models.IsInstantValuationViewModel:
-      type: object
-      properties:
-        isInstantValuation:
-          type: boolean
-      additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
   securitySchemes:
     Bearer:
       type: apiKey

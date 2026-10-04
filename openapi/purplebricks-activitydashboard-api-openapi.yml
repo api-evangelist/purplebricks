@@ -162,41 +162,31 @@ paths:
     - url: https://api.purplebricks.co.uk/property-api
 components:
   schemas:
-    Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardFeedbackDocument:
+    Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyModel:
       type: object
       properties:
-        id:
-          type:
-          - string
-          - 'null'
-        lastUpdated:
-          type: string
-          format: date-time
-        provideFeedback:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationFeedbackModel'
-        feedbackToReview:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationFeedbackModel'
-      additionalProperties: false
-    Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationDiaryModel:
-      type: object
-      properties:
-        appointmentId:
-          type: integer
-          format: int32
         propertyId:
           type: integer
           format: int32
-        appointmentDateTime:
-          type: string
+        address:
+          type:
+          - string
+          - 'null'
+        appointmentDate:
+          type:
+          - string
+          - 'null'
           format: date-time
+        isLive:
+          type: boolean
+        lastActionCompleted:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WorkflowStepType'
+        imageUrl:
+          type:
+          - string
+          - 'null'
+        propertyTimeZone:
+          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.IanaTimeZone'
       additionalProperties: false
     Purplebricks.Property.Domain.Enums.IanaTimeZone:
       enum:
@@ -246,6 +236,40 @@ components:
       - America/Denver
       - Pacific/Auckland
       type: string
+    Purplebricks.CosmosDb.Enums.RegionType:
+      enum:
+      - England
+      - Scotland
+      - Wales
+      - NorthernIreland
+      - Queensland
+      - Victoria
+      - NewSouthWales
+      - WesternAustralia
+      - SouthAustralia
+      - California
+      - NewYork
+      - Connecticut
+      - NewJersey
+      - Pennsylvania
+      type: string
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardMessageDocument:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        lastUpdated:
+          type: string
+          format: date-time
+        unreadMessage:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationMessageModel'
+      additionalProperties: false
     Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardViewingDocument:
       type: object
       properties:
@@ -262,6 +286,48 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationViewingModel'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyCountModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        numOfItems:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationMessageModel:
+      type: object
+      properties:
+        messageId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        from:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationFeedbackModel:
+      type: object
+      properties:
+        feedbackId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        propertyAddress:
+          type:
+          - string
+          - 'null'
+        from:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardOfferDocument:
       type: object
@@ -303,6 +369,74 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationOfferModel'
+      additionalProperties: false
+    Purplebricks.Property.Domain.Enums.WorkflowStepType:
+      enum:
+      - Create
+      - BookValuation
+      - Valuation
+      - Instruct
+      - CreateAdvert
+      - RejectAdvert
+      - AmendAdvert
+      - ApproveAdvert
+      - SchedulePendingRegCert
+      - Schedule
+      - PublishPendingRegCert
+      - Publish
+      - Withdraw
+      - Suspend
+      - SuspendByUser
+      - SuspendAccount
+      - UnderOffer
+      - SoldSubjectToContract
+      - DiyAdvertStarted
+      - LetSubjectToContract
+      - DeclineOffer
+      - UpdateProperty
+      - AcceptableOffer
+      - ApplicationReceived
+      - AcceptableOfferNotMarketed
+      - WithdrawOffer
+      - UpdateAdvert
+      - DiyAdvertCreated
+      - DiyAdvertRejected
+      - ApprovePhoto
+      - ContractsExchanged
+      - Completion
+      - DiyAdvertAmended
+      - DiyAdvertRejectAmendments
+      - SchedulePendingContract
+      - PublishPendingContract
+      - UpdatePropertyDiary
+      - ContractsExchangedCoolingOffPeriod
+      - ForceSold
+      - ForceSoldSubjectToContract
+      - ForceContractsExchanged
+      - ForceCompletion
+      - SoldSubjectToEscrow
+      - PendingEscrow
+      - Closing
+      - ForceAcceptableOffer
+      - ForceAcceptableOfferNotMarketed
+      - ForceContractsExchangedCoolingOffPeriod
+      - InstantValuation
+      - FakeValuation
+      - Cancelled
+      type: string
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationViewingModel:
+      type: object
+      properties:
+        viewingId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        propertyAddress:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardTotalsModel:
       type: object
@@ -374,145 +508,6 @@ components:
         propertyRegionType:
           $ref: '#/components/schemas/Purplebricks.CosmosDb.Enums.RegionType'
       additionalProperties: false
-    Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationViewingModel:
-      type: object
-      properties:
-        viewingId:
-          type: integer
-          format: int32
-        propertyId:
-          type: integer
-          format: int32
-        propertyAddress:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationFeedbackModel:
-      type: object
-      properties:
-        feedbackId:
-          type: integer
-          format: int32
-        propertyId:
-          type: integer
-          format: int32
-        propertyAddress:
-          type:
-          - string
-          - 'null'
-        from:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyCountModel:
-      type: object
-      properties:
-        propertyId:
-          type: integer
-          format: int32
-        numOfItems:
-          type: integer
-          format: int32
-      additionalProperties: false
-    Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardMessageDocument:
-      type: object
-      properties:
-        id:
-          type:
-          - string
-          - 'null'
-        lastUpdated:
-          type: string
-          format: date-time
-        unreadMessage:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationMessageModel'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.ActivityDashboard.ActivityDashboardPropertyModel:
-      type: object
-      properties:
-        propertyId:
-          type: integer
-          format: int32
-        address:
-          type:
-          - string
-          - 'null'
-        appointmentDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        isLive:
-          type: boolean
-        lastActionCompleted:
-          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.WorkflowStepType'
-        imageUrl:
-          type:
-          - string
-          - 'null'
-        propertyTimeZone:
-          $ref: '#/components/schemas/Purplebricks.Property.Domain.Enums.IanaTimeZone'
-      additionalProperties: false
-    Purplebricks.Property.Domain.Enums.WorkflowStepType:
-      enum:
-      - Create
-      - BookValuation
-      - Valuation
-      - Instruct
-      - CreateAdvert
-      - RejectAdvert
-      - AmendAdvert
-      - ApproveAdvert
-      - SchedulePendingRegCert
-      - Schedule
-      - PublishPendingRegCert
-      - Publish
-      - Withdraw
-      - Suspend
-      - SuspendByUser
-      - SuspendAccount
-      - UnderOffer
-      - SoldSubjectToContract
-      - DiyAdvertStarted
-      - LetSubjectToContract
-      - DeclineOffer
-      - UpdateProperty
-      - AcceptableOffer
-      - ApplicationReceived
-      - AcceptableOfferNotMarketed
-      - WithdrawOffer
-      - UpdateAdvert
-      - DiyAdvertCreated
-      - DiyAdvertRejected
-      - ApprovePhoto
-      - ContractsExchanged
-      - Completion
-      - DiyAdvertAmended
-      - DiyAdvertRejectAmendments
-      - SchedulePendingContract
-      - PublishPendingContract
-      - UpdatePropertyDiary
-      - ContractsExchangedCoolingOffPeriod
-      - ForceSold
-      - ForceSoldSubjectToContract
-      - ForceContractsExchanged
-      - ForceCompletion
-      - SoldSubjectToEscrow
-      - PendingEscrow
-      - Closing
-      - ForceAcceptableOffer
-      - ForceAcceptableOfferNotMarketed
-      - ForceContractsExchangedCoolingOffPeriod
-      - InstantValuation
-      - FakeValuation
-      - Cancelled
-      type: string
     Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardDiaryDocument:
       type: object
       properties:
@@ -530,37 +525,42 @@ components:
           items:
             $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationDiaryModel'
       additionalProperties: false
-    Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationMessageModel:
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationDiaryModel:
       type: object
       properties:
-        messageId:
+        appointmentId:
           type: integer
           format: int32
         propertyId:
           type: integer
           format: int32
-        from:
+        appointmentDateTime:
+          type: string
+          format: date-time
+      additionalProperties: false
+    Purplebricks.CosmosDb.Documents.ActivityDashboard.Collections.ActivityDashboardFeedbackDocument:
+      type: object
+      properties:
+        id:
           type:
           - string
           - 'null'
+        lastUpdated:
+          type: string
+          format: date-time
+        provideFeedback:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationFeedbackModel'
+        feedbackToReview:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.CosmosDb.Documents.ActivityDashboard.SubModels.NotificationFeedbackModel'
       additionalProperties: false
-    Purplebricks.CosmosDb.Enums.RegionType:
-      enum:
-      - England
-      - Scotland
-      - Wales
-      - NorthernIreland
-      - Queensland
-      - Victoria
-      - NewSouthWales
-      - WesternAustralia
-      - SouthAustralia
-      - California
-      - NewYork
-      - Connecticut
-      - NewJersey
-      - Pennsylvania
-      type: string
   securitySchemes:
     Bearer:
       type: apiKey

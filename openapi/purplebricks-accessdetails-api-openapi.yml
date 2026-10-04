@@ -250,6 +250,121 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsBaseModel:
+      type: object
+      properties:
+        agentName:
+          type:
+          - string
+          - 'null'
+        accessVia:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.AccessVia'
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+        emailAddress:
+          type:
+          - string
+          - 'null'
+        keySafeOwnershipType:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.KeySafeOwnershipType'
+        keySafeViewingCriteria:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.KeySafeViewingCriteria'
+        keySafeLocation:
+          type:
+          - string
+          - 'null'
+        keySafeCode:
+          type:
+          - string
+          - 'null'
+        notes:
+          type:
+          - string
+          - 'null'
+        loggingHistory:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        sellerIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        tenants:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsTenant'
+        otherDetails:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsOther'
+        viewberDetails:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsViewberDetails'
+      additionalProperties: false
+    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsViewberDetails:
+      type: object
+      properties:
+        agentName:
+          type:
+          - string
+          - 'null'
+        keysHeld:
+          type:
+          - string
+          - 'null'
+        viewingCriteria:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.ViewberViewingCriteria'
+      additionalProperties: false
+    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsResponseModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        canEdit:
+          type: boolean
+        canView:
+          type: boolean
+        propertyAccessDetails:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsModel'
+      additionalProperties: false
+    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsSummaryModel:
+      type: object
+      properties:
+        propertyId:
+          type: integer
+          format: int32
+        hasAccessDetails:
+          type: boolean
+          readOnly: true
+        count:
+          type: integer
+          format: int32
+        accessDetails:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.AccessDetailEntry'
+      additionalProperties: false
     Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsModel:
       type: object
       properties:
@@ -332,29 +447,82 @@ components:
         canView:
           type: boolean
       additionalProperties: false
-    Purplebricks.Viewings.DataModels.Enums.AccessDetails.RelationshipToOwner:
-      enum:
-      - EstateOrLettingsAgency
-      - Photographer
-      - FriendOrFamilyMember
-      - Concierge
-      type: string
-    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsResponseModel:
+    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsOther:
       type: object
       properties:
-        propertyId:
-          type: integer
-          format: int32
-        canEdit:
-          type: boolean
-        canView:
-          type: boolean
-        propertyAccessDetails:
+        firstName:
           type:
-          - array
+          - string
           - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsModel'
+        lastName:
+          type:
+          - string
+          - 'null'
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+        emailAddress:
+          type:
+          - string
+          - 'null'
+        keyCollectionAddress:
+          type:
+          - string
+          - 'null'
+        relationshipToOwner:
+          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.RelationshipToOwner'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Viewings.DataModels.Enums.AccessDetails.KeySafeViewingCriteria:
+      enum:
+      - AsAndWhen
+      - ViaSeller
+      - ViaTenant
+      type: string
+    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsTenant:
+      type: object
+      properties:
+        firstName:
+          type:
+          - string
+          - 'null'
+        lastName:
+          type:
+          - string
+          - 'null'
+        phoneNumber:
+          type:
+          - string
+          - 'null'
+        emailAddress:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     Purplebricks.Viewings.DataModels.Models.AccessDetails.AccessDetailEntry:
       type: object
@@ -384,161 +552,24 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsBaseModel:
-      type: object
-      properties:
-        agentName:
-          type:
-          - string
-          - 'null'
-        accessVia:
-          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.AccessVia'
-        firstName:
-          type:
-          - string
-          - 'null'
-        lastName:
-          type:
-          - string
-          - 'null'
-        phoneNumber:
-          type:
-          - string
-          - 'null'
-        emailAddress:
-          type:
-          - string
-          - 'null'
-        keySafeOwnershipType:
-          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.KeySafeOwnershipType'
-        keySafeViewingCriteria:
-          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.KeySafeViewingCriteria'
-        keySafeLocation:
-          type:
-          - string
-          - 'null'
-        keySafeCode:
-          type:
-          - string
-          - 'null'
-        notes:
-          type:
-          - string
-          - 'null'
-        loggingHistory:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        sellerIds:
-          type:
-          - array
-          - 'null'
-          items:
-            type: integer
-            format: int32
-        tenants:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsTenant'
-        otherDetails:
-          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsOther'
-        viewberDetails:
-          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsViewberDetails'
-      additionalProperties: false
-    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsSummaryModel:
-      type: object
-      properties:
-        propertyId:
-          type: integer
-          format: int32
-        hasAccessDetails:
-          type: boolean
-          readOnly: true
-        count:
-          type: integer
-          format: int32
-        accessDetails:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Models.AccessDetails.AccessDetailEntry'
-      additionalProperties: false
-    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsTenant:
-      type: object
-      properties:
-        firstName:
-          type:
-          - string
-          - 'null'
-        lastName:
-          type:
-          - string
-          - 'null'
-        phoneNumber:
-          type:
-          - string
-          - 'null'
-        emailAddress:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Viewings.DataModels.Enums.AccessDetails.ViewberViewingCriteria:
+    Purplebricks.Viewings.DataModels.Enums.AccessDetails.RelationshipToOwner:
       enum:
-      - AsAndWhen
-      - ViaSeller
-      - ViaTenant
+      - EstateOrLettingsAgency
+      - Photographer
+      - FriendOrFamilyMember
+      - Concierge
       type: string
-    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsOther:
-      type: object
-      properties:
-        firstName:
-          type:
-          - string
-          - 'null'
-        lastName:
-          type:
-          - string
-          - 'null'
-        phoneNumber:
-          type:
-          - string
-          - 'null'
-        emailAddress:
-          type:
-          - string
-          - 'null'
-        keyCollectionAddress:
-          type:
-          - string
-          - 'null'
-        relationshipToOwner:
-          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.RelationshipToOwner'
-      additionalProperties: false
-    Purplebricks.Viewings.DataModels.Models.AccessDetails.PropertyAccessDetailsViewberDetails:
-      type: object
-      properties:
-        agentName:
-          type:
-          - string
-          - 'null'
-        keysHeld:
-          type:
-          - string
-          - 'null'
-        viewingCriteria:
-          $ref: '#/components/schemas/Purplebricks.Viewings.DataModels.Enums.AccessDetails.ViewberViewingCriteria'
-      additionalProperties: false
     Purplebricks.Viewings.DataModels.Enums.AccessDetails.KeySafeOwnershipType:
       enum:
       - Ordered
       - Own
       - Viewber
+      type: string
+    Purplebricks.Viewings.DataModels.Enums.AccessDetails.ViewberViewingCriteria:
+      enum:
+      - AsAndWhen
+      - ViaSeller
+      - ViaTenant
       type: string
     Purplebricks.Viewings.DataModels.Enums.AccessDetails.AccessVia:
       enum:
@@ -547,18 +578,6 @@ components:
       - KeySafe
       - Other
       - Viewber
-      type: string
-    FluentValidation.Severity:
-      enum:
-      - Error
-      - Warning
-      - Info
-      type: string
-    Purplebricks.Viewings.DataModels.Enums.AccessDetails.KeySafeViewingCriteria:
-      enum:
-      - AsAndWhen
-      - ViaSeller
-      - ViaTenant
       type: string
     FluentValidation.Results.ValidationFailure:
       type: object
@@ -585,31 +604,12 @@ components:
           - 'null'
           additionalProperties: {}
       additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
+    FluentValidation.Severity:
+      enum:
+      - Error
+      - Warning
+      - Info
+      type: string
   securitySchemes:
     Bearer:
       type: apiKey

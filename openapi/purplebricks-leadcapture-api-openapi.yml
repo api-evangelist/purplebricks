@@ -58,6 +58,13 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Purplebricks.Valuations.Api.Models.LeadCaptureViewModel:
+      type: object
+      properties:
+        leadId:
+          type: string
+          format: uuid
+      additionalProperties: false
     Purplebricks.Valuations.Contract.InputModels.LeadCaptureInputModel:
       type: object
       properties:
@@ -97,13 +104,6 @@ components:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    Purplebricks.Valuations.Api.Models.LeadCaptureViewModel:
-      type: object
-      properties:
-        leadId:
-          type: string
-          format: uuid
       additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object

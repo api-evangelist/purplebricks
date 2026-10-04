@@ -104,18 +104,31 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Viewings.Business.ViewModels.OpenDaysViewModel:
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
-        start:
-          type: string
-          format: date-time
-        end:
-          type: string
-          format: date-time
-        propertyTimeZone:
-          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.IanaTimeZone'
-      additionalProperties: false
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     Purplebricks.DatabaseModel.Enumerations.IanaTimeZone:
       enum:
       - NotSet
@@ -164,31 +177,18 @@ components:
       - AmericaDenver
       - PacificAuckland
       type: string
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
+    Purplebricks.Viewings.Business.ViewModels.OpenDaysViewModel:
       type: object
       properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        propertyTimeZone:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.IanaTimeZone'
+      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

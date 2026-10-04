@@ -99,13 +99,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Account.Api.Models.ExpertCreatedInputModel:
-      type: object
-      properties:
-        userId:
-          type: integer
-          format: int32
-      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -131,6 +124,13 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    Purplebricks.Account.Api.Models.ExpertCreatedInputModel:
+      type: object
+      properties:
+        userId:
+          type: integer
+          format: int32
+      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

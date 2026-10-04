@@ -211,6 +211,17 @@ components:
           - string
           - 'null'
       additionalProperties: false
+    Purplebricks.Account.Api.V1.Controllers.PhoneVerificationStatusResponse:
+      type: object
+      properties:
+        isVerified:
+          type: boolean
+        verifiedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -236,17 +247,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    Purplebricks.Account.Api.V1.Controllers.PhoneVerificationStatusResponse:
-      type: object
-      properties:
-        isVerified:
-          type: boolean
-        verifiedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

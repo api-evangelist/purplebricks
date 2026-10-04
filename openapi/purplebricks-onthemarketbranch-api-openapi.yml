@@ -140,30 +140,6 @@ components:
       - Sales
       - Lettings
       type: string
-    OnTheMarketBranch:
-      type: object
-      properties:
-        branchId:
-          type: integer
-          format: int32
-        name:
-          type:
-          - string
-          - 'null'
-        postcodeArea:
-          type:
-          - string
-          - 'null'
-        service:
-          $ref: '#/components/schemas/BranchService'
-        livePropertyIds:
-          type:
-          - array
-          - 'null'
-          items:
-            type: integer
-            format: int32
-      additionalProperties: false
     ProblemDetails:
       type: object
       properties:
@@ -189,6 +165,30 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    OnTheMarketBranch:
+      type: object
+      properties:
+        branchId:
+          type: integer
+          format: int32
+        name:
+          type:
+          - string
+          - 'null'
+        postcodeArea:
+          type:
+          - string
+          - 'null'
+        service:
+          $ref: '#/components/schemas/BranchService'
+        livePropertyIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

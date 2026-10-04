@@ -88,6 +88,26 @@ components:
           - string
           - 'null'
       additionalProperties: false
+    Purplebricks.Communications.Api.Models.InputModels.ContactUsAddress:
+      type: object
+      properties:
+        propertyNumberOrName:
+          type:
+          - string
+          - 'null'
+        street:
+          type:
+          - string
+          - 'null'
+        city:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -113,26 +133,6 @@ components:
           - string
           - 'null'
       additionalProperties: {}
-    Purplebricks.Communications.Api.Models.InputModels.ContactUsAddress:
-      type: object
-      properties:
-        propertyNumberOrName:
-          type:
-          - string
-          - 'null'
-        street:
-          type:
-          - string
-          - 'null'
-        city:
-          type:
-          - string
-          - 'null'
-        postcode:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

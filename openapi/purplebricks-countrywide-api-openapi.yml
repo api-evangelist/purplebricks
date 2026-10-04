@@ -77,16 +77,31 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Property.Business.ViewModels.Countrywide.JobResultResponse:
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
-        CWS_job_number:
+        type:
           type:
           - string
           - 'null'
-        Success:
-          type: boolean
-      additionalProperties: false
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     Purplebricks.Property.Business.InputModels.Countrywide.JobResultRequest:
       type: object
       properties:
@@ -119,31 +134,16 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
+    Purplebricks.Property.Business.ViewModels.Countrywide.JobResultResponse:
       type: object
       properties:
-        type:
+        CWS_job_number:
           type:
           - string
           - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
+        Success:
+          type: boolean
+      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

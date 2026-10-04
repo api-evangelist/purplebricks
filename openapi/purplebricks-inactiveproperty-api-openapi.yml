@@ -159,6 +159,99 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    Purplebricks.Property.Domain.Enums.WorkflowStepType:
+      enum:
+      - Create
+      - BookValuation
+      - Valuation
+      - Instruct
+      - CreateAdvert
+      - RejectAdvert
+      - AmendAdvert
+      - ApproveAdvert
+      - SchedulePendingRegCert
+      - Schedule
+      - PublishPendingRegCert
+      - Publish
+      - Withdraw
+      - Suspend
+      - SuspendByUser
+      - SuspendAccount
+      - UnderOffer
+      - SoldSubjectToContract
+      - DiyAdvertStarted
+      - LetSubjectToContract
+      - DeclineOffer
+      - UpdateProperty
+      - AcceptableOffer
+      - ApplicationReceived
+      - AcceptableOfferNotMarketed
+      - WithdrawOffer
+      - UpdateAdvert
+      - DiyAdvertCreated
+      - DiyAdvertRejected
+      - ApprovePhoto
+      - ContractsExchanged
+      - Completion
+      - DiyAdvertAmended
+      - DiyAdvertRejectAmendments
+      - SchedulePendingContract
+      - PublishPendingContract
+      - UpdatePropertyDiary
+      - ContractsExchangedCoolingOffPeriod
+      - ForceSold
+      - ForceSoldSubjectToContract
+      - ForceContractsExchanged
+      - ForceCompletion
+      - SoldSubjectToEscrow
+      - PendingEscrow
+      - Closing
+      - ForceAcceptableOffer
+      - ForceAcceptableOfferNotMarketed
+      - ForceContractsExchangedCoolingOffPeriod
+      - InstantValuation
+      - FakeValuation
+      - Cancelled
+      type: string
+    Purplebricks.Property.Domain.Enums.PaymentMethod:
+      enum:
+      - Card
+      - Pay4Later
+      - RateSetter
+      - CommBankCard
+      - RealexCard
+      - PurplebricksDeferredPayment
+      - Duologi
+      - GlobalPayDeferredPayment
+      - BraintreeCard
+      - PayPal
+      - PayPalCredit
+      type: string
     Purplebricks.Property.Business.ViewModels.InactivePropertyViewModel:
       type: object
       properties:
@@ -241,104 +334,11 @@ components:
         isRelistRequestEnabled:
           type: boolean
       additionalProperties: false
-    Purplebricks.Property.Domain.Enums.WorkflowStepType:
-      enum:
-      - Create
-      - BookValuation
-      - Valuation
-      - Instruct
-      - CreateAdvert
-      - RejectAdvert
-      - AmendAdvert
-      - ApproveAdvert
-      - SchedulePendingRegCert
-      - Schedule
-      - PublishPendingRegCert
-      - Publish
-      - Withdraw
-      - Suspend
-      - SuspendByUser
-      - SuspendAccount
-      - UnderOffer
-      - SoldSubjectToContract
-      - DiyAdvertStarted
-      - LetSubjectToContract
-      - DeclineOffer
-      - UpdateProperty
-      - AcceptableOffer
-      - ApplicationReceived
-      - AcceptableOfferNotMarketed
-      - WithdrawOffer
-      - UpdateAdvert
-      - DiyAdvertCreated
-      - DiyAdvertRejected
-      - ApprovePhoto
-      - ContractsExchanged
-      - Completion
-      - DiyAdvertAmended
-      - DiyAdvertRejectAmendments
-      - SchedulePendingContract
-      - PublishPendingContract
-      - UpdatePropertyDiary
-      - ContractsExchangedCoolingOffPeriod
-      - ForceSold
-      - ForceSoldSubjectToContract
-      - ForceContractsExchanged
-      - ForceCompletion
-      - SoldSubjectToEscrow
-      - PendingEscrow
-      - Closing
-      - ForceAcceptableOffer
-      - ForceAcceptableOfferNotMarketed
-      - ForceContractsExchangedCoolingOffPeriod
-      - InstantValuation
-      - FakeValuation
-      - Cancelled
-      type: string
     Purplebricks.Property.Domain.Enums.MethodOfSale:
       enum:
       - Auction
       - PrivateTreaty
       type: string
-    Purplebricks.Property.Domain.Enums.PaymentMethod:
-      enum:
-      - Card
-      - Pay4Later
-      - RateSetter
-      - CommBankCard
-      - RealexCard
-      - PurplebricksDeferredPayment
-      - Duologi
-      - GlobalPayDeferredPayment
-      - BraintreeCard
-      - PayPal
-      - PayPalCredit
-      type: string
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        detail:
-          type:
-          - string
-          - 'null'
-        instance:
-          type:
-          - string
-          - 'null'
-      additionalProperties: {}
   securitySchemes:
     Bearer:
       type: apiKey

@@ -142,29 +142,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Account.Common.Models.MarketingPreferencesUpdateInputModel:
-      type: object
-      properties:
-        publicUserId:
-          type: string
-          format: uuid
-        updatedCustomerPreferenceRecords:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Account.Common.Models.CustomerPreferenceRecordInputModel'
-      additionalProperties: false
-    Purplebricks.Account.Business.Models.CustomerPreference:
-      type: object
-      properties:
-        records:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Account.Business.Models.CustomerPreferenceRecord'
-      additionalProperties: false
     Purplebricks.Account.Business.Models.CustomerPreferenceRecord:
       type: object
       properties:
@@ -202,32 +179,6 @@ components:
           - 'null'
           format: int32
       additionalProperties: false
-    Purplebricks.Account.Business.Models.MarketingPreferencesResponseModel:
-      type: object
-      properties:
-        customerPreference:
-          $ref: '#/components/schemas/Purplebricks.Account.Business.Models.CustomerPreference'
-      additionalProperties: false
-    Purplebricks.Account.Common.Models.CustomerPreferenceRecordInputModel:
-      type: object
-      properties:
-        customerPreferenceId:
-          type:
-          - string
-          - 'null'
-        channel:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - string
-          - 'null'
-        code:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
@@ -253,6 +204,55 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    Purplebricks.Account.Common.Models.CustomerPreferenceRecordInputModel:
+      type: object
+      properties:
+        customerPreferenceId:
+          type:
+          - string
+          - 'null'
+        channel:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - string
+          - 'null'
+        code:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Account.Business.Models.MarketingPreferencesResponseModel:
+      type: object
+      properties:
+        customerPreference:
+          $ref: '#/components/schemas/Purplebricks.Account.Business.Models.CustomerPreference'
+      additionalProperties: false
+    Purplebricks.Account.Business.Models.CustomerPreference:
+      type: object
+      properties:
+        records:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Account.Business.Models.CustomerPreferenceRecord'
+      additionalProperties: false
+    Purplebricks.Account.Common.Models.MarketingPreferencesUpdateInputModel:
+      type: object
+      properties:
+        publicUserId:
+          type: string
+          format: uuid
+        updatedCustomerPreferenceRecords:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Account.Common.Models.CustomerPreferenceRecordInputModel'
+      additionalProperties: false
   securitySchemes:
     Bearer:
       type: apiKey

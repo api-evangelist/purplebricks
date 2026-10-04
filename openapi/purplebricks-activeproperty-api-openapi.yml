@@ -164,6 +164,14 @@ components:
       - PartBuyPartRent
       - SharedEquity
       type: string
+    Purplebricks.Property.Domain.Enums.RentFrequency:
+      enum:
+      - Yearly
+      - Quarterly
+      - Monthly
+      - Weekly
+      - Daily
+      type: string
     Purplebricks.Property.Business.ViewModels.ImageViewModel:
       type: object
       properties:
@@ -183,14 +191,6 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Purplebricks.Property.Domain.Enums.RentFrequency:
-      enum:
-      - Yearly
-      - Quarterly
-      - Monthly
-      - Weekly
-      - Daily
-      type: string
   securitySchemes:
     Bearer:
       type: apiKey

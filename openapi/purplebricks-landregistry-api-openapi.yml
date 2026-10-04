@@ -67,88 +67,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Purplebricks.Property.Business.ViewModels.TransactionItem:
-      type: object
-      properties:
-        _about:
-          type:
-          - string
-          - 'null'
-        transactionId:
-          type:
-          - string
-          - 'null'
-        pricePaid:
-          type: number
-          format: double
-        transactionDate:
-          type:
-          - string
-          - 'null'
-        propertyAddress:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyAddress'
-        propertyType:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyType'
-        estateType:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.EstateType'
-        newBuild:
-          type: boolean
-        transactionCategory:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.TransactionCategory'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.LabelValue:
-      type: object
-      properties:
-        _value:
-          type:
-          - string
-          - 'null'
-        _lang:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.LandRegistryResult:
-      type: object
-      properties:
-        _about:
-          type:
-          - string
-          - 'null'
-        items:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.TransactionItem'
-        itemsPerPage:
-          type: integer
-          format: int32
-        page:
-          type: integer
-          format: int32
-        next:
-          type:
-          - string
-          - 'null'
-        startIndex:
-          type: integer
-          format: int32
-      additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.TransactionCategory:
-      type: object
-      properties:
-        _about:
-          type:
-          - string
-          - 'null'
-        prefLabel:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LabelValue'
-      additionalProperties: false
     Purplebricks.Property.Business.ViewModels.PropertyAddress:
       type: object
       properties:
@@ -203,19 +121,58 @@ components:
           items:
             $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LabelValue'
       additionalProperties: false
-    Purplebricks.Property.Business.ViewModels.LandRegistryResponse:
+    Purplebricks.Property.Business.ViewModels.LandRegistryResult:
       type: object
       properties:
-        format:
+        _about:
           type:
           - string
           - 'null'
-        version:
+        items:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.TransactionItem'
+        itemsPerPage:
+          type: integer
+          format: int32
+        page:
+          type: integer
+          format: int32
+        next:
           type:
           - string
           - 'null'
-        result:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LandRegistryResult'
+        startIndex:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.TransactionCategory:
+      type: object
+      properties:
+        _about:
+          type:
+          - string
+          - 'null'
+        prefLabel:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LabelValue'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.LabelValue:
+      type: object
+      properties:
+        _value:
+          type:
+          - string
+          - 'null'
+        _lang:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
@@ -242,6 +199,20 @@ components:
           - string
           - 'null'
       additionalProperties: {}
+    Purplebricks.Property.Business.ViewModels.LandRegistryResponse:
+      type: object
+      properties:
+        format:
+          type:
+          - string
+          - 'null'
+        version:
+          type:
+          - string
+          - 'null'
+        result:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LandRegistryResult'
+      additionalProperties: false
     Purplebricks.Property.Business.ViewModels.PropertyType:
       type: object
       properties:
@@ -255,6 +226,35 @@ components:
           - 'null'
           items:
             $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.LabelValue'
+      additionalProperties: false
+    Purplebricks.Property.Business.ViewModels.TransactionItem:
+      type: object
+      properties:
+        _about:
+          type:
+          - string
+          - 'null'
+        transactionId:
+          type:
+          - string
+          - 'null'
+        pricePaid:
+          type: number
+          format: double
+        transactionDate:
+          type:
+          - string
+          - 'null'
+        propertyAddress:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyAddress'
+        propertyType:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.PropertyType'
+        estateType:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.EstateType'
+        newBuild:
+          type: boolean
+        transactionCategory:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.TransactionCategory'
       additionalProperties: false
   securitySchemes:
     Bearer:

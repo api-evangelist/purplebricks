@@ -339,6 +339,23 @@ paths:
     - url: https://api.purplebricks.co.uk/viewings-api
 components:
   schemas:
+    Purplebricks.Property.Domain.Enums.Heating:
+      enum:
+      - None
+      - AirConditioning
+      - Central
+      - Electric
+      - GasCentral
+      - Oil
+      - Solar
+      - UnderFloor
+      type: string
+    Purplebricks.Property.Domain.Enums.Glazing:
+      enum:
+      - Full
+      - Part
+      - None
+      type: string
     Purplebricks.Property.Domain.Enums.Parking:
       enum:
       - None
@@ -349,6 +366,14 @@ components:
       - Gated
       - OffStreet
       - OnStreet
+      type: string
+    Purplebricks.Property.Domain.Enums.Tenure:
+      enum:
+      - Freehold
+      - Leasehold
+      - ShareOfFreehold
+      - SharedOwnership
+      - Commonhold
       type: string
     Purplebricks.Property.Api.Controllers.V1.BlandController_BlandPropertyRequest:
       required:
@@ -361,6 +386,51 @@ components:
           type: integer
           format: int32
       additionalProperties: false
+    Purplebricks.Property.Domain.Enums.TaxBand:
+      enum:
+      - A
+      - B
+      - C
+      - D
+      - E
+      - F
+      - G
+      - H
+      - I
+      - TBC
+      - Exempt
+      type: string
+    Purplebricks.Property.Business.ViewModels.Bland.BlandPropertyViewModel:
+      type: object
+      properties:
+        property:
+          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Bland.BlandProperty'
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
     Purplebricks.Property.Domain.Enums.Garden:
       enum:
       - None
@@ -373,23 +443,6 @@ components:
       - TwoOrMoreCars
       - None
       type: string
-    Purplebricks.Property.Domain.Enums.Heating:
-      enum:
-      - None
-      - AirConditioning
-      - Central
-      - Electric
-      - GasCentral
-      - Oil
-      - Solar
-      - UnderFloor
-      type: string
-    Purplebricks.Property.Business.ViewModels.Bland.BlandPropertyViewModel:
-      type: object
-      properties:
-        property:
-          $ref: '#/components/schemas/Purplebricks.Property.Business.ViewModels.Bland.BlandProperty'
-      additionalProperties: false
     Purplebricks.Property.Business.ViewModels.Bland.BlandProperty:
       type: object
       properties:
@@ -512,59 +565,150 @@ components:
         toLet:
           type: boolean
       additionalProperties: false
-    Purplebricks.Property.Domain.Enums.TaxBand:
+    Purplebricks.DatabaseModel.Enumerations.BookingProcess:
       enum:
-      - A
-      - B
-      - C
-      - D
-      - E
-      - F
-      - G
-      - H
-      - I
-      - TBC
-      - Exempt
+      - SellerBookValuation
+      - BuyerBookViewing
+      - CallCentreBookValuation
+      - CallCentreBookViewing
+      - SellerRearrange
+      - BuyerRearrange
+      - LpeRearrange
+      - LpeBookViewing
+      - BuyingAgentBookViewing
+      - RemortgageInstantValuation
+      - AiVoiceAgent
+      - AiWhatsAppAgent
+      - AiSmsAgent
       type: string
-    Purplebricks.Property.Domain.Enums.Glazing:
-      enum:
-      - Full
-      - Part
-      - None
-      type: string
-    Purplebricks.Property.Domain.Enums.Tenure:
-      enum:
-      - Freehold
-      - Leasehold
-      - ShareOfFreehold
-      - SharedOwnership
-      - Commonhold
-      type: string
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
+    Purplebricks.Viewings.Business.ViewModels.AiSellerRequestSlotResponse:
       type: object
       properties:
-        type:
+        success:
+          type: boolean
+        message:
           type:
           - string
           - 'null'
-        title:
+        confirmedOrNewSlotUtc:
           type:
           - string
           - 'null'
-        status:
+          format: date-time
+      additionalProperties: false
+    Purplebricks.Viewings.Business.Models.BookingRequestStatus:
+      enum:
+      - SlotNotAvailable
+      - Confirmed
+      - AwaitingConfirmation
+      - PropertySold
+      - PropertyWithdrawn
+      type: string
+    Purplebricks.DatabaseModel.Enumerations.ContactNumberType:
+      enum:
+      - Home
+      - Mobile
+      - Other
+      type: string
+    Purplebricks.Viewings.Business.Models.AiRescheduleRequestSlotInputModel:
+      type: object
+      properties:
+        bookingId:
+          type: integer
+          format: int32
+        viewingId:
+          type: integer
+          format: int32
+        sellerUserId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+        eventStart:
+          type: string
+          format: date-time
+      additionalProperties: false
+    Purplebricks.Viewings.Business.ViewModels.BookViewingConfirmationViewModel:
+      type: object
+      properties:
+        eventId:
           type:
           - integer
           - 'null'
           format: int32
-        detail:
+        propertyId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        listingId:
           type:
           - string
           - 'null'
-        instance:
+        status:
+          $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.BookingRequestStatus'
+        bookingProcess:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.BookingProcess'
+        start:
+          type: string
+          format: date-time
+        end:
+          type: string
+          format: date-time
+        propertyTimeZone:
+          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.IanaTimeZone'
+        street:
           type:
           - string
           - 'null'
-      additionalProperties: {}
+        town:
+          type:
+          - string
+          - 'null'
+        county:
+          type:
+          - string
+          - 'null'
+        postcode:
+          type:
+          - string
+          - 'null'
+        isAccompaniedViewing:
+          type: boolean
+        hostName:
+          type:
+          - string
+          - 'null'
+        hostPhoneNumber:
+          type:
+          - string
+          - 'null'
+        expertPhoto:
+          type:
+          - string
+          - 'null'
+        trustPilotId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Purplebricks.Viewings.Business.Models.AiConfirmRequestSlotInputModel:
+      type: object
+      properties:
+        bookingId:
+          type: integer
+          format: int32
+        viewingId:
+          type: integer
+          format: int32
+        sellerUserId:
+          type: integer
+          format: int32
+        propertyId:
+          type: integer
+          format: int32
+      additionalProperties: false
     Purplebricks.DatabaseModel.Enumerations.IanaTimeZone:
       enum:
       - NotSet
@@ -640,150 +784,6 @@ components:
         bookingProcess:
           $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.BookingProcess'
       additionalProperties: false
-    Purplebricks.Viewings.Business.Models.AiRescheduleRequestSlotInputModel:
-      type: object
-      properties:
-        bookingId:
-          type: integer
-          format: int32
-        viewingId:
-          type: integer
-          format: int32
-        sellerUserId:
-          type: integer
-          format: int32
-        propertyId:
-          type: integer
-          format: int32
-        eventStart:
-          type: string
-          format: date-time
-      additionalProperties: false
-    Purplebricks.Viewings.Business.ViewModels.AiSellerRequestSlotResponse:
-      type: object
-      properties:
-        success:
-          type: boolean
-        message:
-          type:
-          - string
-          - 'null'
-        confirmedOrNewSlotUtc:
-          type:
-          - string
-          - 'null'
-          format: date-time
-      additionalProperties: false
-    Purplebricks.Viewings.Business.Models.BookingRequestStatus:
-      enum:
-      - SlotNotAvailable
-      - Confirmed
-      - AwaitingConfirmation
-      - PropertySold
-      - PropertyWithdrawn
-      type: string
-    Purplebricks.Viewings.Business.Models.AiConfirmRequestSlotInputModel:
-      type: object
-      properties:
-        bookingId:
-          type: integer
-          format: int32
-        viewingId:
-          type: integer
-          format: int32
-        sellerUserId:
-          type: integer
-          format: int32
-        propertyId:
-          type: integer
-          format: int32
-      additionalProperties: false
-    Purplebricks.Viewings.Business.ViewModels.BookViewingConfirmationViewModel:
-      type: object
-      properties:
-        eventId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        propertyId:
-          type:
-          - integer
-          - 'null'
-          format: int32
-        listingId:
-          type:
-          - string
-          - 'null'
-        status:
-          $ref: '#/components/schemas/Purplebricks.Viewings.Business.Models.BookingRequestStatus'
-        bookingProcess:
-          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.BookingProcess'
-        start:
-          type: string
-          format: date-time
-        end:
-          type: string
-          format: date-time
-        propertyTimeZone:
-          $ref: '#/components/schemas/Purplebricks.DatabaseModel.Enumerations.IanaTimeZone'
-        street:
-          type:
-          - string
-          - 'null'
-        town:
-          type:
-          - string
-          - 'null'
-        county:
-          type:
-          - string
-          - 'null'
-        postcode:
-          type:
-          - string
-          - 'null'
-        isAccompaniedViewing:
-          type: boolean
-        hostName:
-          type:
-          - string
-          - 'null'
-        hostPhoneNumber:
-          type:
-          - string
-          - 'null'
-        expertPhoto:
-          type:
-          - string
-          - 'null'
-        trustPilotId:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Purplebricks.DatabaseModel.Enumerations.ContactNumberType:
-      enum:
-      - Home
-      - Mobile
-      - Other
-      type: string
-    Purplebricks.DatabaseModel.Enumerations.BookingProcess:
-      enum:
-      - SellerBookValuation
-      - BuyerBookViewing
-      - CallCentreBookValuation
-      - CallCentreBookViewing
-      - SellerRearrange
-      - BuyerRearrange
-      - LpeRearrange
-      - LpeBookViewing
-      - BuyingAgentBookViewing
-      - RemortgageInstantValuation
-      - AiVoiceAgent
-      - AiWhatsAppAgent
-      - AiSmsAgent
-      type: string
   securitySchemes:
     Bearer:
       type: apiKey
