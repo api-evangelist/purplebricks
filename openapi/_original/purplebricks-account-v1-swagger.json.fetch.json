@@ -1,0 +1,12 @@
+{
+ "url": "https://api.purplebricks.co.uk/account-api/swagger/v1/swagger.json",
+ "requested_url": "https://api.purplebricks.co.uk/account-api/swagger/v1/swagger.json",
+ "status": 200,
+ "content_type": "application/json;charset=utf-8",
+ "bytes": 43384,
+ "sha256": "80dbc1c5f35013eedb552cb8fc1fe0c18f487213d363f8309d707561e327f6b2",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}
