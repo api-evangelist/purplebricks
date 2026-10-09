@@ -65,3 +65,66 @@ plans:
   period: one-time
   unit: listing upgrade (shown as Included)
   included_quota: Better showcased for more views
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - subscription
+  units: []
+  plans:
+  - name: Pay Now (properties £200k or less)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: Pay Later (properties up to and including £200,000)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: 'Add-on: Assisted viewing'
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: 'Add-on: EPC'
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: 'Add-on: Home Report'
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: Featured Listing
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: Premium Listing
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
