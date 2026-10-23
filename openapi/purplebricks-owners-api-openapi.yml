@@ -213,3 +213,9 @@ components:
       description: Authorization header using Bearer scheme
       name: Authorization
       in: header
+x-provenance:
+  method: harvested
+  publisher: Purplebricks
+  source: https://api.purplebricks.co.uk/property-api/swagger/v1/swagger.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
